@@ -117,7 +117,7 @@ export default function Home() {
               TruContext: From Data Chaos to Decision Confidence.
             </p>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6">
-              Explainable Agentic AI-Powered <span className="text-primary">Analytics Platform</span>
+              Explainable Agentic AI for <span className="text-primary">Real-Time Business Analytics</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
               TruContext is an enterprise threat detection platform delivering real-time cyber threat detection through explainable AI and graph-based threat detection. Our graph database cybersecurity solution combines advanced analytics with behavioral threat hunting for government agencies, critical infrastructure, and smart city security operations.
