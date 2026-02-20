@@ -120,7 +120,7 @@ export default function Home() {
               Explainable AI for <span className="text-primary">Real-Time Business Analytics</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              TruContext is an enterprise threat detection platform delivering real-time cyber threat detection through explainable AI and graph-based threat detection. Our graph database cybersecurity solution combines advanced analytics with behavioral threat hunting for government agencies, critical infrastructure, and smart city security operations.
+              Transform complex data into actionable intelligence in real-time. TruContext's explainable AI platform processes billions of events instantly, revealing hidden patterns and connections across your entire business ecosystem. Make faster, smarter decisions with complete visibility and predictive insights.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/demo">
@@ -133,6 +133,24 @@ export default function Home() {
                   Explore Platform
                 </Button>
               </Link>
+            </div>
+
+            {/* Trust Indicators */}
+            <div className="mt-12 flex flex-col sm:flex-row justify-center items-center gap-8 text-center">
+              <div>
+                <p className="text-3xl md:text-4xl font-bold text-primary mb-2">1B+</p>
+                <p className="text-gray-600 text-sm md:text-base">Events Processed Daily</p>
+              </div>
+              <div className="hidden sm:block w-px h-12 bg-gray-300"></div>
+              <div>
+                <p className="text-3xl md:text-4xl font-bold text-primary mb-2">50+</p>
+                <p className="text-gray-600 text-sm md:text-base">Enterprise Customers</p>
+              </div>
+              <div className="hidden sm:block w-px h-12 bg-gray-300"></div>
+              <div>
+                <p className="text-3xl md:text-4xl font-bold text-primary mb-2">30 Days</p>
+                <p className="text-gray-600 text-sm md:text-base">Time to Value</p>
+              </div>
             </div>
           </div>
         </div>
@@ -606,6 +624,68 @@ export default function Home() {
       </section>
 
 
+
+      {/* Comparison Section */}
+      <section className="py-12 bg-white">
+        <div className="container">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">TruContext vs Traditional SIEM</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">See how our real-time analytics platform outperforms legacy solutions</p>
+          </div>
+
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr className="bg-gray-100">
+                  <th className="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">Feature</th>
+                  <th className="border border-gray-300 px-4 py-3 text-center font-semibold text-primary">TruContext</th>
+                  <th className="border border-gray-300 px-4 py-3 text-center font-semibold text-gray-600">Traditional SIEM</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="hover:bg-gray-50">
+                  <td className="border border-gray-300 px-4 py-3 font-medium text-gray-900">Real-Time Processing</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center"><span className="text-primary font-bold">✓</span> Sub-second latency</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-gray-500">Minutes to hours</td>
+                </tr>
+                <tr className="hover:bg-gray-50 bg-gray-50">
+                  <td className="border border-gray-300 px-4 py-3 font-medium text-gray-900">Explainable AI</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center"><span className="text-primary font-bold">✓</span> Full transparency</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-gray-500">Black box alerts</td>
+                </tr>
+                <tr className="hover:bg-gray-50">
+                  <td className="border border-gray-300 px-4 py-3 font-medium text-gray-900">Graph-Based Analysis</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center"><span className="text-primary font-bold">✓</span> Multi-layered graphs</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-gray-500">Rule-based only</td>
+                </tr>
+                <tr className="hover:bg-gray-50 bg-gray-50">
+                  <td className="border border-gray-300 px-4 py-3 font-medium text-gray-900">Scalability</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center"><span className="text-primary font-bold">✓</span> 1B+ events/day</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-gray-500">Limited scaling</td>
+                </tr>
+                <tr className="hover:bg-gray-50">
+                  <td className="border border-gray-300 px-4 py-3 font-medium text-gray-900">Deployment Time</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center"><span className="text-primary font-bold">✓</span> 30 days</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-gray-500">6-12 months</td>
+                </tr>
+                <tr className="hover:bg-gray-50 bg-gray-50">
+                  <td className="border border-gray-300 px-4 py-3 font-medium text-gray-900">Cross-Domain Intelligence</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center"><span className="text-primary font-bold">✓</span> Cyber + Physical + Ops</td>
+                  <td className="border border-gray-300 px-4 py-3 text-center text-gray-500">Cyber only</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div className="text-center mt-10">
+            <Link href="/why/comparison-siem">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white">
+                See Detailed Comparison <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* CTA Section */}
       <section className="cta-section py-8 bg-gradient-to-r from-primary to-secondary text-white">
