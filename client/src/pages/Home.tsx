@@ -10,7 +10,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
 import { StructuredData } from "@/components/StructuredData";
 import { SEOHead } from "@/components/SEOHead";
-import ComplianceBadgeCarousel from "@/components/ComplianceBadgeCarousel";
+
 import { 
   Shield, 
   Eye, 
@@ -117,7 +117,7 @@ export default function Home() {
               TruContext: From Data Chaos to Decision Confidence.
             </p>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6">
-              Explainable AI-Powered <span className="text-primary">Cybersecurity Analytics Platform</span>
+              Explainable Agentic AI-Powered <span className="text-primary">Analytics Platform</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
               TruContext is an enterprise threat detection platform delivering real-time cyber threat detection through explainable AI and graph-based threat detection. Our graph database cybersecurity solution combines advanced analytics with behavioral threat hunting for government agencies, critical infrastructure, and smart city security operations.
@@ -605,29 +605,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Compliance & Trust Section */}
-      <section className="py-12 bg-gray-50">
-        <div className="container">
-          <div className="text-center mb-12">
-            <p className="text-sm font-semibold text-primary uppercase tracking-wide mb-2">TRUSTED BY INDUSTRY</p>
-            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
-              Enterprise-Grade Compliance & Certifications
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              TruContext is certified and compliant with industry-leading standards, ensuring your organization meets regulatory requirements across healthcare, financial services, and government sectors.
-            </p>
-          </div>
 
-          <div className="flex justify-center">
-            <ComplianceBadgeCarousel 
-              autoRotate={true}
-              rotationInterval={5000}
-              showControls={true}
-              className="w-full max-w-2xl"
-            />
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="cta-section py-8 bg-gradient-to-r from-primary to-secondary text-white">

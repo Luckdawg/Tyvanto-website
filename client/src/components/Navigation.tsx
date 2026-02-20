@@ -241,12 +241,6 @@ const Navigation = () => {
                 Pricing
               </Button>
             </Link>
-
-            <Link href="/admin/deals/approval">
-              <Button variant="ghost" className="text-gray-700 hover:text-white hover:bg-primary">
-                Admin
-              </Button>
-            </Link>
           </div>
 
           {/* CTA Button */}
@@ -369,10 +363,6 @@ const Navigation = () => {
 
               <Link href="/pricing" onClick={() => setMobileMenuOpen(false)}>
                 <Button variant="ghost" className="w-full justify-start text-base py-3">Pricing</Button>
-              </Link>
-
-              <Link href="/admin/deals/approval" onClick={() => setMobileMenuOpen(false)}>
-                <Button variant="ghost" className="w-full justify-start text-base py-3">Admin Dashboard</Button>
               </Link>
 
               <Link href="/demo" onClick={() => setMobileMenuOpen(false)}>

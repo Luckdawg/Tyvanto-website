@@ -50,6 +50,7 @@ const Footer = () => {
               <li><Link href="/company/investors"><span className="hover:text-white cursor-pointer">Investor Relations</span></Link></li>
               <li><Link href="/company/contact"><span className="hover:text-white cursor-pointer">Contact</span></Link></li>
               <li><Link href="/partners"><span className="hover:text-white cursor-pointer">Partners</span></Link></li>
+              <li><Link href="/admin/deals/approval"><span className="hover:text-white cursor-pointer">Admin Dashboard</span></Link></li>
             </ul>
           </div>
         </div>
