@@ -113,6 +113,9 @@ export default function Home() {
             />
           </div>
           <div className="max-w-4xl mx-auto text-center">
+            <p className="text-lg md:text-2xl font-bold italic text-primary mb-4">
+              TruContext: From Data Chaos to Decision Confidence.
+            </p>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6">
               Explainable AI-Powered <span className="text-primary">Cybersecurity Analytics Platform</span>
             </h1>
