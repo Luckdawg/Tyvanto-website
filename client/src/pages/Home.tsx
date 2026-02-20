@@ -143,11 +143,6 @@ export default function Home() {
               </div>
               <div className="hidden sm:block w-px h-12 bg-gray-300"></div>
               <div>
-                <p className="text-3xl md:text-4xl font-bold text-primary mb-2">50+</p>
-                <p className="text-gray-600 text-sm md:text-base">Enterprise Customers</p>
-              </div>
-              <div className="hidden sm:block w-px h-12 bg-gray-300"></div>
-              <div>
                 <p className="text-3xl md:text-4xl font-bold text-primary mb-2">30 Days</p>
                 <p className="text-gray-600 text-sm md:text-base">Time to Value</p>
               </div>
