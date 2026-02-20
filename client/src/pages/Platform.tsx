@@ -42,9 +42,12 @@ export default function Platform() {
       <section className="platform-hero gradient-hero py-8">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
               The TruContext <span className="text-primary">Platform</span>
             </h1>
+            <p className="text-lg md:text-xl font-bold italic text-primary mb-8">
+              TruContext: From Data Chaos to Decision Confidence.
+            </p>
             <p className="text-xl text-gray-600 mb-8">
               Agentic AI-powered intelligence platform with dual database architecture that transforms data into actionable insights across cyber, physical, and operational domains
             </p>
