@@ -12,6 +12,14 @@ import BlogLeadCaptureDialog from "@/components/BlogLeadCaptureDialog";
 export default function Blog() {
   const blogPosts = [
     {
+      title: "The Architectures of Autonomy: Visium #TruContext and the 2026 Pivot to Agentic Intelligence",
+      date: "February 2026",
+      category: "CEO Corner",
+      excerpt: "The technological landscape of early 2026 is defined by a decisive shift from generative AI toward agentic intelligence. This comprehensive analysis explores TruContext's military pedigree, dual database innovation, and real-world deployments across critical infrastructure, smart cities, and government operations.",
+      image: "/blog_autonomy_architectures.png",
+      pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028236186/nLsxsvxahfboztem.pdf"
+    },
+    {
       title: "The Human Factor: How Agentic AI and Graph Analytics Mitigate Insider Threats",
       date: "December 2025",
       category: "Cyber Security",
