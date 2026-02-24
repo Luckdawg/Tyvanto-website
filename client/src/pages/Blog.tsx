@@ -90,9 +90,11 @@ export default function Blog() {
                 onClick={() => navigate(`/blog/${post.id}`)}
               >
                 <div className="aspect-video bg-gradient-to-br from-primary/10 to-secondary/10 relative overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <BookOpen className="h-20 w-20 text-primary/30" />
-                  </div>
+                  <img 
+                    src={post.image} 
+                    alt={post.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
                   <Badge className="absolute top-4 right-4 bg-white text-primary border-primary">
                     {post.category}
                   </Badge>
