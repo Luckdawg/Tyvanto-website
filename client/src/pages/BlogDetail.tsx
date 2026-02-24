@@ -26,6 +26,7 @@ export default function BlogDetail() {
   const [, navigate] = useLocation();
   const [leadDialogOpen, setLeadDialogOpen] = useState(false);
   const [copiedToClipboard, setCopiedToClipboard] = useState(false);
+  const [shareOpen, setShareOpen] = useState(false);
 
   const post = blogPosts.find(p => p.id === id);
 
@@ -144,6 +145,7 @@ export default function BlogDetail() {
               size="lg" 
               variant="outline"
               className="w-full"
+              onClick={() => setShareOpen(!shareOpen)}
             >
               <Share2 className="h-4 w-4 mr-2" />
               Share This Article
@@ -151,6 +153,7 @@ export default function BlogDetail() {
           </div>
 
           {/* Social Sharing */}
+          {shareOpen && (
           <Card className="mb-12 bg-gray-50">
             <CardContent className="p-6">
               <h3 className="text-lg font-bold text-gray-900 mb-4">Share This Article</h3>
@@ -212,6 +215,7 @@ export default function BlogDetail() {
               </div>
             </CardContent>
           </Card>
+          )}
 
           {/* Related Articles */}
           {relatedPosts.length > 0 && (
