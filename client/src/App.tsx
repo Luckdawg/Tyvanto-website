@@ -50,6 +50,7 @@ import FinancialServicesCybersecurity from "./pages/solutions/FinancialServicesC
 import TelecomCybersecurity from "./pages/solutions/TelecomCybersecurity";
 import GovernmentFederal from "./pages/solutions/GovernmentFederal";
 import Blog from "./pages/Blog";
+import BlogDetail from "./pages/BlogDetail";
 import Videos from "./pages/resources/Videos";
 import AdminDashboard from "./pages/admin/Dashboard";
 import AdminUsers from "./pages/admin/Users";
@@ -115,6 +116,7 @@ function Router() {
       <Route path="/solutions/telecom-cybersecurity" component={TelecomCybersecurity} />
       <Route path="/solutions/government-federal" component={GovernmentFederal} />
       <Route path="/blog" component={Blog} />
+      <Route path="/blog/:id" component={BlogDetail} />
       <Route path="/resources" component={Blog} />
       <Route path="/resources/videos" component={Videos} />
       <Route path="/admin" component={AdminDashboard} />
