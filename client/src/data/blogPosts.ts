@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "age-of-agentic-ai-arrived",
+    title: "The Age of Agentic AI Has Arrived — And the Stakes Have Never Been Higher",
+    date: "February 2026",
+    category: "CEO Corner",
+    excerpt: "The cybersecurity world is waking up to a new reality. Agentic AI — systems that can reason, plan, act, and adapt across multi-step workflows without waiting for human approval — has moved from buzzword to battlefield. Organizations that get it right will be the ones that built governance into the foundation, not bolted it on as an afterthought.",
+    image: "/blog_agentic_ai_arrived.png",
+    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028236186/NLuyxTJGNKdTszdA.pdf"
+  },
+  {
     id: "architectures-of-autonomy",
     title: "The Architectures of Autonomy: Visium #TruContext and the 2026 Pivot to Agentic Intelligence",
     date: "February 2026",
