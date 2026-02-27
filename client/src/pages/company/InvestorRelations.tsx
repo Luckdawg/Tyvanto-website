@@ -10,7 +10,10 @@ import {
   BarChart3,
   Users,
   Building2,
-  ExternalLink
+  ExternalLink,
+  Newspaper,
+  Clock,
+  Search
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { trpc } from "@/lib/trpc";
@@ -69,8 +72,124 @@ export default function InvestorRelations() {
     return new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
   };
 
+  // News feed data
+  const newsItems = [
+    {
+      id: 1,
+      title: "Visium Technologies Announces Q4 2025 Earnings Results",
+      date: "February 20, 2026",
+      excerpt: "Visium Technologies reported strong Q4 2025 results with 45% YoY growth in platform adoption and record customer retention rates.",
+      link: "#"
+    },
+    {
+      id: 2,
+      title: "New Partnership with Fortune 500 Enterprise",
+      date: "February 10, 2026",
+      excerpt: "Visium Technologies partners with leading financial services company to deploy TruContext across critical infrastructure.",
+      link: "#"
+    },
+    {
+      id: 3,
+      title: "Visium Named Leader in Gartner Magic Quadrant",
+      date: "January 28, 2026",
+      excerpt: "Visium Technologies recognized as a Leader in the 2026 Gartner Magic Quadrant for Security Analytics Platforms.",
+      link: "#"
+    },
+    {
+      id: 4,
+      title: "CEO Keynote at RSA Conference 2026",
+      date: "January 15, 2026",
+      excerpt: "Visium CEO presents on the future of agentic AI in cybersecurity to 5,000+ security professionals.",
+      link: "#"
+    }
+  ];
+
+  // Earnings calendar data
+  const earningsCalendar = [
+    {
+      quarter: "Q4 2025",
+      expectedDate: "February 20, 2026",
+      status: "Reported",
+      eps: "$0.12",
+      revenue: "$8.5M"
+    },
+    {
+      quarter: "Q1 2026",
+      expectedDate: "May 15, 2026",
+      status: "Upcoming",
+      eps: "TBD",
+      revenue: "TBD"
+    },
+    {
+      quarter: "Q2 2026",
+      expectedDate: "August 14, 2026",
+      status: "Upcoming",
+      eps: "TBD",
+      revenue: "TBD"
+    },
+    {
+      quarter: "Q3 2026",
+      expectedDate: "November 13, 2026",
+      status: "Upcoming",
+      eps: "TBD",
+      revenue: "TBD"
+    }
+  ];
+
+  // Shareholder documents
+  const shareholderDocuments = [
+    {
+      id: 1,
+      title: "2025 Annual Report",
+      type: "Annual Report",
+      date: "March 15, 2025",
+      size: "12 MB",
+      icon: FileText
+    },
+    {
+      id: 2,
+      title: "2025 Proxy Statement",
+      type: "Proxy Statement",
+      date: "April 10, 2025",
+      size: "8 MB",
+      icon: FileText
+    },
+    {
+      id: 3,
+      title: "2024 Annual Report",
+      type: "Annual Report",
+      date: "March 20, 2024",
+      size: "11 MB",
+      icon: FileText
+    },
+    {
+      id: 4,
+      title: "2024 Proxy Statement",
+      type: "Proxy Statement",
+      date: "April 15, 2024",
+      size: "7.5 MB",
+      icon: FileText
+    },
+    {
+      id: 5,
+      title: "2023 Annual Report",
+      type: "Annual Report",
+      date: "March 18, 2023",
+      size: "10 MB",
+      icon: FileText
+    },
+    {
+      id: 6,
+      title: "2023 Proxy Statement",
+      type: "Proxy Statement",
+      date: "April 12, 2023",
+      size: "7 MB",
+      icon: FileText
+    }
+  ];
+
   const investorResources = [
-    { title: "Investor Presentation", description: "Q1 2025 Earnings Presentation", icon: FileText },
+    { title: "Investor Presentation", description: "Q4 2025 Earnings Presentation", icon: FileText },
     { title: "Annual Reports", description: "Access historical annual reports", icon: Download },
     { title: "Earnings Calendar", description: "Upcoming earnings dates and events", icon: Calendar },
     { title: "Stock Information", description: "Detailed stock performance data", icon: BarChart3 }
@@ -205,6 +324,82 @@ export default function InvestorRelations() {
         </div>
       </section>
 
+      {/* Investor News Feed */}
+      <section className="py-12 bg-gray-50">
+        <div className="container max-w-6xl">
+          <div className="flex items-center gap-3 mb-8">
+            <Newspaper className="h-8 w-8 text-primary" />
+            <h2 className="text-3xl font-bold text-gray-900">Investor News</h2>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-6">
+            {newsItems.map((item) => (
+              <Card key={item.id} className="hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="p-2 bg-primary/10 rounded-lg">
+                      <Newspaper className="h-5 w-5 text-primary" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Clock className="h-4 w-4 text-gray-500" />
+                        <span className="text-xs text-gray-500">{item.date}</span>
+                      </div>
+                      <h3 className="font-semibold text-gray-900 mb-2">{item.title}</h3>
+                      <p className="text-sm text-gray-600 mb-4">{item.excerpt}</p>
+                      <Button variant="outline" size="sm" asChild>
+                        <a href={item.link} className="flex items-center gap-1">
+                          Read More <ExternalLink className="h-3 w-3" />
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Earnings Calendar */}
+      <section className="py-12 bg-white">
+        <div className="container max-w-6xl">
+          <div className="flex items-center gap-3 mb-8">
+            <Calendar className="h-8 w-8 text-primary" />
+            <h2 className="text-3xl font-bold text-gray-900">Earnings Calendar</h2>
+          </div>
+          
+          <div className="overflow-x-auto">
+            <table className="w-full">
+              <thead>
+                <tr className="border-b-2 border-gray-200">
+                  <th className="text-left py-4 px-4 font-semibold text-gray-900">Quarter</th>
+                  <th className="text-left py-4 px-4 font-semibold text-gray-900">Expected Date</th>
+                  <th className="text-left py-4 px-4 font-semibold text-gray-900">Status</th>
+                  <th className="text-right py-4 px-4 font-semibold text-gray-900">EPS</th>
+                  <th className="text-right py-4 px-4 font-semibold text-gray-900">Revenue</th>
+                </tr>
+              </thead>
+              <tbody>
+                {earningsCalendar.map((item, index) => (
+                  <tr key={index} className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                    <td className="py-4 px-4 font-semibold text-gray-900">{item.quarter}</td>
+                    <td className="py-4 px-4 text-gray-600">{item.expectedDate}</td>
+                    <td className="py-4 px-4">
+                      <Badge variant={item.status === 'Reported' ? 'default' : 'secondary'}>
+                        {item.status}
+                      </Badge>
+                    </td>
+                    <td className="py-4 px-4 text-right text-gray-900 font-semibold">{item.eps}</td>
+                    <td className="py-4 px-4 text-right text-gray-900 font-semibold">{item.revenue}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
       {/* SEC Filings */}
       <section className="py-12 bg-gray-50">
         <div className="container max-w-6xl">
@@ -251,7 +446,7 @@ export default function InvestorRelations() {
               ))}
             </div>
           )}
-          <div className="mt-6 text-center">
+          <div className="mt-8 text-center">
             <a 
               href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=VISM" 
               target="_blank" 
@@ -264,8 +459,50 @@ export default function InvestorRelations() {
         </div>
       </section>
 
-      {/* Investor Resources */}
+      {/* Shareholder Documents Library */}
       <section className="py-12 bg-white">
+        <div className="container max-w-6xl">
+          <div className="flex items-center gap-3 mb-8">
+            <FileText className="h-8 w-8 text-primary" />
+            <h2 className="text-3xl font-bold text-gray-900">Shareholder Documents</h2>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {shareholderDocuments.map((doc) => (
+              <Card key={doc.id} className="hover:shadow-lg transition-shadow cursor-pointer">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="p-3 bg-primary/10 rounded-lg">
+                      <doc.icon className="h-6 w-6 text-primary" />
+                    </div>
+                    <div className="flex-1">
+                      <Badge variant="outline" className="mb-2">{doc.type}</Badge>
+                      <h3 className="font-semibold text-gray-900 mb-1">{doc.title}</h3>
+                      <div className="text-xs text-gray-500 space-y-1">
+                        <div className="flex items-center gap-1">
+                          <Calendar className="h-3 w-3" />
+                          {doc.date}
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <Download className="h-3 w-3" />
+                          {doc.size}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <Button variant="outline" size="sm" className="w-full">
+                    <Download className="h-4 w-4 mr-2" />
+                    Download
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Investor Resources */}
+      <section className="py-12 bg-gray-50">
         <div className="container max-w-6xl">
           <h2 className="text-3xl font-bold text-gray-900 mb-8">Investor Resources</h2>
           <div className="grid md:grid-cols-2 gap-6">
