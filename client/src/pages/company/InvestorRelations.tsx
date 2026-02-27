@@ -5,15 +5,10 @@ import {
   TrendingUp, 
   Download, 
   FileText, 
-  Calendar,
   DollarSign,
   BarChart3,
-  Users,
-  Building2,
   ExternalLink,
-  Newspaper,
-  Clock,
-  Search
+  Clock
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { trpc } from "@/lib/trpc";
@@ -62,8 +57,6 @@ export default function InvestorRelations() {
   // Format market cap for display
   const formattedMarketCap = stockData?.marketCap || "$2.1M";
 
-  // Financial highlights removed as requested - data now shown in main stock card
-
   // Fetch real SEC filings from database
   const { data: secFilingsData, isLoading: isLoadingFilings } = trpc.secFilings.getRecent.useQuery({ limit: 20 });
   
@@ -71,70 +64,6 @@ export default function InvestorRelations() {
   const formatDate = (date: Date | string) => {
     return new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
   };
-
-  // News feed data
-  const newsItems = [
-    {
-      id: 1,
-      title: "Visium Technologies Announces Q4 2025 Earnings Results",
-      date: "February 20, 2026",
-      excerpt: "Visium Technologies reported strong Q4 2025 results with 45% YoY growth in platform adoption and record customer retention rates.",
-      link: "#"
-    },
-    {
-      id: 2,
-      title: "New Partnership with Fortune 500 Enterprise",
-      date: "February 10, 2026",
-      excerpt: "Visium Technologies partners with leading financial services company to deploy TruContext across critical infrastructure.",
-      link: "#"
-    },
-    {
-      id: 3,
-      title: "Visium Named Leader in Gartner Magic Quadrant",
-      date: "January 28, 2026",
-      excerpt: "Visium Technologies recognized as a Leader in the 2026 Gartner Magic Quadrant for Security Analytics Platforms.",
-      link: "#"
-    },
-    {
-      id: 4,
-      title: "CEO Keynote at RSA Conference 2026",
-      date: "January 15, 2026",
-      excerpt: "Visium CEO presents on the future of agentic AI in cybersecurity to 5,000+ security professionals.",
-      link: "#"
-    }
-  ];
-
-  // Earnings calendar data
-  const earningsCalendar = [
-    {
-      quarter: "Q4 2025",
-      expectedDate: "February 20, 2026",
-      status: "Reported",
-      eps: "$0.12",
-      revenue: "$8.5M"
-    },
-    {
-      quarter: "Q1 2026",
-      expectedDate: "May 15, 2026",
-      status: "Upcoming",
-      eps: "TBD",
-      revenue: "TBD"
-    },
-    {
-      quarter: "Q2 2026",
-      expectedDate: "August 14, 2026",
-      status: "Upcoming",
-      eps: "TBD",
-      revenue: "TBD"
-    },
-    {
-      quarter: "Q3 2026",
-      expectedDate: "November 13, 2026",
-      status: "Upcoming",
-      eps: "TBD",
-      revenue: "TBD"
-    }
-  ];
 
   // Shareholder documents
   const shareholderDocuments = [
@@ -191,7 +120,6 @@ export default function InvestorRelations() {
   const investorResources = [
     { title: "Investor Presentation", description: "Q4 2025 Earnings Presentation", icon: FileText },
     { title: "Annual Reports", description: "Access historical annual reports", icon: Download },
-    { title: "Earnings Calendar", description: "Upcoming earnings dates and events", icon: Calendar },
     { title: "Stock Information", description: "Detailed stock performance data", icon: BarChart3 }
   ];
 
@@ -288,22 +216,22 @@ export default function InvestorRelations() {
                     </div>
 
                     <div className="mt-6 pt-6 border-t border-gray-200">
-                      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                         <div>
-                          <div className="text-gray-600">Volume</div>
-                          <div className="font-semibold text-gray-900">{stockData?.volume.toLocaleString() || "N/A"}</div>
+                          <div className="text-xs text-gray-600 uppercase tracking-wide">Volume</div>
+                          <div className="text-lg font-semibold text-gray-900">{stockData?.volume.toLocaleString() || "N/A"}</div>
                         </div>
                         <div>
-                          <div className="text-gray-600">Market Cap</div>
-                          <div className="font-semibold text-gray-900">{formattedMarketCap}</div>
+                          <div className="text-xs text-gray-600 uppercase tracking-wide">Market Cap</div>
+                          <div className="text-lg font-semibold text-gray-900">{formattedMarketCap}</div>
                         </div>
                         <div>
-                          <div className="text-gray-600">52-Week High</div>
-                          <div className="font-semibold text-gray-900">${stockData?.high52Week.toFixed(4) || "0.0000"}</div>
+                          <div className="text-xs text-gray-600 uppercase tracking-wide">52-Week High</div>
+                          <div className="text-lg font-semibold text-gray-900">$0.0461</div>
                         </div>
                         <div>
-                          <div className="text-gray-600">52-Week Low</div>
-                          <div className="font-semibold text-gray-900">${stockData?.low52Week.toFixed(4) || "0.0000"}</div>
+                          <div className="text-xs text-gray-600 uppercase tracking-wide">52-Week Low</div>
+                          <div className="text-lg font-semibold text-gray-900">$0.0010</div>
                         </div>
                       </div>
                     </div>
@@ -314,131 +242,75 @@ export default function InvestorRelations() {
           </div>
 
           {/* Historical Price Chart */}
-          <div className="mt-8">
-            <StockChart />
-          </div>
-          
-          <div className="mt-6 text-center text-sm text-gray-500">
-            For live stock quotes and real-time updates, visit <a href="https://www.google.com/finance/quote/VISM:OTCMKTS" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium">Google Finance</a> or <a href="https://www.otcmarkets.com/stock/VISM/quote" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium">OTC Markets</a>
-          </div>
+          <Card className="mb-8">
+            <CardContent className="p-6">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Historical Price Chart</h3>
+              <StockChart />
+              <p className="text-xs text-gray-500 mt-4">
+                Historical data sourced from Nasdaq via Yahoo Finance API. Data updates every 15 minutes during market hours.
+              </p>
+              <p className="text-sm text-gray-600 mt-2">
+                For live stock quotes and real-time updates, visit{" "}
+                <a href="https://www.google.com/finance/quote/VISM:OTCMKTS" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                  Google Finance
+                </a>
+                {" "}or{" "}
+                <a href="https://www.otcmarkets.com/stock/VISM/overview" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                  OTC Markets
+                </a>
+              </p>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
-      {/* Investor News Feed */}
+      {/* SEC Filings Section */}
       <section className="py-12 bg-gray-50">
         <div className="container max-w-6xl">
-          <div className="flex items-center gap-3 mb-8">
-            <Newspaper className="h-8 w-8 text-primary" />
-            <h2 className="text-3xl font-bold text-gray-900">Investor News</h2>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-6">
-            {newsItems.map((item) => (
-              <Card key={item.id} className="hover:shadow-lg transition-shadow">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="p-2 bg-primary/10 rounded-lg">
-                      <Newspaper className="h-5 w-5 text-primary" />
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-2">
-                        <Clock className="h-4 w-4 text-gray-500" />
-                        <span className="text-xs text-gray-500">{item.date}</span>
-                      </div>
-                      <h3 className="font-semibold text-gray-900 mb-2">{item.title}</h3>
-                      <p className="text-sm text-gray-600 mb-4">{item.excerpt}</p>
-                      <Button variant="outline" size="sm" asChild>
-                        <a href={item.link} className="flex items-center gap-1">
-                          Read More <ExternalLink className="h-3 w-3" />
-                        </a>
-                      </Button>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
+            <FileText className="h-8 w-8 text-primary" />
+            SEC Filings
+          </h2>
 
-      {/* Earnings Calendar */}
-      <section className="py-12 bg-white">
-        <div className="container max-w-6xl">
-          <div className="flex items-center gap-3 mb-8">
-            <Calendar className="h-8 w-8 text-primary" />
-            <h2 className="text-3xl font-bold text-gray-900">Earnings Calendar</h2>
-          </div>
-          
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead>
-                <tr className="border-b-2 border-gray-200">
-                  <th className="text-left py-4 px-4 font-semibold text-gray-900">Quarter</th>
-                  <th className="text-left py-4 px-4 font-semibold text-gray-900">Expected Date</th>
-                  <th className="text-left py-4 px-4 font-semibold text-gray-900">Status</th>
-                  <th className="text-right py-4 px-4 font-semibold text-gray-900">EPS</th>
-                  <th className="text-right py-4 px-4 font-semibold text-gray-900">Revenue</th>
-                </tr>
-              </thead>
-              <tbody>
-                {earningsCalendar.map((item, index) => (
-                  <tr key={index} className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
-                    <td className="py-4 px-4 font-semibold text-gray-900">{item.quarter}</td>
-                    <td className="py-4 px-4 text-gray-600">{item.expectedDate}</td>
-                    <td className="py-4 px-4">
-                      <Badge variant={item.status === 'Reported' ? 'default' : 'secondary'}>
-                        {item.status}
-                      </Badge>
-                    </td>
-                    <td className="py-4 px-4 text-right text-gray-900 font-semibold">{item.eps}</td>
-                    <td className="py-4 px-4 text-right text-gray-900 font-semibold">{item.revenue}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      {/* SEC Filings */}
-      <section className="py-12 bg-gray-50">
-        <div className="container max-w-6xl">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">SEC Filings</h2>
           {isLoadingFilings ? (
-            <div className="text-center py-12">
-              <RefreshCw className="h-8 w-8 animate-spin text-primary mx-auto mb-4" />
-              <p className="text-gray-600">Loading SEC filings...</p>
+            <div className="space-y-4">
+              {[...Array(5)].map((_, i) => (
+                <div key={i} className="h-24 bg-gray-200 rounded animate-pulse"></div>
+              ))}
             </div>
           ) : (
-            <div className="space-y-4">
-              {secFilingsData?.map((filing) => (
-                <Card key={filing.id} className="hover:shadow-lg transition-shadow">
+            <div className="space-y-4 mb-8">
+              {secFilingsData?.map((filing: any) => (
+                <Card key={filing.id} className="hover:shadow-md transition-shadow">
                   <CardContent className="p-6">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-4">
-                        <Badge className="bg-primary/10 text-primary border-primary/20">
-                          {filing.filingType}
-                        </Badge>
-                        <div>
-                          <div className="font-semibold text-gray-900">{filing.description}</div>
-                          <div className="text-sm text-gray-600 flex items-center gap-2 mt-1">
-                            <Calendar className="h-4 w-4" />
-                            {formatDate(filing.filingDate)}
-                          </div>
-                          {filing.size && (
-                            <div className="text-xs text-gray-500 mt-1">
-                              Accession: {filing.accessionNumber} | Size: {filing.size}
-                            </div>
-                          )}
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="flex-1">
+                        <div className="flex items-center gap-3 mb-2">
+                          <Badge variant="outline" className="text-xs font-mono">
+                            {filing.filingType}
+                          </Badge>
+                          <span className="text-sm text-gray-600">{formatDate(filing.filingDate)}</span>
+                        </div>
+                        <h3 className="font-semibold text-gray-900 mb-2">{filing.description}</h3>
+                        <div className="text-xs text-gray-500 space-y-1">
+                          <p>Accession: {filing.accessionNumber} | Size: {filing.fileSize}</p>
                         </div>
                       </div>
                       <Button 
                         variant="outline" 
-                        size="sm"
-                        onClick={() => window.open(filing.documentUrl || `https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001082733&type=${filing.filingType}&dateb=&owner=exclude&count=100`, '_blank')}
+                        size="sm" 
+                        asChild
+                        className="whitespace-nowrap"
                       >
-                        <ExternalLink className="h-4 w-4 mr-2" />
-                        View on SEC
+                        <a 
+                          href={`https://www.sec.gov/cgi-bin/viewer?action=view&cik=${filing.cikNumber}&accession_number=${filing.accessionNumber}&xbrl_type=v`}
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-1"
+                        >
+                          <ExternalLink className="h-4 w-4" />
+                          View on SEC
+                        </a>
                       </Button>
                     </div>
                   </CardContent>
@@ -446,49 +318,37 @@ export default function InvestorRelations() {
               ))}
             </div>
           )}
-          <div className="mt-8 text-center">
-            <a 
-              href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=VISM" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-primary hover:underline font-semibold"
-            >
-              View All SEC Filings <ExternalLink className="h-4 w-4" />
+
+          <Button variant="outline" asChild className="w-full">
+            <a href="https://www.sec.gov/cgi-bin/browse-edgar?company=Visium+Technologies&match=starts-with&action=getcompany" target="_blank" rel="noopener noreferrer">
+              View All SEC Filings
             </a>
-          </div>
+          </Button>
         </div>
       </section>
 
-      {/* Shareholder Documents Library */}
+      {/* Shareholder Documents Section */}
       <section className="py-12 bg-white">
         <div className="container max-w-6xl">
-          <div className="flex items-center gap-3 mb-8">
-            <FileText className="h-8 w-8 text-primary" />
-            <h2 className="text-3xl font-bold text-gray-900">Shareholder Documents</h2>
-          </div>
-          
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2">
+            <Download className="h-8 w-8 text-primary" />
+            Shareholder Documents
+          </h2>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {shareholderDocuments.map((doc) => (
-              <Card key={doc.id} className="hover:shadow-lg transition-shadow cursor-pointer">
+              <Card key={doc.id} className="hover:shadow-md transition-shadow">
                 <CardContent className="p-6">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="p-3 bg-primary/10 rounded-lg">
-                      <doc.icon className="h-6 w-6 text-primary" />
-                    </div>
-                    <div className="flex-1">
-                      <Badge variant="outline" className="mb-2">{doc.type}</Badge>
-                      <h3 className="font-semibold text-gray-900 mb-1">{doc.title}</h3>
-                      <div className="text-xs text-gray-500 space-y-1">
-                        <div className="flex items-center gap-1">
-                          <Calendar className="h-3 w-3" />
-                          {doc.date}
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <Download className="h-3 w-3" />
-                          {doc.size}
-                        </div>
-                      </div>
-                    </div>
+                  <div className="flex items-start justify-between mb-4">
+                    <FileText className="h-8 w-8 text-primary" />
+                    <Badge variant="secondary" className="text-xs">
+                      {doc.type}
+                    </Badge>
+                  </div>
+                  <h3 className="font-semibold text-gray-900 mb-2">{doc.title}</h3>
+                  <div className="text-xs text-gray-500 space-y-1 mb-4">
+                    <p>{doc.date}</p>
+                    <p>{doc.size}</p>
                   </div>
                   <Button variant="outline" size="sm" className="w-full">
                     <Download className="h-4 w-4 mr-2" />
@@ -501,84 +361,58 @@ export default function InvestorRelations() {
         </div>
       </section>
 
-      {/* Investor Resources */}
+      {/* Investor Resources Section */}
       <section className="py-12 bg-gray-50">
         <div className="container max-w-6xl">
           <h2 className="text-3xl font-bold text-gray-900 mb-8">Investor Resources</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            {investorResources.map((resource, index) => (
-              <Card key={index} className="hover:shadow-xl transition-shadow cursor-pointer">
-                <CardContent className="p-8">
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 bg-primary/10 rounded-lg">
-                      <resource.icon className="h-8 w-8 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">{resource.title}</h3>
-                      <p className="text-gray-600">{resource.description}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {investorResources.map((resource, index) => {
+              const Icon = resource.icon;
+              return (
+                <Card key={index} className="hover:shadow-md transition-shadow">
+                  <CardContent className="p-6">
+                    <Icon className="h-8 w-8 text-primary mb-4" />
+                    <h3 className="font-semibold text-gray-900 mb-2">{resource.title}</h3>
+                    <p className="text-sm text-gray-600">{resource.description}</p>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Newsletter Signup */}
-      <section className="py-12 bg-white">
-        <div className="container max-w-4xl">
-          <div className="grid md:grid-cols-2 gap-8 items-start">
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Stay Updated</h2>
-              <p className="text-lg text-gray-600 mb-6">
-                Subscribe to receive automated alerts about SEC filings, press releases, quarterly earnings announcements, and other important investor updates.
-              </p>
-              <ul className="space-y-3 text-gray-700">
-                <li className="flex items-start gap-2">
-                  <FileText className="h-5 w-5 text-primary mt-0.5" />
-                  <span>SEC filing notifications</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Calendar className="h-5 w-5 text-primary mt-0.5" />
-                  <span>Quarterly earnings announcements</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <TrendingUp className="h-5 w-5 text-primary mt-0.5" />
-                  <span>Press releases and company news</span>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <NewsletterSignup
-                subscribedTo="investor_alerts"
-                title="Investor Alerts"
-                description="Get notified about important shareholder updates"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact IR */}
-      <section className="py-12 bg-gradient-to-br from-blue-50 to-purple-50">
-        <div className="container max-w-4xl text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Investor Contact</h2>
-          <p className="text-lg text-gray-700 mb-8">
-            For investor inquiries, please contact our Investor Relations team
+      {/* Newsletter Signup Section */}
+      <section className="py-12 bg-gradient-to-br from-primary to-secondary text-white">
+        <div className="container max-w-2xl">
+          <h2 className="text-3xl font-bold mb-4">Stay Updated</h2>
+          <p className="text-white/90 mb-8">
+            Subscribe to receive automated alerts about SEC filings, press releases, quarterly earnings announcements, and other important investor updates.
           </p>
-          <Card className="bg-white">
+          <NewsletterSignup />
+        </div>
+      </section>
+
+      {/* Investor Contact Section */}
+      <section className="py-12 bg-white">
+        <div className="container max-w-6xl">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">Investor Contact</h2>
+          <Card>
             <CardContent className="p-8">
-              <div className="grid md:grid-cols-2 gap-6 text-left">
+              <p className="text-gray-600 mb-6">
+                For investor inquiries, please contact our Investor Relations team
+              </p>
+              <div className="grid md:grid-cols-2 gap-8">
                 <div>
-                  <div className="font-semibold text-gray-900 mb-2">Email</div>
+                  <h3 className="font-semibold text-gray-900 mb-2">Email</h3>
                   <a href="mailto:ir@visiumtechnologies.com" className="text-primary hover:underline">
                     ir@visiumtechnologies.com
                   </a>
                 </div>
                 <div>
-                  <div className="font-semibold text-gray-900 mb-2">Phone</div>
-                  <a href="tel:+1-703-273-0383" className="text-primary hover:underline">
+                  <h3 className="font-semibold text-gray-900 mb-2">Phone</h3>
+                  <a href="tel:+17032730383" className="text-primary hover:underline">
                     +1 (703) 273-0383
                   </a>
                 </div>
