@@ -99,6 +99,7 @@ function Router() {
       <Route path="/legal/privacy" component={PrivacyPolicy} />
       <Route path="/legal/terms" component={TermsOfService} />
       <Route path="/company/investor-relations" component={InvestorRelations} />
+      <Route path="/company/investors" component={InvestorRelations} />
       <Route path="/company/careers" component={Careers} />
       <Route path="/graph-demo" component={GraphDemo} />
       <Route path="/company/contact" component={Contact} />
