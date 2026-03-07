@@ -9,6 +9,8 @@ import Footer from "@/components/Footer";
 import { APP_LOGO } from "@/const";
 import BlogLeadCaptureDialog from "@/components/BlogLeadCaptureDialog";
 import { blogPosts } from "@/data/blogPosts";
+import { SEOHead } from "@/components/SEOHead";
+import { createBreadcrumbSchema } from "@/lib/schema";
 
 export default function Blog() {
   const [, navigate] = useLocation();
@@ -16,6 +18,11 @@ export default function Blog() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [leadDialogOpen, setLeadDialogOpen] = useState(false);
   const [selectedBlog, setSelectedBlog] = useState<{ title: string; pdfUrl: string } | null>(null);
+
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: "Home", url: "https://visiumtechnologies.com" },
+    { name: "Blog", url: "https://visiumtechnologies.com/blog" }
+  ]);
 
   const handleDownloadClick = (title: string, pdfUrl: string) => {
     setSelectedBlog({ title, pdfUrl });
@@ -28,7 +35,11 @@ export default function Blog() {
 
   return (
     <div className="min-h-screen">
-      
+      <SEOHead 
+        title="Blog | TruContext Insights & Resources | Visium Technologies"
+        description="Explore TruContext blog posts on explainable AI, cybersecurity analytics, smart cities, and business intelligence. CEO insights, case studies, and industry analysis."
+        canonicalUrl="https://www.visiumtechnologies.com/blog"
+      />
       {/* Hero Section with Logo */}
       <section className="gradient-hero py-8 relative">
         <div className="container">

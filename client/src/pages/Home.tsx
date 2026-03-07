@@ -10,6 +10,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
 import { StructuredData } from "@/components/StructuredData";
 import { SEOHead } from "@/components/SEOHead";
+import { SchemaHead } from "@/components/SchemaHead";
+import { organizationSchema, softwareApplicationSchema, createBreadcrumbSchema } from "@/lib/schema";
 
 import { 
   Shield, 
@@ -32,6 +34,11 @@ export default function Home() {
   // The userAuth hooks provides authentication state
   // To implement login/logout functionality, simply call logout() or redirect to getLoginUrl()
   let { user, loading, error, isAuthenticated, logout } = useAuth();
+
+  // Schema for breadcrumbs
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: "Home", url: "https://visiumtechnologies.com" }
+  ]);
 
   // Scroll animations for AT A GLANCE section
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation({ threshold: 0.2 });
@@ -88,8 +95,9 @@ export default function Home() {
         keywords="explainable AI cybersecurity platform, graph-based threat detection, graph-based threat detection government, smart city security analytics, enterprise threat detection platform, cybersecurity analytics platform, real-time threat detection, AI-driven security analytics, threat hunting software, graph database cybersecurity, government cybersecurity platform, critical infrastructure security"
         canonicalUrl="https://www.visiumtechnologies.com/"
       />
-      <StructuredData type="organization" data={{}} />
-      <StructuredData type="product" data={{}} />
+      <SchemaHead schema={organizationSchema} />
+      <SchemaHead schema={softwareApplicationSchema} />
+      <SchemaHead schema={breadcrumbSchema} />
       {/* Tour feature disabled */}
       {/* <Tour steps={tourSteps} tourId="homepage" /> */}
       {/* <TourButton tourId="homepage" label="Take Tour" /> */}

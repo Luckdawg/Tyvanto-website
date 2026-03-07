@@ -15,6 +15,7 @@ import { trpc } from "@/lib/trpc";
 import { RefreshCw } from "lucide-react";
 import StockChart from "@/components/StockChart";
 import NewsletterSignup from "@/components/NewsletterSignup";
+import { SEOHead } from "@/components/SEOHead";
 
 export default function InvestorRelations() {
   // Fetch stock data from backend API with auto-refresh every 15 minutes
@@ -125,6 +126,11 @@ export default function InvestorRelations() {
 
   return (
     <div className="min-h-screen">
+      <SEOHead 
+        title="Investor Relations | Visium Technologies"
+        description="Investor relations for Visium Technologies (OTCQB: VISM). Access SEC filings, stock information, shareholder documents, and company announcements."
+        canonicalUrl="https://www.visiumtechnologies.com/company/investor-relations"
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-primary to-secondary text-white py-16">
         <div className="container">

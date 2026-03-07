@@ -4,6 +4,7 @@ import { Link, useLocation } from "wouter";
 import { Handshake, Users, TrendingUp, CheckCircle2, Shield, LogIn, ArrowRight } from "lucide-react";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { getLoginUrl } from "@/const";
+import { SEOHead } from "@/components/SEOHead";
 
 export default function Partners() {
   const { isAuthenticated, user } = useAuth();
@@ -64,6 +65,11 @@ export default function Partners() {
 
   return (
     <div className="min-h-screen">
+      <SEOHead 
+        title="Partner Ecosystem | Visium Technologies"
+        description="Join Visium's partner ecosystem. Strategic alliances and technology integrations delivering innovative cybersecurity solutions at scale."
+        canonicalUrl="https://www.visiumtechnologies.com/partners"
+      />
       {/* Hero Section */}
       <section className="gradient-hero py-12">
         <div className="container">

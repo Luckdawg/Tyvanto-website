@@ -3,10 +3,16 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
 import CountUp from "@/components/CountUp";
 import { Building2, Video, AlertTriangle, TrendingUp, Users, CheckCircle2 } from "lucide-react";
+import { SEOHead } from "@/components/SEOHead";
 
 export default function SmartCities() {
   return (
     <div className="min-h-screen">
+      <SEOHead 
+        title="Smart City Security Analytics & Public Safety Platform | Visium"
+        description="Intelligent city security system connecting video intelligence, IoT sensors, and 911 systems. Real-time situational awareness and predictive analytics for urban operations and public safety."
+        canonicalUrl="https://www.visiumtechnologies.com/solutions/smart-cities"
+      />
       {/* Hero Section */}
       <section className="gradient-hero py-12">
         <div className="container">

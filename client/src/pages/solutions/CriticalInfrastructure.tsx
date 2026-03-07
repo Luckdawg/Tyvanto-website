@@ -3,10 +3,16 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
 import CountUp from "@/components/CountUp";
 import { CheckCircle2 } from "lucide-react";
+import { SEOHead } from "@/components/SEOHead";
 
 export default function CriticalInfrastructure() {
   return (
     <div className="min-h-screen">
+      <SEOHead 
+        title="Critical Infrastructure Protection | Cybersecurity Platform | Visium"
+        description="Protect power grids, SCADA systems, and water infrastructure from cyber and physical threats. Real-time threat detection and operational intelligence for critical infrastructure."
+        canonicalUrl="https://www.visiumtechnologies.com/solutions/critical-infrastructure"
+      />
       <section className="gradient-hero py-12">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">

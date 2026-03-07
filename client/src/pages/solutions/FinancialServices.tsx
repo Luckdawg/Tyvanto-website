@@ -3,10 +3,16 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
 import CountUp from "@/components/CountUp";
 import { CheckCircle2 } from "lucide-react";
+import { SEOHead } from "@/components/SEOHead";
 
 export default function FinancialServices() {
   return (
     <div className="min-h-screen">
+      <SEOHead 
+        title="Financial Services Fraud Detection & Compliance Platform | Visium"
+        description="Detect sophisticated fraud rings and ensure regulatory compliance. Financial services analytics platform with real-time threat detection and operational intelligence."
+        canonicalUrl="https://www.visiumtechnologies.com/solutions/financial-services"
+      />
       <section className="gradient-hero py-12">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">

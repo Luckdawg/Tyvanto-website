@@ -1,4 +1,3 @@
-import { useParams, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -20,6 +19,10 @@ import Footer from "@/components/Footer";
 import { APP_LOGO } from "@/const";
 import { blogPosts } from "@/data/blogPosts";
 import BlogLeadCaptureDialog from "@/components/BlogLeadCaptureDialog";
+import { SchemaHead } from "@/components/SchemaHead";
+import { createBlogPostingSchema, createBreadcrumbSchema } from "@/lib/schema";
+import { SEOHead } from "@/components/SEOHead";
+import { useParams, useLocation } from "wouter";
 
 export default function BlogDetail() {
   const { id } = useParams<{ id: string }>();
@@ -29,6 +32,23 @@ export default function BlogDetail() {
   const [shareOpen, setShareOpen] = useState(false);
 
   const post = blogPosts.find(p => p.id === id);
+
+  // Blog schema
+  const blogSchema = post ? createBlogPostingSchema({
+    title: post.title,
+    description: post.excerpt,
+    image: post.image,
+    url: `https://visiumtechnologies.com/blog/${id}`,
+    datePublished: post.date,
+    dateModified: post.date,
+    author: "Visium Technologies"
+  }) : null;
+
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: "Home", url: "https://visiumtechnologies.com" },
+    { name: "Blog", url: "https://visiumtechnologies.com/blog" },
+    { name: post?.title || "Blog Post", url: `https://visiumtechnologies.com/blog/${id}` }
+  ]);
 
   if (!post) {
     return (
@@ -82,6 +102,14 @@ export default function BlogDetail() {
 
   return (
     <div className="min-h-screen">
+      <SEOHead 
+        title={`${post.title} | Blog | Visium Technologies`}
+        description={post.excerpt}
+        ogImage={post.image}
+        canonicalUrl={`https://www.visiumtechnologies.com/blog/${id}`}
+      />
+      {blogSchema && <SchemaHead schema={blogSchema} />}
+      <SchemaHead schema={breadcrumbSchema} />
       <Navigation />
 
       {/* Hero Section */}

@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 import { useState } from "react";
+import { SEOHead } from "@/components/SEOHead";
 
 export default function Demo() {
   const [formData, setFormData] = useState({
@@ -35,6 +36,11 @@ export default function Demo() {
 
   return (
     <div className="min-h-screen">
+      <SEOHead 
+        title="Schedule a Demo | TruContext Platform | Visium Technologies"
+        description="Schedule a personalized demo of TruContext, the AI-powered intelligence platform. See real-time threat detection and analytics in action."
+        canonicalUrl="https://www.visiumtechnologies.com/demo"
+      />
       <section className="gradient-hero py-12">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">

@@ -5,8 +5,16 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
 import { Shield, Network, Cloud, Database, Zap, Lock, Brain, Cpu } from "lucide-react";
 import FollowUs from "@/components/FollowUs";
+import { SchemaHead } from "@/components/SchemaHead";
+import { SEOHead } from "@/components/SEOHead";
+import { organizationSchema, softwareApplicationSchema, createBreadcrumbSchema, createServiceSchema } from "@/lib/schema";
 
 export default function Platform() {
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: "Home", url: "https://visiumtechnologies.com" },
+    { name: "Platform", url: "https://visiumtechnologies.com/platform" }
+  ]);
+
   const tourSteps: TourStep[] = [
     {
       target: ".platform-hero",
@@ -36,6 +44,14 @@ export default function Platform() {
 
   return (
     <div className="min-h-screen">
+      <SEOHead 
+        title="TruContext Platform | Agentic AI Intelligence Platform | Visium Technologies"
+        description="Enterprise-grade dual database architecture combining graph and relational databases. Real-time threat detection, predictive intelligence, and multi-dimensional correlation for cybersecurity and business analytics."
+        canonicalUrl="https://www.visiumtechnologies.com/platform"
+      />
+      <SchemaHead schema={organizationSchema} />
+      <SchemaHead schema={softwareApplicationSchema} />
+      <SchemaHead schema={breadcrumbSchema} />
       <Tour steps={tourSteps} tourId="platform" />
       <TourButton tourId="platform" label="Platform Tour" />
       {/* Hero Section */}

@@ -3,10 +3,16 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
 import { Shield, Users, TrendingUp } from "lucide-react";
 import FollowUs from "@/components/FollowUs";
+import { SEOHead } from "@/components/SEOHead";
 
 export default function About() {
   return (
     <div className="min-h-screen">
+      <SEOHead 
+        title="About Visium Technologies | AI-Powered Intelligence Platform"
+        description="Learn about Visium Technologies, creator of TruContext - an AI-powered intelligence platform for cybersecurity, smart cities, and critical infrastructure. Built on MITRE technology."
+        canonicalUrl="https://www.visiumtechnologies.com/company/about"
+      />
       <section className="gradient-hero py-8">
         <div className="container">
           {/* Visium Technologies Logo - Upper Left */}

@@ -13,7 +13,7 @@ export default function GovernmentFederal() {
         title="Government Cybersecurity Platform | FedRAMP | DoD Threat Detection | NIST Compliance"
         description="Protect government agencies with TruContext's FedRAMP-authorized cybersecurity platform. Real-time threat detection for federal agencies, DoD, DHS, and critical infrastructure with NIST framework compliance."
         keywords="government cybersecurity, FedRAMP compliance, DoD cybersecurity, federal threat detection, NIST framework, critical infrastructure security, government security platform, defense cybersecurity"
-        canonicalUrl="/solutions/government-federal"
+        canonicalUrl="https://www.visiumtechnologies.com/solutions/government-federal"
       />
       
       <div className="min-h-screen">

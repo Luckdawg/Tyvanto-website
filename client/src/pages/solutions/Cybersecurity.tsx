@@ -3,10 +3,16 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
 import { Shield, AlertTriangle, Network, TrendingDown, Clock, CheckCircle2 } from "lucide-react";
 import CountUp from "@/components/CountUp";
+import { SEOHead } from "@/components/SEOHead";
 
 export default function Cybersecurity() {
   return (
     <div className="min-h-screen">
+      <SEOHead 
+        title="Enterprise Threat Detection Platform | Cybersecurity Solution | Visium"
+        description="TruContext: Graph-based threat detection and security operations analytics with MITRE ATT&CK framework. Real-time cyber threat detection powered by explainable AI for enterprise SOC automation."
+        canonicalUrl="https://www.visiumtechnologies.com/solutions/cybersecurity"
+      />
       {/* Hero Section */}
       <section className="gradient-hero py-20">
         <div className="container">

@@ -3,10 +3,16 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
 import CountUp from "@/components/CountUp";
 import { CheckCircle2 } from "lucide-react";
+import { SEOHead } from "@/components/SEOHead";
 
 export default function SupplyChain() {
   return (
     <div className="min-h-screen">
+      <SEOHead 
+        title="Supply Chain Logistics & Visibility Platform | Visium"
+        description="End-to-end supply chain visibility and predictive intelligence. Real-time supply chain analytics with threat detection and operational intelligence."
+        canonicalUrl="https://www.visiumtechnologies.com/solutions/supply-chain"
+      />
       <section className="gradient-hero py-12">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">

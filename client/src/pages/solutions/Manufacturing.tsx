@@ -3,10 +3,16 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
 import CountUp from "@/components/CountUp";
 import { CheckCircle2 } from "lucide-react";
+import { SEOHead } from "@/components/SEOHead";
 
 export default function Manufacturing() {
   return (
     <div className="min-h-screen">
+      <SEOHead 
+        title="Manufacturing Industrial Operations & Predictive Maintenance | Visium"
+        description="Predictive maintenance and quality control for optimized production. Manufacturing analytics platform with real-time threat detection and operational intelligence."
+        canonicalUrl="https://www.visiumtechnologies.com/solutions/manufacturing"
+      />
       <section className="gradient-hero py-12">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">

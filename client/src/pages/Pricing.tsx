@@ -5,6 +5,7 @@ import { Slider } from "@/components/ui/slider";
 import { Link } from "wouter";
 import { useState, useMemo } from "react";
 import { DollarSign, TrendingDown, Users, CheckCircle2, Calculator } from "lucide-react";
+import { SEOHead } from "@/components/SEOHead";
 
 export default function Pricing() {
   const [nodeCount, setNodeCount] = useState(10000);
@@ -66,6 +67,11 @@ export default function Pricing() {
 
   return (
     <div className="min-h-screen">
+      <SEOHead 
+        title="Pricing | TruContext Platform | Visium Technologies"
+        description="Transparent, scalable pricing for TruContext. Enterprise-grade cybersecurity intelligence that scales with your organization. Calculate your custom pricing based on infrastructure size."
+        canonicalUrl="https://www.visiumtechnologies.com/pricing"
+      />
       {/* Hero Section */}
       <section className="gradient-hero py-12">
         <div className="container">
