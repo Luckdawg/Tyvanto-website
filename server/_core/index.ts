@@ -8,6 +8,7 @@ import { appRouter } from "../routers";
 import { createContext } from "./context";
 import { serveStatic, setupVite } from "./vite";
 import { startEmailCampaignScheduler } from "../emailCampaignJob";
+import { redirectMiddleware } from "../middleware/redirects";
 
 function isPortAvailable(port: number): Promise<boolean> {
   return new Promise(resolve => {
@@ -34,6 +35,8 @@ async function startServer() {
   // Configure body parser with larger size limit for file uploads
   app.use(express.json({ limit: "50mb" }));
   app.use(express.urlencoded({ limit: "50mb", extended: true }));
+  // Handle legacy URL redirects and gone content (410 responses)
+  app.use(redirectMiddleware);
   // OAuth callback under /api/oauth/callback
   registerOAuthRoutes(app);
   // tRPC API

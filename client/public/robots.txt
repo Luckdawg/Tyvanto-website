@@ -1,9 +1,42 @@
 # robots.txt for Visium Technologies
+# https://www.visiumtechnologies.com/
+
 User-agent: *
 Allow: /
+
+# Disallow legacy and internal paths
+Disallow: /role/
+Disallow: /s/CyGraph-Structures.docx
+Disallow: /CyGraph-Structures.docx
+Disallow: /admin/
+Disallow: /api/
+Disallow: /internal/
+
+# Disallow legacy subdomains
+Disallow: /tyofbadmin/
 
 # Sitemap location
 Sitemap: https://www.visiumtechnologies.com/sitemap.xml
 
 # Crawl-delay for respectful crawling
 Crawl-delay: 1
+
+# Specific rules for common bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Block bad bots
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
