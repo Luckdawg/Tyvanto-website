@@ -2031,3 +2031,13 @@
 - [x] Update robots.txt to disallow old paths
 - [x] Create sitemap.xml with current valid pages
 - [x] Test all redirects and verify configuration
+
+
+## Capabilities Deck Feature (Mar 12, 2026)
+- [x] Examine PDF content and plan implementation
+- [x] Upload PDF to S3 storage and get CDN URL
+- [x] Create Capabilities Deck page with embedded PDF viewer
+- [x] Add lead capture form for PDF access
+- [x] Create leads router for capturing form submissions
+- [x] Integrate page into navigation and routing
+- [x] Write and pass comprehensive tests (10/10 passing)

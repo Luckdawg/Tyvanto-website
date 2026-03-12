@@ -3,7 +3,7 @@ import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
 import { publicProcedure, router } from "./_core/trpc";
 import { stockRouter } from "./stockRouter";
-import { leadsRouter } from "./leadsRouter";
+import { leadsRouter } from "./routers/leads";
 import { adminRouter } from "./adminRouter";
 import { twoFactorRouter } from "./twoFactorRouter";
 import { cmsRouter } from "./cmsRouter";

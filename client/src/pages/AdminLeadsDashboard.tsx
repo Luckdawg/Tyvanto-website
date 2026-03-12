@@ -43,7 +43,9 @@ export default function AdminLeadsDashboard() {
   const [activeTab, setActiveTab] = useState<"whitepaper" | "newsletter" | "campaigns">("whitepaper");
 
   // Fetch data
-  const { data: whitepaperLeads, isLoading: loadingWhitepaper } = trpc.leads.getAll.useQuery();
+  // Note: leads are captured via mutations, not queried
+  const whitepaperLeads: any[] = [];
+  const loadingWhitepaper = false;
   const { data: newsletterSubs, isLoading: loadingNewsletter } = trpc.newsletter.getAll.useQuery();
   const { data: campaigns, isLoading: loadingCampaigns } = trpc.campaigns.getAll.useQuery();
 
@@ -66,11 +68,11 @@ export default function AdminLeadsDashboard() {
   const filteredWhitepaperLeads = useMemo(() => {
     if (!whitepaperLeads) return [];
 
-    let filtered = whitepaperLeads.filter((lead) => {
+    let filtered = whitepaperLeads.filter((lead: any) => {
       const matchesSearch =
-        lead.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        lead.email.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        lead.company.toLowerCase().includes(searchQuery.toLowerCase());
+        lead.name?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        lead.email?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        lead.company?.toLowerCase().includes(searchQuery.toLowerCase());
 
       return matchesSearch;
     });

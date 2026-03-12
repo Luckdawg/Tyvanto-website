@@ -30,7 +30,7 @@ export default function WhitepaperDownloadDialog({
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isDownloading, setIsDownloading] = useState(false);
 
-  const submitLeadMutation = trpc.leads.submitWhitepaperLead.useMutation({
+  const submitLeadMutation = trpc.leads.contactFormLead.useMutation({
     onSuccess: () => {
       setIsSubmitted(true);
       // Trigger download after successful submission
@@ -38,7 +38,7 @@ export default function WhitepaperDownloadDialog({
         handleDownload();
       }, 500);
     },
-    onError: (error) => {
+    onError: (error: any) => {
       toast.error("Failed to submit form. Please try again.");
       console.error("Lead submission error:", error);
     },
@@ -66,7 +66,7 @@ export default function WhitepaperDownloadDialog({
       name: formData.name.trim(),
       email: formData.email.trim(),
       company: formData.company.trim(),
-      resource: "Architecture Whitepaper",
+      source: "Architecture Whitepaper",
     });
   };
 

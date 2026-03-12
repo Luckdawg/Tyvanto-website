@@ -52,6 +52,7 @@ import GovernmentFederal from "./pages/solutions/GovernmentFederal";
 import Blog from "./pages/Blog";
 import BlogDetail from "./pages/BlogDetail";
 import Videos from "./pages/resources/Videos";
+import CapabilitiesDeck from "./pages/resources/CapabilitiesDeck";
 import AdminDashboard from "./pages/admin/Dashboard";
 import AdminUsers from "./pages/admin/Users";
 import AdminSecurity from "./pages/admin/Security";
@@ -120,6 +121,7 @@ function Router() {
       <Route path="/blog/:id" component={BlogDetail} />
       <Route path="/resources" component={Blog} />
       <Route path="/resources/videos" component={Videos} />
+      <Route path="/resources/capabilities-deck" component={CapabilitiesDeck} />
       <Route path="/admin" component={AdminDashboard} />
       <Route path="/admin/login" component={AdminLogin} />
       <Route path="/admin/users" component={AdminUsers} />
