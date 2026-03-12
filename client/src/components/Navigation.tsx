@@ -180,12 +180,14 @@ const Navigation = () => {
                   className="absolute top-full left-0 mt-1 w-48 bg-white border border-gray-200 rounded-lg shadow-lg py-2"
                   onMouseLeave={() => setOpenDropdown(null)}
                 >
-
+                  <Link href="/resources/capabilities-deck">
+                    <div className="px-4 py-2 hover:bg-primary hover:text-white cursor-pointer transition-colors font-semibold text-primary">📊 Capabilities Deck</div>
+                  </Link>
                   <Link href="/resources/videos">
                     <div className="px-4 py-2 hover:bg-primary hover:text-white cursor-pointer transition-colors">Videos & Webinars</div>
                   </Link>
                   <Link href="/blog">
-                    <div className="px-4 py-2 hover:bg-primary hover:text-white cursor-pointer transition-colors">Blog & Insights</div>
+                    <div className="px-4 py-2 hover:bg-primary hover:text-white cursor-pointer transition-colors border-t border-gray-100">Blog & Insights</div>
                   </Link>
                   <Link href="/graph-demo">
                     <div className="px-4 py-2 hover:bg-primary hover:text-white cursor-pointer transition-colors border-t border-gray-100 font-semibold text-primary">🎯 Interactive Graph Demo</div>

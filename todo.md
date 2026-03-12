@@ -2041,3 +2041,4 @@
 - [x] Create leads router for capturing form submissions
 - [x] Integrate page into navigation and routing
 - [x] Write and pass comprehensive tests (10/10 passing)
+- [x] Add Capabilities Deck link to Resources menu (5/5 tests passing)
