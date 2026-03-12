@@ -3,15 +3,14 @@ import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Download, Eye, CheckCircle } from 'lucide-react';
+import { Download, CheckCircle } from 'lucide-react';
 import { SEOHead } from '@/components/SEOHead';
 import { trpc } from '@/lib/trpc';
 
 const PDF_URL = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028236186/d8D2GoF7wZHc9ZPzYZfLpT/VisiumTechCapabilitiesDeck03-2026_e7a4924c.pdf';
 
 export default function CapabilitiesDeck() {
-  const [showLeadForm, setShowLeadForm] = useState(false);
-  const [pdfUnlocked, setPdfUnlocked] = useState(false);
+  const [showDownloadForm, setShowDownloadForm] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -23,10 +22,17 @@ export default function CapabilitiesDeck() {
   // Use tRPC mutation for lead capture
   const submitLeadMutation = trpc.leads.capabilitiesDeckLead.useMutation({
     onSuccess: () => {
-      setPdfUnlocked(true);
       setFormError('');
       setTimeout(() => {
-        setShowLeadForm(false);
+        // Trigger download after successful submission
+        const link = document.createElement('a');
+        link.href = PDF_URL;
+        link.download = 'VisiumTechCapabilitiesDeck03-2026.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        
+        setShowDownloadForm(false);
         setFormData({ name: '', email: '', company: '' });
         setIsSubmitting(false);
       }, 1500);
@@ -74,6 +80,15 @@ export default function CapabilitiesDeck() {
     });
   };
 
+  const handleDirectDownload = () => {
+    const link = document.createElement('a');
+    link.href = PDF_URL;
+    link.download = 'VisiumTechCapabilitiesDeck03-2026.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <>
       <SEOHead
@@ -97,27 +112,26 @@ export default function CapabilitiesDeck() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
                   size="lg"
-                  onClick={() => setShowLeadForm(true)}
+                  onClick={handleDirectDownload}
                   className="bg-primary hover:bg-primary/90"
                 >
-                  <Eye className="mr-2 h-5 w-5" />
-                  View Deck
+                  <Download className="mr-2 h-5 w-5" />
+                  Download PDF
                 </Button>
-                <a href={PDF_URL} download>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                  >
-                    <Download className="mr-2 h-5 w-5" />
-                    Download PDF
-                  </Button>
-                </a>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  onClick={() => setShowDownloadForm(true)}
+                >
+                  <Download className="mr-2 h-5 w-5" />
+                  Download & Get Updates
+                </Button>
               </div>
             </div>
           </div>
         </section>
 
-        {/* PDF Preview Section */}
+        {/* PDF Viewer Section */}
         <section className="py-12 px-4">
           <div className="container max-w-5xl">
             <div className="bg-card rounded-lg shadow-lg overflow-hidden border border-border">
@@ -130,31 +144,15 @@ export default function CapabilitiesDeck() {
                 </p>
               </div>
 
-              {/* PDF Embed or Locked State */}
+              {/* PDF Embed */}
               <div className="w-full bg-background">
-                {pdfUnlocked ? (
-                  <iframe
-                    src={`${PDF_URL}#toolbar=1&navpanes=0`}
-                    width="100%"
-                    height="800"
-                    style={{ border: 'none' }}
-                    title="Visium Technologies Capabilities Deck"
-                  />
-                ) : (
-                  <div className="w-full h-96 flex flex-col items-center justify-center bg-muted/50 border-t border-border">
-                    <Eye className="h-16 w-16 text-muted-foreground mb-4 opacity-50" />
-                    <p className="text-muted-foreground text-lg mb-6 text-center">
-                      Sign in to view the full Capabilities Deck
-                    </p>
-                    <Button
-                      size="lg"
-                      onClick={() => setShowLeadForm(true)}
-                      className="bg-primary hover:bg-primary/90"
-                    >
-                      Unlock & View Deck
-                    </Button>
-                  </div>
-                )}
+                <iframe
+                  src={`${PDF_URL}#toolbar=1&navpanes=0`}
+                  width="100%"
+                  height="900"
+                  style={{ border: 'none' }}
+                  title="Visium Technologies Capabilities Deck"
+                />
               </div>
 
               {/* Footer with Actions */}
@@ -167,16 +165,18 @@ export default function CapabilitiesDeck() {
                 <div className="flex gap-3">
                   <Button
                     variant="outline"
-                    onClick={() => setShowLeadForm(true)}
+                    onClick={handleDirectDownload}
                   >
-                    Request Access
+                    <Download className="mr-2 h-4 w-4" />
+                    Download
                   </Button>
-                  <a href={PDF_URL} download>
-                    <Button>
-                      <Download className="mr-2 h-4 w-4" />
-                      Download
-                    </Button>
-                  </a>
+                  <Button
+                    onClick={() => setShowDownloadForm(true)}
+                    className="bg-primary hover:bg-primary/90"
+                  >
+                    <Download className="mr-2 h-4 w-4" />
+                    Get Updates
+                  </Button>
                 </div>
               </div>
             </div>
@@ -273,31 +273,41 @@ export default function CapabilitiesDeck() {
                 Ready to Transform Your Intelligence Operations?
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                View the Capabilities Deck to learn how TruContext's agentic AI platform can help your organization move from reactive alert management to proactive threat prevention.
+                Review the Capabilities Deck to learn how TruContext's agentic AI platform can help your organization move from reactive alert management to proactive threat prevention.
               </p>
-              <Button
-                size="lg"
-                onClick={() => setShowLeadForm(true)}
-                className="bg-primary hover:bg-primary/90"
-              >
-                Get the Deck
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button
+                  size="lg"
+                  onClick={handleDirectDownload}
+                  variant="outline"
+                >
+                  <Download className="mr-2 h-5 w-5" />
+                  Download Now
+                </Button>
+                <Button
+                  size="lg"
+                  onClick={() => setShowDownloadForm(true)}
+                  className="bg-primary hover:bg-primary/90"
+                >
+                  Download & Get Updates
+                </Button>
+              </div>
             </div>
           </div>
         </section>
       </div>
 
-      {/* Lead Capture Dialog */}
-      <Dialog open={showLeadForm} onOpenChange={setShowLeadForm}>
+      {/* Download & Updates Dialog */}
+      <Dialog open={showDownloadForm} onOpenChange={setShowDownloadForm}>
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
             <DialogTitle>
-              {submitLeadMutation.isPending ? 'Processing...' : 'Access the Capabilities Deck'}
+              {submitLeadMutation.isPending ? 'Processing...' : 'Download & Get Updates'}
             </DialogTitle>
             <DialogDescription>
               {submitLeadMutation.isPending 
                 ? 'Please wait while we process your request...'
-                : 'Please provide your information to view the full capabilities deck.'}
+                : 'Provide your information to receive the PDF and stay updated on TruContext.'}
             </DialogDescription>
           </DialogHeader>
 
@@ -306,7 +316,7 @@ export default function CapabilitiesDeck() {
               <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
               <p className="text-lg font-semibold mb-2">Success!</p>
               <p className="text-muted-foreground">
-                The deck is now unlocked. Closing this dialog...
+                Your download is starting. Check your downloads folder.
               </p>
             </div>
           ) : (
@@ -363,7 +373,7 @@ export default function CapabilitiesDeck() {
                 <Button
                   type="button"
                   variant="outline"
-                  onClick={() => setShowLeadForm(false)}
+                  onClick={() => setShowDownloadForm(false)}
                   className="flex-1"
                   disabled={isSubmitting}
                 >
@@ -374,12 +384,12 @@ export default function CapabilitiesDeck() {
                   className="flex-1 bg-primary hover:bg-primary/90"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? 'Processing...' : 'Get Access'}
+                  {isSubmitting ? 'Processing...' : 'Download & Subscribe'}
                 </Button>
               </div>
 
               <p className="text-xs text-muted-foreground text-center">
-                We respect your privacy. Your information will only be used to send you the deck.
+                We respect your privacy. Your information will only be used to send you the deck and relevant updates.
               </p>
             </form>
           )}
