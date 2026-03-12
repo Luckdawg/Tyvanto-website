@@ -3,13 +3,31 @@ import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Download, CheckCircle } from 'lucide-react';
+import { Download, CheckCircle, ChevronLeft, ChevronRight } from 'lucide-react';
 import { SEOHead } from '@/components/SEOHead';
 import { trpc } from '@/lib/trpc';
 
 const PDF_URL = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028236186/d8D2GoF7wZHc9ZPzYZfLpT/VisiumTechCapabilitiesDeck03-2026_e7a4924c.pdf';
 
+// PDF pages converted to images
+const DECK_PAGES = [
+  'https://d2xsxph8kpxj0f.cloudfront.net/310419663028236186/d8D2GoF7wZHc9ZPzYZfLpT/deck_page-01_39f9677d.png',
+  'https://d2xsxph8kpxj0f.cloudfront.net/310419663028236186/d8D2GoF7wZHc9ZPzYZfLpT/deck_page-02_b187113f.png',
+  'https://d2xsxph8kpxj0f.cloudfront.net/310419663028236186/d8D2GoF7wZHc9ZPzYZfLpT/deck_page-03_2d5e161e.png',
+  'https://d2xsxph8kpxj0f.cloudfront.net/310419663028236186/d8D2GoF7wZHc9ZPzYZfLpT/deck_page-04_225b70dc.png',
+  'https://d2xsxph8kpxj0f.cloudfront.net/310419663028236186/d8D2GoF7wZHc9ZPzYZfLpT/deck_page-05_7adc3862.png',
+  'https://d2xsxph8kpxj0f.cloudfront.net/310419663028236186/d8D2GoF7wZHc9ZPzYZfLpT/deck_page-06_5b1f932c.png',
+  'https://d2xsxph8kpxj0f.cloudfront.net/310419663028236186/d8D2GoF7wZHc9ZPzYZfLpT/deck_page-07_e18cf4fb.png',
+  'https://d2xsxph8kpxj0f.cloudfront.net/310419663028236186/d8D2GoF7wZHc9ZPzYZfLpT/deck_page-08_2478131e.png',
+  'https://d2xsxph8kpxj0f.cloudfront.net/310419663028236186/d8D2GoF7wZHc9ZPzYZfLpT/deck_page-09_961eeca3.png',
+  'https://d2xsxph8kpxj0f.cloudfront.net/310419663028236186/d8D2GoF7wZHc9ZPzYZfLpT/deck_page-10_982a0f77.png',
+  'https://d2xsxph8kpxj0f.cloudfront.net/310419663028236186/d8D2GoF7wZHc9ZPzYZfLpT/deck_page-11_d153d165.png',
+  'https://d2xsxph8kpxj0f.cloudfront.net/310419663028236186/d8D2GoF7wZHc9ZPzYZfLpT/deck_page-12_fb4ea81b.png',
+  'https://d2xsxph8kpxj0f.cloudfront.net/310419663028236186/d8D2GoF7wZHc9ZPzYZfLpT/deck_page-13_138ac023.png',
+];
+
 export default function CapabilitiesDeck() {
+  const [currentPage, setCurrentPage] = useState(0);
   const [showDownloadForm, setShowDownloadForm] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -89,6 +107,18 @@ export default function CapabilitiesDeck() {
     document.body.removeChild(link);
   };
 
+  const nextPage = () => {
+    if (currentPage < DECK_PAGES.length - 1) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const prevPage = () => {
+    if (currentPage > 0) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
   return (
     <>
       <SEOHead
@@ -144,15 +174,63 @@ export default function CapabilitiesDeck() {
                 </p>
               </div>
 
-              {/* PDF Embed */}
-              <div className="w-full bg-background">
-                <iframe
-                  src={`${PDF_URL}#toolbar=1&navpanes=0`}
-                  width="100%"
-                  height="900"
-                  style={{ border: 'none' }}
-                  title="Visium Technologies Capabilities Deck"
-                />
+              {/* PDF Pages Display */}
+              <div className="w-full bg-background p-6">
+                <div className="flex justify-center mb-6">
+                  <img 
+                    src={DECK_PAGES[currentPage]} 
+                    alt={`Capabilities Deck Page ${currentPage + 1}`}
+                    className="max-w-full h-auto rounded-lg shadow-md border border-border"
+                  />
+                </div>
+
+                {/* Page Navigation */}
+                <div className="flex items-center justify-between gap-4 flex-wrap">
+                  <Button
+                    variant="outline"
+                    onClick={prevPage}
+                    disabled={currentPage === 0}
+                    className="flex items-center gap-2"
+                  >
+                    <ChevronLeft className="h-4 w-4" />
+                    Previous
+                  </Button>
+
+                  <div className="text-center text-muted-foreground font-medium">
+                    Page {currentPage + 1} of {DECK_PAGES.length}
+                  </div>
+
+                  <Button
+                    variant="outline"
+                    onClick={nextPage}
+                    disabled={currentPage === DECK_PAGES.length - 1}
+                    className="flex items-center gap-2"
+                  >
+                    Next
+                    <ChevronRight className="h-4 w-4" />
+                  </Button>
+                </div>
+
+                {/* Page Thumbnails */}
+                <div className="mt-8 flex gap-2 overflow-x-auto pb-2">
+                  {DECK_PAGES.map((page, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentPage(index)}
+                      className={`flex-shrink-0 rounded border-2 transition-all ${
+                        currentPage === index 
+                          ? 'border-primary' 
+                          : 'border-border hover:border-primary/50'
+                      }`}
+                    >
+                      <img 
+                        src={page} 
+                        alt={`Page ${index + 1}`}
+                        className="w-16 h-20 object-cover rounded"
+                      />
+                    </button>
+                  ))}
+                </div>
               </div>
 
               {/* Footer with Actions */}
