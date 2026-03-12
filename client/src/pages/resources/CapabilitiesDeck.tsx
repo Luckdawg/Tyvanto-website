@@ -40,12 +40,24 @@ export default function CapabilitiesDeck() {
 
       if (response.ok) {
         setFormSubmitted(true);
-        // Reset form after 2 seconds
+        // Trigger PDF download after successful submission
         setTimeout(() => {
-          setShowLeadForm(false);
-          setFormSubmitted(false);
-          setFormData({ name: '', email: '', company: '' });
-        }, 2000);
+          const link = document.createElement('a');
+          link.href = PDF_URL;
+          link.download = 'VisiumTechCapabilitiesDeck03-2026.pdf';
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+          
+          // Close dialog and reset form
+          setTimeout(() => {
+            setShowLeadForm(false);
+            setFormSubmitted(false);
+            setFormData({ name: '', email: '', company: '' });
+          }, 500);
+        }, 1000);
+      } else {
+        console.error('Failed to submit lead');
       }
     } catch (error) {
       console.error('Error submitting lead:', error);

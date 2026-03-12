@@ -2042,3 +2042,4 @@
 - [x] Integrate page into navigation and routing
 - [x] Write and pass comprehensive tests (10/10 passing)
 - [x] Add Capabilities Deck link to Resources menu (5/5 tests passing)
+- [x] Fix PDF download functionality after form submission (9/9 tests passing)
