@@ -3,19 +3,39 @@ import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Download, Eye } from 'lucide-react';
+import { Download, Eye, CheckCircle } from 'lucide-react';
 import { SEOHead } from '@/components/SEOHead';
+import { trpc } from '@/lib/trpc';
 
 const PDF_URL = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028236186/d8D2GoF7wZHc9ZPzYZfLpT/VisiumTechCapabilitiesDeck03-2026_e7a4924c.pdf';
 
 export default function CapabilitiesDeck() {
   const [showLeadForm, setShowLeadForm] = useState(false);
+  const [pdfUnlocked, setPdfUnlocked] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     company: '',
   });
-  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [formError, setFormError] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Use tRPC mutation for lead capture
+  const submitLeadMutation = trpc.leads.capabilitiesDeckLead.useMutation({
+    onSuccess: () => {
+      setPdfUnlocked(true);
+      setFormError('');
+      setTimeout(() => {
+        setShowLeadForm(false);
+        setFormData({ name: '', email: '', company: '' });
+        setIsSubmitting(false);
+      }, 1500);
+    },
+    onError: (error) => {
+      setFormError('Failed to submit form. Please try again.');
+      setIsSubmitting(false);
+    },
+  });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -23,45 +43,35 @@ export default function CapabilitiesDeck() {
       ...prev,
       [name]: value
     }));
+    setFormError('');
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Submit lead data to backend
-    try {
-      const response = await fetch('/api/trpc/leads.capabilitiesDeckLead', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        setFormSubmitted(true);
-        // Trigger PDF download after successful submission
-        setTimeout(() => {
-          const link = document.createElement('a');
-          link.href = PDF_URL;
-          link.download = 'VisiumTechCapabilitiesDeck03-2026.pdf';
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-          
-          // Close dialog and reset form
-          setTimeout(() => {
-            setShowLeadForm(false);
-            setFormSubmitted(false);
-            setFormData({ name: '', email: '', company: '' });
-          }, 500);
-        }, 1000);
-      } else {
-        console.error('Failed to submit lead');
-      }
-    } catch (error) {
-      console.error('Error submitting lead:', error);
+    // Validate form
+    if (!formData.name.trim()) {
+      setFormError('Please enter your name');
+      return;
     }
+    
+    if (!formData.email.trim()) {
+      setFormError('Please enter your email');
+      return;
+    }
+
+    if (!formData.email.includes('@')) {
+      setFormError('Please enter a valid email address');
+      return;
+    }
+
+    setIsSubmitting(true);
+    // Submit lead data using tRPC
+    submitLeadMutation.mutate({
+      name: formData.name.trim(),
+      email: formData.email.trim(),
+      company: formData.company.trim(),
+    });
   };
 
   return (
@@ -120,15 +130,31 @@ export default function CapabilitiesDeck() {
                 </p>
               </div>
 
-              {/* PDF Embed */}
+              {/* PDF Embed or Locked State */}
               <div className="w-full bg-background">
-                <iframe
-                  src={`${PDF_URL}#toolbar=1&navpanes=0`}
-                  width="100%"
-                  height="800"
-                  style={{ border: 'none' }}
-                  title="Visium Technologies Capabilities Deck"
-                />
+                {pdfUnlocked ? (
+                  <iframe
+                    src={`${PDF_URL}#toolbar=1&navpanes=0`}
+                    width="100%"
+                    height="800"
+                    style={{ border: 'none' }}
+                    title="Visium Technologies Capabilities Deck"
+                  />
+                ) : (
+                  <div className="w-full h-96 flex flex-col items-center justify-center bg-muted/50 border-t border-border">
+                    <Eye className="h-16 w-16 text-muted-foreground mb-4 opacity-50" />
+                    <p className="text-muted-foreground text-lg mb-6 text-center">
+                      Sign in to view the full Capabilities Deck
+                    </p>
+                    <Button
+                      size="lg"
+                      onClick={() => setShowLeadForm(true)}
+                      className="bg-primary hover:bg-primary/90"
+                    >
+                      Unlock & View Deck
+                    </Button>
+                  </div>
+                )}
               </div>
 
               {/* Footer with Actions */}
@@ -247,7 +273,7 @@ export default function CapabilitiesDeck() {
                 Ready to Transform Your Intelligence Operations?
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                Download the Capabilities Deck to learn how TruContext's agentic AI platform can help your organization move from reactive alert management to proactive threat prevention.
+                View the Capabilities Deck to learn how TruContext's agentic AI platform can help your organization move from reactive alert management to proactive threat prevention.
               </p>
               <Button
                 size="lg"
@@ -266,20 +292,21 @@ export default function CapabilitiesDeck() {
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
             <DialogTitle>
-              {formSubmitted ? 'Thank You!' : 'Access the Capabilities Deck'}
+              {submitLeadMutation.isPending ? 'Processing...' : 'Access the Capabilities Deck'}
             </DialogTitle>
             <DialogDescription>
-              {formSubmitted 
-                ? 'Your information has been received. The PDF will download shortly.'
-                : 'Please provide your information to access the full capabilities deck.'}
+              {submitLeadMutation.isPending 
+                ? 'Please wait while we process your request...'
+                : 'Please provide your information to view the full capabilities deck.'}
             </DialogDescription>
           </DialogHeader>
 
-          {formSubmitted ? (
+          {submitLeadMutation.isSuccess ? (
             <div className="text-center py-8">
-              <div className="text-4xl mb-4">✓</div>
+              <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
+              <p className="text-lg font-semibold mb-2">Success!</p>
               <p className="text-muted-foreground">
-                Redirecting to PDF download...
+                The deck is now unlocked. Closing this dialog...
               </p>
             </div>
           ) : (
@@ -293,7 +320,7 @@ export default function CapabilitiesDeck() {
                   placeholder="John Doe"
                   value={formData.name}
                   onChange={handleInputChange}
-                  required
+                  disabled={isSubmitting}
                   className="mt-2"
                 />
               </div>
@@ -307,7 +334,7 @@ export default function CapabilitiesDeck() {
                   placeholder="john@company.com"
                   value={formData.email}
                   onChange={handleInputChange}
-                  required
+                  disabled={isSubmitting}
                   className="mt-2"
                 />
               </div>
@@ -321,9 +348,16 @@ export default function CapabilitiesDeck() {
                   placeholder="Your Company"
                   value={formData.company}
                   onChange={handleInputChange}
+                  disabled={isSubmitting}
                   className="mt-2"
                 />
               </div>
+
+              {formError && (
+                <div className="p-3 bg-red-50 border border-red-200 rounded-md">
+                  <p className="text-sm text-red-700">{formError}</p>
+                </div>
+              )}
 
               <div className="flex gap-3 pt-4">
                 <Button
@@ -331,14 +365,16 @@ export default function CapabilitiesDeck() {
                   variant="outline"
                   onClick={() => setShowLeadForm(false)}
                   className="flex-1"
+                  disabled={isSubmitting}
                 >
                   Cancel
                 </Button>
                 <Button
                   type="submit"
                   className="flex-1 bg-primary hover:bg-primary/90"
+                  disabled={isSubmitting}
                 >
-                  Get Access
+                  {isSubmitting ? 'Processing...' : 'Get Access'}
                 </Button>
               </div>
 
