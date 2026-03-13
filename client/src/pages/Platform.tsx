@@ -278,6 +278,61 @@ export default function Platform() {
         </div>
       </section>
 
+      {/* Data Sovereignty Section */}
+      <section className="py-12 bg-gradient-to-br from-blue-50 to-indigo-50">
+        <div className="container">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <Lock className="h-16 w-16 text-primary mx-auto mb-4" />
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Data Sovereignty & Ethical Intelligence
+              </h2>
+              <p className="text-lg text-gray-700">
+                Maintaining local control while enabling secure collaboration
+              </p>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-lg p-8 border-l-4 border-l-primary">
+              <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                Visium Technologies' TruContext platform addresses data sovereignty challenges through its <span className="font-semibold">Ethical Layered Intelligence (ELI)</span> technology, which incorporates a proprietary framework designed to maintain local control over data while facilitating secure, inter-jurisdictional collaboration.
+              </p>
+
+              <div className="grid md:grid-cols-2 gap-8 mb-6">
+                <div>
+                  <h3 className="text-xl font-bold text-primary mb-4 flex items-center">
+                    <Shield className="h-6 w-6 mr-2" />
+                    Local Data Ownership
+                  </h3>
+                  <p className="text-gray-700">
+                    TruContext enables municipalities and other entities to retain full ownership and control of their jurisdictional data, preventing unauthorized centralization or external access.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-bold text-secondary mb-4 flex items-center">
+                    <Network className="h-6 w-6 mr-2" />
+                    Granular Access Control
+                  </h3>
+                  <p className="text-gray-700">
+                    Role-based sharing mechanisms provide granular, auditable permissions for data access based on operational needs, ensuring privacy is balanced with coordination in applications like public safety surveillance networks.
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-lg p-6 border border-primary/20">
+                <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                  <Zap className="h-5 w-5 text-primary mr-2" />
+                  Ethical Safeguards for High-Stakes Environments
+                </h3>
+                <p className="text-gray-700">
+                  The platform's focus on ethical safeguards, including verifiable audit trails, further supports sovereign data management in high-stakes environments such as cybersecurity and critical infrastructure, reducing risks associated with data breaches or misuse.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Follow Us Section */}
       <FollowUs />
 
