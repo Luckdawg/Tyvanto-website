@@ -7,6 +7,14 @@ import { Newspaper, Calendar, ExternalLink, TrendingUp } from "lucide-react";
 export default function News() {
   const newsStories = [
     {
+      date: "March 19, 2026",
+      title: "Visium Technologies Launches TruContext™ AI Governance Layer to Contain OpenClaw Style Autonomous Agent Risks",
+      excerpt: "Visium Technologies announces the launch of a new AI Governance Layer within TruContext, designed to address emerging security risks from autonomous AI agents. The governance layer enhances the platform's ability to contain and mitigate threats while maintaining transparent, explainable AI operations for defense, cybersecurity, and critical infrastructure applications.",
+      url: "https://www.otcmarkets.com/stock/VISM/news/Visium-Technologies-Launches-TruContext-AI-Governance-Layer-to-Contain-OpenClaw-Style-Autonomous-Agent-Risks",
+      source: "OTC Disclosure & News Service",
+      category: "Product Launch"
+    },
+    {
       date: "January 30, 2026",
       title: "Visium Technologies and IREX.AI to Host Webinar on Peru's 54,000-Camera AI Surveillance Network",
       excerpt: "CEOs Calvin Yadav and Mark Lucky Will Discuss Landmark Deployment Addressing Latin American Security; Government-to-Government Regional Expansion Strategy",
