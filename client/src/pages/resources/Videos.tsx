@@ -310,17 +310,23 @@ export default function Videos() {
             </div>
             <div className="grid md:grid-cols-2 gap-8 items-center">
               {/* Video Thumbnail */}
-              <div className="group rounded-lg overflow-hidden bg-gray-900 aspect-video shadow-2xl">
-                {industryVideos[0].thumbnail && (
-                  <img
-                    src={industryVideos[0].thumbnail}
-                    alt={industryVideos[0].title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
+              <div className="group relative rounded-lg overflow-hidden bg-gray-900 aspect-video shadow-2xl">
+                {industryVideos[0].thumbnail ? (
+                  <>
+                    <img
+                      src={industryVideos[0].thumbnail}
+                      alt={industryVideos[0].title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors flex items-center justify-center">
+                      <Play className="w-20 h-20 text-white fill-white" />
+                    </div>
+                  </>
+                ) : (
+                  <div className="w-full h-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center">
+                    <Play className="w-20 h-20 text-gray-400" />
+                  </div>
                 )}
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors flex items-center justify-center">
-                  <Play className="w-20 h-20 text-white fill-white" />
-                </div>
               </div>
               
               {/* Video Info */}
