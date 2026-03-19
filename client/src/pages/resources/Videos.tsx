@@ -25,6 +25,7 @@ const CATEGORIES = [
   { id: 'interview', label: 'Interview' },
   { id: 'use-case', label: 'Use Case' },
   { id: 'webinar', label: 'Webinar' },
+  { id: 'product-features', label: 'Product Features' },
 ];
 
 // Helper function to get YouTube thumbnail from video URL
@@ -42,6 +43,17 @@ export default function Videos() {
 
   // 15 videos with correct category assignments from user's table
   const industryVideos: Video[] = [
+    {
+      title: "TruClaw Secures The Agentic Frontier",
+      url: "https://youtu.be/skDDVvoIdcY",
+      duration: "0:00",
+      views: "0",
+      category: "product-features",
+      playlist: "getting-started",
+      engagementScore: 100,
+      thumbnail: getYouTubeThumbnail('https://youtu.be/skDDVvoIdcY'),
+      description: "Introducing TruClaw: Visium's advanced security framework that secures the agentic frontier, protecting against autonomous AI agent risks and emerging threats."
+    },
     {
       title: "Visium TruContext Intro",
       url: "https://youtu.be/g21CdbOvniw?si=cVMSSpgd-nU4xNWh",
@@ -287,6 +299,56 @@ export default function Videos() {
           </div>
         </div>
       </section>
+
+      {/* Featured Video Section */}
+      {industryVideos[0] && (
+        <section className="py-12 bg-gradient-to-r from-purple-900 via-purple-800 to-indigo-900">
+          <div className="container">
+            <div className="mb-6">
+              <span className="text-sm font-bold text-purple-300 uppercase tracking-wide">Featured Video</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mt-2">Latest Release</h2>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              {/* Video Thumbnail */}
+              <div className="group rounded-lg overflow-hidden bg-gray-900 aspect-video shadow-2xl">
+                {industryVideos[0].thumbnail && (
+                  <img
+                    src={industryVideos[0].thumbnail}
+                    alt={industryVideos[0].title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                )}
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors flex items-center justify-center">
+                  <Play className="w-20 h-20 text-white fill-white" />
+                </div>
+              </div>
+              
+              {/* Video Info */}
+              <div className="text-white">
+                <h3 className="text-3xl font-bold mb-4">{industryVideos[0].title}</h3>
+                <p className="text-lg text-purple-100 mb-6 leading-relaxed">
+                  {industryVideos[0].description}
+                </p>
+                <div className="flex items-center gap-4 mb-8">
+                  <span className="text-sm font-semibold text-purple-300 bg-purple-800/50 px-3 py-1 rounded-full capitalize">
+                    {industryVideos[0].category}
+                  </span>
+                  <span className="text-sm text-purple-200">{industryVideos[0].views} views</span>
+                </div>
+                <a
+                  href={industryVideos[0].url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 bg-white text-purple-900 px-8 py-3 rounded-lg font-bold hover:bg-purple-100 transition-colors shadow-lg"
+                >
+                  <Play className="w-5 h-5 fill-purple-900" />
+                  Watch Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Videos Grid */}
       <section className="py-16">
