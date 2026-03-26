@@ -84,6 +84,11 @@ const Navigation = () => {
                   className="absolute top-full left-0 mt-1 w-72 bg-white border border-gray-200 rounded-lg shadow-lg py-2"
                   onMouseLeave={() => setOpenDropdown(null)}
                 >
+                  <div className="px-4 py-1 text-xs font-semibold text-gray-500 uppercase">Security Modules</div>
+                  <Link href="/solutions/truclaw">
+                    <div className="px-4 py-2 hover:bg-primary hover:text-white cursor-pointer transition-colors font-semibold text-primary">🦀 TruClaw™ — AI Agent Governance</div>
+                  </Link>
+                  <div className="px-4 py-1 text-xs font-semibold text-gray-500 uppercase mt-2">Industry Solutions</div>
                   <Link href="/solutions/cybersecurity">
                     <div className="px-4 py-2 hover:bg-primary hover:text-white cursor-pointer transition-colors">Cybersecurity & Threat Intelligence</div>
                   </Link>
@@ -120,10 +125,6 @@ const Navigation = () => {
                   </Link>
                   <Link href="/solutions/government-federal">
                     <div className="px-4 py-2 hover:bg-primary hover:text-white cursor-pointer transition-colors">Government & Federal</div>
-                  </Link>
-                  <div className="px-4 py-1 text-xs font-semibold text-gray-500 uppercase mt-2">Security Modules</div>
-                  <Link href="/solutions/truclaw">
-                    <div className="px-4 py-2 hover:bg-primary hover:text-white cursor-pointer transition-colors font-semibold text-primary">🦀 TruClaw™ — AI Agent Governance</div>
                   </Link>
                 </div>
               )}
