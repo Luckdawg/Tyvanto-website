@@ -2049,3 +2049,10 @@
 - [ ] Add demo data export — Allow users to export agent discovery timeline and relationship graph as PDF/PNG reports for security audits and compliance documentation
 - [ ] Implement policy template library — Create pre-built governance policy templates (e.g., "Zero-Trust AI Agents", "Shadow AI Containment", "Privilege Escalation Prevention") that users can apply with one click
 - [ ] Add real-time webhook integration — Connect demo to actual TruContext API so it displays live agent discovery and policy enforcement data from customer environments
+
+## Blog Promotion Banner (Mar 26, 2026)
+- [x] Create blog promotion banner component with call-to-action
+- [x] Add banner to Home page highlighting latest AI agent risks post
+- [x] Style banner to match existing design system (purple/blue gradient)
+- [x] Test banner display and responsiveness
+- [x] Verify link to blog post works correctly
