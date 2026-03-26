@@ -2043,3 +2043,9 @@
 - [x] Write and pass comprehensive tests (10/10 passing)
 - [x] Add Capabilities Deck link to Resources menu (5/5 tests passing)
 - [x] Fix PDF download functionality after form submission (9/9 tests passing)
+
+
+## TruClaw Future Enhancements (Backlog)
+- [ ] Add demo data export — Allow users to export agent discovery timeline and relationship graph as PDF/PNG reports for security audits and compliance documentation
+- [ ] Implement policy template library — Create pre-built governance policy templates (e.g., "Zero-Trust AI Agents", "Shadow AI Containment", "Privilege Escalation Prevention") that users can apply with one click
+- [ ] Add real-time webhook integration — Connect demo to actual TruContext API so it displays live agent discovery and policy enforcement data from customer environments

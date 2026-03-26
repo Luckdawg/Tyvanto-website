@@ -11,12 +11,12 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     id: "age-of-agentic-ai-arrived",
-    title: "The Age of Agentic AI Has Arrived — And the Stakes Have Never Been Higher",
+    title: "The Age of Autonomous Agentic AI Has Arrived — And the Stakes Have Never Been Higher – Enter TruClaw",
     date: "February 2026",
     category: "CEO Corner",
-    excerpt: "The cybersecurity world is waking up to a new reality. Agentic AI — systems that can reason, plan, act, and adapt across multi-step workflows without waiting for human approval — has moved from buzzword to battlefield. Organizations that get it right will be the ones that built governance into the foundation, not bolted it on as an afterthought.",
+    excerpt: "The cybersecurity world is waking up to a new reality. Autonomous Agentic AI — systems that can reason, plan, act, and adapt across multi-step workflows without waiting for human approval at every turn — has moved from buzzword to battlefield. At Visium Technologies, we've been building toward this moment for years. TruContext isn't just our response to this shift — it's the architecture we designed for it. And with the launch of TruClaw™, our AI governance and control layer built directly into TruContext, we're closing the attack surface that agentic AI opens before adversaries can exploit it.",
     image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028236186/xQjDyzGyQaiYcNXT.png",
-    pdfUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028236186/NLuyxTJGNKdTszdA.pdf"
+    pdfUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028236186/d8D2GoF7wZHc9ZPzYZfLpT/The_Age_of_Agentic_AI_Has_Arrived_REVISED_68cbbec4.docx"
   },
   {
     id: "architectures-of-autonomy",
