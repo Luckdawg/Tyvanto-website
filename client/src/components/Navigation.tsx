@@ -121,6 +121,10 @@ const Navigation = () => {
                   <Link href="/solutions/government-federal">
                     <div className="px-4 py-2 hover:bg-primary hover:text-white cursor-pointer transition-colors">Government & Federal</div>
                   </Link>
+                  <div className="px-4 py-1 text-xs font-semibold text-gray-500 uppercase mt-2">Security Modules</div>
+                  <Link href="/solutions/truclaw">
+                    <div className="px-4 py-2 hover:bg-primary hover:text-white cursor-pointer transition-colors font-semibold text-primary">🦀 TruClaw™ — AI Agent Governance</div>
+                  </Link>
                 </div>
               )}
             </div>
