@@ -6,6 +6,8 @@ import {
   TrendingUp, CheckCircle2, AlertCircle, GitBranch, Database, Layers
 } from "lucide-react";
 import { SEOHead } from "@/components/SEOHead";
+import TruClawDemo from "@/components/TruClawDemo";
+import AgentGraphVisualization from "@/components/AgentGraphVisualization";
 
 export default function TruClaw() {
   return (
@@ -311,6 +313,32 @@ export default function TruClaw() {
               </CardContent>
             </Card>
           </div>
+        </div>
+      </section>
+
+      {/* Interactive Demo Section */}
+      <section className="py-16 bg-white">
+        <div className="container">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">See TruClaw in Action</h2>
+            <p className="text-xl text-gray-600">
+              Watch how TruClaw discovers shadow AI agents, visualizes their relationships, and enforces governance policies in real time.
+            </p>
+          </div>
+          <TruClawDemo />
+        </div>
+      </section>
+
+      {/* Agent Graph Visualization */}
+      <section className="py-16 gradient-purple-blue">
+        <div className="container">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">AI Agent Relationship Mapping</h2>
+            <p className="text-xl text-gray-600">
+              TruClaw visualizes the complex relationships and communication patterns between AI agents, exposing lateral movement paths and multi-agent attack chains.
+            </p>
+          </div>
+          <AgentGraphVisualization />
         </div>
       </section>
 
