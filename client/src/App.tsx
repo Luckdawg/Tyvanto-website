@@ -69,6 +69,12 @@ import PartnerLogin from "./pages/partner/PartnerLogin";
 // import PartnerApplications from "./pages/admin/PartnerApplications"; // TODO: Fix TypeScript errors
 // import PartnerDetails from "./pages/admin/PartnerDetails"; // TODO: Fix TypeScript errors
 import DealRegistration from "./pages/partner/DealRegistration";
+import Shop from "./pages/Shop";
+import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
+import OrderConfirmation from "./pages/OrderConfirmation";
+import Orders from "./pages/Orders";
+import AdminOrders from "./pages/AdminOrders";
 
 function Router() {
   const [location] = useLocation();
@@ -144,6 +150,15 @@ function Router() {
       {/* <Route path="/partners/resources" component={PartnerResources} /> */}
       {/* <Route path="/admin/partner-applications" component={PartnerApplications} /> */}
       {/* <Route path="/admin/partners/:id" component={PartnerDetails} /> */}
+
+      {/* E-Commerce Routes */}
+      <Route path="/shop" component={Shop} />
+      <Route path="/cart" component={Cart} />
+      <Route path="/checkout" component={Checkout} />
+      <Route path="/order-confirmation" component={OrderConfirmation} />
+      <Route path="/orders" component={Orders} />
+      <Route path="/admin/orders" component={AdminOrders} />
+
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>

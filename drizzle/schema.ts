@@ -1,4 +1,4 @@
-import { int, mysqlEnum, mysqlTable, text, timestamp, varchar } from "drizzle-orm/mysql-core";
+import { int, mysqlEnum, mysqlTable, text, timestamp, varchar, decimal } from "drizzle-orm/mysql-core";
 
 /**
  * Core user table backing auth flow.
@@ -145,6 +145,65 @@ export const blogLeads = mysqlTable("blog_leads", {
 
 export type BlogLead = typeof blogLeads.$inferSelect;
 export type NewBlogLead = typeof blogLeads.$inferInsert;
+
+// E-Commerce Tables
+export const products = mysqlTable("products", {
+  id: int("id").autoincrement().primaryKey(),
+  name: varchar("name", { length: 255 }).notNull(),
+  description: text("description"),
+  price: decimal("price", { precision: 10, scale: 2 }).notNull(),
+  imageUrl: varchar("imageUrl", { length: 500 }),
+  sku: varchar("sku", { length: 100 }).unique(),
+  stock: int("stock").default(999).notNull(),
+  active: int("active").default(1).notNull(),
+  stripeProductId: varchar("stripeProductId", { length: 100 }),
+  stripePriceId: varchar("stripePriceId", { length: 100 }),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type Product = typeof products.$inferSelect;
+export type InsertProduct = typeof products.$inferInsert;
+
+export const orders = mysqlTable("orders", {
+  id: int("id").autoincrement().primaryKey(),
+  orderNumber: varchar("orderNumber", { length: 50 }).notNull().unique(),
+  userId: int("userId"),
+  stripePaymentIntentId: varchar("stripePaymentIntentId", { length: 100 }).unique(),
+  stripeCustomerId: varchar("stripeCustomerId", { length: 100 }),
+  status: mysqlEnum("status", ["pending", "paid", "failed", "refunded"]).default("pending").notNull(),
+  subtotal: decimal("subtotal", { precision: 10, scale: 2 }).notNull(),
+  tax: decimal("tax", { precision: 10, scale: 2 }).default("0"),
+  shipping: decimal("shipping", { precision: 10, scale: 2 }).default("0"),
+  total: decimal("total", { precision: 10, scale: 2 }).notNull(),
+  customerName: varchar("customerName", { length: 255 }).notNull(),
+  customerEmail: varchar("customerEmail", { length: 320 }).notNull(),
+  customerPhone: varchar("customerPhone", { length: 20 }),
+  shippingStreet: varchar("shippingStreet", { length: 255 }),
+  shippingCity: varchar("shippingCity", { length: 100 }),
+  shippingState: varchar("shippingState", { length: 100 }),
+  shippingZip: varchar("shippingZip", { length: 20 }),
+  shippingCountry: varchar("shippingCountry", { length: 100 }),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type Order = typeof orders.$inferSelect;
+export type InsertOrder = typeof orders.$inferInsert;
+
+export const orderItems = mysqlTable("order_items", {
+  id: int("id").autoincrement().primaryKey(),
+  orderId: int("orderId").notNull(),
+  productId: int("productId").notNull(),
+  productName: varchar("productName", { length: 255 }).notNull(),
+  productPrice: decimal("productPrice", { precision: 10, scale: 2 }).notNull(),
+  quantity: int("quantity").notNull(),
+  lineTotal: decimal("lineTotal", { precision: 10, scale: 2 }).notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type OrderItem = typeof orderItems.$inferSelect;
+export type InsertOrderItem = typeof orderItems.$inferInsert;
 
 // TODO: Add your tables here
 // Partner Portal Tables

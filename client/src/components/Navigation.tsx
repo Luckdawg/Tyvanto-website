@@ -248,17 +248,29 @@ const Navigation = () => {
                 Pricing
               </Button>
             </Link>
-          </div>
 
-          {/* CTA Button */}
-          <div className="hidden lg:block">
-            <Link href="/demo">
-              <Button className="bg-primary hover:bg-primary/90 text-white">
-                Schedule a Demo
+            <Link href="/shop">
+              <Button variant="ghost" className="text-gray-700 hover:text-white hover:bg-primary">
+                Shop
               </Button>
             </Link>
           </div>
-        </div>
+
+          {/* Cart & CTA Button */}
+          <div className="hidden lg:flex items-center gap-2">
+            <Link href="/cart">
+              <Button variant="ghost" className="text-gray-700 hover:text-white hover:bg-primary">
+                🛒 Cart
+              </Button>
+            </Link>
+
+              <Link href="/demo">
+                <Button className="bg-primary hover:bg-primary/90 text-white">
+                  Schedule a Demo
+                </Button>
+              </Link>
+            </div>
+          </div>
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
@@ -370,6 +382,14 @@ const Navigation = () => {
 
               <Link href="/pricing" onClick={() => setMobileMenuOpen(false)}>
                 <Button variant="ghost" className="w-full justify-start text-base py-3">Pricing</Button>
+              </Link>
+
+              <Link href="/shop" onClick={() => setMobileMenuOpen(false)}>
+                <Button variant="ghost" className="w-full justify-start text-base py-3">Shop</Button>
+              </Link>
+
+              <Link href="/cart" onClick={() => setMobileMenuOpen(false)}>
+                <Button variant="ghost" className="w-full justify-start text-base py-3">🛒 Cart</Button>
               </Link>
 
               <Link href="/demo" onClick={() => setMobileMenuOpen(false)}>

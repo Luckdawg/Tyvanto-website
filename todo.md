@@ -2056,3 +2056,23 @@
 - [x] Style banner to match existing design system (purple/blue gradient)
 - [x] Test banner display and responsiveness
 - [x] Verify link to blog post works correctly
+
+
+## E-Commerce Integration with Stripe (Mar 26, 2026)
+- [ ] Set up Stripe integration with webdev_add_feature
+- [ ] Create product database schema (products table with name, price, description, image)
+- [ ] Seed 8 sample products in database
+- [ ] Build shopping cart functionality with localStorage persistence
+- [ ] Create cart page (/cart) with item management UI
+- [ ] Build checkout page (/checkout) with customer form
+- [ ] Implement Stripe Elements payment processing
+- [ ] Create order database schema and save orders after payment
+- [ ] Build order confirmation page with order number
+- [ ] Implement order confirmation email notifications
+- [ ] Create shop/products grid page with Add to Cart buttons
+- [ ] Add cart icon to header with item count badge
+- [ ] Create order history page for logged-in users
+- [ ] Create admin orders overview page
+- [ ] Write comprehensive e-commerce tests
+- [ ] Test with Stripe test cards
+- [ ] Deploy and provide testing instructions

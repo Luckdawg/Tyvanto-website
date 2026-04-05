@@ -78,6 +78,13 @@
       "when": 1770819604265,
       "tag": "0010_wild_silver_fox",
       "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "5",
+      "when": 1775412386883,
+      "tag": "0011_lonely_nextwave",
+      "breakpoints": true
     }
   ]
 }
