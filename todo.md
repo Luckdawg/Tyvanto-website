@@ -2076,3 +2076,11 @@
 - [ ] Write comprehensive e-commerce tests
 - [ ] Test with Stripe test cards
 - [ ] Deploy and provide testing instructions
+
+
+## Product Filtering System (Apr 6, 2026)
+- [x] Add category field to products table
+- [x] Create filter UI component with price range and category selectors
+- [x] Implement filtering logic in Shop page
+- [x] Update tRPC router with filtered product queries
+- [x] Test filtering functionality

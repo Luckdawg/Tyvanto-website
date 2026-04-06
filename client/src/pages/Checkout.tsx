@@ -55,8 +55,8 @@ export default function Checkout() {
         customerName: formData.customerName,
       });
 
-      if (result.sessionUrl) {
-        window.open(result.sessionUrl, '_blank');
+      if (result.url) {
+        window.open(result.url, '_blank');
       }
     } catch (err) {
       setError(

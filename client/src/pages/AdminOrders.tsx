@@ -201,8 +201,8 @@ function OrderDetails({
   orderId: number;
   onClose: () => void;
 }) {
-  const { data: order, isLoading } = trpc.ecommerce.getOrderAdmin.useQuery({
-    id: orderId,
+  const { data: order, isLoading } = trpc.ecommerce.getOrder.useQuery({
+    orderId: orderId,
   });
 
   if (isLoading) {

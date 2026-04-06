@@ -15,6 +15,9 @@ import {
 } from "../db-ecommerce";
 import Stripe from "stripe";
 import { ENV } from "../_core/env";
+import { getDb } from "../db";
+import { products } from "../../drizzle/schema";
+import { eq, gte, lte, inArray, or, like, asc, desc } from "drizzle-orm";
 
 const stripe = new Stripe(ENV.stripeSecretKey);
 
@@ -79,11 +82,18 @@ export const ecommerceRouter = router({
         metadata: {
           customer_name: input.customerName,
           customer_email: input.customerEmail,
-          user_id: ctx.user?.id.toString() || "guest",
         },
-      } as any);
+      });
 
-      return { sessionUrl: session.url };
+      return { url: session.url };
+    }),
+
+  // Get checkout session details
+  getCheckoutSession: publicProcedure
+    .input(z.object({ sessionId: z.string() }))
+    .query(async ({ input }) => {
+      const session = await stripe.checkout.sessions.retrieve(input.sessionId);
+      return session;
     }),
 
   // Get user's orders
@@ -92,20 +102,16 @@ export const ecommerceRouter = router({
   }),
 
   // Get order details
-  getOrder: protectedProcedure.input(z.object({ id: z.number() })).query(async ({ input, ctx }) => {
-    const order = await getOrderById(input.id);
-    if (!order) {
-      throw new Error("Order not found");
-    }
-
-    // Verify ownership
-    if (order.userId !== ctx.user.id) {
-      throw new Error("Unauthorized");
-    }
-
-    const items = await getOrderItems(order.id);
-    return { ...order, items };
-  }),
+  getOrder: protectedProcedure
+    .input(z.object({ orderId: z.number() }))
+    .query(async ({ input, ctx }) => {
+      const order = await getOrderById(input.orderId);
+      if (!order || order.userId !== ctx.user.id) {
+        throw new Error("Order not found");
+      }
+      const items = await getOrderItems(input.orderId);
+      return { ...order, items };
+    }),
 
   // Get all orders (admin only)
   getAllOrders: protectedProcedure.query(async ({ ctx }) => {
@@ -115,18 +121,13 @@ export const ecommerceRouter = router({
     return getAllOrders();
   }),
 
-  // Get order with items (admin)
-  getOrderAdmin: protectedProcedure.input(z.object({ id: z.number() })).query(async ({ input, ctx }) => {
-    if (ctx.user.role !== "admin") {
-      throw new Error("Unauthorized");
-    }
-
-    const order = await getOrderById(input.id);
-    if (!order) {
-      throw new Error("Order not found");
-    }
-
-    const items = await getOrderItems(order.id);
-    return { ...order, items };
-  }),
+  // Update order status (admin only)
+  updateOrderStatus: protectedProcedure
+    .input(z.object({ orderId: z.number(), status: z.enum(['pending', 'paid', 'failed', 'refunded']) }))
+    .mutation(async ({ input, ctx }) => {
+      if (ctx.user.role !== "admin") {
+        throw new Error("Unauthorized");
+      }
+      return updateOrderStatus(input.orderId, input.status);
+    }),
 });

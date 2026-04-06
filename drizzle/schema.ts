@@ -152,6 +152,7 @@ export const products = mysqlTable("products", {
   name: varchar("name", { length: 255 }).notNull(),
   description: text("description"),
   price: decimal("price", { precision: 10, scale: 2 }).notNull(),
+  category: varchar("category", { length: 100 }).default("general").notNull(),
   imageUrl: varchar("imageUrl", { length: 500 }),
   sku: varchar("sku", { length: 100 }).unique(),
   stock: int("stock").default(999).notNull(),
