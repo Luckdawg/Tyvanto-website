@@ -2121,3 +2121,13 @@
 - [x] Integrate overlay trigger button into PricingCalculator
 - [x] Show dynamic pricing comparison based on selected product and node count
 - [x] Write 13 unit tests for the overlay component — all passing
+
+## Fully Functional Shop + Cart + Stripe (Apr 6, 2026)
+- [ ] Create centralized product catalog at shared/products.ts
+- [ ] Update CartContext with full add/remove/quantity/clear operations
+- [ ] Update Shop page product cards with Add to Cart + Go to Cart buttons
+- [ ] Build fully functional Cart page with quantity selectors, line totals, order summary
+- [ ] Implement Stripe Checkout session creation via tRPC
+- [ ] Update navigation cart badge with live item count
+- [ ] Add order confirmation page with session details
+- [ ] Test full end-to-end flow with Stripe test card

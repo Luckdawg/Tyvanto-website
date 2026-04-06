@@ -14,10 +14,13 @@
  */
 
 import { useState, useEffect, useCallback } from 'react';
-import { Link } from 'wouter';
+import { Link, useLocation } from 'wouter';
 import { Button } from '@/components/ui/button';
 import PricingCalculator from '@/components/PricingCalculator';
 import RequestQuoteModal from '@/components/RequestQuoteModal';
+import { useCart } from '@/contexts/CartContext';
+import { toast } from 'sonner';
+import { ShoppingCart, CheckCircle } from 'lucide-react';
 import {
   Shield,
   Brain,
@@ -49,6 +52,8 @@ interface PricingTier {
 
 interface Product {
   id: string;
+  dbId: number;        // matches products.id in the database
+  basePrice: number;   // base monthly price in USD (cents)
   badge?: string;
   badgeColor?: string;
   icon: React.ReactNode;
@@ -76,6 +81,8 @@ interface Bundle {
 const products: Product[] = [
   {
     id: 'trucontext',
+    dbId: 1,
+    basePrice: 9999,
     icon: <Network className="h-8 w-8" />,
     name: 'TruContext Core Platform',
     tagline: 'Explainable AI Cybersecurity & Data Analytics',
@@ -100,6 +107,8 @@ const products: Product[] = [
   },
   {
     id: 'truclaw',
+    dbId: 2,
+    basePrice: 799,
     badge: 'Most Popular',
     badgeColor: 'cyan',
     icon: <Shield className="h-8 w-8" />,
@@ -127,6 +136,8 @@ const products: Product[] = [
   },
   {
     id: 'truinsight',
+    dbId: 3,
+    basePrice: 2499,
     icon: <Eye className="h-8 w-8" />,
     name: 'Tru-InSight Video Intelligence',
     tagline: 'Proactive Camera Intelligence with Vision AI',
@@ -151,6 +162,8 @@ const products: Product[] = [
   },
   {
     id: 'eli',
+    dbId: 4,
+    basePrice: 7500,
     icon: <BarChart3 className="h-8 w-8" />,
     name: 'ELI Unified Surveillance Intelligence',
     tagline: 'National & Regional Physical Security Command',
@@ -245,6 +258,9 @@ const costFeatures = [
 // ─── Component ────────────────────────────────────────────────────────────────
 
 export default function Shop() {
+  const { addItem, items } = useCart();
+  const [, navigate] = useLocation();
+  const [addedProducts, setAddedProducts] = useState<Set<string>>(new Set());
   const [expandedProduct, setExpandedProduct] = useState<string | null>(null);
   const [animatedNodes, setAnimatedNodes] = useState(0);
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
@@ -272,6 +288,23 @@ export default function Shop() {
     setPricingSnapshot(undefined);
     setQuoteModalOpen(true);
   }, []);
+
+  const handleAddToCart = useCallback((product: Product) => {
+    addItem({
+      productId: product.dbId,
+      name: product.name,
+      price: product.basePrice,
+      quantity: 1,
+    });
+    setAddedProducts((prev) => new Set(Array.from(prev).concat(product.id)));
+    toast.success(`${product.name} added to cart`, {
+      description: 'Click the cart icon in the nav to review your order.',
+      action: {
+        label: 'View Cart',
+        onClick: () => navigate('/cart'),
+      },
+    });
+  }, [addItem, navigate]);
 
   // Animate the node counter in the hero
   useEffect(() => {
@@ -529,25 +562,55 @@ export default function Shop() {
                     </ul>
                   )}
 
-                  {/* CTA */}
-                  <Link href={product.ctaHref}>
-                    <Button
-                      className={`w-full font-semibold ${
-                        product.highlight
-                          ? 'text-black'
-                          : 'border-cyan-500/40 text-cyan-300 hover:bg-cyan-500/10'
-                      }`}
-                      style={
-                        product.highlight
-                          ? { background: 'linear-gradient(135deg, #00E5FF, #0080FF)' }
-                          : {}
-                      }
-                      variant={product.highlight ? 'default' : 'outline'}
+                  {/* CTA — Add to Cart + secondary action */}
+                  <div className="space-y-2">
+                    {addedProducts.has(product.id) ? (
+                      <div className="flex gap-2">
+                        <Button
+                          className="flex-1 font-semibold border-green-500/40 text-green-400 hover:bg-green-500/10"
+                          variant="outline"
+                          disabled
+                        >
+                          <CheckCircle className="h-4 w-4 mr-2" />
+                          Added to Cart
+                        </Button>
+                        <Link href="/cart">
+                          <Button
+                            className="font-semibold text-black"
+                            style={{ background: 'linear-gradient(135deg, #00E5FF, #0080FF)' }}
+                          >
+                            <ShoppingCart className="h-4 w-4 mr-1" />
+                            View Cart
+                          </Button>
+                        </Link>
+                      </div>
+                    ) : (
+                      <Button
+                        onClick={() => handleAddToCart(product)}
+                        className={`w-full font-semibold ${
+                          product.highlight
+                            ? 'text-black'
+                            : 'border-cyan-500/40 text-cyan-300 hover:bg-cyan-500/10'
+                        }`}
+                        style={
+                          product.highlight
+                            ? { background: 'linear-gradient(135deg, #00E5FF, #0080FF)' }
+                            : {}
+                        }
+                        variant={product.highlight ? 'default' : 'outline'}
+                      >
+                        <ShoppingCart className="h-4 w-4 mr-2" />
+                        Add to Cart
+                        <ArrowRight className="h-4 w-4 ml-2" />
+                      </Button>
+                    )}
+                    <button
+                      onClick={() => openQuoteModal(product.id)}
+                      className="w-full text-center text-xs text-slate-500 hover:text-cyan-400 transition-colors py-1"
                     >
-                      {product.cta}
-                      <ArrowRight className="h-4 w-4 ml-2" />
-                    </Button>
-                  </Link>
+                      Need custom pricing? Request a quote →
+                    </button>
+                  </div>
                 </div>
               </div>
             ))}

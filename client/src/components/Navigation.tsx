@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X, ShoppingCart } from "lucide-react";
+import { useCart } from "@/contexts/CartContext";
 
 const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const { itemCount } = useCart();
 
   const toggleDropdown = (menu: string) => {
     setOpenDropdown(openDropdown === menu ? null : menu);
@@ -259,8 +261,14 @@ const Navigation = () => {
           {/* Cart & CTA Button */}
           <div className="hidden lg:flex items-center gap-2">
             <Link href="/cart">
-              <Button variant="ghost" className="text-gray-700 hover:text-white hover:bg-primary">
-                🛒 Cart
+              <Button variant="ghost" className="text-gray-700 hover:text-white hover:bg-primary relative flex items-center gap-1.5">
+                <ShoppingCart className="h-4 w-4" />
+                Cart
+                {itemCount > 0 && (
+                  <span className="absolute -top-1 -right-1 min-w-[18px] h-[18px] rounded-full text-[10px] font-bold flex items-center justify-center px-1" style={{ background: '#00E5FF', color: '#000' }}>
+                    {itemCount > 99 ? '99+' : itemCount}
+                  </span>
+                )}
               </Button>
             </Link>
 
@@ -389,7 +397,15 @@ const Navigation = () => {
               </Link>
 
               <Link href="/cart" onClick={() => setMobileMenuOpen(false)}>
-                <Button variant="ghost" className="w-full justify-start text-base py-3">🛒 Cart</Button>
+                <Button variant="ghost" className="w-full justify-start text-base py-3 relative">
+                  <ShoppingCart className="h-4 w-4 mr-2" />
+                  Cart
+                  {itemCount > 0 && (
+                    <span className="ml-2 min-w-[20px] h-[20px] rounded-full text-[11px] font-bold flex items-center justify-center px-1" style={{ background: '#00E5FF', color: '#000' }}>
+                      {itemCount > 99 ? '99+' : itemCount}
+                    </span>
+                  )}
+                </Button>
               </Link>
 
               <Link href="/demo" onClick={() => setMobileMenuOpen(false)}>
