@@ -2131,3 +2131,13 @@
 - [ ] Update navigation cart badge with live item count
 - [ ] Add order confirmation page with session details
 - [ ] Test full end-to-end flow with Stripe test card
+
+## Annual vs Monthly Billing Toggle (Apr 6, 2026)
+- [x] Add billingCycle state (monthly | annual) to PricingCalculator
+- [x] Add toggle UI above calculator with monthly/annual switch and discount badge
+- [x] Apply 15% annual discount for Starter/Growth tiers, 20% for Enterprise/Bundle
+- [x] Show annual savings amount prominently in cost summary
+- [x] Show per-month equivalent when annual is selected
+- [x] Update breakdown panel to show discounted rates
+- [x] Update onRequestQuote snapshot to include billing cycle
+- [x] Write tests for toggle behavior and discount calculations (32 tests passing)

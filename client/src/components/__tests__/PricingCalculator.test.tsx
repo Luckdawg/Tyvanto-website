@@ -2,6 +2,7 @@
  * PricingCalculator.test.tsx
  * Tests for the aligned pricing tiers in PricingCalculator.
  * Verifies that calculator output matches Core Offerings card pricing exactly.
+ * Also covers the annual/monthly billing toggle and discount logic.
  */
 
 import React from 'react';
@@ -140,11 +141,6 @@ describe('PricingCalculator — Pricing Alignment', () => {
     expect(screen.getByText(/mirror the Core Offerings pricing tiers/i)).toBeInTheDocument();
   });
 
-  it('shows "Estimated Monthly Cost" label in the right panel', () => {
-    renderCalculator();
-    expect(screen.getByText(/Estimated Monthly Cost/i)).toBeInTheDocument();
-  });
-
   it('node slider is present for TruContext', () => {
     renderCalculator();
     const sliders = document.querySelectorAll('input[type="range"]');
@@ -170,5 +166,105 @@ describe('PricingCalculator — Pricing Alignment', () => {
     const slider = document.querySelector('input[type="range"]') as HTMLInputElement;
     act(() => fireEvent.change(slider, { target: { value: '60' } }));
     expect(screen.getByText(/Request Enterprise Quote/i)).toBeInTheDocument();
+  });
+});
+
+// ─── Billing Toggle Tests ──────────────────────────────────────────────────────
+
+describe('PricingCalculator — Annual/Monthly Billing Toggle', () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
+  it('renders the Monthly and Annual toggle buttons', () => {
+    renderCalculator();
+    expect(screen.getByRole('button', { name: /Monthly/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Annual/i })).toBeInTheDocument();
+  });
+
+  it('defaults to Monthly billing — shows "Estimated Monthly Cost" label', () => {
+    renderCalculator();
+    expect(screen.getByText(/Estimated Monthly Cost/i)).toBeInTheDocument();
+  });
+
+  it('Annual toggle button shows the discount badge (Save 15%)', () => {
+    renderCalculator();
+    // The badge may appear multiple times (toggle + hint text)
+    expect(screen.getAllByText(/Save 15%/i).length).toBeGreaterThan(0);
+  });
+
+  it('switching to Annual changes the cost label to "Estimated Annual Cost"', () => {
+    renderCalculator();
+    const annualBtn = screen.getByRole('button', { name: /Annual/i });
+    act(() => fireEvent.click(annualBtn));
+    expect(screen.getByText(/Estimated Annual Cost/i)).toBeInTheDocument();
+  });
+
+  it('switching to Annual shows the savings banner with "Annual billing saves you"', () => {
+    renderCalculator();
+    const annualBtn = screen.getByRole('button', { name: /Annual/i });
+    act(() => fireEvent.click(annualBtn));
+    expect(screen.getByText(/Annual billing saves you/i)).toBeInTheDocument();
+  });
+
+  it('switching to Annual shows "per month (billed annually)" sub-label', () => {
+    renderCalculator();
+    const annualBtn = screen.getByRole('button', { name: /Annual/i });
+    act(() => fireEvent.click(annualBtn));
+    expect(screen.getByText(/per month \(billed annually\)/i)).toBeInTheDocument();
+  });
+
+  it('switching back to Monthly restores "per month" label', () => {
+    renderCalculator();
+    const annualBtn = screen.getByRole('button', { name: /Annual/i });
+    act(() => fireEvent.click(annualBtn));
+    const monthlyBtn = screen.getByRole('button', { name: /Monthly/i });
+    act(() => fireEvent.click(monthlyBtn));
+    expect(screen.getByText(/^per month$/i)).toBeInTheDocument();
+  });
+
+  it('Full Suite toggle shows "Save 20%" discount badge', () => {
+    renderCalculator();
+    const bundleBtns = screen.getAllByText(/Full Suite/i);
+    act(() => fireEvent.click(bundleBtns[0]));
+    expect(screen.getAllByText(/Save 20%/i).length).toBeGreaterThan(0);
+  });
+
+  it('onRequestQuote is called with billingCycle: "monthly" by default', () => {
+    renderCalculator();
+    const quoteBtns = screen.getAllByText(/Get Custom Quote/i);
+    act(() => fireEvent.click(quoteBtns[0]));
+    expect(mockOnRequestQuote).toHaveBeenCalledWith(
+      expect.objectContaining({ billingCycle: 'monthly' })
+    );
+  });
+
+  it('onRequestQuote is called with billingCycle: "annual" after switching to Annual', () => {
+    renderCalculator();
+    const annualBtn = screen.getByRole('button', { name: /Annual/i });
+    act(() => fireEvent.click(annualBtn));
+    const quoteBtns = screen.getAllByText(/Get Custom Quote/i);
+    act(() => fireEvent.click(quoteBtns[0]));
+    expect(mockOnRequestQuote).toHaveBeenCalledWith(
+      expect.objectContaining({ billingCycle: 'annual' })
+    );
+  });
+
+  it('annual billing shows a hint about saving with annual on monthly view', () => {
+    renderCalculator();
+    // Monthly view should show the "save X% with annual" hint
+    expect(screen.getByText(/save 15% with annual/i)).toBeInTheDocument();
+  });
+
+  it('breakdown total row shows discounted amount when annual is selected', () => {
+    renderCalculator();
+    // Switch to annual
+    const annualBtn = screen.getByRole('button', { name: /Annual/i });
+    act(() => fireEvent.click(annualBtn));
+    // Open breakdown
+    const toggleBtn = screen.getByText(/Show cost breakdown/i);
+    act(() => fireEvent.click(toggleBtn));
+    // Should show "Annual total (billed once)" line
+    expect(screen.getByText(/Annual total \(billed once\)/i)).toBeInTheDocument();
   });
 });

@@ -270,6 +270,7 @@ export default function Shop() {
     estimatedNodes: number;
     estimatedAgents: number;
     estimatedMonthlyBudget: string;
+    billingCycle?: 'monthly' | 'annual';
   } | undefined>(undefined);
 
   const handleRequestQuote = useCallback((snapshot: {
@@ -277,6 +278,7 @@ export default function Shop() {
     estimatedNodes: number;
     estimatedAgents: number;
     estimatedMonthlyBudget: string;
+    billingCycle?: 'monthly' | 'annual';
   }) => {
     setPricingSnapshot(snapshot);
     setQuoteDefaultProduct(snapshot.productInterest);

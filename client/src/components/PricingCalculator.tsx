@@ -32,6 +32,8 @@ import {
   Package,
   BarChart2,
   Phone,
+  CalendarDays,
+  Sparkles,
 } from 'lucide-react';
 import CompetitorComparisonOverlay from './CompetitorComparisonOverlay';
 
@@ -214,12 +216,24 @@ function formatCurrency(n: number): string {
 
 // ─── Props ────────────────────────────────────────────────────────────────────
 
+// Annual discount rates per product tier
+const ANNUAL_DISCOUNT: Record<string, number> = {
+  trucontext: 0.15,   // 15% off for Starter/Growth
+  truclaw:    0.15,   // 15% off
+  truinsight: 0.15,   // 15% off
+  eli:        0.15,   // 15% off
+  bundle:     0.20,   // 20% off for Full Suite
+};
+
+type BillingCycle = 'monthly' | 'annual';
+
 interface PricingCalculatorProps {
   onRequestQuote: (snapshot: {
     productInterest: string;
     estimatedNodes: number;
     estimatedAgents: number;
     estimatedMonthlyBudget: string;
+    billingCycle: BillingCycle;
   }) => void;
 }
 
@@ -231,6 +245,7 @@ export default function PricingCalculator({ onRequestQuote }: PricingCalculatorP
   const [agents, setAgents] = useState<number>(10);
   const [showBreakdown, setShowBreakdown] = useState<boolean>(false);
   const [showComparison, setShowComparison] = useState<boolean>(false);
+  const [billingCycle, setBillingCycle] = useState<BillingCycle>('monthly');
 
   const nodes = useMemo(() => sliderToNodes(nodeSlider), [nodeSlider]);
 
@@ -277,12 +292,30 @@ export default function PricingCalculator({ onRequestQuote }: PricingCalculatorP
     };
   }, [product, nodes, agents]);
 
+  // Annual discount
+  const annualDiscountRate = ANNUAL_DISCOUNT[selectedProduct] ?? 0.15;
+  const effectiveMonthly = useMemo(() => {
+    if (billingCycle === 'annual' && !breakdown.isCustom) {
+      return Math.round(breakdown.total * (1 - annualDiscountRate));
+    }
+    return breakdown.total;
+  }, [billingCycle, breakdown.total, breakdown.isCustom, annualDiscountRate]);
+
+  const annualSavings = useMemo(() => {
+    if (billingCycle === 'annual' && !breakdown.isCustom) {
+      return Math.round(breakdown.total * annualDiscountRate * 12);
+    }
+    return 0;
+  }, [billingCycle, breakdown.total, breakdown.isCustom, annualDiscountRate]);
+
+  const annualTotal = effectiveMonthly * 12;
+
   // Comparison: what legacy SIEM/SOC tooling would cost at this scale
   const legacyCost = useMemo(() => {
     return Math.round(5000 + nodes * 0.25 + agents * 500);
   }, [nodes, agents]);
 
-  const savings = Math.max(0, legacyCost - breakdown.total);
+  const savings = Math.max(0, legacyCost - effectiveMonthly);
   const savingsPct = legacyCost > 0 ? Math.round((savings / legacyCost) * 100) : 0;
 
   const handleRequestQuote = useCallback(() => {
@@ -292,9 +325,10 @@ export default function PricingCalculator({ onRequestQuote }: PricingCalculatorP
       estimatedAgents: agents,
       estimatedMonthlyBudget: breakdown.isCustom
         ? 'Enterprise / Custom'
-        : `${formatCurrency(breakdown.total)}/mo`,
+        : `${formatCurrency(effectiveMonthly)}/mo (${billingCycle})`,
+      billingCycle,
     });
-  }, [selectedProduct, nodes, agents, breakdown.total, breakdown.isCustom, onRequestQuote]);
+  }, [selectedProduct, nodes, agents, effectiveMonthly, breakdown.isCustom, billingCycle, onRequestQuote]);
 
   // Show "Contact Sales" for enterprise-scale configs
   const showCustomPricing = breakdown.isCustom;
@@ -335,6 +369,52 @@ export default function PricingCalculator({ onRequestQuote }: PricingCalculatorP
             Adjust the sliders to match your environment. Pricing mirrors the Core Offerings
             cards exactly — no hidden fees, no surprise overages.
           </p>
+        </div>
+
+        {/* ── Billing Cycle Toggle ── */}
+        <div className="flex justify-center mb-8">
+          <div
+            className="relative inline-flex items-center rounded-full p-1 gap-1"
+            style={{
+              background: 'rgba(255,255,255,0.05)',
+              border: '1px solid rgba(255,255,255,0.1)',
+            }}
+          >
+            <button
+              onClick={() => setBillingCycle('monthly')}
+              className="relative flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300"
+              style={{
+                background: billingCycle === 'monthly' ? 'rgba(255,255,255,0.12)' : 'transparent',
+                color: billingCycle === 'monthly' ? '#fff' : '#64748b',
+                boxShadow: billingCycle === 'monthly' ? '0 2px 8px rgba(0,0,0,0.3)' : 'none',
+              }}
+            >
+              <CalendarDays className="h-4 w-4" />
+              Monthly
+            </button>
+            <button
+              onClick={() => setBillingCycle('annual')}
+              className="relative flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300"
+              style={{
+                background: billingCycle === 'annual' ? 'rgba(0,229,255,0.15)' : 'transparent',
+                color: billingCycle === 'annual' ? '#00E5FF' : '#64748b',
+                boxShadow: billingCycle === 'annual' ? '0 2px 8px rgba(0,229,255,0.2)' : 'none',
+                border: billingCycle === 'annual' ? '1px solid rgba(0,229,255,0.3)' : '1px solid transparent',
+              }}
+            >
+              <Sparkles className="h-4 w-4" />
+              Annual
+              <span
+                className="ml-1 px-2 py-0.5 rounded-full text-[10px] font-bold"
+                style={{
+                  background: billingCycle === 'annual' ? '#00E5FF' : 'rgba(0,229,255,0.2)',
+                  color: billingCycle === 'annual' ? '#000' : '#00E5FF',
+                }}
+              >
+                Save {selectedProduct === 'bundle' ? '20%' : '15%'}
+              </span>
+            </button>
+          </div>
         </div>
 
         <div className="max-w-5xl mx-auto">
@@ -537,9 +617,26 @@ export default function PricingCalculator({ onRequestQuote }: PricingCalculatorP
                 className="lg:col-span-2 p-8 flex flex-col"
                 style={{ background: 'rgba(0,0,0,0.2)' }}
               >
-                <h3 className="text-slate-400 text-sm font-semibold uppercase tracking-wide mb-6">
-                  Estimated Monthly Cost
+                <h3 className="text-slate-400 text-sm font-semibold uppercase tracking-wide mb-4">
+                  {billingCycle === 'annual' ? 'Estimated Annual Cost' : 'Estimated Monthly Cost'}
                 </h3>
+
+                {/* Annual savings banner */}
+                {billingCycle === 'annual' && !breakdown.isCustom && (
+                  <div
+                    className="flex items-center gap-2 rounded-lg px-3 py-2 mb-4 text-xs font-semibold"
+                    style={{
+                      background: 'rgba(0,229,255,0.08)',
+                      border: '1px solid rgba(0,229,255,0.2)',
+                      color: '#00E5FF',
+                    }}
+                  >
+                    <Sparkles className="h-3.5 w-3.5 flex-shrink-0" />
+                    Annual billing saves you{' '}
+                    <span className="font-black">{formatCurrency(annualSavings)}/yr</span>
+                    {' '}({Math.round(annualDiscountRate * 100)}% off)
+                  </div>
+                )}
 
                 {/* Total — or Contact Sales for enterprise */}
                 <div className="mb-6">
@@ -563,18 +660,32 @@ export default function PricingCalculator({ onRequestQuote }: PricingCalculatorP
                     </div>
                   ) : (
                     <div>
+                      {/* Monthly price — struck through when annual is selected */}
+                      {billingCycle === 'annual' && (
+                        <div className="text-slate-600 text-lg line-through tabular-nums mb-1">
+                          {formatCurrency(breakdown.total)}/mo
+                        </div>
+                      )}
                       <div
                         className="text-5xl font-black tabular-nums mb-1"
                         style={{ color: product.color }}
                       >
-                        {formatCurrency(breakdown.total)}
+                        {formatCurrency(effectiveMonthly)}
                       </div>
-                      <div className="text-slate-500 text-sm">per month</div>
+                      <div className="text-slate-500 text-sm">
+                        {billingCycle === 'annual' ? 'per month (billed annually)' : 'per month'}
+                      </div>
                       <div className="text-slate-400 text-sm mt-1">
-                        {formatCurrency(breakdown.annualTotal)}{' '}
+                        {formatCurrency(annualTotal)}{' '}
                         <span className="text-slate-600">/ year</span>
-                        {' '}
-                        <span className="text-emerald-500 text-xs">(save 15–20% annual)</span>
+                        {billingCycle === 'monthly' && (
+                          <>
+                            {' '}
+                            <span className="text-cyan-500 text-xs">
+                              (save {selectedProduct === 'bundle' ? '20%' : '15%'} with annual)
+                            </span>
+                          </>
+                        )}
                       </div>
                     </div>
                   )}
@@ -650,9 +761,29 @@ export default function PricingCalculator({ onRequestQuote }: PricingCalculatorP
                       className="flex justify-between pt-2 mt-2 font-semibold"
                       style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}
                     >
-                      <span className="text-slate-300">Total</span>
-                      <span style={{ color: product.color }}>{formatCurrency(breakdown.total)}</span>
+                      <span className="text-slate-300">Total / month</span>
+                      <span style={{ color: product.color }}>
+                        {billingCycle === 'annual' ? (
+                          <>
+                            <span className="line-through text-slate-600 mr-1.5 text-sm font-normal">
+                              {formatCurrency(breakdown.total)}
+                            </span>
+                            {formatCurrency(effectiveMonthly)}
+                          </>
+                        ) : (
+                          formatCurrency(breakdown.total)
+                        )}
+                      </span>
                     </div>
+                    {billingCycle === 'annual' && (
+                      <div
+                        className="flex justify-between text-xs pt-1"
+                        style={{ color: '#00E5FF' }}
+                      >
+                        <span>Annual total (billed once)</span>
+                        <span className="font-mono font-semibold">{formatCurrency(annualTotal)}</span>
+                      </div>
+                    )}
                   </div>
                 )}
 

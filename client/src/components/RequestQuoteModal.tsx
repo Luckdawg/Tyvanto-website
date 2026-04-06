@@ -22,6 +22,7 @@ interface PricingSnapshot {
   estimatedNodes?: number;
   estimatedAgents?: number;
   estimatedMonthlyBudget?: string;
+  billingCycle?: 'monthly' | 'annual';
 }
 
 interface RequestQuoteModalProps {
@@ -79,11 +80,13 @@ export default function RequestQuoteModal({
 }: RequestQuoteModalProps) {
   const buildDefaultUseCase = () => {
     if (!pricingSnapshot) return '';
+    const billingLabel = pricingSnapshot.billingCycle === 'annual' ? 'Annual (billed yearly)' : 'Monthly';
     return `From pricing calculator:
 - Product: ${pricingSnapshot.productInterest ?? 'N/A'}
 - Estimated nodes: ${(pricingSnapshot.estimatedNodes ?? 0).toLocaleString()}
 - Estimated agents: ${pricingSnapshot.estimatedAgents ?? 0}
 - Estimated budget: ${pricingSnapshot.estimatedMonthlyBudget ?? 'N/A'}
+- Preferred billing: ${billingLabel}
 
 Additional requirements: `;
   };
