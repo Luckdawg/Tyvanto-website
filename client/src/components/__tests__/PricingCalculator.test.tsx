@@ -24,8 +24,9 @@ describe('PricingCalculator', () => {
 
   it('renders product selection buttons', () => {
     render(<PricingCalculator onRequestQuote={mockOnRequestQuote} />);
-    expect(screen.getByText(/TruContext/i)).toBeTruthy();
-    expect(screen.getByText(/TruClaw/i)).toBeTruthy();
+    // Multiple TruContext elements exist (label + description), use getAllByText
+    expect(screen.getAllByText(/TruContext/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/TruClaw/i).length).toBeGreaterThan(0);
   });
 
   it('renders node and agent sliders', () => {
