@@ -1,4 +1,5 @@
-import { int, mysqlEnum, mysqlTable, text, timestamp, varchar, decimal } from "drizzle-orm/mysql-core";
+import { int, mysqlEnum, mysqlTable, text, timestamp, varchar, decimal, boolean } from "drizzle-orm/mysql-core";
+import { sql } from "drizzle-orm";
 
 /**
  * Core user table backing auth flow.
@@ -228,3 +229,32 @@ export {
   type PartnerMdfClaim,
   type InsertPartnerMdfClaim,
 } from "./partner-schema";
+
+// ─── Quote Leads Table ────────────────────────────────────────────────────────
+// Stores "Request a Quote" form submissions from the /shop page.
+// Linked to the pricing calculator so estimated values are captured alongside contact info.
+export const quoteLeads = mysqlTable("quote_leads", {
+  id: int("id").autoincrement().primaryKey(),
+  // Contact information
+  firstName: varchar("firstName", { length: 100 }).notNull(),
+  lastName: varchar("lastName", { length: 100 }).notNull(),
+  email: varchar("email", { length: 320 }).notNull(),
+  company: varchar("company", { length: 255 }).notNull(),
+  jobTitle: varchar("jobTitle", { length: 255 }),
+  phone: varchar("phone", { length: 50 }),
+  // Product interest
+  productInterest: varchar("productInterest", { length: 100 }).notNull(), // e.g. "trucontext", "truclaw", "bundle"
+  useCase: text("useCase"),
+  // Pricing calculator snapshot (what the user configured)
+  estimatedNodes: int("estimatedNodes"),
+  estimatedAgents: int("estimatedAgents"),
+  estimatedMonthlyBudget: varchar("estimatedMonthlyBudget", { length: 50 }),
+  // Status tracking
+  status: mysqlEnum("status", ["new", "contacted", "qualified", "closed"]).default("new").notNull(),
+  notes: text("notes"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type QuoteLead = typeof quoteLeads.$inferSelect;
+export type InsertQuoteLead = typeof quoteLeads.$inferInsert;

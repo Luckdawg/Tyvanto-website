@@ -2094,3 +2094,23 @@
 - [x] Build final CTA section
 - [x] Add SEO schema.org markup and meta tags
 - [x] Test responsiveness and visual quality
+
+## Quote Form & Pricing Calculator (Apr 6, 2026)
+- [x] Build live pricing calculator widget with real-time cost estimation sliders
+- [x] Build Request a Quote modal form with validation
+- [x] Create tRPC backend procedure for quote submissions
+- [x] Store quote leads in database
+- [x] Send owner notification on new quote submission
+- [x] Integrate both features into Shop.tsx
+- [x] Wire up all CTA buttons to open quote modal
+- [x] Test all interactions and form validation
+
+## Request a Quote Modal + Live Pricing Calculator (Apr 6, 2026)
+- [x] Build RequestQuoteModal component with name, company, email, product, use case fields
+- [x] Wire modal to owner notification via tRPC mutation
+- [x] Build PricingCalculator component with product selector and usage sliders
+- [x] Implement real-time cost estimation logic for all 4 products
+- [x] Integrate both components into Shop.tsx
+- [x] Test form submission and calculator interactions
+- [x] Write vitest tests for RequestQuoteModal (9/9 passing)
+- [x] Configure vitest with React JSX transform and jsdom environment

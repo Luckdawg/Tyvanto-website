@@ -13,9 +13,11 @@
  * - Removed old filter sidebar (replaced with enterprise pricing layout)
  */
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'wouter';
 import { Button } from '@/components/ui/button';
+import PricingCalculator from '@/components/PricingCalculator';
+import RequestQuoteModal from '@/components/RequestQuoteModal';
 import {
   Shield,
   Brain,
@@ -245,6 +247,31 @@ const costFeatures = [
 export default function Shop() {
   const [expandedProduct, setExpandedProduct] = useState<string | null>(null);
   const [animatedNodes, setAnimatedNodes] = useState(0);
+  const [quoteModalOpen, setQuoteModalOpen] = useState(false);
+  const [quoteDefaultProduct, setQuoteDefaultProduct] = useState<string>('');
+  const [pricingSnapshot, setPricingSnapshot] = useState<{
+    productInterest: string;
+    estimatedNodes: number;
+    estimatedAgents: number;
+    estimatedMonthlyBudget: string;
+  } | undefined>(undefined);
+
+  const handleRequestQuote = useCallback((snapshot: {
+    productInterest: string;
+    estimatedNodes: number;
+    estimatedAgents: number;
+    estimatedMonthlyBudget: string;
+  }) => {
+    setPricingSnapshot(snapshot);
+    setQuoteDefaultProduct(snapshot.productInterest);
+    setQuoteModalOpen(true);
+  }, []);
+
+  const openQuoteModal = useCallback((productId?: string) => {
+    setQuoteDefaultProduct(productId ?? '');
+    setPricingSnapshot(undefined);
+    setQuoteModalOpen(true);
+  }, []);
 
   // Animate the node counter in the hero
   useEffect(() => {
@@ -688,7 +715,12 @@ export default function Shop() {
       </section>
 
       {/* ══════════════════════════════════════════════════════════════════════
-          5. FINAL CTA SECTION
+          5. LIVE PRICING CALCULATOR
+      ══════════════════════════════════════════════════════════════════════ */}
+      <PricingCalculator onRequestQuote={handleRequestQuote} />
+
+      {/* ══════════════════════════════════════════════════════════════════════
+          6. FINAL CTA SECTION
       ══════════════════════════════════════════════════════════════════════ */}
       <section className="py-24 px-4">
         <div className="container max-w-4xl mx-auto text-center">
@@ -725,16 +757,15 @@ export default function Shop() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/demo">
-                  <Button
-                    size="lg"
-                    className="text-black font-bold px-10 py-4 text-base"
-                    style={{ background: 'linear-gradient(135deg, #00E5FF, #0080FF)' }}
-                  >
-                    Get Custom Quote
-                    <ArrowRight className="h-5 w-5 ml-2" />
-                  </Button>
-                </Link>
+                <Button
+                  size="lg"
+                  onClick={() => openQuoteModal()}
+                  className="text-black font-bold px-10 py-4 text-base"
+                  style={{ background: 'linear-gradient(135deg, #00E5FF, #0080FF)' }}
+                >
+                  Get Custom Quote
+                  <ArrowRight className="h-5 w-5 ml-2" />
+                </Button>
                 <Link href="/demo">
                   <Button
                     size="lg"
@@ -754,6 +785,14 @@ export default function Shop() {
           </div>
         </div>
       </section>
+
+      {/* ── Request a Quote Modal ── */}
+      <RequestQuoteModal
+        open={quoteModalOpen}
+        onClose={() => setQuoteModalOpen(false)}
+        defaultProduct={quoteDefaultProduct}
+        pricingSnapshot={pricingSnapshot}
+      />
     </div>
   );
 }

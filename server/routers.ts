@@ -20,6 +20,7 @@ import { adminWorkflowsRouter } from "./routers/admin-workflows";
 import { analyticsRouter } from "./routers/analytics";
 import { analyticsExportRouter } from "./routers/analytics-export";
 import { ecommerceRouter } from "./routers/ecommerce";
+import { quoteRouter } from "./routers/quote";
 
 export const appRouter = router({
     // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly
@@ -86,6 +87,9 @@ export const appRouter = router({
 
   // E-Commerce API (products, checkout, orders)
   ecommerce: ecommerceRouter,
+
+  // Quote Leads API (Request a Quote form from /shop page)
+  quote: quoteRouter,
 
   // TODO: add feature routers here, e.g.
   // todo: router({
