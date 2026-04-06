@@ -2114,3 +2114,10 @@
 - [x] Test form submission and calculator interactions
 - [x] Write vitest tests for RequestQuoteModal (9/9 passing)
 - [x] Configure vitest with React JSX transform and jsdom environment
+
+## Competitor Comparison Overlay (Apr 6, 2026)
+- [x] Build CompetitorComparisonOverlay component with side-by-side comparison table
+- [x] Add competitor data for Splunk, CrowdStrike, Palo Alto, and IBM QRadar
+- [x] Integrate overlay trigger button into PricingCalculator
+- [x] Show dynamic pricing comparison based on selected product and node count
+- [x] Write 13 unit tests for the overlay component — all passing

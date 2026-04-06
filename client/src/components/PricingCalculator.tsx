@@ -27,7 +27,9 @@ import {
   Eye,
   Brain,
   Package,
+  BarChart2,
 } from 'lucide-react';
+import CompetitorComparisonOverlay from './CompetitorComparisonOverlay';
 
 // ─── Pricing Config ───────────────────────────────────────────────────────────
 
@@ -142,6 +144,7 @@ export default function PricingCalculator({ onRequestQuote }: PricingCalculatorP
   const [nodeSlider, setNodeSlider] = useState<number>(40); // ~10K nodes default
   const [agents, setAgents] = useState<number>(10);
   const [showBreakdown, setShowBreakdown] = useState<boolean>(false);
+  const [showComparison, setShowComparison] = useState<boolean>(false);
 
   const nodes = useMemo(() => sliderToNodes(nodeSlider), [nodeSlider]);
 
@@ -456,6 +459,18 @@ export default function PricingCalculator({ onRequestQuote }: PricingCalculatorP
                     Get Custom Quote
                     <ArrowRight className="h-4 w-4 ml-2" />
                   </Button>
+                  <button
+                    onClick={() => setShowComparison(true)}
+                    className="w-full flex items-center justify-center gap-2 rounded-xl py-2.5 text-sm font-semibold transition-all duration-200 hover:bg-white/10"
+                    style={{
+                      border: `1px solid ${product.color}40`,
+                      color: product.color,
+                      background: `${product.color}08`,
+                    }}
+                  >
+                    <BarChart2 className="h-4 w-4" />
+                    Compare vs. Competitors
+                  </button>
                   <p className="text-center text-slate-600 text-xs">
                     No commitment required · Response within 1 business day
                   </p>
@@ -471,6 +486,19 @@ export default function PricingCalculator({ onRequestQuote }: PricingCalculatorP
           </p>
         </div>
       </div>
+
+      {/* Competitor Comparison Overlay */}
+      <CompetitorComparisonOverlay
+        open={showComparison}
+        onClose={() => setShowComparison(false)}
+        selectedProduct={selectedProduct}
+        productLabel={product.label}
+        productColor={product.color}
+        visiumMonthlyCost={breakdown.total}
+        nodes={nodes}
+        agents={agents}
+        onRequestQuote={handleRequestQuote}
+      />
     </section>
   );
 }
