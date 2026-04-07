@@ -2141,3 +2141,18 @@
 - [x] Update breakdown panel to show discounted rates
 - [x] Update onRequestQuote snapshot to include billing cycle
 - [x] Write tests for toggle behavior and discount calculations (32 tests passing)
+
+## Industry Solutions & Vertical Platforms Section on /shop (Apr 7, 2026)
+- [x] Audit Shop.tsx structure: locate bundle section end and pricing calculator anchor
+- [x] Build IndustrySolutionsSection component with 9 product cards
+- [x] Match card design: same border, padding, radius, background, hover state as core platform cards
+- [x] Add vertical badge pills above each product name
+- [x] Add 4 expanded feature bullets per card
+- [x] Add "Starting at $X/mo" pricing row with annual savings note
+- [x] Add "Get Custom Quote" CTA button linking to /demo
+- [x] Section label: "Vertical Solutions", h2: "Industry Solutions & Vertical Platforms"
+- [x] Add subheading description paragraph
+- [x] Responsive grid: 3-col desktop (≥1200px), 2-col tablet (768–1199px), 1-col mobile (≤767px)
+- [x] Insert section between bundle packages and #pricing-calculator anchor
+- [x] Preserve all existing content, anchors, and layout
+- [x] Write tests for new section (43 tests passing)

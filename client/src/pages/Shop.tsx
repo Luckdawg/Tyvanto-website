@@ -780,7 +780,565 @@ export default function Shop() {
       </section>
 
       {/* ══════════════════════════════════════════════════════════════════════
-          5. LIVE PRICING CALCULATOR
+          5. INDUSTRY SOLUTIONS & VERTICAL PLATFORMS
+      ══════════════════════════════════════════════════════════════════════ */}
+      <section className="py-20 px-4" id="industry-solutions">
+        <div className="container max-w-7xl mx-auto">
+          {/* Section header */}
+          <div className="text-center mb-14">
+            <p className="text-cyan-400 text-sm font-semibold uppercase tracking-widest mb-3">
+              Vertical Solutions
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Industry Solutions &amp; Vertical Platforms
+            </h2>
+            <p className="text-slate-400 max-w-3xl mx-auto">
+              Purpose-built applications powered by TruContext™ intelligence — deployable standalone
+              or integrated with the full Visium platform suite. Each solution is available for
+              custom scoping, white-label deployment, and government procurement vehicles.
+            </p>
+          </div>
+
+          {/* 9-card responsive grid: 3-col ≥1200px, 2-col 768–1199px, 1-col ≤767px */}
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+
+            {/* ── Card 1: Oil & Gas ── */}
+            <div
+              className="relative rounded-2xl border border-white/10 hover:border-white/25 transition-all duration-300 overflow-hidden"
+              style={{ background: 'rgba(255,255,255,0.03)', backdropFilter: 'blur(12px)' }}
+            >
+              <div className="p-8">
+                <div className="flex items-start gap-4 mb-5">
+                  <div
+                    className="p-3 rounded-xl flex-shrink-0"
+                    style={{ background: 'linear-gradient(135deg, rgba(0,229,255,0.2), rgba(0,128,255,0.1))', color: '#00E5FF' }}
+                  >
+                    <Zap className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <span
+                      className="inline-block px-2.5 py-0.5 rounded-full text-xs font-semibold mb-2"
+                      style={{ background: 'rgba(255,165,0,0.15)', color: '#FFA500', border: '1px solid rgba(255,165,0,0.3)' }}
+                    >
+                      Oil &amp; Gas · Industrial OT
+                    </span>
+                    <h3 className="text-xl font-bold text-white">TruContext™ for Oil &amp; Gas Operations</h3>
+                    <p className="text-cyan-400 text-sm mt-0.5">AI-driven refinery operations intelligence with 3D digital twins, predictive maintenance, and SCADA/IT-OT threat detection — built for critical energy infrastructure.</p>
+                  </div>
+                </div>
+                <ul className="space-y-2 mb-6">
+                  {[
+                    'Interactive 3D facility digital twins with live equipment state visualization',
+                    'Predictive maintenance AI — RUL scoring, anomaly detection, and failure forecasting',
+                    'IT/OT convergence with SCADA threat topology and MITRE ATT&CK mapping',
+                    'ESG and emissions compliance dashboards aligned to national energy frameworks',
+                  ].map((f) => (
+                    <li key={f} className="flex items-start gap-2 text-sm text-slate-300">
+                      <CheckCircle2 className="h-4 w-4 flex-shrink-0 mt-0.5" style={{ color: '#00E5FF' }} />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <div
+                  className="flex items-center justify-between rounded-lg px-4 py-3 border border-white/8 mb-2"
+                  style={{ background: 'rgba(255,255,255,0.04)' }}
+                >
+                  <span className="text-slate-400 text-sm">Starting at</span>
+                  <div className="text-right">
+                    <span className="text-white font-bold text-sm">$18,500<span className="text-slate-400 font-normal">/mo</span></span>
+                  </div>
+                </div>
+                <p className="text-xs text-slate-500 mb-5">Annual billing saves 15–20%. Volume discounts available.</p>
+                <Link href="/demo">
+                  <Button
+                    className="w-full font-semibold border-cyan-500/40 text-cyan-300 hover:bg-cyan-500/10"
+                    variant="outline"
+                  >
+                    Get Custom Quote
+                    <ArrowRight className="h-4 w-4 ml-2" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+
+            {/* ── Card 2: Smart City Government Edition ── */}
+            <div
+              className="relative rounded-2xl border border-white/10 hover:border-white/25 transition-all duration-300 overflow-hidden"
+              style={{ background: 'rgba(255,255,255,0.03)', backdropFilter: 'blur(12px)' }}
+            >
+              <div className="p-8">
+                <div className="flex items-start gap-4 mb-5">
+                  <div
+                    className="p-3 rounded-xl flex-shrink-0"
+                    style={{ background: 'linear-gradient(135deg, rgba(0,229,255,0.2), rgba(0,128,255,0.1))', color: '#00E5FF' }}
+                  >
+                    <Network className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <span
+                      className="inline-block px-2.5 py-0.5 rounded-full text-xs font-semibold mb-2"
+                      style={{ background: 'rgba(100,200,100,0.15)', color: '#64C864', border: '1px solid rgba(100,200,100,0.3)' }}
+                    >
+                      Smart City · National Government
+                    </span>
+                    <h3 className="text-xl font-bold text-white">TruContext™ Smart City Suite — Government Edition</h3>
+                    <p className="text-cyan-400 text-sm mt-0.5">Comprehensive national smart city command platform covering 10+ urban domains with AI agents, no-code automation marketplace, and 3D geospatial terrain visualization.</p>
+                  </div>
+                </div>
+                <ul className="space-y-2 mb-6">
+                  {[
+                    'Unified command dashboard: cybersecurity, traffic, water, energy, health, environment, and infrastructure',
+                    'Vibe Context — AI-assisted no-code automation and agent builder with installable marketplace',
+                    'CesiumJS 3D geospatial terrain with real-time severity-based alert markers',
+                    'Role-based access tiers for executives, urban planners, and operations teams',
+                  ].map((f) => (
+                    <li key={f} className="flex items-start gap-2 text-sm text-slate-300">
+                      <CheckCircle2 className="h-4 w-4 flex-shrink-0 mt-0.5" style={{ color: '#00E5FF' }} />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <div
+                  className="flex items-center justify-between rounded-lg px-4 py-3 border border-white/8 mb-2"
+                  style={{ background: 'rgba(255,255,255,0.04)' }}
+                >
+                  <span className="text-slate-400 text-sm">Starting at</span>
+                  <div className="text-right">
+                    <span className="text-white font-bold text-sm">$28,000<span className="text-slate-400 font-normal">/mo</span></span>
+                  </div>
+                </div>
+                <p className="text-xs text-slate-500 mb-5">Annual billing saves 15–20%. Volume discounts available.</p>
+                <Link href="/demo">
+                  <Button
+                    className="w-full font-semibold border-cyan-500/40 text-cyan-300 hover:bg-cyan-500/10"
+                    variant="outline"
+                  >
+                    Get Custom Quote
+                    <ArrowRight className="h-4 w-4 ml-2" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+
+            {/* ── Card 3: Smart City Command Center ── */}
+            <div
+              className="relative rounded-2xl border border-white/10 hover:border-white/25 transition-all duration-300 overflow-hidden"
+              style={{ background: 'rgba(255,255,255,0.03)', backdropFilter: 'blur(12px)' }}
+            >
+              <div className="p-8">
+                <div className="flex items-start gap-4 mb-5">
+                  <div
+                    className="p-3 rounded-xl flex-shrink-0"
+                    style={{ background: 'linear-gradient(135deg, rgba(0,229,255,0.2), rgba(0,128,255,0.1))', color: '#00E5FF' }}
+                  >
+                    <Activity className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <span
+                      className="inline-block px-2.5 py-0.5 rounded-full text-xs font-semibold mb-2"
+                      style={{ background: 'rgba(100,200,100,0.15)', color: '#64C864', border: '1px solid rgba(100,200,100,0.3)' }}
+                    >
+                      Smart City · Municipal
+                    </span>
+                    <h3 className="text-xl font-bold text-white">TruContext™ Smart City Command Center</h3>
+                    <p className="text-cyan-400 text-sm mt-0.5">Municipal-scale smart infrastructure monitoring integrating IoT device networks, AI-powered operational insights, predictive maintenance scoring, and D3 network topology visualization.</p>
+                  </div>
+                </div>
+                <ul className="space-y-2 mb-6">
+                  {[
+                    'Real-time device fleet monitoring with Mapbox 3D map layer, heatmaps, and clustering',
+                    'AI command assistant with alert pattern detection and executive voice briefings',
+                    'Multi-factor predictive maintenance scoring with Critical / High / Medium / Low classification',
+                    'CSV import/export, full-text search, and drill-down analytics data explorer',
+                  ].map((f) => (
+                    <li key={f} className="flex items-start gap-2 text-sm text-slate-300">
+                      <CheckCircle2 className="h-4 w-4 flex-shrink-0 mt-0.5" style={{ color: '#00E5FF' }} />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <div
+                  className="flex items-center justify-between rounded-lg px-4 py-3 border border-white/8 mb-2"
+                  style={{ background: 'rgba(255,255,255,0.04)' }}
+                >
+                  <span className="text-slate-400 text-sm">Starting at</span>
+                  <div className="text-right">
+                    <span className="text-white font-bold text-sm">$12,500<span className="text-slate-400 font-normal">/mo</span></span>
+                  </div>
+                </div>
+                <p className="text-xs text-slate-500 mb-5">Annual billing saves 15–20%. Volume discounts available.</p>
+                <Link href="/demo">
+                  <Button
+                    className="w-full font-semibold border-cyan-500/40 text-cyan-300 hover:bg-cyan-500/10"
+                    variant="outline"
+                  >
+                    Get Custom Quote
+                    <ArrowRight className="h-4 w-4 ml-2" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+
+            {/* ── Card 4: ELI Campus Security ── */}
+            <div
+              className="relative rounded-2xl border border-white/10 hover:border-white/25 transition-all duration-300 overflow-hidden"
+              style={{ background: 'rgba(255,255,255,0.03)', backdropFilter: 'blur(12px)' }}
+            >
+              <div className="p-8">
+                <div className="flex items-start gap-4 mb-5">
+                  <div
+                    className="p-3 rounded-xl flex-shrink-0"
+                    style={{ background: 'linear-gradient(135deg, rgba(0,229,255,0.2), rgba(0,128,255,0.1))', color: '#00E5FF' }}
+                  >
+                    <Shield className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <span
+                      className="inline-block px-2.5 py-0.5 rounded-full text-xs font-semibold mb-2"
+                      style={{ background: 'rgba(147,112,219,0.2)', color: '#9370DB', border: '1px solid rgba(147,112,219,0.4)' }}
+                    >
+                      Campus Security · Education
+                    </span>
+                    <h3 className="text-xl font-bold text-white">ELI™ Campus Security Intelligence Platform</h3>
+                    <p className="text-cyan-400 text-sm mt-0.5">Next-generation campus situational awareness: real-time floor-plan personnel tracking, AI video analytics across 800+ cameras, and coordinated incident response workspaces.</p>
+                  </div>
+                </div>
+                <ul className="space-y-2 mb-6">
+                  {[
+                    'Wi-Fi, RFID, and facial recognition data fusion for live 2D floor-plan tracking',
+                    'AI threat detection — weapons, person-down, and anomalous crowd pattern recognition',
+                    'Unified alert feed with AI confidence scores and cross-system event correlation',
+                    'Privacy by design: role-based access, anonymization options, and full audit logging',
+                  ].map((f) => (
+                    <li key={f} className="flex items-start gap-2 text-sm text-slate-300">
+                      <CheckCircle2 className="h-4 w-4 flex-shrink-0 mt-0.5" style={{ color: '#00E5FF' }} />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <div
+                  className="flex items-center justify-between rounded-lg px-4 py-3 border border-white/8 mb-2"
+                  style={{ background: 'rgba(255,255,255,0.04)' }}
+                >
+                  <span className="text-slate-400 text-sm">Starting at</span>
+                  <div className="text-right">
+                    <span className="text-white font-bold text-sm">$5,500<span className="text-slate-400 font-normal">/mo</span></span>
+                  </div>
+                </div>
+                <p className="text-xs text-slate-500 mb-5">Annual billing saves 15–20%. Volume discounts available.</p>
+                <Link href="/demo">
+                  <Button
+                    className="w-full font-semibold border-cyan-500/40 text-cyan-300 hover:bg-cyan-500/10"
+                    variant="outline"
+                  >
+                    Get Custom Quote
+                    <ArrowRight className="h-4 w-4 ml-2" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+
+            {/* ── Card 5: CaseForge Legal ── */}
+            <div
+              className="relative rounded-2xl border border-white/10 hover:border-white/25 transition-all duration-300 overflow-hidden"
+              style={{ background: 'rgba(255,255,255,0.03)', backdropFilter: 'blur(12px)' }}
+            >
+              <div className="p-8">
+                <div className="flex items-start gap-4 mb-5">
+                  <div
+                    className="p-3 rounded-xl flex-shrink-0"
+                    style={{ background: 'linear-gradient(135deg, rgba(0,229,255,0.2), rgba(0,128,255,0.1))', color: '#00E5FF' }}
+                  >
+                    <Brain className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <span
+                      className="inline-block px-2.5 py-0.5 rounded-full text-xs font-semibold mb-2"
+                      style={{ background: 'rgba(218,165,32,0.15)', color: '#DAA520', border: '1px solid rgba(218,165,32,0.35)' }}
+                    >
+                      Legal Tech · Litigation
+                    </span>
+                    <h3 className="text-xl font-bold text-white">CaseForge™ Legal Case Intelligence</h3>
+                    <p className="text-cyan-400 text-sm mt-0.5">AI-powered litigation command center that transforms document repositories into interactive timelines, evidence matrices, and autonomous case management — powered by TruClaw™ agents.</p>
+                  </div>
+                </div>
+                <ul className="space-y-2 mb-6">
+                  {[
+                    'Consolidates 100+ source documents into a unified, searchable intelligence dashboard',
+                    'AI legal research with natural language queries and voice narration via ElevenLabs TTS',
+                    'TruClaw™ autonomous agents for document analysis, court monitoring, and outreach automation',
+                    'Interactive financial analytics, deposition timelines, and evidence matrix visualization',
+                  ].map((f) => (
+                    <li key={f} className="flex items-start gap-2 text-sm text-slate-300">
+                      <CheckCircle2 className="h-4 w-4 flex-shrink-0 mt-0.5" style={{ color: '#00E5FF' }} />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <div
+                  className="flex items-center justify-between rounded-lg px-4 py-3 border border-white/8 mb-2"
+                  style={{ background: 'rgba(255,255,255,0.04)' }}
+                >
+                  <span className="text-slate-400 text-sm">Starting at</span>
+                  <div className="text-right">
+                    <span className="text-white font-bold text-sm">$2,499<span className="text-slate-400 font-normal">/mo</span></span>
+                  </div>
+                </div>
+                <p className="text-xs text-slate-500 mb-5">Annual billing saves 15–20%. Volume discounts available.</p>
+                <Link href="/demo">
+                  <Button
+                    className="w-full font-semibold border-cyan-500/40 text-cyan-300 hover:bg-cyan-500/10"
+                    variant="outline"
+                  >
+                    Get Custom Quote
+                    <ArrowRight className="h-4 w-4 ml-2" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+
+            {/* ── Card 6: ASPIRE Public Reporting ── */}
+            <div
+              className="relative rounded-2xl border border-white/10 hover:border-white/25 transition-all duration-300 overflow-hidden"
+              style={{ background: 'rgba(255,255,255,0.03)', backdropFilter: 'blur(12px)' }}
+            >
+              <div className="p-8">
+                <div className="flex items-start gap-4 mb-5">
+                  <div
+                    className="p-3 rounded-xl flex-shrink-0"
+                    style={{ background: 'linear-gradient(135deg, rgba(0,229,255,0.2), rgba(0,128,255,0.1))', color: '#00E5FF' }}
+                  >
+                    <BarChart3 className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <span
+                      className="inline-block px-2.5 py-0.5 rounded-full text-xs font-semibold mb-2"
+                      style={{ background: 'rgba(100,149,237,0.2)', color: '#6495ED', border: '1px solid rgba(100,149,237,0.4)' }}
+                    >
+                      Education · Accountability
+                    </span>
+                    <h3 className="text-xl font-bold text-white">ASPIRE™ Public Reporting Platform</h3>
+                    <p className="text-cyan-400 text-sm mt-0.5">Automated, ADA-compliant public reporting system for charter school accountability frameworks — generating mobile-friendly performance reports from live data warehouse connections.</p>
+                  </div>
+                </div>
+                <ul className="space-y-2 mb-6">
+                  {[
+                    'Dual-report architecture: system overview reports and per-school measure score reports',
+                    'Quarto + Python pipeline with AWS data warehouse integration',
+                    'Progressive disclosure design with dynamic embedded data narratives',
+                    'ADA/Section 508 compliant, fully responsive, with graceful handling of suppressed data',
+                  ].map((f) => (
+                    <li key={f} className="flex items-start gap-2 text-sm text-slate-300">
+                      <CheckCircle2 className="h-4 w-4 flex-shrink-0 mt-0.5" style={{ color: '#00E5FF' }} />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <div
+                  className="flex items-center justify-between rounded-lg px-4 py-3 border border-white/8 mb-2"
+                  style={{ background: 'rgba(255,255,255,0.04)' }}
+                >
+                  <span className="text-slate-400 text-sm">Starting at</span>
+                  <div className="text-right">
+                    <span className="text-white font-bold text-sm">$1,499<span className="text-slate-400 font-normal">/mo</span></span>
+                  </div>
+                </div>
+                <p className="text-xs text-slate-500 mb-5">Annual billing saves 15–20%. Volume discounts available.</p>
+                <Link href="/demo">
+                  <Button
+                    className="w-full font-semibold border-cyan-500/40 text-cyan-300 hover:bg-cyan-500/10"
+                    variant="outline"
+                  >
+                    Get Custom Quote
+                    <ArrowRight className="h-4 w-4 ml-2" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+
+            {/* ── Card 7: TruAddress National Address Intelligence ── */}
+            <div
+              className="relative rounded-2xl border border-white/10 hover:border-white/25 transition-all duration-300 overflow-hidden"
+              style={{ background: 'rgba(255,255,255,0.03)', backdropFilter: 'blur(12px)' }}
+            >
+              <div className="p-8">
+                <div className="flex items-start gap-4 mb-5">
+                  <div
+                    className="p-3 rounded-xl flex-shrink-0"
+                    style={{ background: 'linear-gradient(135deg, rgba(0,229,255,0.2), rgba(0,128,255,0.1))', color: '#00E5FF' }}
+                  >
+                    <Eye className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <span
+                      className="inline-block px-2.5 py-0.5 rounded-full text-xs font-semibold mb-2"
+                      style={{ background: 'rgba(220,20,60,0.15)', color: '#DC143C', border: '1px solid rgba(220,20,60,0.3)' }}
+                    >
+                      Government · National Infrastructure
+                    </span>
+                    <h3 className="text-xl font-bold text-white">TruAddress™ National Address Intelligence</h3>
+                    <p className="text-cyan-400 text-sm mt-0.5">AI-powered national address data collection, verification, and management — enabling postal services, emergency response, financial inclusion, and e-government at scale.</p>
+                  </div>
+                </div>
+                <ul className="space-y-2 mb-6">
+                  {[
+                    'Satellite-assisted AI address detection with mobile-first field verification workflows',
+                    'Province-level analytics with animated progress tracking and verification status mapping',
+                    'Surveyor management portal supporting 10,000+ active field agents',
+                    'Service integration APIs for postal, financial, emergency response, and civic platforms',
+                  ].map((f) => (
+                    <li key={f} className="flex items-start gap-2 text-sm text-slate-300">
+                      <CheckCircle2 className="h-4 w-4 flex-shrink-0 mt-0.5" style={{ color: '#00E5FF' }} />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <div
+                  className="flex items-center justify-between rounded-lg px-4 py-3 border border-white/8 mb-2"
+                  style={{ background: 'rgba(255,255,255,0.04)' }}
+                >
+                  <span className="text-slate-400 text-sm">Starting at</span>
+                  <div className="text-right">
+                    <span className="text-white font-bold text-sm">$8,500<span className="text-slate-400 font-normal">/mo</span></span>
+                  </div>
+                </div>
+                <p className="text-xs text-slate-500 mb-5">Annual billing saves 15–20%. Volume discounts available.</p>
+                <Link href="/demo">
+                  <Button
+                    className="w-full font-semibold border-cyan-500/40 text-cyan-300 hover:bg-cyan-500/10"
+                    variant="outline"
+                  >
+                    Get Custom Quote
+                    <ArrowRight className="h-4 w-4 ml-2" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+
+            {/* ── Card 8: PanelPulse Research Panel Management ── */}
+            <div
+              className="relative rounded-2xl border border-white/10 hover:border-white/25 transition-all duration-300 overflow-hidden"
+              style={{ background: 'rgba(255,255,255,0.03)', backdropFilter: 'blur(12px)' }}
+            >
+              <div className="p-8">
+                <div className="flex items-start gap-4 mb-5">
+                  <div
+                    className="p-3 rounded-xl flex-shrink-0"
+                    style={{ background: 'linear-gradient(135deg, rgba(0,229,255,0.2), rgba(0,128,255,0.1))', color: '#00E5FF' }}
+                  >
+                    <Cpu className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <span
+                      className="inline-block px-2.5 py-0.5 rounded-full text-xs font-semibold mb-2"
+                      style={{ background: 'rgba(0,206,209,0.15)', color: '#00CED1', border: '1px solid rgba(0,206,209,0.3)' }}
+                    >
+                      Research · NGO · Government
+                    </span>
+                    <h3 className="text-xl font-bold text-white">PanelPulse™ Research Panel Management</h3>
+                    <p className="text-cyan-400 text-sm mt-0.5">Full-stack sovereign survey panel platform — recruit panelists, distribute WhatsApp and SMS pulse surveys, manage airtime incentives, and analyze results with AI — no third-party panel providers required.</p>
+                  </div>
+                </div>
+                <ul className="space-y-2 mb-6">
+                  {[
+                    'Multi-channel survey distribution via WhatsApp and SMS with real-time response tracking',
+                    'Airtime incentive management with automated reward disbursement to respondents',
+                    'AI-powered analysis and automated news generation with integrated search summarization',
+                    'Multi-region deployment: manage panels across departments, districts, or countries',
+                  ].map((f) => (
+                    <li key={f} className="flex items-start gap-2 text-sm text-slate-300">
+                      <CheckCircle2 className="h-4 w-4 flex-shrink-0 mt-0.5" style={{ color: '#00E5FF' }} />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <div
+                  className="flex items-center justify-between rounded-lg px-4 py-3 border border-white/8 mb-2"
+                  style={{ background: 'rgba(255,255,255,0.04)' }}
+                >
+                  <span className="text-slate-400 text-sm">Starting at</span>
+                  <div className="text-right">
+                    <span className="text-white font-bold text-sm">$799<span className="text-slate-400 font-normal">/mo</span></span>
+                  </div>
+                </div>
+                <p className="text-xs text-slate-500 mb-5">Annual billing saves 15–20%. Volume discounts available.</p>
+                <Link href="/demo">
+                  <Button
+                    className="w-full font-semibold border-cyan-500/40 text-cyan-300 hover:bg-cyan-500/10"
+                    variant="outline"
+                  >
+                    Get Custom Quote
+                    <ArrowRight className="h-4 w-4 ml-2" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+
+            {/* ── Card 9: Smart City Proposal & Demo Suite ── */}
+            <div
+              className="relative rounded-2xl border border-white/10 hover:border-white/25 transition-all duration-300 overflow-hidden"
+              style={{ background: 'rgba(255,255,255,0.03)', backdropFilter: 'blur(12px)' }}
+            >
+              <div className="p-8">
+                <div className="flex items-start gap-4 mb-5">
+                  <div
+                    className="p-3 rounded-xl flex-shrink-0"
+                    style={{ background: 'linear-gradient(135deg, rgba(0,229,255,0.2), rgba(0,128,255,0.1))', color: '#00E5FF' }}
+                  >
+                    <TrendingDown className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <span
+                      className="inline-block px-2.5 py-0.5 rounded-full text-xs font-semibold mb-2"
+                      style={{ background: 'rgba(255,105,180,0.15)', color: '#FF69B4', border: '1px solid rgba(255,105,180,0.3)' }}
+                    >
+                      Pre-Sales · Smart City · Systems Integrators
+                    </span>
+                    <h3 className="text-xl font-bold text-white">Smart City Proposal &amp; Demo Suite</h3>
+                    <p className="text-cyan-400 text-sm mt-0.5">Production-ready smart city reference platform and proposal toolkit — stakeholder-ready dashboards, ROI models, integration guides, and white-label capability for RFP and procurement responses.</p>
+                  </div>
+                </div>
+                <ul className="space-y-2 mb-6">
+                  {[
+                    'Full-stack demo environment with GPU-accelerated geospatial and 3D map visualization',
+                    'Pre-built ROI and investment return models (based on $85M / $150M+ 10-year framework)',
+                    'Standards documentation package: FIWARE NGSI-LD, MITRE ATT&CK, OGC SensorThings, GTFS',
+                    'White-label and systems integrator licensing available',
+                  ].map((f) => (
+                    <li key={f} className="flex items-start gap-2 text-sm text-slate-300">
+                      <CheckCircle2 className="h-4 w-4 flex-shrink-0 mt-0.5" style={{ color: '#00E5FF' }} />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <div
+                  className="flex items-center justify-between rounded-lg px-4 py-3 border border-white/8 mb-2"
+                  style={{ background: 'rgba(255,255,255,0.04)' }}
+                >
+                  <span className="text-slate-400 text-sm">Starting at</span>
+                  <div className="text-right">
+                    <span className="text-white font-bold text-sm">$2,499<span className="text-slate-400 font-normal">/mo</span></span>
+                  </div>
+                </div>
+                <p className="text-xs text-slate-500 mb-5">Annual billing saves 15–20%. Volume discounts available.</p>
+                <Link href="/demo">
+                  <Button
+                    className="w-full font-semibold border-cyan-500/40 text-cyan-300 hover:bg-cyan-500/10"
+                    variant="outline"
+                  >
+                    Get Custom Quote
+                    <ArrowRight className="h-4 w-4 ml-2" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+
+          </div>{/* end grid */}
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════════════════════════
+          6. LIVE PRICING CALCULATOR
       ══════════════════════════════════════════════════════════════════════ */}
       <PricingCalculator onRequestQuote={handleRequestQuote} />
 
