@@ -268,3 +268,91 @@ describe('PricingCalculator — Annual/Monthly Billing Toggle', () => {
     expect(screen.getByText(/Annual total \(billed once\)/i)).toBeInTheDocument();
   });
 });
+
+describe('PricingCalculator — Vertical Products & Flat-Rate', () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
+  it('shows "Core Platforms" and "Vertical Solutions" group labels', () => {
+    renderCalculator();
+    expect(screen.getByText(/Core Platforms/i)).toBeInTheDocument();
+    expect(screen.getByText(/Vertical Solutions/i)).toBeInTheDocument();
+  });
+
+  it('shows all 9 vertical product buttons', () => {
+    renderCalculator();
+    expect(screen.getAllByText(/Oil & Gas/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/Smart City Gov/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/Smart City Municipal/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/Campus Security/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/CaseForge Legal/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/ASPIRE Reporting/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/TruAddress/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/PanelPulse/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/Smart City Demo/i).length).toBeGreaterThan(0);
+  });
+
+  it('selecting CaseForge shows flat-rate info panel', () => {
+    renderCalculator();
+    const btn = screen.getAllByText(/CaseForge Legal/i)[0];
+    act(() => fireEvent.click(btn));
+    expect(screen.getByText(/Flat-rate product/i)).toBeInTheDocument();
+  });
+
+  it('selecting PanelPulse shows $799/mo flat rate info', () => {
+    renderCalculator();
+    const btn = screen.getAllByText(/PanelPulse/i)[0];
+    act(() => fireEvent.click(btn));
+    expect(screen.getByText(/\$799\/mo flat rate/i)).toBeInTheDocument();
+  });
+
+  it('selecting ASPIRE Reporting shows $1,499/mo flat rate info', () => {
+    renderCalculator();
+    const btn = screen.getAllByText(/ASPIRE Reporting/i)[0];
+    act(() => fireEvent.click(btn));
+    expect(screen.getByText(/\$1,499\/mo flat rate/i)).toBeInTheDocument();
+  });
+
+  it('selecting Oil & Gas shows $18,500/mo base info', () => {
+    renderCalculator();
+    const btn = screen.getAllByText(/Oil & Gas/i)[0];
+    act(() => fireEvent.click(btn));
+    expect(screen.getByText(/\$18,500\/mo/i)).toBeInTheDocument();
+  });
+
+  it('selecting Smart City Gov shows $28,000/mo base info', () => {
+    renderCalculator();
+    const btn = screen.getAllByText(/Smart City Gov/i)[0];
+    act(() => fireEvent.click(btn));
+    expect(screen.getByText(/\$28,000\/mo/i)).toBeInTheDocument();
+  });
+
+  it('selecting Campus Security shows $5,500/mo base info', () => {
+    renderCalculator();
+    const btn = screen.getAllByText(/Campus Security/i)[0];
+    act(() => fireEvent.click(btn));
+    expect(screen.getByText(/\$5,500\/mo/i)).toBeInTheDocument();
+  });
+
+  it('flat-rate products do not show node slider', () => {
+    renderCalculator();
+    const btn = screen.getAllByText(/Smart City Demo/i)[0];
+    act(() => fireEvent.click(btn));
+    // Node slider should not be present for flat-rate products
+    const nodeSliders = document.querySelectorAll('input[type="range"]');
+    expect(nodeSliders.length).toBe(0);
+  });
+
+  it('annual billing applies 15% discount to vertical products', () => {
+    renderCalculator();
+    // Select CaseForge ($2,499 flat)
+    const btn = screen.getAllByText(/CaseForge Legal/i)[0];
+    act(() => fireEvent.click(btn));
+    // Switch to annual
+    const annualBtn = screen.getByRole('button', { name: /Annual/i });
+    act(() => fireEvent.click(annualBtn));
+    // Should show savings banner
+    expect(screen.getByText(/Annual billing saves you/i)).toBeInTheDocument();
+  });
+});

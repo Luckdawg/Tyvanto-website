@@ -34,6 +34,13 @@ import {
   Phone,
   CalendarDays,
   Sparkles,
+  Globe,
+  Building2,
+  Briefcase,
+  BookOpen,
+  MapPin,
+  Radio,
+  Users,
 } from 'lucide-react';
 import CompetitorComparisonOverlay from './CompetitorComparisonOverlay';
 
@@ -58,6 +65,8 @@ interface ProductConfig {
   description: string;
   highlight?: string;
   customAboveNodes?: number; // above this node count → show "Contact Sales" note
+  isFlat?: boolean;          // flat-rate product — no node/agent sliders
+  category?: string;         // product category for grouping in selector
 }
 
 const PRODUCTS: ProductConfig[] = [
@@ -139,6 +148,153 @@ const PRODUCTS: ProductConfig[] = [
     maxAgentsBeforeCustom: 500,
     description: 'All 4 products — best per-unit value',
     highlight: 'Best Value',
+    category: 'Core',
+  },
+  // ── Vertical / Industry Solutions ──────────────────────────────────────────
+  {
+    id: 'oil-gas',
+    label: 'Oil & Gas',
+    icon: <Zap className="h-4 w-4" />,
+    color: '#FFA500',
+    baseFee: 18500,
+    baseFeeLabel: 'Refinery operations intelligence platform',
+    nodeTiers: [
+      { upTo: Infinity, rate: 0.12 },  // per SCADA/OT endpoint above 500
+    ],
+    agentRate: 0,
+    agentIncluded: 0,
+    maxAgentsBeforeCustom: 0,
+    customAboveNodes: 10000,
+    description: 'Energy & critical infrastructure OT/IT',
+    category: 'Vertical',
+  },
+  {
+    id: 'smart-city-gov',
+    label: 'Smart City Gov',
+    icon: <Globe className="h-4 w-4" />,
+    color: '#4A90D9',
+    baseFee: 28000,
+    baseFeeLabel: 'National smart city command platform',
+    nodeTiers: [
+      { upTo: Infinity, rate: 0.10 },  // per IoT/sensor node above 1000
+    ],
+    agentRate: 0,
+    agentIncluded: 0,
+    maxAgentsBeforeCustom: 0,
+    customAboveNodes: 50000,
+    description: 'National government smart city suite',
+    category: 'Vertical',
+  },
+  {
+    id: 'smart-city-municipal',
+    label: 'Smart City Municipal',
+    icon: <Building2 className="h-4 w-4" />,
+    color: '#64C864',
+    baseFee: 12500,
+    baseFeeLabel: 'Municipal IoT monitoring platform',
+    nodeTiers: [
+      { upTo: Infinity, rate: 0.08 },  // per IoT device above 200
+    ],
+    agentRate: 0,
+    agentIncluded: 0,
+    maxAgentsBeforeCustom: 0,
+    customAboveNodes: 20000,
+    description: 'Municipal smart infrastructure command',
+    category: 'Vertical',
+  },
+  {
+    id: 'campus-security',
+    label: 'Campus Security',
+    icon: <Shield className="h-4 w-4" />,
+    color: '#9370DB',
+    baseFee: 5500,
+    baseFeeLabel: 'Campus security intelligence platform',
+    nodeTiers: [
+      { upTo: Infinity, rate: 0.06 },  // per camera/endpoint above 100
+    ],
+    agentRate: 0,
+    agentIncluded: 0,
+    maxAgentsBeforeCustom: 0,
+    customAboveNodes: 5000,
+    description: 'ELI campus situational awareness',
+    category: 'Vertical',
+  },
+  {
+    id: 'caseforge',
+    label: 'CaseForge Legal',
+    icon: <Briefcase className="h-4 w-4" />,
+    color: '#DAA520',
+    baseFee: 2499,
+    baseFeeLabel: 'Legal case intelligence platform (flat rate)',
+    nodeTiers: [],
+    agentRate: 0,
+    agentIncluded: 0,
+    maxAgentsBeforeCustom: 0,
+    description: 'AI-powered litigation command center',
+    isFlat: true,
+    category: 'Vertical',
+  },
+  {
+    id: 'aspire',
+    label: 'ASPIRE Reporting',
+    icon: <BookOpen className="h-4 w-4" />,
+    color: '#6495ED',
+    baseFee: 1499,
+    baseFeeLabel: 'Public reporting platform (flat rate)',
+    nodeTiers: [],
+    agentRate: 0,
+    agentIncluded: 0,
+    maxAgentsBeforeCustom: 0,
+    description: 'ADA-compliant charter school reporting',
+    isFlat: true,
+    category: 'Vertical',
+  },
+  {
+    id: 'truaddress',
+    label: 'TruAddress',
+    icon: <MapPin className="h-4 w-4" />,
+    color: '#DC143C',
+    baseFee: 8500,
+    baseFeeLabel: 'National address intelligence platform',
+    nodeTiers: [
+      { upTo: Infinity, rate: 0.002 },  // per verified address record above 100K
+    ],
+    agentRate: 0,
+    agentIncluded: 0,
+    maxAgentsBeforeCustom: 0,
+    customAboveNodes: 5000000,
+    description: 'AI national address data collection',
+    category: 'Vertical',
+  },
+  {
+    id: 'panelpulse',
+    label: 'PanelPulse',
+    icon: <Radio className="h-4 w-4" />,
+    color: '#00CED1',
+    baseFee: 799,
+    baseFeeLabel: 'Research panel management (flat rate)',
+    nodeTiers: [],
+    agentRate: 0,
+    agentIncluded: 0,
+    maxAgentsBeforeCustom: 0,
+    description: 'WhatsApp/SMS survey panel platform',
+    isFlat: true,
+    category: 'Vertical',
+  },
+  {
+    id: 'smart-city-demo',
+    label: 'Smart City Demo',
+    icon: <Users className="h-4 w-4" />,
+    color: '#FF69B4',
+    baseFee: 2499,
+    baseFeeLabel: 'Smart city proposal & demo suite (flat rate)',
+    nodeTiers: [],
+    agentRate: 0,
+    agentIncluded: 0,
+    maxAgentsBeforeCustom: 0,
+    description: 'RFP toolkit & white-label demo suite',
+    isFlat: true,
+    category: 'Vertical',
   },
 ];
 
@@ -218,11 +374,20 @@ function formatCurrency(n: number): string {
 
 // Annual discount rates per product tier
 const ANNUAL_DISCOUNT: Record<string, number> = {
-  trucontext: 0.15,   // 15% off for Starter/Growth
-  truclaw:    0.15,   // 15% off
-  truinsight: 0.15,   // 15% off
-  eli:        0.15,   // 15% off
-  bundle:     0.20,   // 20% off for Full Suite
+  trucontext:          0.15,
+  truclaw:             0.15,
+  truinsight:          0.15,
+  eli:                 0.15,
+  bundle:              0.20,
+  'oil-gas':           0.15,
+  'smart-city-gov':    0.15,
+  'smart-city-municipal': 0.15,
+  'campus-security':   0.15,
+  caseforge:           0.15,
+  aspire:              0.15,
+  truaddress:          0.15,
+  panelpulse:          0.15,
+  'smart-city-demo':   0.15,
 };
 
 type BillingCycle = 'monthly' | 'annual';
@@ -433,28 +598,22 @@ export default function PricingCalculator({ onRequestQuote }: PricingCalculatorP
               {/* ── Left: Controls ── */}
               <div className="lg:col-span-3 p-8 space-y-8">
 
-                {/* Product selector */}
+                {/* Product selector — grouped by Core / Vertical */}
                 <div>
                   <label className="block text-slate-300 text-sm font-semibold mb-3 uppercase tracking-wide">
                     Select Product
                   </label>
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                    {PRODUCTS.map((p) => (
+
+                  {/* Core Platforms group */}
+                  <p className="text-xs text-slate-600 uppercase tracking-widest font-medium mb-2">Core Platforms</p>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-4">
+                    {PRODUCTS.filter((p) => !p.category || p.category === 'Core').map((p) => (
                       <button
                         key={p.id}
                         onClick={() => setSelectedProduct(p.id)}
                         className="relative flex flex-col items-start gap-1 rounded-xl px-3 py-3 text-left transition-all duration-200"
                         style={{
-                          background:
-                            selectedProduct === p.id
-                              ? `rgba(${
-                                  p.color === '#00E5FF' ? '0,229,255' :
-                                  p.color === '#7C3AED' ? '124,58,237' :
-                                  p.color === '#0EA5E9' ? '14,165,233' :
-                                  p.color === '#F59E0B' ? '245,158,11' :
-                                  '16,185,129'
-                                },0.12)`
-                              : 'rgba(255,255,255,0.04)',
+                          background: selectedProduct === p.id ? `${p.color}18` : 'rgba(255,255,255,0.04)',
                           border: `1px solid ${selectedProduct === p.id ? p.color + '50' : 'rgba(255,255,255,0.08)'}`,
                           boxShadow: selectedProduct === p.id ? `0 0 16px ${p.color}20` : 'none',
                         }}
@@ -480,16 +639,68 @@ export default function PricingCalculator({ onRequestQuote }: PricingCalculatorP
                       </button>
                     ))}
                   </div>
+
+                  {/* Vertical Solutions group */}
+                  <p className="text-xs text-slate-600 uppercase tracking-widest font-medium mb-2">Vertical Solutions</p>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                    {PRODUCTS.filter((p) => p.category === 'Vertical').map((p) => (
+                      <button
+                        key={p.id}
+                        onClick={() => setSelectedProduct(p.id)}
+                        className="relative flex flex-col items-start gap-1 rounded-xl px-3 py-3 text-left transition-all duration-200"
+                        style={{
+                          background: selectedProduct === p.id ? `${p.color}18` : 'rgba(255,255,255,0.04)',
+                          border: `1px solid ${selectedProduct === p.id ? p.color + '50' : 'rgba(255,255,255,0.08)'}`,
+                          boxShadow: selectedProduct === p.id ? `0 0 16px ${p.color}20` : 'none',
+                        }}
+                      >
+                        <span style={{ color: selectedProduct === p.id ? p.color : '#64748b' }}>
+                          {p.icon}
+                        </span>
+                        <span
+                          className="text-sm font-semibold"
+                          style={{ color: selectedProduct === p.id ? '#fff' : '#94a3b8' }}
+                        >
+                          {p.label}
+                        </span>
+                        <span className="text-xs text-slate-500 leading-tight">{p.description}</span>
+                      </button>
+                    ))}
+                  </div>
                 </div>
 
-                {/* Node slider — hidden for TruClaw (agent-only pricing) */}
-                {product.id !== 'truclaw' && (
+                {/* Flat-rate product info */}
+                {product.isFlat && (
+                  <div
+                    className="flex items-center gap-3 rounded-xl px-4 py-4"
+                    style={{ background: `${product.color}10`, border: `1px solid ${product.color}30` }}
+                  >
+                    <div className="p-2 rounded-lg" style={{ background: `${product.color}20`, color: product.color }}>
+                      {product.icon}
+                    </div>
+                    <div>
+                      <p className="text-white font-semibold text-sm">{product.label}</p>
+                      <p className="text-slate-400 text-xs mt-0.5">
+                        Flat-rate product — one predictable monthly fee with no usage-based charges.
+                        Price shown is the base rate; volume discounts available for multi-seat or multi-region deployments.
+                      </p>
+                    </div>
+                  </div>
+                )}
+
+                {/* Node slider — hidden for TruClaw (agent-only) and flat-rate products */}
+                {product.id !== 'truclaw' && !product.isFlat && (
                   <div>
                     <div className="flex items-center justify-between mb-3">
                       <label className="flex items-center gap-2 text-slate-300 text-sm font-semibold uppercase tracking-wide">
                         <Server className="h-4 w-4 text-slate-500" />
                         {product.id === 'truinsight' ? 'Cameras / Endpoints' :
                          product.id === 'eli' ? 'Cameras / Nodes' :
+                         product.id === 'oil-gas' ? 'OT/SCADA Endpoints' :
+                         product.id === 'smart-city-gov' ? 'IoT Sensor Nodes' :
+                         product.id === 'smart-city-municipal' ? 'IoT Devices' :
+                         product.id === 'campus-security' ? 'Cameras / Endpoints' :
+                         product.id === 'truaddress' ? 'Address Records (×1K)' :
                          'Monitored Nodes / Endpoints'}
                       </label>
                       <span
@@ -606,6 +817,69 @@ export default function PricingCalculator({ onRequestQuote }: PricingCalculatorP
                         <strong className="text-slate-300">Full Suite</strong>: $14,999/mo (all 4 platforms, 25% bundle discount) ·
                         $0.40/node (10K–100K) · $0.16/node (100K+) · $120/agent.
                         Best per-unit value across the portfolio.
+                      </>
+                    )}
+                    {product.id === 'oil-gas' && (
+                      <>
+                        <strong className="text-slate-300">TruContext Oil &amp; Gas</strong>: $18,500/mo base (refinery operations intelligence) ·
+                        $0.12/OT endpoint above 500. Contact sales above 10,000 endpoints.
+                        Includes 3D digital twin, SCADA/IT-OT threat detection, and ESG dashboards.
+                      </>
+                    )}
+                    {product.id === 'smart-city-gov' && (
+                      <>
+                        <strong className="text-slate-300">Smart City Government Edition</strong>: $28,000/mo base (national command platform) ·
+                        $0.10/IoT sensor node above 1,000. Contact sales above 50,000 nodes.
+                        Covers 10+ urban domains with AI agents and 3D geospatial visualization.
+                      </>
+                    )}
+                    {product.id === 'smart-city-municipal' && (
+                      <>
+                        <strong className="text-slate-300">Smart City Municipal</strong>: $12,500/mo base (municipal IoT monitoring) ·
+                        $0.08/IoT device above 200. Contact sales above 20,000 devices.
+                        Includes Mapbox 3D, AI command assistant, and predictive maintenance scoring.
+                      </>
+                    )}
+                    {product.id === 'campus-security' && (
+                      <>
+                        <strong className="text-slate-300">ELI Campus Security</strong>: $5,500/mo base (campus situational awareness) ·
+                        $0.06/camera or endpoint above 100. Contact sales above 5,000 endpoints.
+                        Includes Wi-Fi/RFID fusion, AI threat detection, and privacy-by-design controls.
+                      </>
+                    )}
+                    {product.id === 'caseforge' && (
+                      <>
+                        <strong className="text-slate-300">CaseForge Legal</strong>: $2,499/mo flat rate — no usage-based charges.
+                        Includes AI legal research, TruClaw autonomous agents, and interactive case analytics.
+                        Annual billing saves 15%.
+                      </>
+                    )}
+                    {product.id === 'aspire' && (
+                      <>
+                        <strong className="text-slate-300">ASPIRE Reporting</strong>: $1,499/mo flat rate — no usage-based charges.
+                        Includes ADA-compliant public reporting, AWS data warehouse integration, and progressive disclosure design.
+                        Annual billing saves 15%.
+                      </>
+                    )}
+                    {product.id === 'truaddress' && (
+                      <>
+                        <strong className="text-slate-300">TruAddress</strong>: $8,500/mo base (national address intelligence) ·
+                        $0.002/verified address record above 100K. Contact sales above 5M records.
+                        Includes satellite AI detection, province analytics, and 10,000+ surveyor management.
+                      </>
+                    )}
+                    {product.id === 'panelpulse' && (
+                      <>
+                        <strong className="text-slate-300">PanelPulse</strong>: $799/mo flat rate — no usage-based charges.
+                        Includes WhatsApp/SMS survey distribution, airtime incentive management, and AI analysis.
+                        Annual billing saves 15%.
+                      </>
+                    )}
+                    {product.id === 'smart-city-demo' && (
+                      <>
+                        <strong className="text-slate-300">Smart City Demo Suite</strong>: $2,499/mo flat rate — no usage-based charges.
+                        Includes GPU-accelerated 3D visualization, ROI models, standards documentation, and white-label licensing.
+                        Annual billing saves 15%.
                       </>
                     )}
                   </span>

@@ -2156,3 +2156,12 @@
 - [x] Insert section between bundle packages and #pricing-calculator anchor
 - [x] Preserve all existing content, anchors, and layout
 - [x] Write tests for new section (43 tests passing)
+
+## Shop Page World-Class Optimization (Apr 8, 2026)
+- [ ] Add sticky category navigation bar
+- [ ] Add How to Choose decision guide section
+- [ ] Move PricingCalculator below Core Offerings
+- [ ] Add all 9 vertical products to PricingCalculator
+- [ ] Restructure page order for conversion flow
+- [ ] Add category filter tabs to Industry Solutions
+- [ ] Write/update tests for new calculator products
