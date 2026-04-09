@@ -418,8 +418,8 @@ export default function InvestorRelations() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-2">Phone</h3>
-                  <a href="tel:+17032730383" className="text-primary hover:underline">
-                    +1 (703) 273-0383
+                  <a href="tel:+18883449850" className="text-primary hover:underline">
+                    +1 (888) 344-9850
                   </a>
                 </div>
               </div>

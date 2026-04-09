@@ -31,7 +31,7 @@ export const organizationSchema = {
   "contactPoint": {
     "@type": "ContactPoint",
     "contactType": "Sales",
-    "telephone": "+1-XXX-XXX-XXXX",
+    "telephone": "+1-888-344-9850",
     "email": "sales@visiumtechnologies.com"
   },
   "address": {
@@ -151,7 +151,7 @@ export const localBusinessSchema = {
   "image": "https://visiumtechnologies.com/visium_logo.svg",
   "description": "Enterprise AI and cybersecurity analytics company",
   "url": "https://visiumtechnologies.com",
-  "telephone": "+1-XXX-XXX-XXXX",
+  "telephone": "+1-888-344-9850",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "TBD",

@@ -204,7 +204,7 @@ export default function TermsOfService() {
                   info@visiumtechnologies.com
                 </a>
               </p>
-              <p className="text-gray-700">Phone: +1 (703) 273-0383</p>
+              <p className="text-gray-700">Phone: +1 (888) 344-9850</p>
               <p className="text-gray-700 mt-2">
                 For legal inquiries, please include "Terms of Service" in your subject line.
               </p>

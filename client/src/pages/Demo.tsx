@@ -103,7 +103,7 @@ export default function Demo() {
                   <Input
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    placeholder="+1 (703) 273-0383"
+                    placeholder="+1 (888) 344-9850"
                   />
                 </div>
 

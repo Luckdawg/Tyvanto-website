@@ -45,7 +45,7 @@ Best regards,
 
 Visium Technologies Sales Team
 Email: info@visiumtechnologies.com
-Phone: +1 (703) 273-0383
+Phone: +1 (888) 344-9850
 Website: https://trucontext.manus.space
 
 ---
@@ -87,7 +87,7 @@ Best regards,
 
 Visium Technologies Sales Team
 Email: info@visiumtechnologies.com
-Phone: +1 (703) 273-0383
+Phone: +1 (888) 344-9850
 
 P.S. Our technical team is available for architecture discussions and proof-of-concept planning.`,
     },
@@ -137,7 +137,7 @@ Best regards,
 
 Visium Technologies Sales Team
 Email: info@visiumtechnologies.com
-Phone: +1 (703) 273-0383
+Phone: +1 (888) 344-9850
 Website: https://trucontext.manus.space
 
 ---

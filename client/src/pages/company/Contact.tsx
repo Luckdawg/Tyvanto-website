@@ -61,7 +61,7 @@ export default function Contact() {
               <CardContent className="p-6 text-center">
                 <Phone className="h-12 w-12 text-secondary mx-auto mb-4" />
                 <h3 className="text-lg font-bold mb-2">Phone</h3>
-                <p className="text-gray-600">+1 (703) 273-0383</p>
+                <p className="text-gray-600">+1 (888) 344-9850</p>
               </CardContent>
             </Card>
 

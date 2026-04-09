@@ -160,7 +160,7 @@ export default function PrivacyPolicy() {
                   info@visiumtechnologies.com
                 </a>
               </p>
-              <p className="text-gray-700">Phone: +1 (703) 273-0383</p>
+              <p className="text-gray-700">Phone: +1 (888) 344-9850</p>
               <p className="text-gray-700 mt-2">
                 For privacy-specific inquiries, please include "Privacy Request" in your subject line.
               </p>
