@@ -14,6 +14,10 @@
 import React from 'react';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen, within } from '@testing-library/react';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { trpc } from '@/lib/trpc';
+import { httpBatchLink } from '@trpc/client';
+import superjson from 'superjson';
 
 // ── Mocks ─────────────────────────────────────────────────────────────────────
 
@@ -27,6 +31,10 @@ vi.mock('@/components/RequestQuoteModal', () => ({
   default: () => <div data-testid="request-quote-modal" />,
 }));
 
+vi.mock('@/components/TruClawTierModal', () => ({
+  default: () => <div data-testid="truclaw-tier-modal" />,
+}));
+
 vi.mock('@/contexts/CartContext', () => ({
   useCart: () => ({
     addItem: vi.fn(),
@@ -37,7 +45,7 @@ vi.mock('@/contexts/CartContext', () => ({
   }),
 }));
 
-vi.mock('sonner', () => ({ toast: { success: vi.fn(), error: vi.fn() } }));
+vi.mock('sonner', () => ({ toast: { success: vi.fn(), error: vi.fn(), info: vi.fn() } }));
 
 vi.mock('wouter', () => ({
   Link: ({ href, children }: { href: string; children: React.ReactNode }) => (
@@ -50,12 +58,30 @@ vi.mock('@/_core/hooks/useAuth', () => ({
   useAuth: () => ({ user: null, loading: false, isAuthenticated: false }),
 }));
 
+// ── tRPC wrapper ──────────────────────────────────────────────────────────────
+
+function createWrapper() {
+  const queryClient = new QueryClient({
+    defaultOptions: { queries: { retry: false }, mutations: { retry: false } },
+  });
+  const trpcClient = trpc.createClient({
+    links: [httpBatchLink({ url: 'http://localhost:3000/api/trpc', transformer: superjson })],
+  });
+  return function Wrapper({ children }: { children: React.ReactNode }) {
+    return (
+      <trpc.Provider client={trpcClient} queryClient={queryClient}>
+        <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+      </trpc.Provider>
+    );
+  };
+}
+
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
-// Lazy import after mocks are set up
 async function renderShop() {
   const { default: Shop } = await import('../Shop');
-  return render(<Shop />);
+  const wrapper = createWrapper();
+  return render(<Shop />, { wrapper });
 }
 
 // ── Tests ─────────────────────────────────────────────────────────────────────
@@ -67,7 +93,8 @@ describe('Shop — Industry Solutions & Vertical Platforms section', () => {
 
   it('renders the "Vertical Solutions" section label', async () => {
     await renderShop();
-    expect(screen.getByText('Vertical Solutions')).toBeInTheDocument();
+    // 'Vertical Solutions' appears in both the sticky nav and the section label
+    expect(screen.getAllByText('Vertical Solutions').length).toBeGreaterThanOrEqual(1);
   });
 
   it('renders the h2 heading "Industry Solutions & Vertical Platforms"', async () => {
@@ -171,48 +198,46 @@ describe('Shop — Industry Solutions & Vertical Platforms section', () => {
     expect(screen.getByText(/Research.*NGO.*Government/i)).toBeInTheDocument();
   });
 
-  it('shows "Pre-Sales · Smart City · Systems Integrators" badge on Card 9', async () => {
+  it('shows "Pre-Sales · Systems Integrators" badge on Card 9', async () => {
     await renderShop();
-    expect(screen.getByText(/Pre-Sales.*Smart City.*Systems Integrators/i)).toBeInTheDocument();
+    expect(screen.getByText(/Pre-Sales.*Systems Integrators/i)).toBeInTheDocument();
   });
 
-  // ── Pricing ────────────────────────────────────────────────────────────────
+  // ── Pricing (updated from spreadsheet) ────────────────────────────────────
 
-  it('shows $18,500/mo for Card 1', async () => {
+  it('shows $24,995/mo for Card 1 (Oil & Gas)', async () => {
     await renderShop();
-    expect(screen.getByText(/\$18,500/i)).toBeInTheDocument();
+    expect(screen.getByText(/\$24,995/i)).toBeInTheDocument();
   });
 
-  it('shows $28,000/mo for Card 2', async () => {
+  it('shows $28,000/mo for Card 2 (Smart City Gov)', async () => {
     await renderShop();
     expect(screen.getByText(/\$28,000/i)).toBeInTheDocument();
   });
 
-  it('shows $12,500/mo for Card 3', async () => {
+  it('shows $20,000/mo for Card 3 (Smart City Municipal)', async () => {
     await renderShop();
-    expect(screen.getByText(/\$12,500/i)).toBeInTheDocument();
+    expect(screen.getByText(/\$20,000/i)).toBeInTheDocument();
   });
 
-  it('shows $5,500/mo for Card 4', async () => {
+  it('shows $9,995/mo for Card 4 (Campus Security)', async () => {
     await renderShop();
-    expect(screen.getByText(/\$5,500/i)).toBeInTheDocument();
+    expect(screen.getByText(/\$9,995/i)).toBeInTheDocument();
   });
 
-  it('shows $8,500/mo for Card 7', async () => {
+  it('shows $19,950/mo for Card 7 (TruAddress)', async () => {
     await renderShop();
-    expect(screen.getByText(/\$8,500/i)).toBeInTheDocument();
+    expect(screen.getByText(/\$19,950/i)).toBeInTheDocument();
   });
 
-  it('shows $799/mo for Card 8', async () => {
+  it('shows $995/mo for Card 8 (PanelPulse)', async () => {
     await renderShop();
-    expect(screen.getAllByText(/\$799/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/\$995/i).length).toBeGreaterThan(0);
   });
 
-  it('shows "Annual billing saves 15–20%" note on each card', async () => {
+  it('shows $4,750/mo for Card 9 (Smart City Demo)', async () => {
     await renderShop();
-    const notes = screen.getAllByText(/Annual billing saves 15/i);
-    // 9 cards in the new section + possibly others from existing cards
-    expect(notes.length).toBeGreaterThanOrEqual(9);
+    expect(screen.getByText(/\$4,750/i)).toBeInTheDocument();
   });
 
   // ── Feature bullets ────────────────────────────────────────────────────────
@@ -254,7 +279,6 @@ describe('Shop — Industry Solutions & Vertical Platforms section', () => {
 
   it('shows WhatsApp and SMS feature bullet on Card 8', async () => {
     await renderShop();
-    // Text appears in both tagline and feature bullet
     expect(screen.getAllByText(/WhatsApp and SMS/i).length).toBeGreaterThan(0);
   });
 
