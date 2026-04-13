@@ -21,6 +21,7 @@ import { analyticsRouter } from "./routers/analytics";
 import { analyticsExportRouter } from "./routers/analytics-export";
 import { ecommerceRouter } from "./routers/ecommerce";
 import { quoteRouter } from "./routers/quote";
+import { shopCheckoutRouter } from "./routers/shop-checkout";
 
 export const appRouter = router({
     // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly
@@ -90,6 +91,9 @@ export const appRouter = router({
 
   // Quote Leads API (Request a Quote form from /shop page)
   quote: quoteRouter,
+
+  // Shop Checkout API (Stripe subscription checkout for /shop page products)
+  shopCheckout: shopCheckoutRouter,
 
   // TODO: add feature routers here, e.g.
   // todo: router({

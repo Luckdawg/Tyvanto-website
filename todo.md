@@ -2165,3 +2165,14 @@
 - [ ] Restructure page order for conversion flow
 - [ ] Add category filter tabs to Industry Solutions
 - [ ] Write/update tests for new calculator products
+
+## Stripe Sandbox Setup (Apr 13, 2026)
+- [x] Create all 17 Stripe sandbox products via API (16 with prices + 1 Contact Sales)
+- [x] Create monthly and annual prices for all products with correct discounts
+- [x] Write server/stripe/products.ts price registry with all product/price IDs
+- [x] Write server/routers/shop-checkout.ts tRPC router (createSubscriptionCheckout, getCheckoutSession, getMySubscriptions, listProducts)
+- [x] Register shopCheckoutRouter in server/routers.ts
+- [x] Add Subscribe Now buttons to core product cards (primary CTA)
+- [x] Add Subscribe Now buttons to vertical product cards
+- [x] Add checkout success/cancel URL param toast handlers
+- [x] Write 21 unit tests for products registry and helper functions (all passing)

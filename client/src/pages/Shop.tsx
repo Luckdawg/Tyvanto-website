@@ -20,6 +20,7 @@ import PricingCalculator from '@/components/PricingCalculator';
 import RequestQuoteModal from '@/components/RequestQuoteModal';
 import { useCart } from '@/contexts/CartContext';
 import { toast } from 'sonner';
+import { trpc } from '@/lib/trpc';
 import {
   Shield,
   Brain,
@@ -476,6 +477,50 @@ export default function Shop() {
   } | undefined>(undefined);
 
   const heroRef = useRef<HTMLDivElement>(null);
+
+  // ── Stripe checkout mutation ─────────────────────────────────────────────
+  const checkoutMutation = trpc.shopCheckout.createSubscriptionCheckout.useMutation({
+    onSuccess: (data) => {
+      if (data.url) {
+        window.open(data.url, '_blank');
+        toast.info('Redirecting to secure checkout…', {
+          description: 'A new tab has opened with the Stripe checkout page.',
+        });
+      }
+    },
+    onError: (err) => {
+      toast.error('Checkout failed', { description: err.message });
+    },
+  });
+
+  const handleSubscribe = useCallback(
+    (productId: string, billingCycle: 'monthly' | 'annual' = 'monthly') => {
+      checkoutMutation.mutate({ productId, billingCycle });
+    },
+    [checkoutMutation]
+  );
+
+  // Handle checkout success/cancel URL params
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const checkoutStatus = params.get('checkout');
+    const productName = params.get('product');
+    if (checkoutStatus === 'success') {
+      toast.success('Subscription activated!', {
+        description: productName
+          ? `Your ${decodeURIComponent(productName)} subscription is now active.`
+          : 'Your subscription is now active. Welcome to Visium Technologies.',
+        duration: 8000,
+      });
+      // Clean up URL
+      window.history.replaceState({}, '', '/shop');
+    } else if (checkoutStatus === 'cancelled') {
+      toast.info('Checkout cancelled', {
+        description: 'Your subscription was not started. Return any time to subscribe.',
+      });
+      window.history.replaceState({}, '', '/shop');
+    }
+  }, []);
 
   const handleRequestQuote = useCallback((snapshot: {
     productInterest: string;
@@ -956,28 +1001,40 @@ export default function Shop() {
                   )}
 
                   {/* CTAs */}
-                  <div className="flex gap-3 mt-2">
-                    <Link href={product.ctaHref} className="flex-1">
-                      <Button
-                        className="w-full font-bold text-black"
-                        style={{ background: 'linear-gradient(135deg, #00E5FF, #0080FF)' }}
-                      >
-                        {product.cta}
-                        <ArrowRight className="h-4 w-4 ml-2" />
-                      </Button>
-                    </Link>
+                  <div className="flex flex-col gap-2 mt-2">
+                    {/* Primary: Subscribe Now (Stripe checkout) */}
                     <Button
-                      variant="outline"
-                      className="border-white/15 text-slate-400 hover:bg-white/5 hover:text-white"
-                      onClick={() => handleAddToCart(product)}
-                      title="Add to cart"
+                      className="w-full font-bold text-black"
+                      style={{ background: 'linear-gradient(135deg, #00E5FF, #0080FF)' }}
+                      onClick={() => handleSubscribe(product.id === 'truclaw' ? 'truclaw-starter' : product.id)}
+                      disabled={checkoutMutation.isPending}
                     >
-                      {addedProducts.has(product.id) ? (
-                        <CheckCircle className="h-4 w-4 text-emerald-400" />
-                      ) : (
-                        <ShoppingCart className="h-4 w-4" />
-                      )}
+                      {checkoutMutation.isPending ? 'Opening checkout…' : 'Subscribe Now'}
+                      <ArrowRight className="h-4 w-4 ml-2" />
                     </Button>
+                    {/* Secondary row: Request Demo + Add to Cart */}
+                    <div className="flex gap-2">
+                      <Link href={product.ctaHref} className="flex-1">
+                        <Button
+                          variant="outline"
+                          className="w-full border-white/15 text-slate-300 hover:bg-white/5 hover:text-white text-sm"
+                        >
+                          {product.cta}
+                        </Button>
+                      </Link>
+                      <Button
+                        variant="outline"
+                        className="border-white/15 text-slate-400 hover:bg-white/5 hover:text-white"
+                        onClick={() => handleAddToCart(product)}
+                        title="Add to cart"
+                      >
+                        {addedProducts.has(product.id) ? (
+                          <CheckCircle className="h-4 w-4 text-emerald-400" />
+                        ) : (
+                          <ShoppingCart className="h-4 w-4" />
+                        )}
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1174,16 +1231,26 @@ export default function Shop() {
                       </span>
                     </div>
                   </div>
-                  <p className="text-xs text-slate-500 mb-5">Annual billing saves 15–20%. Volume discounts available.</p>
-                  <Link href="/demo">
+                  <p className="text-xs text-slate-500 mb-4">Annual billing saves 15–20%. Volume discounts available.</p>
+                  <div className="flex flex-col gap-2">
                     <Button
-                      className="w-full font-semibold border-cyan-500/40 text-cyan-300 hover:bg-cyan-500/10"
-                      variant="outline"
+                      className="w-full font-bold text-black"
+                      style={{ background: 'linear-gradient(135deg, #00E5FF, #0080FF)' }}
+                      onClick={() => handleSubscribe(vp.id)}
+                      disabled={checkoutMutation.isPending}
                     >
-                      Get Custom Quote
+                      {checkoutMutation.isPending ? 'Opening checkout…' : 'Subscribe Now'}
                       <ArrowRight className="h-4 w-4 ml-2" />
                     </Button>
-                  </Link>
+                    <Link href="/demo">
+                      <Button
+                        className="w-full font-semibold border-cyan-500/40 text-cyan-300 hover:bg-cyan-500/10 text-sm"
+                        variant="outline"
+                      >
+                        Get Custom Quote
+                      </Button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))}
