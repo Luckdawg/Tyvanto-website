@@ -1,8 +1,22 @@
 /**
  * PricingCalculator.test.tsx
- * Tests for the aligned pricing tiers in PricingCalculator.
- * Verifies that calculator output matches Core Offerings card pricing exactly.
- * Also covers the annual/monthly billing toggle and discount logic.
+ * Tests for the pricing calculator component.
+ * All pricing values sourced from Visium_Pricing_Formulas-01.xlsx (Apr 2026).
+ *
+ * TruContext:   $12,499/mo base · $0.40/node (10K–100K) · $0.25/node (100K+) · $450/agent
+ * TruClaw:     $1,299/mo Starter (≤10) · $9,999/mo Standard (11–50) · Enterprise (50+)
+ * Tru-InSight: $7,499/mo base · $2.20/camera
+ * ELI:         $9,499/mo base · $4.00/node above 500
+ * Full Suite:  $27,500/mo base · $3.00/node · $120/agent (10 included)
+ * Oil & Gas:   $24,995/mo base · $2.00/endpoint above 500
+ * Smart City Gov: $28,000/mo base · $2.00/node above 1,000
+ * Smart City Muni: $20,000/mo base · $2.00/device above 500
+ * Campus Security: $9,995/mo base · $2.00/camera above 100
+ * CaseForge:   $2,499/mo flat
+ * ASPIRE:      $1,499/mo flat
+ * TruAddress:  $19,950/mo base · $0.20/1K records above 100K
+ * PanelPulse:  $995/mo flat
+ * Smart City Demo: $4,750/mo flat
  */
 
 import React from 'react';
@@ -21,270 +35,31 @@ function renderCalculator() {
   return render(<PricingCalculator onRequestQuote={mockOnRequestQuote} />);
 }
 
-describe('PricingCalculator — Pricing Alignment', () => {
-  beforeEach(() => {
-    vi.clearAllMocks();
-  });
+// ─── Render smoke tests ───────────────────────────────────────────────────────
 
-  it('renders the calculator section header', () => {
+describe('PricingCalculator — Render', () => {
+  beforeEach(() => vi.clearAllMocks());
+
+  it('renders the section header', () => {
     renderCalculator();
-    expect(screen.getByText(/LIVE PRICING CALCULATOR/i)).toBeInTheDocument();
+    expect(screen.getByText(/LIVE PRICING ESTIMATOR/i)).toBeInTheDocument();
     expect(screen.getByText(/Estimate Your Monthly Investment/i)).toBeInTheDocument();
   });
 
-  it('shows all 5 product options', () => {
+  it('shows all 5 core product buttons', () => {
     renderCalculator();
     expect(screen.getAllByText(/TruContext/i).length).toBeGreaterThan(0);
     expect(screen.getAllByText(/TruClaw/i).length).toBeGreaterThan(0);
     expect(screen.getAllByText(/Tru-InSight/i).length).toBeGreaterThan(0);
-    expect(screen.getAllByText(/ELI/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/^ELI$/i).length).toBeGreaterThan(0);
     expect(screen.getAllByText(/Full Suite/i).length).toBeGreaterThan(0);
-  });
-
-  it('defaults to TruContext and shows $9,999/mo in rate info', () => {
-    renderCalculator();
-    expect(screen.getByText(/\$9,999\/mo/i)).toBeInTheDocument();
-  });
-
-  it('TruContext info shows correct tier rates: $0.50/node (10K–100K) and $0.20/node (100K+)', () => {
-    renderCalculator();
-    expect(screen.getByText(/\$0\.50\/node \(10K–100K\)/i)).toBeInTheDocument();
-    expect(screen.getByText(/\$0\.20\/node \(100K\+\)/i)).toBeInTheDocument();
-  });
-
-  it('switching to TruClaw shows Starter $799/mo info', () => {
-    renderCalculator();
-    const truClawBtns = screen.getAllByText(/TruClaw/i);
-    act(() => fireEvent.click(truClawBtns[0]));
-    expect(screen.getByText(/\$799\/mo Starter/i)).toBeInTheDocument();
-  });
-
-  it('TruClaw info shows Standard $7,999/mo for 11–50 agents', () => {
-    renderCalculator();
-    const truClawBtns = screen.getAllByText(/TruClaw/i);
-    act(() => fireEvent.click(truClawBtns[0]));
-    expect(screen.getByText(/\$7,999\/mo Standard \(11–50 agents/i)).toBeInTheDocument();
-  });
-
-  it('switching to Tru-InSight shows $2,499/mo base info', () => {
-    renderCalculator();
-    const insightBtns = screen.getAllByText(/Tru-InSight/i);
-    act(() => fireEvent.click(insightBtns[0]));
-    expect(screen.getByText(/\$2,499\/mo base/i)).toBeInTheDocument();
-  });
-
-  it('Tru-InSight info shows $0.08/camera metered inference rate', () => {
-    renderCalculator();
-    const insightBtns = screen.getAllByText(/Tru-InSight/i);
-    act(() => fireEvent.click(insightBtns[0]));
-    expect(screen.getByText(/\$0\.08\/camera metered inference/i)).toBeInTheDocument();
-  });
-
-  it('switching to ELI shows $7,500/mo regional base info', () => {
-    renderCalculator();
-    const eliBtns = screen.getAllByText(/^ELI$/i);
-    act(() => fireEvent.click(eliBtns[0]));
-    expect(screen.getByText(/\$7,500\/mo regional base/i)).toBeInTheDocument();
-  });
-
-  it('ELI info shows $0.15/node above 500', () => {
-    renderCalculator();
-    const eliBtns = screen.getAllByText(/^ELI$/i);
-    act(() => fireEvent.click(eliBtns[0]));
-    expect(screen.getByText(/\$0\.15\/node above 500/i)).toBeInTheDocument();
-  });
-
-  it('Full Suite shows $14,999/mo base with 25% bundle discount info', () => {
-    renderCalculator();
-    const bundleBtns = screen.getAllByText(/Full Suite/i);
-    act(() => fireEvent.click(bundleBtns[0]));
-    expect(screen.getByText(/\$14,999\/mo \(all 4 platforms, 25% bundle discount\)/i)).toBeInTheDocument();
-  });
-
-  it('shows "Get Custom Quote" CTA button', () => {
-    renderCalculator();
-    expect(screen.getAllByText(/Get Custom Quote/i).length).toBeGreaterThan(0);
-  });
-
-  it('shows "Compare vs. Competitors" button', () => {
-    renderCalculator();
-    expect(screen.getByText(/Compare vs\. Competitors/i)).toBeInTheDocument();
-  });
-
-  it('clicking "Get Custom Quote" calls onRequestQuote with trucontext product', () => {
-    renderCalculator();
-    const quoteBtns = screen.getAllByText(/Get Custom Quote/i);
-    act(() => fireEvent.click(quoteBtns[0]));
-    expect(mockOnRequestQuote).toHaveBeenCalledWith(
-      expect.objectContaining({
-        productInterest: 'trucontext',
-      })
-    );
-  });
-
-  it('shows cost breakdown when breakdown toggle is clicked', () => {
-    renderCalculator();
-    const toggleBtn = screen.getByText(/Show cost breakdown/i);
-    act(() => fireEvent.click(toggleBtn));
-    expect(screen.getByText(/Platform fee/i)).toBeInTheDocument();
-  });
-
-  it('shows "First 10,000 nodes" as base fee label in breakdown for TruContext', () => {
-    renderCalculator();
-    const toggleBtn = screen.getByText(/Show cost breakdown/i);
-    act(() => fireEvent.click(toggleBtn));
-    expect(screen.getByText(/First 10,000 nodes/i)).toBeInTheDocument();
-  });
-
-  it('shows fine print about estimates mirroring Core Offerings tiers', () => {
-    renderCalculator();
-    expect(screen.getByText(/mirror the Core Offerings pricing tiers/i)).toBeInTheDocument();
-  });
-
-  it('node slider is present for TruContext', () => {
-    renderCalculator();
-    const sliders = document.querySelectorAll('input[type="range"]');
-    expect(sliders.length).toBeGreaterThanOrEqual(1);
-  });
-
-  it('TruClaw at 50+ agents shows "Contact Sales" instead of a dollar amount', () => {
-    renderCalculator();
-    const truClawBtns = screen.getAllByText(/TruClaw/i);
-    act(() => fireEvent.click(truClawBtns[0]));
-
-    // Drag agent slider to max (60 = >50 agents for TruClaw)
-    const slider = document.querySelector('input[type="range"]') as HTMLInputElement;
-    act(() => fireEvent.change(slider, { target: { value: '60' } }));
-
-    expect(screen.getAllByText(/Contact Sales/i).length).toBeGreaterThan(0);
-  });
-
-  it('shows "Request Enterprise Quote" CTA when Contact Sales is triggered for TruClaw', () => {
-    renderCalculator();
-    const truClawBtns = screen.getAllByText(/TruClaw/i);
-    act(() => fireEvent.click(truClawBtns[0]));
-    const slider = document.querySelector('input[type="range"]') as HTMLInputElement;
-    act(() => fireEvent.change(slider, { target: { value: '60' } }));
-    expect(screen.getByText(/Request Enterprise Quote/i)).toBeInTheDocument();
-  });
-});
-
-// ─── Billing Toggle Tests ──────────────────────────────────────────────────────
-
-describe('PricingCalculator — Annual/Monthly Billing Toggle', () => {
-  beforeEach(() => {
-    vi.clearAllMocks();
-  });
-
-  it('renders the Monthly and Annual toggle buttons', () => {
-    renderCalculator();
-    expect(screen.getByRole('button', { name: /Monthly/i })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /Annual/i })).toBeInTheDocument();
-  });
-
-  it('defaults to Monthly billing — shows "Estimated Monthly Cost" label', () => {
-    renderCalculator();
-    expect(screen.getByText(/Estimated Monthly Cost/i)).toBeInTheDocument();
-  });
-
-  it('Annual toggle button shows the discount badge (Save 15%)', () => {
-    renderCalculator();
-    // The badge may appear multiple times (toggle + hint text)
-    expect(screen.getAllByText(/Save 15%/i).length).toBeGreaterThan(0);
-  });
-
-  it('switching to Annual changes the cost label to "Estimated Annual Cost"', () => {
-    renderCalculator();
-    const annualBtn = screen.getByRole('button', { name: /Annual/i });
-    act(() => fireEvent.click(annualBtn));
-    expect(screen.getByText(/Estimated Annual Cost/i)).toBeInTheDocument();
-  });
-
-  it('switching to Annual shows the savings banner with "Annual billing saves you"', () => {
-    renderCalculator();
-    const annualBtn = screen.getByRole('button', { name: /Annual/i });
-    act(() => fireEvent.click(annualBtn));
-    expect(screen.getByText(/Annual billing saves you/i)).toBeInTheDocument();
-  });
-
-  it('switching to Annual shows "per month (billed annually)" sub-label', () => {
-    renderCalculator();
-    const annualBtn = screen.getByRole('button', { name: /Annual/i });
-    act(() => fireEvent.click(annualBtn));
-    expect(screen.getByText(/per month \(billed annually\)/i)).toBeInTheDocument();
-  });
-
-  it('switching back to Monthly restores "per month" label', () => {
-    renderCalculator();
-    const annualBtn = screen.getByRole('button', { name: /Annual/i });
-    act(() => fireEvent.click(annualBtn));
-    const monthlyBtn = screen.getByRole('button', { name: /Monthly/i });
-    act(() => fireEvent.click(monthlyBtn));
-    expect(screen.getByText(/^per month$/i)).toBeInTheDocument();
-  });
-
-  it('Full Suite toggle shows "Save 20%" discount badge', () => {
-    renderCalculator();
-    const bundleBtns = screen.getAllByText(/Full Suite/i);
-    act(() => fireEvent.click(bundleBtns[0]));
-    expect(screen.getAllByText(/Save 20%/i).length).toBeGreaterThan(0);
-  });
-
-  it('onRequestQuote is called with billingCycle: "monthly" by default', () => {
-    renderCalculator();
-    const quoteBtns = screen.getAllByText(/Get Custom Quote/i);
-    act(() => fireEvent.click(quoteBtns[0]));
-    expect(mockOnRequestQuote).toHaveBeenCalledWith(
-      expect.objectContaining({ billingCycle: 'monthly' })
-    );
-  });
-
-  it('onRequestQuote is called with billingCycle: "annual" after switching to Annual', () => {
-    renderCalculator();
-    const annualBtn = screen.getByRole('button', { name: /Annual/i });
-    act(() => fireEvent.click(annualBtn));
-    const quoteBtns = screen.getAllByText(/Get Custom Quote/i);
-    act(() => fireEvent.click(quoteBtns[0]));
-    expect(mockOnRequestQuote).toHaveBeenCalledWith(
-      expect.objectContaining({ billingCycle: 'annual' })
-    );
-  });
-
-  it('annual billing shows a hint about saving with annual on monthly view', () => {
-    renderCalculator();
-    // Monthly view should show the "save X% with annual" hint
-    expect(screen.getByText(/save 15% with annual/i)).toBeInTheDocument();
-  });
-
-  it('breakdown total row shows discounted amount when annual is selected', () => {
-    renderCalculator();
-    // Switch to annual
-    const annualBtn = screen.getByRole('button', { name: /Annual/i });
-    act(() => fireEvent.click(annualBtn));
-    // Open breakdown
-    const toggleBtn = screen.getByText(/Show cost breakdown/i);
-    act(() => fireEvent.click(toggleBtn));
-    // Should show "Annual total (billed once)" line
-    expect(screen.getByText(/Annual total \(billed once\)/i)).toBeInTheDocument();
-  });
-});
-
-describe('PricingCalculator — Vertical Products & Flat-Rate', () => {
-  beforeEach(() => {
-    vi.clearAllMocks();
-  });
-
-  it('shows "Core Platforms" and "Vertical Solutions" group labels', () => {
-    renderCalculator();
-    expect(screen.getByText(/Core Platforms/i)).toBeInTheDocument();
-    expect(screen.getByText(/Vertical Solutions/i)).toBeInTheDocument();
   });
 
   it('shows all 9 vertical product buttons', () => {
     renderCalculator();
     expect(screen.getAllByText(/Oil & Gas/i).length).toBeGreaterThan(0);
     expect(screen.getAllByText(/Smart City Gov/i).length).toBeGreaterThan(0);
-    expect(screen.getAllByText(/Smart City Municipal/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/Smart City Muni/i).length).toBeGreaterThan(0);
     expect(screen.getAllByText(/Campus Security/i).length).toBeGreaterThan(0);
     expect(screen.getAllByText(/CaseForge Legal/i).length).toBeGreaterThan(0);
     expect(screen.getAllByText(/ASPIRE Reporting/i).length).toBeGreaterThan(0);
@@ -293,66 +68,375 @@ describe('PricingCalculator — Vertical Products & Flat-Rate', () => {
     expect(screen.getAllByText(/Smart City Demo/i).length).toBeGreaterThan(0);
   });
 
-  it('selecting CaseForge shows flat-rate info panel', () => {
+  it('shows "Core Platforms" and "Vertical Solutions" group labels', () => {
     renderCalculator();
-    const btn = screen.getAllByText(/CaseForge Legal/i)[0];
-    act(() => fireEvent.click(btn));
-    expect(screen.getByText(/Flat-rate product/i)).toBeInTheDocument();
+    expect(screen.getByText(/Core Platforms/i)).toBeInTheDocument();
+    expect(screen.getByText(/Vertical Solutions/i)).toBeInTheDocument();
   });
 
-  it('selecting PanelPulse shows $799/mo flat rate info', () => {
+  it('shows the CTA button', () => {
     renderCalculator();
-    const btn = screen.getAllByText(/PanelPulse/i)[0];
-    act(() => fireEvent.click(btn));
-    expect(screen.getByText(/\$799\/mo flat rate/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/Get Custom Quote/i).length).toBeGreaterThan(0);
   });
 
-  it('selecting ASPIRE Reporting shows $1,499/mo flat rate info', () => {
+  it('shows Compare vs. Competitors button', () => {
     renderCalculator();
-    const btn = screen.getAllByText(/ASPIRE Reporting/i)[0];
+    expect(screen.getByText(/Compare vs\. Competitors/i)).toBeInTheDocument();
+  });
+
+  it('shows fine print about indicative estimates', () => {
+    renderCalculator();
+    expect(screen.getByText(/Estimates are indicative only/i)).toBeInTheDocument();
+  });
+});
+
+// ─── TruContext pricing (spreadsheet Apr 2026) ────────────────────────────────
+
+describe('TruContext pricing', () => {
+  beforeEach(() => vi.clearAllMocks());
+
+  it('defaults to TruContext and shows $12,499/mo in info text', () => {
+    renderCalculator();
+    expect(screen.getByText(/\$12,499\/mo/i)).toBeInTheDocument();
+  });
+
+  it('shows $0.40/node (10K–100K) rate in info text', () => {
+    renderCalculator();
+    expect(screen.getByText(/\$0\.40\/node \(10K–100K\)/i)).toBeInTheDocument();
+  });
+
+  it('shows $0.25/node (100K+) rate in info text', () => {
+    renderCalculator();
+    expect(screen.getByText(/\$0\.25\/node \(100K\+\)/i)).toBeInTheDocument();
+  });
+
+  it('shows $450/agent rate in info text', () => {
+    renderCalculator();
+    expect(screen.getByText(/\$450\/agent/i)).toBeInTheDocument();
+  });
+
+  it('shows node slider for TruContext', () => {
+    renderCalculator();
+    const sliders = document.querySelectorAll('input[type="range"]');
+    expect(sliders.length).toBeGreaterThanOrEqual(1);
+  });
+
+  it('clicking Get Custom Quote calls onRequestQuote with trucontext', () => {
+    renderCalculator();
+    const btn = screen.getAllByText(/Get Custom Quote/i)[0];
     act(() => fireEvent.click(btn));
+    expect(mockOnRequestQuote).toHaveBeenCalledWith(
+      expect.objectContaining({ productInterest: 'trucontext' })
+    );
+  });
+});
+
+// ─── TruClaw pricing ──────────────────────────────────────────────────────────
+
+describe('TruClaw pricing', () => {
+  beforeEach(() => vi.clearAllMocks());
+
+  it('switching to TruClaw shows Starter $1,299/mo info', () => {
+    renderCalculator();
+    act(() => fireEvent.click(screen.getAllByText(/TruClaw/i)[0]));
+    expect(screen.getByText(/\$1,299\/mo Starter/i)).toBeInTheDocument();
+  });
+
+  it('TruClaw info shows Standard $9,999/mo for 11–50 agents', () => {
+    renderCalculator();
+    act(() => fireEvent.click(screen.getAllByText(/TruClaw/i)[0]));
+    expect(screen.getByText(/\$9,999\/mo Standard \(11–50 agents/i)).toBeInTheDocument();
+  });
+
+  it('shows Starter, Standard, Enterprise tier cards', () => {
+    renderCalculator();
+    act(() => fireEvent.click(screen.getAllByText(/TruClaw/i)[0]));
+    expect(screen.getByText('Starter')).toBeInTheDocument();
+    expect(screen.getByText('Standard')).toBeInTheDocument();
+    expect(screen.getByText('Enterprise')).toBeInTheDocument();
+  });
+
+  it('TruClaw at 60 agents shows Contact Sales', () => {
+    renderCalculator();
+    act(() => fireEvent.click(screen.getAllByText(/TruClaw/i)[0]));
+    const slider = document.querySelector('input[type="range"]') as HTMLInputElement;
+    act(() => fireEvent.change(slider, { target: { value: '60' } }));
+    expect(screen.getAllByText(/Contact Sales/i).length).toBeGreaterThan(0);
+  });
+
+  it('shows Request Enterprise Quote CTA when Contact Sales is triggered', () => {
+    renderCalculator();
+    act(() => fireEvent.click(screen.getAllByText(/TruClaw/i)[0]));
+    // TruClaw renders a readOnly display slider + an interactive slider; use the last one
+    const sliders = document.querySelectorAll('input[type="range"]');
+    const interactiveSlider = sliders[sliders.length - 1] as HTMLInputElement;
+    act(() => fireEvent.change(interactiveSlider, { target: { value: '60' } }));
+    expect(screen.getAllByText(/Request Enterprise Quote/i).length).toBeGreaterThan(0);
+  });
+});
+
+// ─── Tru-InSight pricing ──────────────────────────────────────────────────────
+
+describe('Tru-InSight pricing', () => {
+  beforeEach(() => vi.clearAllMocks());
+
+  it('shows $7,499/mo base platform in info text', () => {
+    renderCalculator();
+    act(() => fireEvent.click(screen.getAllByText(/Tru-InSight/i)[0]));
+    expect(screen.getByText(/\$7,499\/mo base platform/i)).toBeInTheDocument();
+  });
+
+  it('shows $2.20/camera metered inference rate in info text', () => {
+    renderCalculator();
+    act(() => fireEvent.click(screen.getAllByText(/Tru-InSight/i)[0]));
+    expect(screen.getByText(/\$2\.20\/camera metered inference/i)).toBeInTheDocument();
+  });
+});
+
+// ─── ELI pricing ─────────────────────────────────────────────────────────────
+
+describe('ELI pricing', () => {
+  beforeEach(() => vi.clearAllMocks());
+
+  it('shows $9,499/mo regional base in info text', () => {
+    renderCalculator();
+    act(() => fireEvent.click(screen.getAllByText(/^ELI$/i)[0]));
+    expect(screen.getByText(/\$9,499\/mo regional base/i)).toBeInTheDocument();
+  });
+
+  it('shows $4.00/node above 500 in info text', () => {
+    renderCalculator();
+    act(() => fireEvent.click(screen.getAllByText(/^ELI$/i)[0]));
+    expect(screen.getByText(/\$4\.00\/node above 500/i)).toBeInTheDocument();
+  });
+});
+
+// ─── Full Suite Bundle pricing ────────────────────────────────────────────────
+
+describe('Full Suite Bundle pricing', () => {
+  beforeEach(() => vi.clearAllMocks());
+
+  it('shows $27,500/mo base with 25% bundle discount in info text', () => {
+    renderCalculator();
+    act(() => fireEvent.click(screen.getAllByText(/Full Suite/i)[0]));
+    expect(screen.getByText(/\$27,500\/mo \(all 4 platforms, 25% bundle discount\)/i)).toBeInTheDocument();
+  });
+
+  it('shows $3.00/node above 20K in info text', () => {
+    renderCalculator();
+    act(() => fireEvent.click(screen.getAllByText(/Full Suite/i)[0]));
+    expect(screen.getByText(/\$3\.00\/node above 20K/i)).toBeInTheDocument();
+  });
+
+  it('shows $120/agent (10 included) in info text', () => {
+    renderCalculator();
+    act(() => fireEvent.click(screen.getAllByText(/Full Suite/i)[0]));
+    expect(screen.getByText(/\$120\/agent \(10 included\)/i)).toBeInTheDocument();
+  });
+});
+
+// ─── Flat-rate vertical products ─────────────────────────────────────────────
+
+describe('Flat-rate vertical products', () => {
+  beforeEach(() => vi.clearAllMocks());
+
+  it('CaseForge shows $2,499/mo flat rate', () => {
+    renderCalculator();
+    act(() => fireEvent.click(screen.getAllByText(/CaseForge Legal/i)[0]));
+    expect(screen.getByText(/\$2,499\/mo flat rate/i)).toBeInTheDocument();
+  });
+
+  it('ASPIRE shows $1,499/mo flat rate', () => {
+    renderCalculator();
+    act(() => fireEvent.click(screen.getAllByText(/ASPIRE Reporting/i)[0]));
     expect(screen.getByText(/\$1,499\/mo flat rate/i)).toBeInTheDocument();
   });
 
-  it('selecting Oil & Gas shows $18,500/mo base info', () => {
+  it('PanelPulse shows $995/mo flat rate', () => {
     renderCalculator();
-    const btn = screen.getAllByText(/Oil & Gas/i)[0];
-    act(() => fireEvent.click(btn));
-    expect(screen.getByText(/\$18,500\/mo/i)).toBeInTheDocument();
+    act(() => fireEvent.click(screen.getAllByText(/PanelPulse/i)[0]));
+    expect(screen.getByText(/\$995\/mo flat rate/i)).toBeInTheDocument();
   });
 
-  it('selecting Smart City Gov shows $28,000/mo base info', () => {
+  it('Smart City Demo shows $4,750/mo flat rate', () => {
     renderCalculator();
-    const btn = screen.getAllByText(/Smart City Gov/i)[0];
-    act(() => fireEvent.click(btn));
-    expect(screen.getByText(/\$28,000\/mo/i)).toBeInTheDocument();
+    act(() => fireEvent.click(screen.getAllByText(/Smart City Demo/i)[0]));
+    expect(screen.getByText(/\$4,750\/mo flat rate/i)).toBeInTheDocument();
   });
 
-  it('selecting Campus Security shows $5,500/mo base info', () => {
+  it('flat-rate products show the flat-rate info panel', () => {
     renderCalculator();
-    const btn = screen.getAllByText(/Campus Security/i)[0];
-    act(() => fireEvent.click(btn));
-    expect(screen.getByText(/\$5,500\/mo/i)).toBeInTheDocument();
+    act(() => fireEvent.click(screen.getAllByText(/CaseForge Legal/i)[0]));
+    expect(screen.getByText(/Flat-rate product/i)).toBeInTheDocument();
   });
 
-  it('flat-rate products do not show node slider', () => {
+  it('flat-rate products do not show node sliders', () => {
     renderCalculator();
-    const btn = screen.getAllByText(/Smart City Demo/i)[0];
-    act(() => fireEvent.click(btn));
-    // Node slider should not be present for flat-rate products
-    const nodeSliders = document.querySelectorAll('input[type="range"]');
-    expect(nodeSliders.length).toBe(0);
+    act(() => fireEvent.click(screen.getAllByText(/Smart City Demo/i)[0]));
+    const sliders = document.querySelectorAll('input[type="range"]');
+    expect(sliders.length).toBe(0);
+  });
+});
+
+// ─── Usage-based vertical products ───────────────────────────────────────────
+
+describe('Usage-based vertical products', () => {
+  beforeEach(() => vi.clearAllMocks());
+
+  it('Oil & Gas shows $24,995/mo base in info text', () => {
+    renderCalculator();
+    act(() => fireEvent.click(screen.getAllByText(/Oil & Gas/i)[0]));
+    expect(screen.getByText(/\$24,995\/mo base/i)).toBeInTheDocument();
   });
 
-  it('annual billing applies 15% discount to vertical products', () => {
+  it('Oil & Gas shows $2.00/endpoint above 500 in info text', () => {
     renderCalculator();
-    // Select CaseForge ($2,499 flat)
-    const btn = screen.getAllByText(/CaseForge Legal/i)[0];
-    act(() => fireEvent.click(btn));
-    // Switch to annual
-    const annualBtn = screen.getByRole('button', { name: /Annual/i });
-    act(() => fireEvent.click(annualBtn));
-    // Should show savings banner
+    act(() => fireEvent.click(screen.getAllByText(/Oil & Gas/i)[0]));
+    expect(screen.getByText(/\$2\.00\/endpoint above 500/i)).toBeInTheDocument();
+  });
+
+  it('Smart City Gov shows $28,000/mo base in info text', () => {
+    renderCalculator();
+    act(() => fireEvent.click(screen.getAllByText(/Smart City Gov/i)[0]));
+    expect(screen.getByText(/\$28,000\/mo base/i)).toBeInTheDocument();
+  });
+
+  it('Smart City Gov shows $2.00/node above 1,000 in info text', () => {
+    renderCalculator();
+    act(() => fireEvent.click(screen.getAllByText(/Smart City Gov/i)[0]));
+    expect(screen.getByText(/\$2\.00\/node above 1,000/i)).toBeInTheDocument();
+  });
+
+  it('Smart City Muni shows $20,000/mo base in info text', () => {
+    renderCalculator();
+    act(() => fireEvent.click(screen.getAllByText(/Smart City Muni/i)[0]));
+    expect(screen.getByText(/\$20,000\/mo base/i)).toBeInTheDocument();
+  });
+
+  it('Campus Security shows $9,995/mo base in info text', () => {
+    renderCalculator();
+    act(() => fireEvent.click(screen.getAllByText(/Campus Security/i)[0]));
+    expect(screen.getByText(/\$9,995\/mo base/i)).toBeInTheDocument();
+  });
+
+  it('Campus Security shows $2.00/camera above 100 in info text', () => {
+    renderCalculator();
+    act(() => fireEvent.click(screen.getAllByText(/Campus Security/i)[0]));
+    expect(screen.getByText(/\$2\.00\/camera above 100/i)).toBeInTheDocument();
+  });
+
+  it('TruAddress shows $19,950/mo base in info text', () => {
+    renderCalculator();
+    act(() => fireEvent.click(screen.getAllByText(/TruAddress/i)[0]));
+    expect(screen.getByText(/\$19,950\/mo base/i)).toBeInTheDocument();
+  });
+
+  it('TruAddress shows $0.20/1K records above 100K in info text', () => {
+    renderCalculator();
+    act(() => fireEvent.click(screen.getAllByText(/TruAddress/i)[0]));
+    expect(screen.getByText(/\$0\.20\/1K records above 100K/i)).toBeInTheDocument();
+  });
+});
+
+// ─── Billing toggle ───────────────────────────────────────────────────────────
+
+describe('Annual/Monthly Billing Toggle', () => {
+  beforeEach(() => vi.clearAllMocks());
+
+  it('renders Monthly and Annual toggle buttons', () => {
+    renderCalculator();
+    expect(screen.getByRole('button', { name: /Monthly/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Annual/i })).toBeInTheDocument();
+  });
+
+  it('defaults to Monthly — shows "Estimated Monthly Cost"', () => {
+    renderCalculator();
+    // Multiple elements may match; verify at least one is present
+    expect(screen.getAllByText(/Estimated Monthly Cost/i).length).toBeGreaterThan(0);
+  });
+
+  it('Annual toggle shows Save 15% badge', () => {
+    renderCalculator();
+    expect(screen.getAllByText(/Save 15%/i).length).toBeGreaterThan(0);
+  });
+
+  it('switching to Annual changes label to "Estimated Annual Cost"', () => {
+    renderCalculator();
+    act(() => fireEvent.click(screen.getByRole('button', { name: /Annual/i })));
+    expect(screen.getByText(/Estimated Annual Cost/i)).toBeInTheDocument();
+  });
+
+  it('switching to Annual shows savings banner', () => {
+    renderCalculator();
+    act(() => fireEvent.click(screen.getByRole('button', { name: /Annual/i })));
     expect(screen.getByText(/Annual billing saves you/i)).toBeInTheDocument();
+  });
+
+  it('switching to Annual shows "per month, billed annually" label', () => {
+    renderCalculator();
+    act(() => fireEvent.click(screen.getByRole('button', { name: /Annual/i })));
+    expect(screen.getByText(/per month, billed annually/i)).toBeInTheDocument();
+  });
+
+  it('switching back to Monthly hides savings banner', () => {
+    renderCalculator();
+    act(() => fireEvent.click(screen.getByRole('button', { name: /Annual/i })));
+    act(() => fireEvent.click(screen.getByRole('button', { name: /Monthly/i })));
+    expect(screen.queryByText(/Annual billing saves you/i)).not.toBeInTheDocument();
+  });
+
+  it('onRequestQuote called with billingCycle: "monthly" by default', () => {
+    renderCalculator();
+    act(() => fireEvent.click(screen.getAllByText(/Get Custom Quote/i)[0]));
+    expect(mockOnRequestQuote).toHaveBeenCalledWith(
+      expect.objectContaining({ billingCycle: 'monthly' })
+    );
+  });
+
+  it('onRequestQuote called with billingCycle: "annual" after switching', () => {
+    renderCalculator();
+    act(() => fireEvent.click(screen.getByRole('button', { name: /Annual/i })));
+    act(() => fireEvent.click(screen.getAllByText(/Get Custom Quote/i)[0]));
+    expect(mockOnRequestQuote).toHaveBeenCalledWith(
+      expect.objectContaining({ billingCycle: 'annual' })
+    );
+  });
+
+  it('annual billing applies to flat-rate vertical products', () => {
+    renderCalculator();
+    act(() => fireEvent.click(screen.getAllByText(/CaseForge Legal/i)[0]));
+    act(() => fireEvent.click(screen.getByRole('button', { name: /Annual/i })));
+    expect(screen.getByText(/Annual billing saves you/i)).toBeInTheDocument();
+  });
+
+  it('breakdown shows "Annual total (billed once)" when annual is selected', () => {
+    renderCalculator();
+    act(() => fireEvent.click(screen.getByRole('button', { name: /Annual/i })));
+    act(() => fireEvent.click(screen.getByText(/Show cost breakdown/i)));
+    expect(screen.getByText(/Annual total \(billed once\)/i)).toBeInTheDocument();
+  });
+});
+
+// ─── Cost breakdown ───────────────────────────────────────────────────────────
+
+describe('Cost breakdown', () => {
+  beforeEach(() => vi.clearAllMocks());
+
+  it('shows breakdown toggle button', () => {
+    renderCalculator();
+    expect(screen.getByText(/Show cost breakdown/i)).toBeInTheDocument();
+  });
+
+  it('expands breakdown when clicked', () => {
+    renderCalculator();
+    act(() => fireEvent.click(screen.getByText(/Show cost breakdown/i)));
+    expect(screen.getByText(/Hide cost breakdown/i)).toBeInTheDocument();
+    expect(screen.getByText('Base fee')).toBeInTheDocument();
+  });
+
+  it('shows base fee label in breakdown for TruContext', () => {
+    renderCalculator();
+    act(() => fireEvent.click(screen.getByText(/Show cost breakdown/i)));
+    expect(screen.getByText(/First 10,000 nodes included/i)).toBeInTheDocument();
   });
 });
