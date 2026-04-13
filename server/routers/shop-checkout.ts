@@ -174,6 +174,43 @@ export const shopCheckoutRouter = router({
     }),
 
   /**
+   * Creates a Stripe Customer Portal session so the user can manage their
+   * billing, payment methods, and subscriptions directly in Stripe.
+   */
+  createCustomerPortalSession: protectedProcedure.mutation(async ({ ctx }) => {
+    const userEmail = (ctx.user as any)?.email;
+    if (!userEmail) {
+      throw new Error('No email associated with your account.');
+    }
+
+    const origin = (ctx.req.headers.origin as string) || 'https://visiumtechnologies.com';
+
+    // Find the Stripe customer record for this user
+    const customers = await stripe.customers.list({ email: userEmail, limit: 1 });
+
+    let customerId: string;
+
+    if (customers.data.length > 0) {
+      customerId = customers.data[0].id;
+    } else {
+      // Create a customer record if one doesn't exist yet
+      const newCustomer = await stripe.customers.create({
+        email: userEmail,
+        name: (ctx.user as any)?.name ?? undefined,
+        metadata: { visium_user_id: String((ctx.user as any)?.id ?? '') },
+      });
+      customerId = newCustomer.id;
+    }
+
+    const portalSession = await stripe.billingPortal.sessions.create({
+      customer: customerId,
+      return_url: `${origin}/account/subscriptions`,
+    });
+
+    return { url: portalSession.url };
+  }),
+
+  /**
    * Returns all active Visium subscriptions for the authenticated user.
    * Looks up by customer email in Stripe.
    */

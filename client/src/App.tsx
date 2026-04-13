@@ -70,6 +70,7 @@ import PartnerLogin from "./pages/partner/PartnerLogin";
 // import PartnerDetails from "./pages/admin/PartnerDetails"; // TODO: Fix TypeScript errors
 import DealRegistration from "./pages/partner/DealRegistration";
 import Shop from "./pages/Shop";
+import MySubscriptions from "./pages/account/MySubscriptions";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import OrderConfirmation from "./pages/OrderConfirmation";
@@ -150,6 +151,9 @@ function Router() {
       {/* <Route path="/partners/resources" component={PartnerResources} /> */}
       {/* <Route path="/admin/partner-applications" component={PartnerApplications} /> */}
       {/* <Route path="/admin/partners/:id" component={PartnerDetails} /> */}
+
+      {/* Account Routes */}
+      <Route path="/account/subscriptions" component={MySubscriptions} />
 
       {/* E-Commerce Routes */}
       <Route path="/shop" component={Shop} />

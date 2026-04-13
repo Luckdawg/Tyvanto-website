@@ -2176,3 +2176,13 @@
 - [x] Add Subscribe Now buttons to vertical product cards
 - [x] Add checkout success/cancel URL param toast handlers
 - [x] Write 21 unit tests for products registry and helper functions (all passing)
+
+## Stripe Follow-ups (Apr 13, 2026)
+- [ ] Verify Stripe checkout flow end-to-end (test card 4242 4242 4242 4242)
+- [ ] Build /account/subscriptions page with active subscription list and management
+- [ ] Add getMySubscriptions tRPC query to fetch live Stripe subscription data
+- [ ] Add cancel/manage subscription CTA linking to Stripe Customer Portal
+- [ ] Build TruClaw tier-picker modal (Starter / Standard / Enterprise) before checkout
+- [ ] Wire tier-picker into Shop page Subscribe Now for truclaw product
+- [ ] Add navigation link to My Subscriptions in user account menu
+- [ ] Write tests for TruClaw tier picker and subscriptions page

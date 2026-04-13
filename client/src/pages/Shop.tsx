@@ -18,6 +18,7 @@ import { Link, useLocation } from 'wouter';
 import { Button } from '@/components/ui/button';
 import PricingCalculator from '@/components/PricingCalculator';
 import RequestQuoteModal from '@/components/RequestQuoteModal';
+import TruClawTierModal from '@/components/TruClawTierModal';
 import { useCart } from '@/contexts/CartContext';
 import { toast } from 'sonner';
 import { trpc } from '@/lib/trpc';
@@ -466,6 +467,8 @@ export default function Shop() {
   const [animatedNodes, setAnimatedNodes] = useState(0);
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [quoteDefaultProduct, setQuoteDefaultProduct] = useState<string>('');
+  const [truClawModalOpen, setTruClawModalOpen] = useState(false);
+  const [truClawBillingCycle, setTruClawBillingCycle] = useState<'monthly' | 'annual'>('monthly');
   const [activeVerticalFilter, setActiveVerticalFilter] = useState<string>('All');
   const [stickyNavVisible, setStickyNavVisible] = useState(false);
   const [pricingSnapshot, setPricingSnapshot] = useState<{
@@ -495,6 +498,12 @@ export default function Shop() {
 
   const handleSubscribe = useCallback(
     (productId: string, billingCycle: 'monthly' | 'annual' = 'monthly') => {
+      // TruClaw requires tier selection before checkout
+      if (productId === 'truclaw') {
+        setTruClawBillingCycle(billingCycle);
+        setTruClawModalOpen(true);
+        return;
+      }
       checkoutMutation.mutate({ productId, billingCycle });
     },
     [checkoutMutation]
@@ -1420,6 +1429,13 @@ export default function Shop() {
         onClose={() => setQuoteModalOpen(false)}
         defaultProduct={quoteDefaultProduct}
         pricingSnapshot={pricingSnapshot}
+      />
+
+      {/* ── TruClaw Tier Picker Modal ── */}
+      <TruClawTierModal
+        open={truClawModalOpen}
+        onClose={() => setTruClawModalOpen(false)}
+        defaultBillingCycle={truClawBillingCycle}
       />
     </div>
   );

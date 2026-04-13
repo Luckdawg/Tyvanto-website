@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, Menu, X, ShoppingCart } from "lucide-react";
+import { ChevronDown, Menu, X, ShoppingCart, CreditCard } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
 
 const Navigation = () => {
@@ -260,6 +260,13 @@ const Navigation = () => {
 
           {/* Cart & CTA Button */}
           <div className="hidden lg:flex items-center gap-2">
+            <Link href="/account/subscriptions">
+              <Button variant="ghost" className="text-gray-700 hover:text-white hover:bg-primary flex items-center gap-1.5">
+                <CreditCard className="h-4 w-4" />
+                My Subscriptions
+              </Button>
+            </Link>
+
             <Link href="/cart">
               <Button variant="ghost" className="text-gray-700 hover:text-white hover:bg-primary relative flex items-center gap-1.5">
                 <ShoppingCart className="h-4 w-4" />
@@ -394,6 +401,13 @@ const Navigation = () => {
 
               <Link href="/shop" onClick={() => setMobileMenuOpen(false)}>
                 <Button variant="ghost" className="w-full justify-start text-base py-3">Shop</Button>
+              </Link>
+
+              <Link href="/account/subscriptions" onClick={() => setMobileMenuOpen(false)}>
+                <Button variant="ghost" className="w-full justify-start text-base py-3">
+                  <CreditCard className="h-4 w-4 mr-2" />
+                  My Subscriptions
+                </Button>
               </Link>
 
               <Link href="/cart" onClick={() => setMobileMenuOpen(false)}>
