@@ -2,6 +2,7 @@ import { eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
 import { InsertUser, users } from "../drizzle/schema";
 import { ENV } from './_core/env';
+import { ADMIN_EMAILS } from '../shared/const';
 import mysql from 'mysql2/promise';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -67,9 +68,18 @@ export async function upsertUser(user: InsertUser): Promise<void> {
       values.lastSignedIn = user.lastSignedIn;
       updateSet.lastSignedIn = user.lastSignedIn;
     }
+    // Determine the role to assign:
+    // 1. Caller explicitly passed a role → honour it.
+    // 2. User's email is in the ADMIN_EMAILS allow-list → auto-promote to admin.
+    // 3. User is the site owner (by openId) → admin.
+    // 4. Otherwise leave the default ('user') set by the schema.
     if (user.role !== undefined) {
       values.role = user.role;
       updateSet.role = user.role;
+    } else if (user.email && ADMIN_EMAILS.has(user.email.toLowerCase())) {
+      values.role = 'admin';
+      updateSet.role = 'admin';
+      console.log(`[Auth] Auto-promoted ${user.email} to admin (ADMIN_EMAILS match)`);
     } else if (user.openId === ENV.ownerOpenId) {
       values.role = 'admin';
       updateSet.role = 'admin';

@@ -2240,3 +2240,8 @@
 ## Sitemap Update (Apr 2026)
 - [x] Add /shop to sitemap.xml (changefreq: weekly, priority: 0.9, lastmod: 2026-04-13)
 - [x] Remove /pricing from sitemap.xml
+
+## Admin Auto-Promotion (Apr 2026)
+- [x] Add ADMIN_EMAILS list (mlucky@, edevane@, inoble.ctr@ visiumtechnologies.com) to shared/const.ts
+- [x] Hook into OAuth user-creation path to auto-promote matching emails to admin role (db.ts upsertUser)
+- [x] Write tests for auto-promotion logic (15 tests pass, case-insensitive, explicit-role override, owner fallback)
