@@ -2230,3 +2230,9 @@
 - [x] Fix ASPIRE anchor ID in comparison strip (id="product-aspire-reporting" added to vertical card)
 - [x] Add pricing model legend below comparison strip table (4 model types explained)
 - [x] Update tests to cover all 8 rows and the legend (155 pricing tests pass)
+
+## Comparison Strip Final Completion (Apr 2026)
+- [x] Add Smart City Demo Suite ($4,750/mo, Flat rate, Systems integrators) row to comparison strip
+- [x] Sort all comparison strip rows by entry price ascending (lowest to highest)
+- [x] Update AI chat widget pricing language to match new product-based pricing
+- [x] Update tests to cover Smart City Demo Suite row and sort order (158 pricing tests pass)

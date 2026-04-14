@@ -871,6 +871,7 @@ export default function Shop() {
 
           {/* Quick compare strip */}
           <div
+            data-testid="comparison-strip"
             className="rounded-2xl border border-white/8 overflow-hidden mb-12"
             style={{ background: 'rgba(255,255,255,0.02)' }}
           >
@@ -882,15 +883,18 @@ export default function Shop() {
               <span className="text-slate-500 text-xs font-semibold uppercase tracking-wide">Action</span>
             </div>
             {[
-              { name: 'TruClaw', entry: '$1,299/mo', model: 'Flat tier + agent count', bestFor: 'AI governance teams', href: '#product-truclaw', color: '#7C3AED' },
-              { name: 'Tru-InSight', entry: '$7,499/mo', model: 'Base + $2.00/camera', bestFor: 'Video intelligence', href: '#product-truinsight', color: '#0EA5E9' },
-              { name: 'ELI', entry: '$9,499/mo', model: 'Base + $4/node overage', bestFor: 'Physical security ops', href: '#product-eli', color: '#F59E0B' },
-              { name: 'TruContext', entry: '$7,995/mo', model: 'Base + tiered node rate', bestFor: 'SOC & threat analysts', href: '#product-trucontext', color: '#00E5FF' },
-              { name: 'CaseForge', entry: '$3,499/mo', model: 'Flat rate', bestFor: 'Legal teams', href: '#product-caseforge-legal', color: '#DAA520' },
-              { name: 'ASPIRE', entry: '$3,499/mo', model: 'Flat rate', bestFor: 'Public agencies', href: '#product-aspire-reporting', color: '#22C55E' },
-              { name: 'PanelPulse', entry: '$3,995/mo', model: 'Flat rate', bestFor: 'Research & NGO ops', href: '#product-panelpulse', color: '#00CED1' },
-              { name: 'TruAddress', entry: '$19,950/mo', model: 'Usage-based', bestFor: 'National address programs', href: '#product-truaddress', color: '#DC143C' },
-            ].map((row, i, arr) => (
+              // Sorted by entry price ascending (lowest → highest)
+              { name: 'TruClaw', entry: '$1,299/mo', entryNum: 1299, model: 'Flat tier + agent count', bestFor: 'AI governance teams', href: '#product-truclaw', color: '#7C3AED' },
+              { name: 'CaseForge', entry: '$3,499/mo', entryNum: 3499, model: 'Flat rate', bestFor: 'Legal teams', href: '#product-caseforge-legal', color: '#DAA520' },
+              { name: 'ASPIRE', entry: '$3,499/mo', entryNum: 3499, model: 'Flat rate', bestFor: 'Public agencies', href: '#product-aspire-reporting', color: '#22C55E' },
+              { name: 'PanelPulse', entry: '$3,995/mo', entryNum: 3995, model: 'Flat rate', bestFor: 'Research & NGO ops', href: '#product-panelpulse', color: '#00CED1' },
+              { name: 'Smart City Demo', entry: '$4,750/mo', entryNum: 4750, model: 'Flat rate', bestFor: 'Systems integrators', href: '#product-smart-city-demo', color: '#FF69B4' },
+              { name: 'TruContext', entry: '$7,995/mo', entryNum: 7995, model: 'Base + tiered node rate', bestFor: 'SOC & threat analysts', href: '#product-trucontext', color: '#00E5FF' },
+              { name: 'Tru-InSight', entry: '$7,499/mo', entryNum: 7499, model: 'Base + $2.00/camera', bestFor: 'Video intelligence', href: '#product-truinsight', color: '#0EA5E9' },
+              { name: 'ELI', entry: '$9,499/mo', entryNum: 9499, model: 'Base + $4/node overage', bestFor: 'Physical security ops', href: '#product-eli', color: '#F59E0B' },
+              { name: 'TruAddress', entry: '$19,950/mo', entryNum: 19950, model: 'Usage-based', bestFor: 'National address programs', href: '#product-truaddress', color: '#DC143C' },
+            ].sort((a, b) => a.entryNum - b.entryNum)
+            .map((row, i, arr) => (
               <div
                 key={row.name}
                 className={`grid grid-cols-5 gap-2 px-6 py-3 border-b border-white/5 hover:bg-white/5 transition-colors ${i === arr.length - 1 ? 'border-b-0' : ''}`}

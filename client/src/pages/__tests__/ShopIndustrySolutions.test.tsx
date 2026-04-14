@@ -237,7 +237,7 @@ describe('Shop — Industry Solutions & Vertical Platforms section', () => {
 
   it('shows $4,750/mo for Card 9 (Smart City Demo)', async () => {
     await renderShop();
-    expect(screen.getByText(/\$4,750/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/\$4,750/i).length).toBeGreaterThan(0);
   });
 
   // ── Feature bullets ────────────────────────────────────────────────────────
@@ -393,7 +393,7 @@ describe('Shop — How to Choose comparison strip', () => {
     expect(screen.getAllByText(/Usage-based/i).length).toBeGreaterThan(0);
   });
 
-  it('comparison strip has 8 rows (all products)', async () => {
+  it('comparison strip has 9 rows (all products including Smart City Demo Suite)', async () => {
     await renderShop();
     expect(screen.getAllByText(/AI governance teams/i).length).toBeGreaterThan(0);
     expect(screen.getAllByText(/Video intelligence/i).length).toBeGreaterThan(0);
@@ -403,6 +403,34 @@ describe('Shop — How to Choose comparison strip', () => {
     expect(screen.getAllByText(/Public agencies/i).length).toBeGreaterThan(0);
     expect(screen.getByText(/Research & NGO ops/i)).toBeInTheDocument();
     expect(screen.getByText(/National address programs/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/Systems integrators/i).length).toBeGreaterThan(0);
+  });
+
+  it('shows Smart City Demo Suite in the comparison strip with $4,750/mo', async () => {
+    await renderShop();
+    expect(screen.getAllByText(/Smart City Demo/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/\$4,750/i).length).toBeGreaterThan(0);
+  });
+
+  it('shows "Systems integrators" as Best For for Smart City Demo Suite', async () => {
+    await renderShop();
+    expect(screen.getAllByText(/Systems integrators/i).length).toBeGreaterThan(0);
+  });
+
+  it('comparison strip rows are sorted by entry price ascending', async () => {
+    await renderShop();
+    // Scope to the comparison strip container via data-testid
+    const strip = screen.getByTestId('comparison-strip');
+    const priceCells = strip.querySelectorAll('span.font-bold.text-sm');
+    const prices = Array.from(priceCells).map(el => {
+      const match = el.textContent?.match(/\$([\d,]+)/);
+      return match ? parseInt(match[1].replace(/,/g, ''), 10) : 0;
+    }).filter(p => p > 0);
+    expect(prices.length).toBe(9); // 9 products in the strip
+    // Verify the prices are in ascending order
+    for (let i = 1; i < prices.length; i++) {
+      expect(prices[i]).toBeGreaterThanOrEqual(prices[i - 1]);
+    }
   });
 
   it('renders the pricing model legend with all four model types', async () => {
@@ -420,5 +448,6 @@ describe('Shop — How to Choose comparison strip', () => {
     expect(document.getElementById('product-aspire-reporting')).not.toBeNull();
     expect(document.getElementById('product-panelpulse')).not.toBeNull();
     expect(document.getElementById('product-truaddress')).not.toBeNull();
+    expect(document.getElementById('product-smart-city-demo')).not.toBeNull();
   });
 });
