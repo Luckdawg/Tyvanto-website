@@ -2236,3 +2236,7 @@
 - [x] Sort all comparison strip rows by entry price ascending (lowest to highest)
 - [x] Update AI chat widget pricing language to match new product-based pricing
 - [x] Update tests to cover Smart City Demo Suite row and sort order (158 pricing tests pass)
+
+## Sitemap Update (Apr 2026)
+- [x] Add /shop to sitemap.xml (changefreq: weekly, priority: 0.9, lastmod: 2026-04-13)
+- [x] Remove /pricing from sitemap.xml
