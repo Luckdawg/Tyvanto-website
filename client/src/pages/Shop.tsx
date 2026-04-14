@@ -886,10 +886,12 @@ export default function Shop() {
               { name: 'Tru-InSight', entry: '$7,499/mo', model: 'Base + $2.00/camera', bestFor: 'Video intelligence', href: '#product-truinsight', color: '#0EA5E9' },
               { name: 'ELI', entry: '$9,499/mo', model: 'Base + $4/node overage', bestFor: 'Physical security ops', href: '#product-eli', color: '#F59E0B' },
               { name: 'TruContext', entry: '$7,995/mo', model: 'Base + tiered node rate', bestFor: 'SOC & threat analysts', href: '#product-trucontext', color: '#00E5FF' },
-            ].map((row, i) => (
+              { name: 'CaseForge', entry: '$3,499/mo', model: 'Flat rate', bestFor: 'Legal teams', href: '#product-caseforge-legal', color: '#DAA520' },
+              { name: 'ASPIRE', entry: '$3,499/mo', model: 'Flat rate', bestFor: 'Public agencies', href: '#product-aspire-reporting', color: '#22C55E' },
+            ].map((row, i, arr) => (
               <div
                 key={row.name}
-                className={`grid grid-cols-5 gap-2 px-6 py-3 border-b border-white/5 hover:bg-white/5 transition-colors ${i === 3 ? 'border-b-0' : ''}`}
+                className={`grid grid-cols-5 gap-2 px-6 py-3 border-b border-white/5 hover:bg-white/5 transition-colors ${i === arr.length - 1 ? 'border-b-0' : ''}`}
               >
                 <span className="text-white font-semibold text-sm" style={{ color: row.color }}>{row.name}</span>
                 <span className="text-white font-bold text-sm">{row.entry}</span>

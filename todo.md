@@ -2217,3 +2217,8 @@
 - [x] Fix TruContext $12,499 → $7,995 in all display strings
 - [x] Verify PricingCalculator.tsx info text strings match new prices
 - [x] Run full test suite after fixes (142 pricing tests pass)
+
+## How to Choose Comparison Table Expansion (Apr 2026)
+- [x] Add CaseForge ($3,499/mo, Flat rate, Legal teams) row to comparison strip
+- [x] Add ASPIRE ($3,499/mo, Flat rate, Public agencies) row to comparison strip
+- [x] Update comparison table tests to cover new rows (49 tests pass)

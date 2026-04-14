@@ -327,3 +327,53 @@ describe('Shop — Industry Solutions & Vertical Platforms section', () => {
     expect(el).not.toBeNull();
   });
 });
+
+describe('Shop — How to Choose comparison strip', () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
+  it('shows CaseForge in the comparison strip with $3,499/mo', async () => {
+    await renderShop();
+    // CaseForge appears in both the vertical cards section and the comparison strip
+    const matches = screen.getAllByText(/CaseForge/i);
+    expect(matches.length).toBeGreaterThan(0);
+    const priceMatches = screen.getAllByText(/\$3,499/i);
+    expect(priceMatches.length).toBeGreaterThan(0);
+  });
+
+  it('shows ASPIRE in the comparison strip with $3,499/mo', async () => {
+    await renderShop();
+    const matches = screen.getAllByText(/ASPIRE/i);
+    expect(matches.length).toBeGreaterThan(0);
+    const priceMatches = screen.getAllByText(/\$3,499/i);
+    expect(priceMatches.length).toBeGreaterThan(0);
+  });
+
+  it('shows "Flat rate" pricing model for CaseForge in comparison strip', async () => {
+    await renderShop();
+    const flatRateMatches = screen.getAllByText(/Flat rate/i);
+    expect(flatRateMatches.length).toBeGreaterThanOrEqual(2); // CaseForge + ASPIRE both show Flat rate
+  });
+
+  it('shows "Legal teams" as Best For for CaseForge', async () => {
+    await renderShop();
+    expect(screen.getByText(/Legal teams/i)).toBeInTheDocument();
+  });
+
+  it('shows "Public agencies" as Best For for ASPIRE', async () => {
+    await renderShop();
+    expect(screen.getByText(/Public agencies/i)).toBeInTheDocument();
+  });
+
+  it('comparison strip has 6 rows (TruClaw, Tru-InSight, ELI, TruContext, CaseForge, ASPIRE)', async () => {
+    await renderShop();
+    // Each row has a Best For cell — use getAllByText for values that may appear in multiple sections
+    expect(screen.getAllByText(/AI governance teams/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/Video intelligence/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/Physical security ops/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/SOC.*threat analysts/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/Legal teams/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/Public agencies/i).length).toBeGreaterThan(0);
+  });
+});
