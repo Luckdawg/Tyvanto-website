@@ -93,14 +93,14 @@ describe('TruClawTierModal', () => {
     it('shows monthly prices when billing cycle is monthly', () => {
       renderModal({ defaultBillingCycle: 'monthly' });
       expect(screen.getByText('$1,299')).toBeInTheDocument();
-      expect(screen.getByText('$9,999')).toBeInTheDocument();
+      expect(screen.getByText('$6,995')).toBeInTheDocument();
     });
 
     it('shows discounted prices when billing cycle is annual', () => {
       renderModal({ defaultBillingCycle: 'annual' });
-      // 15% off $1,299 = $1,104; 15% off $9,999 = $8,499
-      expect(screen.getByText('$1,104')).toBeInTheDocument();
-      expect(screen.getByText('$8,499')).toBeInTheDocument();
+      // 10% off $1,299 = $1,169; 10% off $6,995 = $6,296
+      expect(screen.getByText('$1,169')).toBeInTheDocument();
+      expect(screen.getByText('$6,296')).toBeInTheDocument();
     });
 
     it('shows "Custom" for Enterprise tier', () => {
@@ -110,8 +110,8 @@ describe('TruClawTierModal', () => {
 
     it('shows annual savings when annual billing is selected', () => {
       renderModal({ defaultBillingCycle: 'annual' });
-      // Starter annual savings: ($1,299 - $1,104) * 12 = $2,340
-      expect(screen.getByText('Save $2,340/yr')).toBeInTheDocument();
+      // Starter annual savings: ($1,299 - $1,169) * 12 = $1,560
+      expect(screen.getByText('Save $1,560/yr')).toBeInTheDocument();
     });
   });
 
@@ -124,21 +124,21 @@ describe('TruClawTierModal', () => {
 
     it('defaults to annual billing when specified', () => {
       renderModal({ defaultBillingCycle: 'annual' });
-      // Annual price shown (15% off)
-      expect(screen.getByText('$1,104')).toBeInTheDocument();
+      // Annual price shown (10% off)
+      expect(screen.getByText('$1,169')).toBeInTheDocument();
     });
 
     it('switches to annual billing when Annual button is clicked', () => {
       renderModal({ defaultBillingCycle: 'monthly' });
       const annualButton = screen.getByRole('button', { name: /Annual/i });
       fireEvent.click(annualButton);
-      // After switching, discounted price should appear
-      expect(screen.getByText('$1,104')).toBeInTheDocument();
+      // After switching, discounted price should appear (10% off $1,299 = $1,169)
+      expect(screen.getByText('$1,169')).toBeInTheDocument();
     });
 
-    it('shows Save 15% badge on Annual toggle', () => {
+    it('shows Save 10% badge on Annual toggle', () => {
       renderModal();
-      expect(screen.getByText('Save 15%')).toBeInTheDocument();
+      expect(screen.getByText('Save 10%')).toBeInTheDocument();
     });
   });
 

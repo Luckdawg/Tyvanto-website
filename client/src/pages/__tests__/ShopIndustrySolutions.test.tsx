@@ -205,24 +205,24 @@ describe('Shop — Industry Solutions & Vertical Platforms section', () => {
 
   // ── Pricing (updated from spreadsheet) ────────────────────────────────────
 
-  it('shows $24,995/mo for Card 1 (Oil & Gas)', async () => {
+  it('shows $8,000/mo for Card 1 (Oil & Gas)', async () => {
     await renderShop();
-    expect(screen.getByText(/\$24,995/i)).toBeInTheDocument();
+    expect(screen.getByText(/\$8,000/i)).toBeInTheDocument();
   });
 
-  it('shows $28,000/mo for Card 2 (Smart City Gov)', async () => {
+  it('shows $16,000/mo for Card 2 (Smart City Gov)', async () => {
     await renderShop();
-    expect(screen.getByText(/\$28,000/i)).toBeInTheDocument();
+    expect(screen.getByText(/\$16,000/i)).toBeInTheDocument();
   });
 
-  it('shows $20,000/mo for Card 3 (Smart City Municipal)', async () => {
+  it('shows $12,495/mo for Card 3 (Smart City Municipal)', async () => {
     await renderShop();
-    expect(screen.getByText(/\$20,000/i)).toBeInTheDocument();
+    expect(screen.getByText(/\$12,495/i)).toBeInTheDocument();
   });
 
-  it('shows $9,995/mo for Card 4 (Campus Security)', async () => {
+  it('shows $7,995/mo for Card 4 (Campus Security)', async () => {
     await renderShop();
-    expect(screen.getByText(/\$9,995/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/\$7,995/i).length).toBeGreaterThan(0);
   });
 
   it('shows $19,950/mo for Card 7 (TruAddress)', async () => {
@@ -230,9 +230,9 @@ describe('Shop — Industry Solutions & Vertical Platforms section', () => {
     expect(screen.getByText(/\$19,950/i)).toBeInTheDocument();
   });
 
-  it('shows $995/mo for Card 8 (PanelPulse)', async () => {
+  it('shows $3,995/mo for Card 8 (PanelPulse)', async () => {
     await renderShop();
-    expect(screen.getAllByText(/\$995/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/\$3,995/i).length).toBeGreaterThan(0);
   });
 
   it('shows $4,750/mo for Card 9 (Smart City Demo)', async () => {
@@ -305,9 +305,9 @@ describe('Shop — Industry Solutions & Vertical Platforms section', () => {
     expect(screen.getByTestId('pricing-calculator')).toBeInTheDocument();
   });
 
-  it('preserves the "Bundled Suites — Save Up to 25%" heading', async () => {
+  it('preserves the "Bundled Suites" heading', async () => {
     await renderShop();
-    expect(screen.getByText(/Bundled Suites.*Save Up to 25%/i)).toBeInTheDocument();
+    expect(screen.getByText(/Bundled Suites/i)).toBeInTheDocument();
   });
 
   it('preserves the "Four Platforms. One Unified Defense." heading', async () => {

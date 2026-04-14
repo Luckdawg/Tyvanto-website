@@ -53,7 +53,7 @@ const TRUCLAW_TIERS: TruClawTier[] = [
     name: 'Starter',
     tagline: 'Perfect for small teams and pilot deployments',
     monthlyPrice: 1299,
-    annualDiscount: 0.15,
+    annualDiscount: 0.10,
     icon: <Zap className="h-6 w-6" />,
     features: [
       'Up to 10 AI agents monitored',
@@ -70,8 +70,8 @@ const TRUCLAW_TIERS: TruClawTier[] = [
     id: 'truclaw-standard',
     name: 'Standard',
     tagline: 'For growing security teams with complex AI environments',
-    monthlyPrice: 9999,
-    annualDiscount: 0.15,
+    monthlyPrice: 6995,
+    annualDiscount: 0.10,
     icon: <Shield className="h-6 w-6" />,
     badge: 'Most Popular',
     badgeColor: 'bg-cyan-500 text-black',
@@ -92,7 +92,7 @@ const TRUCLAW_TIERS: TruClawTier[] = [
     name: 'Enterprise',
     tagline: 'Unlimited scale for mission-critical AI deployments',
     monthlyPrice: null,
-    annualDiscount: 0.15,
+    annualDiscount: 0.10,
     icon: <Building2 className="h-6 w-6" />,
     badge: 'Custom Pricing',
     badgeColor: 'bg-purple-500/20 text-purple-300 border border-purple-500/40',
@@ -333,7 +333,7 @@ export default function TruClawTierModal({
               >
                 Annual
                 <span className="text-xs font-bold px-1.5 py-0.5 rounded-full bg-cyan-500/20 text-cyan-400">
-                  Save 15%
+                  Save 10%
                 </span>
               </button>
             </div>

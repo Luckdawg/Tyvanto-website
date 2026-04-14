@@ -120,7 +120,7 @@ const products: Product[] = [
     entryPrice: 1299,
     pricingTiers: [
       { label: 'Starter (≤10 agents)', price: '$1,299/mo', included: '20M tokens included' },
-      { label: 'Standard (11–50 agents)', price: '$9,999/mo', included: '150M tokens included' },
+      { label: 'Standard (11–50 agents)', price: '$6,995/mo', included: '150M tokens included' },
       { label: 'Enterprise (50+ agents)', price: 'Custom', included: 'Unlimited tokens + dedicated optimization' },
     ],
     features: [
@@ -148,8 +148,8 @@ const products: Product[] = [
     entryPrice: 7499,
     pricingTiers: [
       { label: 'Base Platform', price: '$7,499/mo', included: 'Core video analytics' },
-      { label: 'Metered Inference', price: '$2.20/camera', included: 'Per camera/endpoint above base' },
-      { label: 'Bundle Discount', price: 'Save 20%', included: 'When paired with TruContext' },
+      { label: 'Metered Inference', price: '$2.00/camera', included: 'Per camera/endpoint above base' },
+      { label: 'Bundle Discount', price: 'Save 10%', included: 'When paired with TruContext' },
     ],
     features: [
       'Gemini/Z.ai vision AI integration',
@@ -192,16 +192,16 @@ const products: Product[] = [
   {
     id: 'trucontext',
     dbId: 1,
-    basePrice: 12499,
+    basePrice: 7995,
     icon: <Network className="h-8 w-8" />,
     name: 'TruContext Core Platform',
     tagline: 'Explainable AI Cybersecurity & Data Analytics',
     description:
       "Visium's flagship graph-based intelligence platform. Real-time correlation across billions of events with full explainability, MITRE ATT&CK mapping, and 30-day time-to-value. Enhanced from MITRE Corporation's CyGraph — the only patented scalable multi-layered graph database for cybersecurity.",
     type: 'Monthly SaaS (Hybrid)',
-    entryPrice: 12499,
+    entryPrice: 7995,
     pricingTiers: [
-      { label: 'Starter', price: '$12,499/mo', included: 'First 10,000 nodes' },
+      { label: 'Starter', price: '$7,995/mo', included: 'First 10,000 nodes' },
       { label: 'Growth', price: '$0.40/node', included: 'Nodes 10K–100K' },
       { label: 'Enterprise', price: '$0.25/node', included: 'Volume discount 100K+' },
     ],
@@ -210,7 +210,7 @@ const products: Product[] = [
       'MITRE ATT&CK framework integration',
       'Predictive threat intelligence & root cause analysis',
       '30-day time-to-value guarantee',
-      'Annual billing saves ~15–20%',
+      'Annual billing saves ~10%',
       'DoD & Army Cyber Command heritage',
     ],
     cta: 'Request Demo',
@@ -224,7 +224,7 @@ const bundles: Bundle[] = [
   {
     name: 'TruContext Essentials',
     includes: 'TruContext Core',
-    monthlyRange: 'From $12,499/mo',
+    monthlyRange: 'From $7,995/mo',
     bestFor: 'SOC teams & threat analysts',
   },
   {
@@ -238,16 +238,16 @@ const bundles: Bundle[] = [
   {
     name: 'Tru-InSight Intelligence',
     includes: 'TruContext + Tru-InSight',
-    monthlyRange: 'From $19,998/mo',
+    monthlyRange: 'From $15,494/mo',
     bestFor: 'Physical + cyber convergence',
-    savings: 'Save 20%',
+    savings: 'Save 10%',
   },
   {
     name: 'Complete Defense Suite',
     includes: 'TruContext + TruClaw + Tru-InSight',
-    monthlyRange: 'Custom (save 25%)',
+    monthlyRange: 'Custom (save 10%)',
     bestFor: 'Enterprise full-stack defense',
-    savings: 'Save 25%',
+    savings: 'Save 10%',
   },
   {
     name: 'ELI National',
@@ -273,8 +273,8 @@ const verticalProducts: VerticalProduct[] = [
       'IT/OT convergence with SCADA threat topology and MITRE ATT&CK mapping',
       'ESG and emissions compliance dashboards aligned to national energy frameworks',
     ],
-    startingPrice: '$24,995/mo',
-    startingPriceNum: 24995,
+    startingPrice: '$8,000/mo',
+    startingPriceNum: 8000,
   },
   {
     id: 'smart-city-gov',
@@ -289,8 +289,8 @@ const verticalProducts: VerticalProduct[] = [
       'CesiumJS 3D geospatial terrain with real-time severity-based alert markers',
       'Role-based access tiers for executives, urban planners, and operations teams',
     ],
-    startingPrice: '$28,000/mo',
-    startingPriceNum: 28000,
+    startingPrice: '$16,000/mo',
+    startingPriceNum: 16000,
   },
   {
     id: 'smart-city-municipal',
@@ -305,8 +305,8 @@ const verticalProducts: VerticalProduct[] = [
       'Multi-factor predictive maintenance scoring with Critical / High / Medium / Low classification',
       'CSV import/export, full-text search, and drill-down analytics data explorer',
     ],
-    startingPrice: '$20,000/mo',
-    startingPriceNum: 20000,
+    startingPrice: '$12,495/mo',
+    startingPriceNum: 12495,
   },
   {
     id: 'campus-security',
@@ -321,8 +321,8 @@ const verticalProducts: VerticalProduct[] = [
       'Unified alert feed with AI confidence scores and cross-system event correlation',
       'Privacy by design: role-based access, anonymization options, and full audit logging',
     ],
-    startingPrice: '$9,995/mo',
-    startingPriceNum: 9995,
+    startingPrice: '$7,995/mo',
+    startingPriceNum: 7995,
   },
   {
     id: 'caseforge-legal',
@@ -337,8 +337,8 @@ const verticalProducts: VerticalProduct[] = [
       'TruClaw™ autonomous agents for document analysis, court monitoring, and outreach automation',
       'Interactive financial analytics, deposition timelines, and evidence matrix visualization',
     ],
-    startingPrice: '$2,499/mo',
-    startingPriceNum: 2499,
+    startingPrice: '$3,499/mo',
+    startingPriceNum: 3499,
   },
   {
     id: 'aspire-reporting',
@@ -353,8 +353,8 @@ const verticalProducts: VerticalProduct[] = [
       'Progressive disclosure design with dynamic embedded data narratives',
       'ADA/Section 508 compliant, fully responsive, with graceful handling of suppressed data',
     ],
-    startingPrice: '$1,499/mo',
-    startingPriceNum: 1499,
+    startingPrice: '$3,499/mo',
+    startingPriceNum: 3499,
   },
   {
     id: 'truaddress',
@@ -385,8 +385,8 @@ const verticalProducts: VerticalProduct[] = [
       'AI-powered analysis and automated news generation with integrated search summarization',
       'Multi-region deployment: manage panels across departments, districts, or countries',
     ],
-    startingPrice: '$995/mo',
-    startingPriceNum: 995,
+    startingPrice: '$3,995/mo',
+    startingPriceNum: 3995,
   },
   {
     id: 'smart-city-demo',
@@ -785,7 +785,7 @@ export default function Shop() {
                 description: 'You need real-time threat detection, MITRE ATT&CK mapping, and explainable AI across your entire network.',
                 recommendation: 'TruContext Core Platform',
                 recommendationHref: '#product-trucontext',
-                price: 'From $12,499/mo',
+                price: 'From $7,995/mo',
                 bullets: ['Graph-based threat correlation', 'MITRE ATT&CK integration', '30-day time to value'],
               },
               {
@@ -805,7 +805,7 @@ export default function Shop() {
                 description: 'You need national-scale surveillance, smart city command, or critical infrastructure protection.',
                 recommendation: 'ELI + Vertical Solutions',
                 recommendationHref: '#industry-solutions',
-                price: 'From $9,495/mo',
+                price: 'From $9,499/mo',
                 bullets: ['White-label deployment', 'Government procurement vehicles', 'National-scale architecture'],
               },
             ].map((card) => (
@@ -883,9 +883,9 @@ export default function Shop() {
             </div>
             {[
               { name: 'TruClaw', entry: '$1,299/mo', model: 'Flat tier + agent count', bestFor: 'AI governance teams', href: '#product-truclaw', color: '#7C3AED' },
-              { name: 'Tru-InSight', entry: '$7,499/mo', model: 'Base + $2.20/camera', bestFor: 'Video intelligence', href: '#product-truinsight', color: '#0EA5E9' },
+              { name: 'Tru-InSight', entry: '$7,499/mo', model: 'Base + $2.00/camera', bestFor: 'Video intelligence', href: '#product-truinsight', color: '#0EA5E9' },
               { name: 'ELI', entry: '$9,499/mo', model: 'Base + $4/node overage', bestFor: 'Physical security ops', href: '#product-eli', color: '#F59E0B' },
-              { name: 'TruContext', entry: '$12,499/mo', model: 'Base + tiered node rate', bestFor: 'SOC & threat analysts', href: '#product-trucontext', color: '#00E5FF' },
+              { name: 'TruContext', entry: '$7,995/mo', model: 'Base + tiered node rate', bestFor: 'SOC & threat analysts', href: '#product-trucontext', color: '#00E5FF' },
             ].map((row, i) => (
               <div
                 key={row.name}
@@ -974,7 +974,7 @@ export default function Shop() {
                       </div>
                     ))}
                     <p className="text-xs text-slate-500 mt-2">
-                      Annual billing saves 15–20%. Volume discounts available.
+                      Annual billing saves 10%. Volume discounts available.
                     </p>
                   </div>
 
@@ -1243,7 +1243,7 @@ export default function Shop() {
                       </span>
                     </div>
                   </div>
-                  <p className="text-xs text-slate-500 mb-4">Annual billing saves 15–20%. Volume discounts available.</p>
+                  <p className="text-xs text-slate-500 mb-4">Annual billing saves 10%. Volume discounts available.</p>
                   <div className="flex flex-col gap-2">
                     <Button
                       className="w-full font-bold text-black"

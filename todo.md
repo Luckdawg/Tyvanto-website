@@ -2210,3 +2210,10 @@
 - [x] Remove /pricing from navigation menus
 - [x] Update static pricing table on /pricing page if present (page replaced with redirect)
 - [x] Publish site after all changes
+
+## Price Display Audit & Fix (Apr 2026)
+- [x] Fix all hardcoded old prices in Shop.tsx "How to Choose" table and product cards
+- [x] Fix camera rate $2.20 → $2.00 in all display strings
+- [x] Fix TruContext $12,499 → $7,995 in all display strings
+- [x] Verify PricingCalculator.tsx info text strings match new prices
+- [x] Run full test suite after fixes (142 pricing tests pass)

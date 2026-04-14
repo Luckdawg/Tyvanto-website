@@ -4,23 +4,23 @@
  *
  * Pricing sourced from Visium_Pricing_Formulas-01.xlsx (Apr 2026):
  *
- *   TruContext  — $12,499/mo (first 10K nodes) · $0.40/node (10K–100K) · $0.25/node (100K+)
- *                 + $450/agent (0 included)
- *   TruClaw     — $1,299/mo Starter (≤10 agents) · $9,999/mo Standard (11–50) · Enterprise (50+)
- *   Tru-InSight — $7,499/mo base + $2.20/camera metered
+ *   TruContext  — $7,995/mo (first 10K nodes) · $0.40/node (10K–100K) · $0.25/node (100K+)
+ *                 + $450/agent
+ *   TruClaw     — $1,299/mo Starter (≤10 agents) · $6,995/mo Standard (11–50) · Enterprise (50+)
+ *   Tru-InSight — $7,499/mo base + $2.00/camera metered
  *   ELI         — $9,499/mo base (first 500 nodes) · $4.00/node above 500
- *   Full Suite  — $27,500/mo (20K nodes included) · $3.00/node T1 · $3.00/node T2 · $120/agent
- *   Oil & Gas   — $24,995/mo (500 endpoints) · $2.00/endpoint above 500
- *   Smart City Gov — $28,000/mo (1,000 nodes) · $2.00/node above 1,000
- *   Smart City Muni — $20,000/mo (500 devices) · $2.00/device above 500
- *   Campus Security — $9,995/mo (100 cameras) · $2.00/camera above 100
- *   CaseForge Legal — $2,499/mo flat
- *   ASPIRE Reporting — $1,499/mo flat
+ *   Full Suite  — $14,995/mo (20K nodes included) · $3.00/node T1 · $3.00/node T2 · $120/agent
+ *   Oil & Gas   — $8,000/mo (500 endpoints) · $2.00/endpoint above 500
+ *   Smart City Gov — $16,000/mo (1,000 nodes) · $2.00/node above 1,000
+ *   Smart City Muni — $12,495/mo (500 devices) · $2.00/device above 500
+ *   Campus Security — $7,995/mo (100 cameras) · $2.00/camera above 100
+ *   CaseForge Legal — $3,499/mo flat
+ *   ASPIRE Reporting — $3,499/mo flat
  *   TruAddress  — $19,950/mo (100K records) · $0.20/1K records above 100K
- *   PanelPulse  — $995/mo flat
+ *   PanelPulse  — $3,995/mo flat
  *   Smart City Demo — $4,750/mo flat
  *
- * All products: 15% annual discount (Full Suite Bundle: 15% also per spreadsheet)
+ * All products: 10% annual discount (uniform across all products)
  */
 
 import { useState, useMemo, useCallback } from 'react';
@@ -138,10 +138,10 @@ const PRODUCTS: ProductConfig[] = [
     description: 'Core cyber-physical intelligence platform',
     highlight: 'Most Popular',
     customAboveUnits: 1_000_000,
-    annualDiscount: 0.15,
+    annualDiscount: 0.10,
     infoText: (
       <>
-        <strong className="text-slate-300">TruContext</strong>: $12,499/mo (first 10K nodes) ·
+        <strong className="text-slate-300">TruContext</strong>: $7,995/mo (first 10K nodes) ·
         $0.40/node (10K–100K) · $0.25/node (100K+) · $450/agent.
         Tiered pricing rewards scale — the more you monitor, the lower the per-unit cost.
       </>
@@ -177,15 +177,15 @@ const PRODUCTS: ProductConfig[] = [
     agentDefault: 0,
     isTruClaw: true,
     truClawStarterFee: 1299,
-    truClawStandardFee: 9999,
+    truClawStandardFee: 6995,
     truClawEnterpriseThreshold: 50,
     description: 'Agentic AI governance & control layer',
     customAboveUnits: 50,
-    annualDiscount: 0.15,
+    annualDiscount: 0.10,
     infoText: (
       <>
         <strong className="text-slate-300">TruClaw</strong>: $1,299/mo Starter (≤10 agents, 20M tokens) ·
-        $9,999/mo Standard (11–50 agents, 200M tokens) · Enterprise custom pricing (50+ agents).
+        $6,995/mo Standard (11–50 agents, 200M tokens) · Enterprise custom pricing (50+ agents).
         Token overages above included limits billed at $0.002/1K tokens.
       </>
     ),
@@ -201,7 +201,7 @@ const PRODUCTS: ProductConfig[] = [
     baseFeeLabel: 'Core video analytics platform',
     unitLabel: 'Cameras / Endpoints',
     unitsIncluded: 0,          // all cameras metered
-    unitRate: 2.20,            // $2.20/camera
+    unitRate: 2.00,            // $2.00/camera
     sliderMin: 0,
     sliderMax: 5000,
     sliderDefault: 100,
@@ -220,12 +220,12 @@ const PRODUCTS: ProductConfig[] = [
     agentMax: 0,
     agentDefault: 0,
     description: 'Video intelligence & physical security fusion',
-    annualDiscount: 0.15,
+    annualDiscount: 0.10,
     infoText: (
       <>
         <strong className="text-slate-300">Tru-InSight</strong>: $7,499/mo base platform ·
-        $2.20/camera metered inference. All cameras are metered — no included allowance.
-        Save 20% when bundled with TruContext via the Full Suite.
+        $2.00/camera metered inference. All cameras are metered — no included allowance.
+        Save 10% when bundled with TruContext via the Full Suite.
       </>
     ),
   },
@@ -260,7 +260,7 @@ const PRODUCTS: ProductConfig[] = [
     agentDefault: 0,
     description: 'Unified surveillance intelligence platform',
     customAboveUnits: 50_000,
-    annualDiscount: 0.15,
+    annualDiscount: 0.10,
     infoText: (
       <>
         <strong className="text-slate-300">ELI</strong>: $9,499/mo regional base (first 500 cameras/nodes) ·
@@ -276,8 +276,8 @@ const PRODUCTS: ProductConfig[] = [
     color: '#10B981',
     category: 'Core',
     isFlat: false,
-    baseFee: 27500,
-    baseFeeLabel: 'All 4 platforms — 25% bundle discount · 20K nodes included',
+    baseFee: 14995,
+    baseFeeLabel: 'All 4 platforms — 10% bundle discount · 20K nodes included',
     unitLabel: 'Monitored Nodes / Endpoints',
     unitsIncluded: 20_000,
     unitRate: 3.00,            // $3.00/node T1 (above 20K)
@@ -305,12 +305,12 @@ const PRODUCTS: ProductConfig[] = [
     description: 'All 4 products — best per-unit value',
     highlight: 'Best Value',
     customAboveUnits: 1_000_000,
-    annualDiscount: 0.15,
+    annualDiscount: 0.10,
     infoText: (
       <>
-        <strong className="text-slate-300">Full Suite Bundle</strong>: $27,500/mo (all 4 platforms, 25% bundle discount) ·
+        <strong className="text-slate-300">Full Suite Bundle</strong>: $14,995/mo (all 4 platforms, 10% bundle discount) ·
         20K nodes included · $3.00/node above 20K · $120/agent (10 included).
-        Saves ~$4,999/mo vs buying all 4 platforms separately.
+        Saves ~$10,493/mo vs buying all 4 platforms separately.
       </>
     ),
   },
@@ -323,7 +323,7 @@ const PRODUCTS: ProductConfig[] = [
     color: '#FFA500',
     category: 'Vertical',
     isFlat: false,
-    baseFee: 24995,
+    baseFee: 8000,
     baseFeeLabel: 'Energy & critical infrastructure — first 500 OT endpoints',
     unitLabel: 'OT/SCADA Endpoints',
     unitsIncluded: 500,
@@ -347,12 +347,12 @@ const PRODUCTS: ProductConfig[] = [
     agentDefault: 0,
     description: 'Energy & critical infrastructure OT/IT',
     customAboveUnits: 50_000,
-    annualDiscount: 0.15,
+    annualDiscount: 0.10,
     infoText: (
       <>
-        <strong className="text-slate-300">TruContext Oil &amp; Gas</strong>: $24,995/mo base (first 500 OT endpoints) ·
+        <strong className="text-slate-300">TruContext Oil &amp; Gas</strong>: $8,000/mo base (first 500 OT endpoints) ·
         $2.00/endpoint above 500. Includes 3D digital twin, SCADA/IT-OT threat detection, and ESG dashboards.
-        Example: 2,000 endpoints → $24,995 + (1,500 × $2.00) = $27,995/mo.
+        Example: 2,000 endpoints → $8,000 + (1,500 × $2.00) = $11,000/mo.
       </>
     ),
   },
@@ -363,7 +363,7 @@ const PRODUCTS: ProductConfig[] = [
     color: '#4A90D9',
     category: 'Vertical',
     isFlat: false,
-    baseFee: 28000,
+    baseFee: 16000,
     baseFeeLabel: 'National smart city command — first 1,000 IoT nodes',
     unitLabel: 'IoT Sensor Nodes',
     unitsIncluded: 1_000,
@@ -387,12 +387,12 @@ const PRODUCTS: ProductConfig[] = [
     agentDefault: 0,
     description: 'National government smart city suite',
     customAboveUnits: 500_000,
-    annualDiscount: 0.15,
+    annualDiscount: 0.10,
     infoText: (
       <>
-        <strong className="text-slate-300">Smart City Government Edition</strong>: $28,000/mo base (first 1,000 IoT nodes) ·
+        <strong className="text-slate-300">Smart City Government Edition</strong>: $16,000/mo base (first 1,000 IoT nodes) ·
         $2.00/node above 1,000. Government procurement vehicles available (GSA Schedule, SEWP).
-        Example: 10,000 nodes → $28,000 + (9,000 × $2.00) = $46,000/mo.
+        Example: 10,000 nodes → $16,000 + (9,000 × $2.00) = $34,000/mo.
       </>
     ),
   },
@@ -403,7 +403,7 @@ const PRODUCTS: ProductConfig[] = [
     color: '#64C864',
     category: 'Vertical',
     isFlat: false,
-    baseFee: 20000,
+    baseFee: 12495,
     baseFeeLabel: 'Municipal smart infrastructure — first 500 IoT devices',
     unitLabel: 'IoT Devices',
     unitsIncluded: 500,
@@ -427,12 +427,12 @@ const PRODUCTS: ProductConfig[] = [
     agentDefault: 0,
     description: 'Municipal smart infrastructure command',
     customAboveUnits: 100_000,
-    annualDiscount: 0.15,
+    annualDiscount: 0.10,
     infoText: (
       <>
-        <strong className="text-slate-300">Smart City Municipal</strong>: $20,000/mo base (first 500 IoT devices) ·
+        <strong className="text-slate-300">Smart City Municipal</strong>: $12,495/mo base (first 500 IoT devices) ·
         $2.00/device above 500. Includes Mapbox 3D, AI command assistant, and predictive maintenance scoring.
-        Example: 2,000 devices → $20,000 + (1,500 × $2.00) = $23,000/mo.
+        Example: 2,000 devices → $12,495 + (1,500 × $2.00) = $15,495/mo.
       </>
     ),
   },
@@ -443,7 +443,7 @@ const PRODUCTS: ProductConfig[] = [
     color: '#9370DB',
     category: 'Vertical',
     isFlat: false,
-    baseFee: 9995,
+    baseFee: 7995,
     baseFeeLabel: 'Campus situational awareness — first 100 cameras/endpoints',
     unitLabel: 'Cameras / Endpoints',
     unitsIncluded: 100,
@@ -467,12 +467,12 @@ const PRODUCTS: ProductConfig[] = [
     agentDefault: 0,
     description: 'ELI campus situational awareness',
     customAboveUnits: 20_000,
-    annualDiscount: 0.15,
+    annualDiscount: 0.10,
     infoText: (
       <>
-        <strong className="text-slate-300">ELI Campus Security</strong>: $9,995/mo base (first 100 cameras/endpoints) ·
+        <strong className="text-slate-300">ELI Campus Security</strong>: $7,995/mo base (first 100 cameras/endpoints) ·
         $2.00/camera above 100. Ideal for universities, corporate campuses, and K-12 districts.
-        Example: 500 cameras → $9,995 + (400 × $2.00) = $10,795/mo.
+        Example: 500 cameras → $7,995 + (400 × $2.00) = $8,795/mo.
       </>
     ),
   },
@@ -483,7 +483,7 @@ const PRODUCTS: ProductConfig[] = [
     color: '#DAA520',
     category: 'Vertical',
     isFlat: true,
-    baseFee: 2499,
+    baseFee: 3499,
     baseFeeLabel: 'All-inclusive flat rate — no usage-based charges',
     unitLabel: 'Attorney / Paralegal Seats',
     unitsIncluded: 0,
@@ -500,10 +500,10 @@ const PRODUCTS: ProductConfig[] = [
     agentMax: 0,
     agentDefault: 0,
     description: 'AI-powered litigation command center',
-    annualDiscount: 0.15,
+    annualDiscount: 0.10,
     infoText: (
       <>
-        <strong className="text-slate-300">CaseForge Legal</strong>: $2,499/mo flat rate — no usage-based charges.
+        <strong className="text-slate-300">CaseForge Legal</strong>: $3,499/mo flat rate — no usage-based charges.
         Includes AI legal research, TruClaw autonomous agents, and interactive case analytics.
         Volume discounts for multi-firm or multi-region deployments — contact sales.
       </>
@@ -516,7 +516,7 @@ const PRODUCTS: ProductConfig[] = [
     color: '#6495ED',
     category: 'Vertical',
     isFlat: true,
-    baseFee: 1499,
+    baseFee: 3499,
     baseFeeLabel: 'All-inclusive flat rate — no usage-based charges',
     unitLabel: 'Schools / Districts',
     unitsIncluded: 0,
@@ -533,10 +533,10 @@ const PRODUCTS: ProductConfig[] = [
     agentMax: 0,
     agentDefault: 0,
     description: 'ADA-compliant charter school reporting',
-    annualDiscount: 0.15,
+    annualDiscount: 0.10,
     infoText: (
       <>
-        <strong className="text-slate-300">ASPIRE Reporting</strong>: $1,499/mo flat rate — no usage-based charges.
+        <strong className="text-slate-300">ASPIRE Reporting</strong>: $3,499/mo flat rate — no usage-based charges.
         Includes ADA-compliant public reporting, AWS data warehouse integration, and progressive disclosure design.
         Multi-district pricing available — contact sales.
       </>
@@ -574,7 +574,7 @@ const PRODUCTS: ProductConfig[] = [
     agentDefault: 0,
     description: 'AI national address data collection',
     customAboveUnits: 10_000,    // 10M records → Contact Sales
-    annualDiscount: 0.15,
+    annualDiscount: 0.10,
     infoText: (
       <>
         <strong className="text-slate-300">TruAddress</strong>: $19,950/mo base (first 100K records) ·
@@ -590,7 +590,7 @@ const PRODUCTS: ProductConfig[] = [
     color: '#00CED1',
     category: 'Vertical',
     isFlat: true,
-    baseFee: 995,
+    baseFee: 3995,
     baseFeeLabel: 'All-inclusive flat rate — no usage-based charges',
     unitLabel: 'Panel Members',
     unitsIncluded: 0,
@@ -607,10 +607,10 @@ const PRODUCTS: ProductConfig[] = [
     agentMax: 0,
     agentDefault: 0,
     description: 'WhatsApp/SMS survey panel platform',
-    annualDiscount: 0.15,
+    annualDiscount: 0.10,
     infoText: (
       <>
-        <strong className="text-slate-300">PanelPulse</strong>: $995/mo flat rate — no usage-based charges.
+        <strong className="text-slate-300">PanelPulse</strong>: $3,995/mo flat rate — no usage-based charges.
         Includes WhatsApp/SMS survey distribution, airtime incentive management, and AI analysis.
         SMS/WhatsApp message volume overage pricing available for high-frequency surveys — contact sales.
       </>
@@ -640,7 +640,7 @@ const PRODUCTS: ProductConfig[] = [
     agentMax: 0,
     agentDefault: 0,
     description: 'RFP toolkit & white-label demo suite',
-    annualDiscount: 0.15,
+    annualDiscount: 0.10,
     infoText: (
       <>
         <strong className="text-slate-300">Smart City Demo Suite</strong>: $4,750/mo flat rate — no usage-based charges.
@@ -847,7 +847,7 @@ function PricingSlider({
 function TruClawTierBar({ agents, color }: { agents: number; color: string }) {
   const tiers = [
     { label: 'Starter', range: '1–10 agents', fee: '$1,299/mo', max: 10, active: agents <= 10 },
-    { label: 'Standard', range: '11–50 agents', fee: '$9,999/mo', max: 50, active: agents > 10 && agents <= 50 },
+    { label: 'Standard', range: '11–50 agents', fee: '$6,995/mo', max: 50, active: agents > 10 && agents <= 50 },
     { label: 'Enterprise', range: '50+ agents', fee: 'Contact Sales', max: Infinity, active: agents > 50 },
   ];
   return (
