@@ -2186,3 +2186,20 @@
 - [ ] Wire tier-picker into Shop page Subscribe Now for truclaw product
 - [ ] Add navigation link to My Subscriptions in user account menu
 - [ ] Write tests for TruClaw tier picker and subscriptions page
+
+## Pricing Update from Visium_Pricing_Formulas-02.xlsx (Apr 2026)
+- [x] Update TruContext base price to $7,995/mo in Shop.tsx, PricingCalculator.tsx, Stripe products.ts
+- [x] Update TruClaw Standard price to $6,995/mo across all files
+- [x] Update Full Suite Bundle base price to $14,995/mo
+- [x] Update Oil & Gas base price to $8,000/mo
+- [x] Update Smart City Gov base price to $16,000/mo
+- [x] Update Smart City Municipal base price to $12,495/mo
+- [x] Update Campus Security base price to $7,995/mo
+- [x] Update CaseForge Legal base price to $3,499/mo
+- [x] Update ASPIRE Reporting base price to $3,499/mo
+- [x] Update PanelPulse base price to $3,995/mo
+- [x] Update Tru-InSight metered rate to $2.00/camera (from $2.20)
+- [x] Update all annual discounts from 15%/20% to uniform 10%
+- [x] Update TruClawTierModal Save badge from 15% to 10%
+- [x] Update bundle savings text in Shop.tsx from 20%/25% to 10%
+- [x] Update all test files to reflect new prices and discount rates
