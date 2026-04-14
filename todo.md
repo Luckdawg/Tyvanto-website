@@ -2222,3 +2222,11 @@
 - [x] Add CaseForge ($3,499/mo, Flat rate, Legal teams) row to comparison strip
 - [x] Add ASPIRE ($3,499/mo, Flat rate, Public agencies) row to comparison strip
 - [x] Update comparison table tests to cover new rows (49 tests pass)
+
+## Comparison Strip Completion (Apr 2026)
+- [x] Add PanelPulse ($3,995/mo, Flat rate, Research & NGO ops) row to comparison strip
+- [x] Add TruAddress ($19,950/mo, Usage-based, National address programs) row to comparison strip
+- [x] Fix CaseForge anchor ID in comparison strip (id="product-caseforge-legal" added to vertical card)
+- [x] Fix ASPIRE anchor ID in comparison strip (id="product-aspire-reporting" added to vertical card)
+- [x] Add pricing model legend below comparison strip table (4 model types explained)
+- [x] Update tests to cover all 8 rows and the legend (155 pricing tests pass)

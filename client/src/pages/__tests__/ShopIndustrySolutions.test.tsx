@@ -227,7 +227,7 @@ describe('Shop — Industry Solutions & Vertical Platforms section', () => {
 
   it('shows $19,950/mo for Card 7 (TruAddress)', async () => {
     await renderShop();
-    expect(screen.getByText(/\$19,950/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/\$19,950/i).length).toBeGreaterThan(0);
   });
 
   it('shows $3,995/mo for Card 8 (PanelPulse)', async () => {
@@ -350,10 +350,10 @@ describe('Shop — How to Choose comparison strip', () => {
     expect(priceMatches.length).toBeGreaterThan(0);
   });
 
-  it('shows "Flat rate" pricing model for CaseForge in comparison strip', async () => {
+  it('shows "Flat rate" pricing model for CaseForge, ASPIRE, and PanelPulse in comparison strip', async () => {
     await renderShop();
     const flatRateMatches = screen.getAllByText(/Flat rate/i);
-    expect(flatRateMatches.length).toBeGreaterThanOrEqual(2); // CaseForge + ASPIRE both show Flat rate
+    expect(flatRateMatches.length).toBeGreaterThanOrEqual(3); // CaseForge + ASPIRE + PanelPulse
   });
 
   it('shows "Legal teams" as Best For for CaseForge', async () => {
@@ -366,14 +366,59 @@ describe('Shop — How to Choose comparison strip', () => {
     expect(screen.getByText(/Public agencies/i)).toBeInTheDocument();
   });
 
-  it('comparison strip has 6 rows (TruClaw, Tru-InSight, ELI, TruContext, CaseForge, ASPIRE)', async () => {
+  it('shows PanelPulse in the comparison strip with $3,995/mo', async () => {
     await renderShop();
-    // Each row has a Best For cell — use getAllByText for values that may appear in multiple sections
+    expect(screen.getAllByText(/PanelPulse/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/\$3,995/i).length).toBeGreaterThan(0);
+  });
+
+  it('shows "Research & NGO ops" as Best For for PanelPulse', async () => {
+    await renderShop();
+    expect(screen.getByText(/Research & NGO ops/i)).toBeInTheDocument();
+  });
+
+  it('shows TruAddress in the comparison strip with $19,950/mo', async () => {
+    await renderShop();
+    expect(screen.getAllByText(/TruAddress/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/\$19,950/i).length).toBeGreaterThan(0);
+  });
+
+  it('shows "National address programs" as Best For for TruAddress', async () => {
+    await renderShop();
+    expect(screen.getByText(/National address programs/i)).toBeInTheDocument();
+  });
+
+  it('shows "Usage-based" pricing model for TruAddress', async () => {
+    await renderShop();
+    expect(screen.getAllByText(/Usage-based/i).length).toBeGreaterThan(0);
+  });
+
+  it('comparison strip has 8 rows (all products)', async () => {
+    await renderShop();
     expect(screen.getAllByText(/AI governance teams/i).length).toBeGreaterThan(0);
     expect(screen.getAllByText(/Video intelligence/i).length).toBeGreaterThan(0);
     expect(screen.getAllByText(/Physical security ops/i).length).toBeGreaterThan(0);
     expect(screen.getAllByText(/SOC.*threat analysts/i).length).toBeGreaterThan(0);
     expect(screen.getAllByText(/Legal teams/i).length).toBeGreaterThan(0);
     expect(screen.getAllByText(/Public agencies/i).length).toBeGreaterThan(0);
+    expect(screen.getByText(/Research & NGO ops/i)).toBeInTheDocument();
+    expect(screen.getByText(/National address programs/i)).toBeInTheDocument();
+  });
+
+  it('renders the pricing model legend with all four model types', async () => {
+    await renderShop();
+    expect(screen.getByText(/Pricing Model Key/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/Flat rate/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/Flat tier \+ agent count/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/Base \+ metered/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/Usage-based/i).length).toBeGreaterThan(0);
+  });
+
+  it('vertical product cards have anchor IDs for deep-link navigation', async () => {
+    await renderShop();
+    expect(document.getElementById('product-caseforge-legal')).not.toBeNull();
+    expect(document.getElementById('product-aspire-reporting')).not.toBeNull();
+    expect(document.getElementById('product-panelpulse')).not.toBeNull();
+    expect(document.getElementById('product-truaddress')).not.toBeNull();
   });
 });

@@ -888,6 +888,8 @@ export default function Shop() {
               { name: 'TruContext', entry: '$7,995/mo', model: 'Base + tiered node rate', bestFor: 'SOC & threat analysts', href: '#product-trucontext', color: '#00E5FF' },
               { name: 'CaseForge', entry: '$3,499/mo', model: 'Flat rate', bestFor: 'Legal teams', href: '#product-caseforge-legal', color: '#DAA520' },
               { name: 'ASPIRE', entry: '$3,499/mo', model: 'Flat rate', bestFor: 'Public agencies', href: '#product-aspire-reporting', color: '#22C55E' },
+              { name: 'PanelPulse', entry: '$3,995/mo', model: 'Flat rate', bestFor: 'Research & NGO ops', href: '#product-panelpulse', color: '#00CED1' },
+              { name: 'TruAddress', entry: '$19,950/mo', model: 'Usage-based', bestFor: 'National address programs', href: '#product-truaddress', color: '#DC143C' },
             ].map((row, i, arr) => (
               <div
                 key={row.name}
@@ -902,6 +904,16 @@ export default function Shop() {
                 </a>
               </div>
             ))}
+            {/* Pricing model legend */}
+            <div className="px-6 py-4 border-t border-white/8 bg-white/2">
+              <p className="text-slate-500 text-xs font-semibold uppercase tracking-wide mb-2">Pricing Model Key</p>
+              <div className="flex flex-wrap gap-x-6 gap-y-1.5">
+                <span className="text-slate-400 text-xs"><span className="text-slate-300 font-medium">Flat rate</span> — fixed monthly fee, unlimited usage within plan limits</span>
+                <span className="text-slate-400 text-xs"><span className="text-slate-300 font-medium">Flat tier + agent count</span> — fixed tier fee plus a per-agent overage charge</span>
+                <span className="text-slate-400 text-xs"><span className="text-slate-300 font-medium">Base + metered</span> — predictable base fee plus transparent per-unit charges (cameras, nodes, etc.)</span>
+                <span className="text-slate-400 text-xs"><span className="text-slate-300 font-medium">Usage-based</span> — billed entirely on consumption volume; no fixed base fee</span>
+              </div>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -1193,6 +1205,7 @@ export default function Shop() {
             {filteredVerticals.map((vp) => (
               <div
                 key={vp.id}
+                id={`product-${vp.id}`}
                 className="relative rounded-2xl border border-white/10 hover:border-white/25 transition-all duration-300 overflow-hidden flex flex-col"
                 style={{ background: 'rgba(255,255,255,0.03)', backdropFilter: 'blur(12px)' }}
               >
