@@ -2203,3 +2203,10 @@
 - [x] Update TruClawTierModal Save badge from 15% to 10%
 - [x] Update bundle savings text in Shop.tsx from 20%/25% to 10%
 - [x] Update all test files to reflect new prices and discount rates
+
+## Follow-up Tasks (Apr 2026)
+- [x] Sync Stripe Price objects to new base fees (create new prices in Stripe test environment)
+- [x] Update /pricing page to redirect to /shop
+- [x] Remove /pricing from navigation menus
+- [x] Update static pricing table on /pricing page if present (page replaced with redirect)
+- [x] Publish site after all changes

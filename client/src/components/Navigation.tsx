@@ -245,12 +245,6 @@ const Navigation = () => {
               </Button>
             </Link>
 
-            <Link href="/pricing">
-              <Button variant="ghost" className="text-gray-700 hover:text-white hover:bg-primary">
-                Pricing
-              </Button>
-            </Link>
-
             <Link href="/shop">
               <Button variant="ghost" className="text-gray-700 hover:text-white hover:bg-primary">
                 Shop
@@ -393,10 +387,6 @@ const Navigation = () => {
 
               <Link href="/partners" onClick={() => setMobileMenuOpen(false)}>
                 <Button variant="ghost" className="w-full justify-start text-base py-3">Partners</Button>
-              </Link>
-
-              <Link href="/pricing" onClick={() => setMobileMenuOpen(false)}>
-                <Button variant="ghost" className="w-full justify-start text-base py-3">Pricing</Button>
               </Link>
 
               <Link href="/shop" onClick={() => setMobileMenuOpen(false)}>

@@ -463,7 +463,7 @@ export default function ROICalculator() {
                     Schedule Demo
                   </Button>
                 </Link>
-                <Link href="/pricing">
+                <Link href="/shop">
                   <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
                     View Pricing
                   </Button>

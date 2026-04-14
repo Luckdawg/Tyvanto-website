@@ -6,6 +6,9 @@
  *
  * Products are created idempotently using metadata.visium_id so re-running
  * this script will update existing products rather than creating duplicates.
+ *
+ * Pricing sourced from Visium_Pricing_Formulas-02.xlsx (Apr 2026).
+ * All annual discounts are now uniform 10%.
  */
 
 import Stripe from 'stripe';
@@ -30,10 +33,10 @@ const PRODUCTS = [
     description:
       'Agentic AI-powered cybersecurity intelligence platform. Patented multi-layered graph database. MITRE ATT&CK heritage. Includes first 10,000 monitored nodes.',
     category: 'Core Platform',
-    monthlyPrice: 12499_00,   // $12,499/mo
-    annualDiscount: 0.15,     // 15% off
+    monthlyPrice: 7995_00,    // $7,995/mo
+    annualDiscount: 0.10,     // 10% off
     metadata: {
-      base_fee: '12499',
+      base_fee: '7995',
       included_nodes: '10000',
       tier1_rate_per_node: '0.40',
       tier1_range: '10K–100K nodes',
@@ -49,7 +52,7 @@ const PRODUCTS = [
       'Autonomous AI agent platform. Starter tier: up to 10 agents, 20M tokens included per month.',
     category: 'Core Platform',
     monthlyPrice: 1299_00,    // $1,299/mo
-    annualDiscount: 0.15,
+    annualDiscount: 0.10,
     metadata: {
       tier: 'starter',
       max_agents: '10',
@@ -60,14 +63,14 @@ const PRODUCTS = [
     id: 'truclaw-standard',
     name: 'TruClaw — Standard',
     description:
-      'Autonomous AI agent platform. Standard tier: 11–50 agents, 100M tokens included per month.',
+      'Autonomous AI agent platform. Standard tier: 11–50 agents, 200M tokens included per month.',
     category: 'Core Platform',
-    monthlyPrice: 9999_00,    // $9,999/mo
-    annualDiscount: 0.15,
+    monthlyPrice: 6995_00,    // $6,995/mo
+    annualDiscount: 0.10,
     metadata: {
       tier: 'standard',
       max_agents: '50',
-      tokens_included: '100000000',
+      tokens_included: '200000000',
     },
   },
   {
@@ -77,7 +80,7 @@ const PRODUCTS = [
       'Autonomous AI agent platform. Enterprise tier: 50+ agents, unlimited tokens. Custom pricing — contact sales.',
     category: 'Core Platform',
     monthlyPrice: null,       // Contact Sales — no price created
-    annualDiscount: 0.15,
+    annualDiscount: 0.10,
     metadata: {
       tier: 'enterprise',
       pricing: 'contact_sales',
@@ -87,13 +90,13 @@ const PRODUCTS = [
     id: 'truinsight',
     name: 'Tru-InSight',
     description:
-      'AI-powered video intelligence and situational awareness platform. Includes core analytics platform. Per-camera metered inference at $2.20/camera/mo.',
+      'AI-powered video intelligence and situational awareness platform. Includes core analytics platform. Per-camera metered inference at $2.00/camera/mo.',
     category: 'Core Platform',
     monthlyPrice: 7499_00,    // $7,499/mo base
-    annualDiscount: 0.15,
+    annualDiscount: 0.10,
     metadata: {
       base_fee: '7499',
-      camera_rate: '2.20',
+      camera_rate: '2.00',
       pricing_model: 'base_plus_usage',
     },
   },
@@ -104,7 +107,7 @@ const PRODUCTS = [
       'Regional emergency response and law enforcement intelligence platform. First 500 cameras/nodes included. $4.00/node overage.',
     category: 'Core Platform',
     monthlyPrice: 9499_00,    // $9,499/mo base
-    annualDiscount: 0.15,
+    annualDiscount: 0.10,
     metadata: {
       base_fee: '9499',
       included_nodes: '500',
@@ -115,17 +118,16 @@ const PRODUCTS = [
     id: 'full-suite-bundle',
     name: 'Full Suite Bundle',
     description:
-      'All 4 core platforms (TruContext + TruClaw Standard + Tru-InSight + ELI) at 25% bundle discount. 20,000 nodes included. $3.00/node overage. $120/agent (10 agents included).',
+      'All 4 core platforms (TruContext + TruClaw Standard + Tru-InSight + ELI) at bundle discount. 5,000 nodes included. $3.00/node overage. $120/agent (10 agents included).',
     category: 'Bundle',
-    monthlyPrice: 27500_00,   // $27,500/mo
-    annualDiscount: 0.20,     // 20% off for bundle
+    monthlyPrice: 14995_00,   // $14,995/mo
+    annualDiscount: 0.10,     // 10% off
     metadata: {
-      base_fee: '27500',
-      included_nodes: '20000',
+      base_fee: '14995',
+      included_nodes: '5000',
       overage_rate_per_node: '3.00',
       included_agents: '10',
       agent_rate: '120',
-      bundle_discount: '25',
     },
   },
 
@@ -136,11 +138,11 @@ const PRODUCTS = [
     description:
       'Energy and critical infrastructure cybersecurity. OT/ICS network monitoring. First 500 OT endpoints included. $2.00/endpoint overage.',
     category: 'Vertical Solution',
-    monthlyPrice: 24995_00,   // $24,995/mo
-    annualDiscount: 0.15,
+    monthlyPrice: 8000_00,    // $8,000/mo
+    annualDiscount: 0.10,
     metadata: {
       vertical: 'oil_gas',
-      base_fee: '24995',
+      base_fee: '8000',
       included_endpoints: '500',
       overage_rate: '2.00',
     },
@@ -151,11 +153,11 @@ const PRODUCTS = [
     description:
       'National smart city command and control. First 1,000 IoT nodes included. $2.00/node overage. Includes 3D city visualization and AI agents.',
     category: 'Vertical Solution',
-    monthlyPrice: 28000_00,   // $28,000/mo
-    annualDiscount: 0.15,
+    monthlyPrice: 16000_00,   // $16,000/mo
+    annualDiscount: 0.10,
     metadata: {
       vertical: 'smart_city_government',
-      base_fee: '28000',
+      base_fee: '16000',
       included_nodes: '1000',
       overage_rate: '2.00',
     },
@@ -166,11 +168,11 @@ const PRODUCTS = [
     description:
       'Municipal smart infrastructure management. First 500 IoT devices included. $2.00/device overage.',
     category: 'Vertical Solution',
-    monthlyPrice: 20000_00,   // $20,000/mo
-    annualDiscount: 0.15,
+    monthlyPrice: 12495_00,   // $12,495/mo
+    annualDiscount: 0.10,
     metadata: {
       vertical: 'smart_city_municipal',
-      base_fee: '20000',
+      base_fee: '12495',
       included_devices: '500',
       overage_rate: '2.00',
     },
@@ -181,11 +183,11 @@ const PRODUCTS = [
     description:
       'Campus situational awareness and security intelligence. First 100 cameras/endpoints included. $2.00/camera overage.',
     category: 'Vertical Solution',
-    monthlyPrice: 9995_00,    // $9,995/mo
-    annualDiscount: 0.15,
+    monthlyPrice: 7995_00,    // $7,995/mo
+    annualDiscount: 0.10,
     metadata: {
       vertical: 'campus_security',
-      base_fee: '9995',
+      base_fee: '7995',
       included_cameras: '100',
       overage_rate: '2.00',
     },
@@ -196,8 +198,8 @@ const PRODUCTS = [
     description:
       'AI-powered legal research and case intelligence platform. Flat-rate monthly subscription. No usage-based charges.',
     category: 'Vertical Solution',
-    monthlyPrice: 2499_00,    // $2,499/mo flat
-    annualDiscount: 0.15,
+    monthlyPrice: 3499_00,    // $3,499/mo flat
+    annualDiscount: 0.10,
     metadata: {
       vertical: 'legal',
       pricing_model: 'flat_rate',
@@ -209,8 +211,8 @@ const PRODUCTS = [
     description:
       'Automated security posture and incident reporting. Flat-rate monthly subscription. No usage-based charges.',
     category: 'Vertical Solution',
-    monthlyPrice: 1499_00,    // $1,499/mo flat
-    annualDiscount: 0.15,
+    monthlyPrice: 3499_00,    // $3,499/mo flat
+    annualDiscount: 0.10,
     metadata: {
       vertical: 'reporting',
       pricing_model: 'flat_rate',
@@ -223,7 +225,7 @@ const PRODUCTS = [
       'National address verification and geospatial intelligence. First 100,000 records included. $0.20/1K records overage.',
     category: 'Vertical Solution',
     monthlyPrice: 19950_00,   // $19,950/mo
-    annualDiscount: 0.15,
+    annualDiscount: 0.10,
     metadata: {
       vertical: 'address_intelligence',
       base_fee: '19950',
@@ -237,8 +239,8 @@ const PRODUCTS = [
     description:
       'Smart utility grid monitoring and anomaly detection. Flat-rate monthly subscription.',
     category: 'Vertical Solution',
-    monthlyPrice: 995_00,     // $995/mo flat
-    annualDiscount: 0.15,
+    monthlyPrice: 3995_00,    // $3,995/mo flat
+    annualDiscount: 0.10,
     metadata: {
       vertical: 'utility_grid',
       pricing_model: 'flat_rate',
@@ -251,7 +253,7 @@ const PRODUCTS = [
       'Full smart city demonstration environment with live data feeds. Flat-rate monthly subscription.',
     category: 'Vertical Solution',
     monthlyPrice: 4750_00,    // $4,750/mo flat
-    annualDiscount: 0.15,
+    annualDiscount: 0.10,
     metadata: {
       vertical: 'smart_city_demo',
       pricing_model: 'flat_rate',
@@ -280,6 +282,20 @@ async function findExistingPrice(productId, interval, lookup_key) {
     limit: 20,
   });
   return prices.data.find(p => p.lookup_key === lookup_key) || null;
+}
+
+async function archiveOldPrices(productId, keepLookupKeys) {
+  const prices = await stripe.prices.list({
+    product: productId,
+    active: true,
+    limit: 100,
+  });
+  for (const price of prices.data) {
+    if (!keepLookupKeys.includes(price.lookup_key)) {
+      await stripe.prices.update(price.id, { active: false });
+      console.log(`  ↳ Archived old price: ${price.id} (${price.lookup_key || 'no key'})`);
+    }
+  }
 }
 
 // ─── Main ─────────────────────────────────────────────────────────────────────
@@ -335,34 +351,38 @@ for (const product of PRODUCTS) {
     continue;
   }
 
-  // 3. Create monthly price
-  const monthlyLookupKey = `${product.id}_monthly`;
-  let monthlyPrice = await findExistingPrice(stripeProduct.id, 'month', monthlyLookupKey);
+  const monthlyLookupKey = `${product.id}_monthly_v2`;
+  const annualLookupKey  = `${product.id}_annual_v2`;
 
-  if (!monthlyPrice) {
-    monthlyPrice = await stripe.prices.create({
+  // 3. Archive any old prices that don't match the new lookup keys
+  await archiveOldPrices(stripeProduct.id, [monthlyLookupKey, annualLookupKey]);
+
+  // 4. Create monthly price (idempotent via lookup_key)
+  let monthlyPriceObj = await findExistingPrice(stripeProduct.id, 'month', monthlyLookupKey);
+  if (!monthlyPriceObj) {
+    monthlyPriceObj = await stripe.prices.create({
       product: stripeProduct.id,
       unit_amount: product.monthlyPrice,
       currency: 'usd',
       recurring: { interval: 'month' },
       lookup_key: monthlyLookupKey,
+      transfer_lookup_key: true,
       metadata: {
         visium_id: product.id,
         billing_cycle: 'monthly',
         discount_pct: '0',
+        pricing_version: 'v2',
       },
     });
-    console.log(`  ✓ Monthly price: ${monthlyPrice.id} ($${(product.monthlyPrice / 100).toLocaleString()}/mo)`);
+    console.log(`  ✓ Monthly price: ${monthlyPriceObj.id} ($${(product.monthlyPrice / 100).toLocaleString()}/mo)`);
   } else {
-    console.log(`  ↳ Monthly price exists: ${monthlyPrice.id}`);
+    console.log(`  ↳ Monthly price exists: ${monthlyPriceObj.id}`);
   }
-  entry.monthlyPriceId = monthlyPrice.id;
+  entry.monthlyPriceId = monthlyPriceObj.id;
 
-  // 4. Create annual price (billed yearly, discounted)
+  // 5. Create annual price (billed yearly, discounted)
   const annualAmount = annualPrice(product.monthlyPrice, product.annualDiscount);
-  const annualLookupKey = `${product.id}_annual`;
   let annualPriceObj = await findExistingPrice(stripeProduct.id, 'year', annualLookupKey);
-
   if (!annualPriceObj) {
     annualPriceObj = await stripe.prices.create({
       product: stripeProduct.id,
@@ -370,11 +390,13 @@ for (const product of PRODUCTS) {
       currency: 'usd',
       recurring: { interval: 'year' },
       lookup_key: annualLookupKey,
+      transfer_lookup_key: true,
       metadata: {
         visium_id: product.id,
         billing_cycle: 'annual',
         discount_pct: String(Math.round(product.annualDiscount * 100)),
         monthly_equivalent: String(Math.round(annualAmount / 12)),
+        pricing_version: 'v2',
       },
     });
     const monthlyEquiv = Math.round(annualAmount / 12 / 100);
@@ -393,18 +415,12 @@ console.log('\n\n═════════════════════
 console.log('STRIPE PRICE ID MAP — paste into server/stripe/products.ts');
 console.log('══════════════════════════════════════════════════════════════\n');
 
-console.log('export const STRIPE_PRICES: Record<string, { monthly: string; annual: string }> = {');
 for (const r of results) {
   console.log(`  '${r.visiumId}': {`);
-  console.log(`    monthly: '${r.monthlyPriceId}',`);
-  console.log(`    annual:  '${r.annualPriceId}',`);
+  console.log(`    productId: '${r.stripeProductId}',`);
+  console.log(`    monthlyPriceId: '${r.monthlyPriceId}',`);
+  console.log(`    annualPriceId:  '${r.annualPriceId}',`);
   console.log(`  },`);
 }
-console.log('};');
 
-console.log('\n\nSTRIPE PRODUCT ID MAP:\n');
-for (const r of results) {
-  console.log(`  ${r.visiumId}: ${r.stripeProductId}`);
-}
-
-console.log('\n✅ All Stripe products and prices created successfully.');
+console.log('\n✅ All Stripe products and prices created/updated successfully.');

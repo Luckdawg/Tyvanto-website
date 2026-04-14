@@ -6,6 +6,8 @@
  * To update prices: edit setup-stripe-products.mjs and re-run it, then paste
  * the output here.
  *
+ * Pricing sourced from Visium_Pricing_Formulas-02.xlsx (Apr 2026).
+ * All annual discounts are uniform 10%.
  * All prices are in the Stripe SANDBOX (test mode).
  * Switch to live keys in Settings → Payment when ready for production.
  */
@@ -38,11 +40,11 @@ export const VISIUM_PRODUCTS: Record<string, StripeProductEntry> = {
     productId: 'prod_UKYM2OGkqtDnkJ',
     name: 'TruContext',
     category: 'Core Platform',
-    monthlyBaseUsd: 12499,
-    annualDiscount: 0.15,
+    monthlyBaseUsd: 7995,
+    annualDiscount: 0.10,
     prices: {
-      monthly: 'price_1TLtG52eZs8bKGLsMAmBZUk4',
-      annual:  'price_1TLtG62eZs8bKGLsCSYb7Ffn',
+      monthly: 'price_1TLuXD2eZs8bKGLsQW7smUw3',
+      annual:  'price_1TLuXD2eZs8bKGLs0RBYhAJz',
     },
   },
   'truclaw-starter': {
@@ -50,21 +52,21 @@ export const VISIUM_PRODUCTS: Record<string, StripeProductEntry> = {
     name: 'TruClaw — Starter',
     category: 'Core Platform',
     monthlyBaseUsd: 1299,
-    annualDiscount: 0.15,
+    annualDiscount: 0.10,
     prices: {
-      monthly: 'price_1TLtG92eZs8bKGLsIOXvUBdq',
-      annual:  'price_1TLtGB2eZs8bKGLsIOPOIXCF',
+      monthly: 'price_1TLuXF2eZs8bKGLsnb4SdDxy',
+      annual:  'price_1TLuXF2eZs8bKGLshWr6iGJt',
     },
   },
   'truclaw-standard': {
     productId: 'prod_UKYMxf88cAHzIQ',
     name: 'TruClaw — Standard',
     category: 'Core Platform',
-    monthlyBaseUsd: 9999,
-    annualDiscount: 0.15,
+    monthlyBaseUsd: 6995,
+    annualDiscount: 0.10,
     prices: {
-      monthly: 'price_1TLtGE2eZs8bKGLsPyFhzI10',
-      annual:  'price_1TLtGF2eZs8bKGLs4OA5bN0L',
+      monthly: 'price_1TLuXH2eZs8bKGLsgsBS0SzT',
+      annual:  'price_1TLuXH2eZs8bKGLsLsMUtAHU',
     },
   },
   'truclaw-enterprise': {
@@ -72,7 +74,7 @@ export const VISIUM_PRODUCTS: Record<string, StripeProductEntry> = {
     name: 'TruClaw — Enterprise',
     category: 'Core Platform',
     monthlyBaseUsd: 0,
-    annualDiscount: 0.15,
+    annualDiscount: 0.10,
     prices: {
       monthly: 'contact_sales',
       annual:  'contact_sales',
@@ -84,10 +86,10 @@ export const VISIUM_PRODUCTS: Record<string, StripeProductEntry> = {
     name: 'Tru-InSight',
     category: 'Core Platform',
     monthlyBaseUsd: 7499,
-    annualDiscount: 0.15,
+    annualDiscount: 0.10,
     prices: {
-      monthly: 'price_1TLtGK2eZs8bKGLslZU5VRjG',
-      annual:  'price_1TLtGL2eZs8bKGLs1jdGWwnk',
+      monthly: 'price_1TLuXJ2eZs8bKGLsvh8x7ZvZ',
+      annual:  'price_1TLuXK2eZs8bKGLs3RhSw4e5',
     },
   },
   eli: {
@@ -95,10 +97,10 @@ export const VISIUM_PRODUCTS: Record<string, StripeProductEntry> = {
     name: 'ELI — Emergency Location Intelligence',
     category: 'Core Platform',
     monthlyBaseUsd: 9499,
-    annualDiscount: 0.15,
+    annualDiscount: 0.10,
     prices: {
-      monthly: 'price_1TLtGO2eZs8bKGLsca4ITCdY',
-      annual:  'price_1TLtGP2eZs8bKGLscOjc58Ee',
+      monthly: 'price_1TLuXL2eZs8bKGLswAVMblGH',
+      annual:  'price_1TLuXL2eZs8bKGLsOBa9I3eJ',
     },
   },
 
@@ -107,11 +109,11 @@ export const VISIUM_PRODUCTS: Record<string, StripeProductEntry> = {
     productId: 'prod_UKYNSOjaoWgUfK',
     name: 'Full Suite Bundle',
     category: 'Bundle',
-    monthlyBaseUsd: 27500,
-    annualDiscount: 0.20,
+    monthlyBaseUsd: 14995,
+    annualDiscount: 0.10,
     prices: {
-      monthly: 'price_1TLtGS2eZs8bKGLsaNhLZazi',
-      annual:  'price_1TLtGU2eZs8bKGLsl5mmwC4s',
+      monthly: 'price_1TLuXN2eZs8bKGLsyMHPgjcH',
+      annual:  'price_1TLuXN2eZs8bKGLsEGh6WuCv',
     },
   },
 
@@ -120,66 +122,66 @@ export const VISIUM_PRODUCTS: Record<string, StripeProductEntry> = {
     productId: 'prod_UKYNvEOcpWxGka',
     name: 'TruContext — Oil & Gas',
     category: 'Vertical Solution',
-    monthlyBaseUsd: 24995,
-    annualDiscount: 0.15,
+    monthlyBaseUsd: 8000,
+    annualDiscount: 0.10,
     prices: {
-      monthly: 'price_1TLtGX2eZs8bKGLsb0OP2Dng',
-      annual:  'price_1TLtGZ2eZs8bKGLsuyHQzfme',
+      monthly: 'price_1TLuXP2eZs8bKGLsJiqTwSa4',
+      annual:  'price_1TLuXP2eZs8bKGLsVkJik5xo',
     },
   },
   'smart-city-gov': {
     productId: 'prod_UKYNT9lLBSGD62',
     name: 'Smart City — Government',
     category: 'Vertical Solution',
-    monthlyBaseUsd: 28000,
-    annualDiscount: 0.15,
+    monthlyBaseUsd: 16000,
+    annualDiscount: 0.10,
     prices: {
-      monthly: 'price_1TLtGc2eZs8bKGLslCxIyrdS',
-      annual:  'price_1TLtGd2eZs8bKGLsBBSdKTyj',
+      monthly: 'price_1TLuXR2eZs8bKGLspGtHvLsb',
+      annual:  'price_1TLuXR2eZs8bKGLsOIMj4kZb',
     },
   },
   'smart-city-municipal': {
     productId: 'prod_UKYNsMUivN021w',
     name: 'Smart City — Municipal',
     category: 'Vertical Solution',
-    monthlyBaseUsd: 20000,
-    annualDiscount: 0.15,
+    monthlyBaseUsd: 12495,
+    annualDiscount: 0.10,
     prices: {
-      monthly: 'price_1TLtGg2eZs8bKGLsifIxS8Xk',
-      annual:  'price_1TLtGi2eZs8bKGLsiWxcJYCn',
+      monthly: 'price_1TLuXT2eZs8bKGLscJBVaoRZ',
+      annual:  'price_1TLuXT2eZs8bKGLspH6t445J',
     },
   },
   'campus-security': {
     productId: 'prod_UKYN5SrzwlOK8X',
     name: 'ELI — Campus Security Suite',
     category: 'Vertical Solution',
-    monthlyBaseUsd: 9995,
-    annualDiscount: 0.15,
+    monthlyBaseUsd: 7995,
+    annualDiscount: 0.10,
     prices: {
-      monthly: 'price_1TLtGk2eZs8bKGLsGFX36K7G',
-      annual:  'price_1TLtGm2eZs8bKGLsZmN1p0ok',
+      monthly: 'price_1TLuXV2eZs8bKGLsWeQ3a980',
+      annual:  'price_1TLuXV2eZs8bKGLsBszbAKvx',
     },
   },
   'caseforge-legal': {
     productId: 'prod_UKYNNoT1DlMBcC',
     name: 'CaseForge Legal Intelligence',
     category: 'Vertical Solution',
-    monthlyBaseUsd: 2499,
-    annualDiscount: 0.15,
+    monthlyBaseUsd: 3499,
+    annualDiscount: 0.10,
     prices: {
-      monthly: 'price_1TLtGp2eZs8bKGLsJodkqEDi',
-      annual:  'price_1TLtGq2eZs8bKGLslVoGYNqy',
+      monthly: 'price_1TLuXX2eZs8bKGLsrZiRaQVC',
+      annual:  'price_1TLuXX2eZs8bKGLsG70QlRoN',
     },
   },
   'aspire-reporting': {
     productId: 'prod_UKYN7iacimS6qC',
     name: 'ASPIRE Reporting Platform',
     category: 'Vertical Solution',
-    monthlyBaseUsd: 1499,
-    annualDiscount: 0.15,
+    monthlyBaseUsd: 3499,
+    annualDiscount: 0.10,
     prices: {
-      monthly: 'price_1TLtGt2eZs8bKGLsp3ViKSSk',
-      annual:  'price_1TLtGv2eZs8bKGLsb5vAUKxF',
+      monthly: 'price_1TLuXZ2eZs8bKGLs0GbaDSOm',
+      annual:  'price_1TLuXZ2eZs8bKGLsG5GDszhj',
     },
   },
   truaddress: {
@@ -187,21 +189,21 @@ export const VISIUM_PRODUCTS: Record<string, StripeProductEntry> = {
     name: 'TruAddress — National Address Intelligence',
     category: 'Vertical Solution',
     monthlyBaseUsd: 19950,
-    annualDiscount: 0.15,
+    annualDiscount: 0.10,
     prices: {
-      monthly: 'price_1TLtH02eZs8bKGLs7SK287yo',
-      annual:  'price_1TLtH22eZs8bKGLshRp8vyud',
+      monthly: 'price_1TLuXb2eZs8bKGLsZUqa5y0o',
+      annual:  'price_1TLuXb2eZs8bKGLspUSzu50e',
     },
   },
   panelpulse: {
     productId: 'prod_UKYN1Rexx1Jsk8',
     name: 'PanelPulse — Utility Grid Intelligence',
     category: 'Vertical Solution',
-    monthlyBaseUsd: 995,
-    annualDiscount: 0.15,
+    monthlyBaseUsd: 3995,
+    annualDiscount: 0.10,
     prices: {
-      monthly: 'price_1TLtH62eZs8bKGLsZrb043Pm',
-      annual:  'price_1TLtH72eZs8bKGLskj0atmcH',
+      monthly: 'price_1TLuXd2eZs8bKGLsJLqxbOqf',
+      annual:  'price_1TLuXd2eZs8bKGLsktSQuq6q',
     },
   },
   'smart-city-demo': {
@@ -209,10 +211,10 @@ export const VISIUM_PRODUCTS: Record<string, StripeProductEntry> = {
     name: 'Smart City Demo Suite',
     category: 'Vertical Solution',
     monthlyBaseUsd: 4750,
-    annualDiscount: 0.15,
+    annualDiscount: 0.10,
     prices: {
-      monthly: 'price_1TLtHA2eZs8bKGLsIpiSXAwJ',
-      annual:  'price_1TLtHB2eZs8bKGLsiDtOgVjQ',
+      monthly: 'price_1TLuXe2eZs8bKGLsW9miMMP6',
+      annual:  'price_1TLuXf2eZs8bKGLssF9SxMCd',
     },
   },
 };
