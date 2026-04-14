@@ -2245,3 +2245,8 @@
 - [x] Add ADMIN_EMAILS list (mlucky@, edevane@, inoble.ctr@ visiumtechnologies.com) to shared/const.ts
 - [x] Hook into OAuth user-creation path to auto-promote matching emails to admin role (db.ts upsertUser)
 - [x] Write tests for auto-promotion logic (15 tests pass, case-insensitive, explicit-role override, owner fallback)
+
+## News Page Press Release (Apr 2026)
+- [x] Fetch EIN Presswire press release content (Labrys/Talos debt settlement)
+- [x] Add press release to News page with consistent styling (first entry, Corporate News category, EIN Presswire source)
+- [x] Update news page tests (7 tests pass)

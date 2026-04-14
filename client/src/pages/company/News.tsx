@@ -7,6 +7,14 @@ import { Newspaper, Calendar, ExternalLink, TrendingUp } from "lucide-react";
 export default function News() {
   const newsStories = [
     {
+      date: "April 14, 2026",
+      title: "Visium Technologies Eliminates Over $182,000 in Outstanding Debt and All Conversion Overhang Through Full Settlement of Labrys Notes and Talos Warrants",
+      excerpt: "Visium Technologies announces the execution of a definitive Settlement Agreement providing for the full and final extinguishment of all outstanding obligations under the Labrys Notes and the Talos Warrants. The settlement eliminates all conversion rights, derivative liabilities, and potential dilution associated with these instruments — representing a negotiated compromise of more than 18% below the current face amount — strengthening Visium's capital structure as the Company executes its strategic transformation following the recently announced Letter of Intent to acquire ConnexUs AI.",
+      url: "https://www.einpresswire.com/article/904942308/visium-technologies-eliminates-over-182-000-in-outstanding-debt-and-all-conversion-overhang-through-full-settlement-of-labrys-notes-and-talos",
+      source: "EIN Presswire",
+      category: "Corporate News"
+    },
+    {
       date: "March 19, 2026",
       title: "Visium Technologies Launches TruContext™ AI Governance Layer to Contain OpenClaw Style Autonomous Agent Risks",
       excerpt: "Visium Technologies announces the launch of a new AI Governance Layer within TruContext, designed to address emerging security risks from autonomous AI agents. The governance layer enhances the platform's ability to contain and mitigate threats while maintaining transparent, explainable AI operations for defense, cybersecurity, and critical infrastructure applications.",

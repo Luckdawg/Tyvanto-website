@@ -3,17 +3,21 @@ import { describe, it, expect } from "vitest";
 describe("News Page - Press Release Links & Formatting", () => {
   it("should have the latest press release at the top", () => {
     const latestPressRelease = {
-      date: "March 19, 2026",
-      title: "Visium Technologies Launches TruContext™ AI Governance Layer to Contain OpenClaw Style Autonomous Agent Risks",
-      excerpt: "Visium Technologies announces the launch of a new AI Governance Layer within TruContext, designed to address emerging security risks from autonomous AI agents.",
-      url: "https://www.otcmarkets.com/stock/VISM/news/Visium-Technologies-Launches-TruContext-AI-Governance-Layer-to-Contain-OpenClaw-Style-Autonomous-Agent-Risks",
-      source: "OTC Disclosure & News Service",
-      category: "Product Launch"
+      date: "April 14, 2026",
+      title: "Visium Technologies Eliminates Over $182,000 in Outstanding Debt and All Conversion Overhang Through Full Settlement of Labrys Notes and Talos Warrants",
+      excerpt: "Visium Technologies announces the execution of a definitive Settlement Agreement providing for the full and final extinguishment of all outstanding obligations under the Labrys Notes and the Talos Warrants.",
+      url: "https://www.einpresswire.com/article/904942308/visium-technologies-eliminates-over-182-000-in-outstanding-debt-and-all-conversion-overhang-through-full-settlement-of-labrys-notes-and-talos",
+      source: "EIN Presswire",
+      category: "Corporate News"
     };
 
-    expect(latestPressRelease.date).toBe("March 19, 2026");
-    expect(latestPressRelease.title).toContain("AI Governance Layer");
-    expect(latestPressRelease.category).toBe("Product Launch");
+    expect(latestPressRelease.date).toBe("April 14, 2026");
+    expect(latestPressRelease.title).toContain("$182,000");
+    expect(latestPressRelease.title).toContain("Labrys Notes");
+    expect(latestPressRelease.category).toBe("Corporate News");
+    expect(latestPressRelease.source).toBe("EIN Presswire");
+    expect(latestPressRelease.url).toContain("einpresswire.com");
+    expect(latestPressRelease.url).toContain("904942308");
   });
 
   it("should have a valid OTC Markets URL for the latest press release", () => {
@@ -67,6 +71,7 @@ describe("News Page - Press Release Links & Formatting", () => {
 
   it("should have all press release URLs accessible", () => {
     const urls = [
+      "https://www.einpresswire.com/article/904942308/visium-technologies-eliminates-over-182-000-in-outstanding-debt-and-all-conversion-overhang-through-full-settlement-of-labrys-notes-and-talos",
       "https://www.otcmarkets.com/stock/VISM/news/Visium-Technologies-Launches-TruContext-AI-Governance-Layer-to-Contain-OpenClaw-Style-Autonomous-Agent-Risks",
       "https://www.otcmarkets.com/stock/VISM/news/Visium-Technologies-and-IREXAI-to-Host-Webinar-on-Perus-54000-Camera-AI-Surveillance-Network?id=508740",
       "https://www.otcmarkets.com/stock/VISM/news?id=484402"
@@ -80,7 +85,7 @@ describe("News Page - Press Release Links & Formatting", () => {
   });
 
   it("should have proper date formatting", () => {
-    const dates = ["March 19, 2026", "January 30, 2026", "December 23, 2025"];
+    const dates = ["April 14, 2026", "March 19, 2026", "January 30, 2026", "December 23, 2025"];
     
     dates.forEach((date) => {
       expect(date).toMatch(/^(January|February|March|April|May|June|July|August|September|October|November|December)\s\d{1,2},\s\d{4}$/);
