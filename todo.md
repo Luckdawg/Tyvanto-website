@@ -2256,3 +2256,11 @@
 - [x] Audit existing Investors page SEC filings section structure
 - [x] Add all 5 new 8-K filings with consistent styling (inserted into DB via seed script, documentUrl links fixed)
 - [x] Update tests and save checkpoint (9 new tests pass)
+
+## SEC EDGAR Auto-Sync Job (Apr 2026)
+- [x] Implement SEC EDGAR RSS feed parser (CIK 1082733) — server/jobs/secEdgarSync.ts
+- [x] Add upsertSecFiling helper to server/db.ts
+- [x] Create server/jobs/secEdgarSync.ts scheduled job (runs every 24 hours, notifies owner on new filings)
+- [x] Register job in server/_core/index.ts
+- [x] Write tests for RSS parser and upsert logic (16 tests pass)
+- [x] Save checkpoint (on startup: fetched 40, inserted 15, skipped 25)

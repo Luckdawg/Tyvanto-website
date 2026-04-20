@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users } from "../drizzle/schema";
+import { InsertUser, NewSecFiling, users, secFilings } from "../drizzle/schema";
 import { ENV } from './_core/env';
 import { ADMIN_EMAILS } from '../shared/const';
 import mysql from 'mysql2/promise';
@@ -135,3 +135,45 @@ export async function executeRawSQL(sql: string, params: any[] = []): Promise<an
 }
 
 // TODO: add feature queries here as your schema grows.
+
+/**
+ * Upsert a single SEC filing by accession number (unique key).
+ * Returns 'inserted' if a new row was created, 'skipped' if it already existed.
+ */
+export async function upsertSecFiling(
+  filing: Omit<NewSecFiling, 'id' | 'createdAt' | 'updatedAt'>
+): Promise<'inserted' | 'skipped'> {
+  const db = await getDb();
+  if (!db) {
+    console.warn('[Database] Cannot upsert SEC filing: database not available');
+    return 'skipped';
+  }
+
+  try {
+    // Check if the filing already exists by accession number
+    const existing = await db
+      .select({ id: secFilings.id })
+      .from(secFilings)
+      .where(eq(secFilings.accessionNumber, filing.accessionNumber))
+      .limit(1);
+
+    if (existing.length > 0) {
+      return 'skipped';
+    }
+
+    await db.insert(secFilings).values({
+      filingType: filing.filingType,
+      filingDate: filing.filingDate,
+      accessionNumber: filing.accessionNumber,
+      fileNumber: filing.fileNumber ?? null,
+      description: filing.description ?? null,
+      documentUrl: filing.documentUrl ?? null,
+      size: filing.size ?? null,
+    });
+
+    return 'inserted';
+  } catch (error) {
+    console.error('[Database] Failed to upsert SEC filing:', error);
+    throw error;
+  }
+}

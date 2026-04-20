@@ -8,6 +8,7 @@ import { appRouter } from "../routers";
 import { createContext } from "./context";
 import { serveStatic, setupVite } from "./vite";
 import { startEmailCampaignScheduler } from "../emailCampaignJob";
+import { startSecEdgarSyncScheduler } from "../jobs/secEdgarSync";
 import { redirectMiddleware } from "../middleware/redirects";
 
 function isPortAvailable(port: number): Promise<boolean> {
@@ -66,6 +67,9 @@ async function startServer() {
     
     // Start email campaign scheduler
     startEmailCampaignScheduler();
+
+    // Start daily SEC EDGAR filing sync (runs every 24 hours)
+    startSecEdgarSyncScheduler();
   });
 }
 
