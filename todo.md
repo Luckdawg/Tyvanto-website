@@ -2250,3 +2250,9 @@
 - [x] Fetch EIN Presswire press release content (Labrys/Talos debt settlement)
 - [x] Add press release to News page with consistent styling (first entry, Corporate News category, EIN Presswire source)
 - [x] Update news page tests (7 tests pass)
+
+## SEC Filings on Investors Page (Apr 2026)
+- [x] Fetch all 5 SEC 8-K filing titles and dates from SEC.gov
+- [x] Audit existing Investors page SEC filings section structure
+- [x] Add all 5 new 8-K filings with consistent styling (inserted into DB via seed script, documentUrl links fixed)
+- [x] Update tests and save checkpoint (9 new tests pass)

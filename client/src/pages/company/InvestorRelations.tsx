@@ -309,7 +309,7 @@ export default function InvestorRelations() {
                         className="whitespace-nowrap"
                       >
                         <a 
-                          href={`https://www.sec.gov/cgi-bin/viewer?action=view&cik=${filing.cikNumber}&accession_number=${filing.accessionNumber}&xbrl_type=v`}
+                          href={filing.documentUrl || `https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001082733&type=8-K&dateb=&owner=include&count=40`}
                           target="_blank" 
                           rel="noopener noreferrer"
                           className="flex items-center gap-1"
