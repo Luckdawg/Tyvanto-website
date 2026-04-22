@@ -122,9 +122,9 @@ export default function CapabilitiesDeck() {
   return (
     <>
       <SEOHead
-        title="Capabilities Deck | Visium Technologies"
-        description="Download the Visium Technologies Capabilities Deck - Learn about TruContext's agentic AI platform, autonomous intelligence, and six key pillars of our solution."
-        canonicalUrl="https://www.visiumtechnologies.com/resources/capabilities-deck"
+        title="Capabilities Deck | Tyvanto"
+        description="Download the Tyvanto Capabilities Deck - Learn about Arqen's agentic AI platform, autonomous intelligence, and six key pillars of our solution."
+        canonicalUrl="https://www.tyvanto.com/resources/capabilities-deck"
       />
       
       <div className="min-h-screen bg-gradient-to-b from-background to-background/95">
@@ -136,7 +136,7 @@ export default function CapabilitiesDeck() {
                 Capabilities Deck
               </h1>
               <p className="text-xl text-muted-foreground mb-8">
-                Discover how TruContext's agentic AI platform transforms data chaos into decision confidence
+                Discover how Arqen's agentic AI platform transforms data chaos into decision confidence
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -167,7 +167,7 @@ export default function CapabilitiesDeck() {
             <div className="bg-card rounded-lg shadow-lg overflow-hidden border border-border">
               <div className="bg-gradient-to-r from-primary/10 to-secondary/10 p-6 border-b border-border">
                 <h2 className="text-2xl font-bold text-card-foreground">
-                  Visium Technologies - Agentic AI Platform
+                  Tyvanto - Agentic AI Platform
                 </h2>
                 <p className="text-muted-foreground mt-2">
                   From Data Chaos to Decision Confidence
@@ -237,7 +237,7 @@ export default function CapabilitiesDeck() {
               <div className="bg-gradient-to-r from-primary/5 to-secondary/5 p-6 border-t border-border flex flex-col sm:flex-row gap-4 justify-between items-center">
                 <div>
                   <p className="text-sm text-muted-foreground">
-                    13-page comprehensive overview of TruContext capabilities
+                    13-page comprehensive overview of Arqen capabilities
                   </p>
                 </div>
                 <div className="flex gap-3">
@@ -291,7 +291,7 @@ export default function CapabilitiesDeck() {
 
               <div className="bg-card rounded-lg p-6 border border-border">
                 <h3 className="text-xl font-bold mb-4 text-secondary">
-                  TruContext Solution
+                  Arqen Solution
                 </h3>
                 <ul className="space-y-3 text-muted-foreground">
                   <li className="flex items-start">
@@ -319,7 +319,7 @@ export default function CapabilitiesDeck() {
                   <li>✓ Kafka Streaming</li>
                   <li>✓ Explainable AI</li>
                   <li>✓ Multi-Domain Fusion</li>
-                  <li>✓ MITRE ATT&CK Built-In</li>
+                  <li>✓ an independent research organization ATT&CK Built-In</li>
                 </ul>
               </div>
 
@@ -351,7 +351,7 @@ export default function CapabilitiesDeck() {
                 Ready to Transform Your Intelligence Operations?
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                Review the Capabilities Deck to learn how TruContext's agentic AI platform can help your organization move from reactive alert management to proactive threat prevention.
+                Review the Capabilities Deck to learn how Arqen's agentic AI platform can help your organization move from reactive alert management to proactive threat prevention.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
@@ -385,7 +385,7 @@ export default function CapabilitiesDeck() {
             <DialogDescription>
               {submitLeadMutation.isPending 
                 ? 'Please wait while we process your request...'
-                : 'Provide your information to receive the PDF and stay updated on TruContext.'}
+                : 'Provide your information to receive the PDF and stay updated on Arqen.'}
             </DialogDescription>
           </DialogHeader>
 

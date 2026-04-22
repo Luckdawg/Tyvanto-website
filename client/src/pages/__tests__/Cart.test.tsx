@@ -12,7 +12,7 @@ const mockUpdateQuantity = vi.fn();
 
 const mockCartState = {
   items: [
-    { productId: 1, name: 'TruContext Core Platform', price: 9999, quantity: 1 },
+    { productId: 1, name: 'Arqen Core Platform', price: 9999, quantity: 1 },
     { productId: 2, name: 'TruClaw Agentic AI Governance', price: 799, quantity: 2 },
   ],
   cartTotal: 11597,
@@ -79,7 +79,7 @@ describe('Cart Page', () => {
 
   it('renders cart items correctly', () => {
     render(<Cart />);
-    expect(screen.getByText('TruContext Core Platform')).toBeInTheDocument();
+    expect(screen.getByText('Arqen Core Platform')).toBeInTheDocument();
     expect(screen.getByText('TruClaw Agentic AI Governance')).toBeInTheDocument();
   });
 
@@ -169,6 +169,6 @@ describe('Cart Page - Empty State', () => {
     // With items present, we should NOT see the empty state
     expect(screen.queryByText(/Your Cart is Empty/i)).not.toBeInTheDocument();
     // And we SHOULD see the cart items
-    expect(screen.getByText('TruContext Core Platform')).toBeInTheDocument();
+    expect(screen.getByText('Arqen Core Platform')).toBeInTheDocument();
   });
 });

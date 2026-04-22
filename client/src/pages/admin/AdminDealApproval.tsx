@@ -144,9 +144,9 @@ export default function AdminDealApproval() {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm text-gray-600 mb-1">Total Commissions</p>
-                  <p className="text-3xl font-bold text-purple-600">${totalCommissions.toLocaleString()}</p>
+                  <p className="text-3xl font-bold text-blue-600">${totalCommissions.toLocaleString()}</p>
                 </div>
-                <DollarSign className="w-12 h-12 text-purple-500 opacity-20" />
+                <DollarSign className="w-12 h-12 text-blue-500 opacity-20" />
               </div>
             </CardContent>
           </Card>

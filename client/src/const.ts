@@ -13,6 +13,11 @@ export const getLoginUrl = () => {
   const redirectUri = `${window.location.origin}/api/oauth/callback`;
   const state = btoa(redirectUri);
 
+  // Guard: if OAuth is not configured, return a safe fallback
+  if (!oauthPortalUrl || !appId) {
+    return `${window.location.origin}/partners/login`;
+  }
+
   const url = new URL(`${oauthPortalUrl}/app-auth`);
   url.searchParams.set("appId", appId);
   url.searchParams.set("redirectUri", redirectUri);

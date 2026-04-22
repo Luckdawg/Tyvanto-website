@@ -20,8 +20,8 @@ export default function Blog() {
   const [selectedBlog, setSelectedBlog] = useState<{ title: string; pdfUrl: string } | null>(null);
 
   const breadcrumbSchema = createBreadcrumbSchema([
-    { name: "Home", url: "https://visiumtechnologies.com" },
-    { name: "Blog", url: "https://visiumtechnologies.com/blog" }
+    { name: "Home", url: "https://tyvanto.com" },
+    { name: "Blog", url: "https://tyvanto.com/blog" }
   ]);
 
   const handleDownloadClick = (title: string, pdfUrl: string) => {
@@ -36,9 +36,9 @@ export default function Blog() {
   return (
     <div className="min-h-screen">
       <SEOHead 
-        title="Blog | TruContext Insights & Resources | Visium Technologies"
-        description="Explore TruContext blog posts on explainable AI, cybersecurity analytics, smart cities, and business intelligence. CEO insights, case studies, and industry analysis."
-        canonicalUrl="https://www.visiumtechnologies.com/blog"
+        title="Blog | Arqen Insights & Resources | Tyvanto"
+        description="Explore Arqen blog posts on explainable AI, cybersecurity analytics, smart cities, and business intelligence. CEO insights, case studies, and industry analysis."
+        canonicalUrl="https://www.tyvanto.com/blog"
       />
       {/* Hero Section with Logo */}
       <section className="gradient-hero py-8 relative">
@@ -47,7 +47,7 @@ export default function Blog() {
           <div className="mb-8">
             <img 
               src={APP_LOGO} 
-              alt="Visium Technologies" 
+              alt="Tyvanto" 
               className="h-12 md:h-14 lg:h-16 w-auto"
             />
           </div>
@@ -58,7 +58,7 @@ export default function Blog() {
               Resources & <span className="text-primary">Insights</span>
             </h1>
             <p className="text-xl text-gray-600 mb-4">
-              TruContext shows how everything you touch is connected
+              Arqen shows how everything you touch is connected
             </p>
             <div className="max-w-2xl mx-auto bg-white/80 backdrop-blur-sm rounded-lg p-6 border-2 border-primary/20">
               <p className="text-lg text-gray-800 font-semibold mb-2">

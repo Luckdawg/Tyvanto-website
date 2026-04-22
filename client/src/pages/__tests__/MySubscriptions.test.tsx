@@ -59,8 +59,8 @@ let mockSubscriptionsQuery: () => any;
 
 const mockActiveSubscription = {
   id: 'sub_test123',
-  productId: 'trucontext',
-  productName: 'TruContext Intelligence Platform',
+  productId: 'arqen',
+  productName: 'Arqen Intelligence Platform',
   billingCycle: 'monthly',
   status: 'active',
   currentPeriodEnd: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
@@ -107,7 +107,7 @@ describe('MySubscriptions', () => {
     it('shows descriptive text in empty state', () => {
       mockSubscriptionsQuery = () => ({ data: [], isLoading: false, error: null });
       render(<MySubscriptions />);
-      expect(screen.getByText(/You don't have any active Visium subscriptions/i)).toBeInTheDocument();
+      expect(screen.getByText(/You don't have any active Tyvanto subscriptions/i)).toBeInTheDocument();
     });
   });
 
@@ -132,7 +132,7 @@ describe('MySubscriptions', () => {
 
     it('shows the subscription product name', () => {
       render(<MySubscriptions />);
-      expect(screen.getByText('TruContext Intelligence Platform')).toBeInTheDocument();
+      expect(screen.getByText('Arqen Intelligence Platform')).toBeInTheDocument();
     });
 
     it('shows the "Active" status badge', () => {
@@ -288,7 +288,7 @@ describe('MySubscriptions', () => {
         error: null,
       });
       render(<MySubscriptions />);
-      expect(screen.getByText('TruContext Intelligence Platform')).toBeInTheDocument();
+      expect(screen.getByText('Arqen Intelligence Platform')).toBeInTheDocument();
       expect(screen.getByText('TruClaw Governance')).toBeInTheDocument();
     });
   });

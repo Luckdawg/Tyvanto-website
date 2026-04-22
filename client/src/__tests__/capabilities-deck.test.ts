@@ -26,12 +26,12 @@ describe('Capabilities Deck Page', () => {
   });
 
   it('should have correct SEO metadata', () => {
-    const seoTitle = 'Capabilities Deck | Visium Technologies';
-    const seoDescription = 'Download the Visium Technologies Capabilities Deck - Learn about TruContext\'s agentic AI platform, autonomous intelligence, and six key pillars of our solution.';
-    const canonicalUrl = 'https://www.visiumtechnologies.com/resources/capabilities-deck';
+    const seoTitle = 'Capabilities Deck | Tyvanto';
+    const seoDescription = 'Download the Tyvanto Capabilities Deck - Learn about Arqen\'s agentic AI platform, autonomous intelligence, and six key pillars of our solution.';
+    const canonicalUrl = 'https://www.tyvanto.com/resources/capabilities-deck';
 
     expect(seoTitle).toContain('Capabilities Deck');
-    expect(seoDescription).toContain('TruContext');
+    expect(seoDescription).toContain('Arqen');
     expect(canonicalUrl).toContain('resources/capabilities-deck');
   });
 

@@ -10,7 +10,7 @@ export default function FollowUs() {
           <CardContent className="p-6">
             <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">Follow Us</h2>
             <p className="text-gray-600 mb-6 text-center">
-              Stay connected with Visium Technologies on social media for company updates, career opportunities, and industry insights
+              Stay connected with Tyvanto on social media for company updates, career opportunities, and industry insights
             </p>
             
             <div className="flex flex-col sm:flex-row gap-3 justify-center max-w-2xl mx-auto">
@@ -30,7 +30,7 @@ export default function FollowUs() {
                 size="lg"
                 variant="outline"
                 className="border-2 border-blue-600 hover:bg-blue-600 hover:text-white hover:scale-110 hover:shadow-lg transition-all duration-300"
-                onClick={() => window.open('https://www.linkedin.com/company/visium-technologies-inc', '_blank')}
+                onClick={() => window.open('https://www.linkedin.com/company/tyvanto-technologies-inc', '_blank')}
               >
                 <Linkedin className="h-5 w-5 mr-2" />
                 LinkedIn
@@ -50,7 +50,7 @@ export default function FollowUs() {
                 size="lg"
                 variant="outline"
                 className="border-2 border-red-600 hover:bg-red-600 hover:text-white hover:scale-110 hover:shadow-lg transition-all duration-300"
-                onClick={() => window.open('https://www.youtube.com/@visiumanalytics874', '_blank')}
+                onClick={() => window.open('https://www.youtube.com/@tyvanto', '_blank')}
               >
                 <Youtube className="h-5 w-5 mr-2" />
                 YouTube

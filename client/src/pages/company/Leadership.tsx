@@ -6,38 +6,15 @@ import { Users, Linkedin, Mail } from "lucide-react";
 export default function Leadership() {
   const leaders = [
     {
-      name: "Mark Lucky",
-      title: "CEO/CFO, Director",
-      bio: [
-        "Mark Lucky brings over 20 years of experience working as a C-Level executive for small cap public companies, providing strategic leadership and financial oversight to drive growth and operational excellence.",
-        "He holds a CPA certification and earned his BA in Economics from UCLA. His career includes significant tenure at prestigious accounting firms KPMG and PricewaterhouseCoopers, where he developed deep expertise in financial management, corporate governance, and strategic planning.",
-        "As CEO and CFO of Visium Analytics, Mark leads the company's vision to transform cybersecurity through innovative data visualization and agentic AI-powered intelligence platforms. His financial acumen and operational leadership have been instrumental in positioning Visium as a leader in the cybersecurity analytics space."
-      ],
-      image: "/mark_lucky.jpg",
-      linkedin: "https://www.linkedin.com/in/marklucky/",
-      email: "MLucky@visiumtechnologies.com"
-    },
-    {
       name: "Tom Grbelja",
       title: "Director",
       bio: [
         "Tom Grbelja brings over 30 years of experience as a Certified Public Accountant, with extensive expertise in financial management, corporate governance, and strategic oversight for public companies.",
         "He earned his BS in Accounting from Fairleigh Dickinson University and began his career at Coopers & Lybrand, one of the world's leading accounting firms. Throughout his career, Tom has served as CFO and Director for multiple public companies, providing critical financial leadership during periods of growth and transformation.",
-        "As a Director at Visium Analytics, Tom provides invaluable guidance on financial strategy, compliance, and corporate governance, ensuring the company maintains the highest standards of fiscal responsibility while pursuing aggressive growth objectives in the cybersecurity market."
+        "As a Director at Tyvanto, Tom provides invaluable guidance on financial strategy, compliance, and corporate governance, ensuring the company maintains the highest standards of fiscal responsibility while pursuing aggressive growth objectives in the cybersecurity market."
       ],
       image: "/tom_grbelja.jpg",
       linkedin: "https://www.linkedin.com/in/thomas-grbelja-19176010/"
-    },
-    {
-      name: "Paul Favata",
-      title: "Director",
-      bio: [
-        "Paul Favata is a 29-year Wall Street veteran with extensive experience in capital markets, corporate finance, and strategic business development. His deep understanding of public markets and investor relations brings critical expertise to Visium's board.",
-        "As an experienced Public Company Executive and Director, Paul has held leadership positions across IT, Cloud Technology, and professional services sectors. His career spans multiple successful ventures where he has guided companies through critical growth phases, capital raises, and strategic transformations.",
-        "At Visium Analytics, Paul provides strategic counsel on business development, market positioning, and growth strategies. His Wall Street experience and technology sector expertise help guide the company's approach to scaling operations, building strategic partnerships, and creating shareholder value in the rapidly evolving cybersecurity market."
-      ],
-      image: "/paul_favata.jpg",
-      linkedin: "https://www.linkedin.com/in/favata66/"
     }
   ];
 
@@ -46,12 +23,12 @@ export default function Leadership() {
       {/* Hero Section */}
       <section className="gradient-hero py-8">
         <div className="container">
-          {/* Visium Technologies Logo - Upper Left */}
+          {/* Tyvanto Logo - Upper Left */}
           <div className="mb-6">
             <img 
-              src="/visium-technologies-logo-new.png" 
-              alt="Visium Technologies" 
-              className="h-12 sm:h-14 md:h-16 object-contain"
+              src="/tyvanto_logo.png" 
+              alt="Tyvanto" 
+              className="h-16 sm:h-20 md:h-24 object-contain"
             />
           </div>
           <div className="max-w-4xl mx-auto text-center">
@@ -60,7 +37,7 @@ export default function Leadership() {
               Leadership <span className="text-primary">Team</span>
             </h1>
             <p className="text-xl text-gray-600">
-              Meet the experienced executives guiding Visium Analytics' mission to transform cybersecurity through innovative agentic AI-powered intelligence platforms
+              Meet the experienced executives guiding Tyvanto' mission to transform cybersecurity through innovative agentic AI-powered intelligence platforms
             </p>
           </div>
         </div>
@@ -75,7 +52,7 @@ export default function Leadership() {
                 <CardContent className="p-0">
                   <div className={`grid lg:grid-cols-3 gap-6 ${index % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}>
                     {/* Image */}
-                    <div className={`${index % 2 === 1 ? 'lg:col-start-3' : ''} bg-gradient-to-br from-purple-100 to-blue-100 flex items-center justify-center p-12`}>
+                    <div className={`${index % 2 === 1 ? 'lg:col-start-3' : ''} bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center p-12`}>
                       <div className="text-center">
                         {leader.image !== "/team_placeholder.png" ? (
                           <img 

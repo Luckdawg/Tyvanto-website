@@ -3,7 +3,7 @@
  * Tests for the pricing calculator component.
  * All pricing values sourced from Visium_Pricing_Formulas-01.xlsx (Apr 2026).
  *
- * TruContext:   $7,995/mo base · $0.40/node (10K–100K) · $0.25/node (100K+) · $450/agent
+ * Arqen:   $7,995/mo base · $0.40/node (10K–100K) · $0.25/node (100K+) · $450/agent
  * TruClaw:     $1,299/mo Starter (≤10) · $6,995/mo Standard (11–50) · Enterprise (50+)
  * Tru-InSight: $7,499/mo base · $2.00/camera
  * ELI:         $9,499/mo base · $4.00/node above 500
@@ -48,7 +48,7 @@ describe('PricingCalculator — Render', () => {
 
   it('shows all 5 core product buttons', () => {
     renderCalculator();
-    expect(screen.getAllByText(/TruContext/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/Arqen/i).length).toBeGreaterThan(0);
     expect(screen.getAllByText(/TruClaw/i).length).toBeGreaterThan(0);
     expect(screen.getAllByText(/Tru-InSight/i).length).toBeGreaterThan(0);
     expect(screen.getAllByText(/^ELI$/i).length).toBeGreaterThan(0);
@@ -90,12 +90,12 @@ describe('PricingCalculator — Render', () => {
   });
 });
 
-// ─── TruContext pricing (spreadsheet Apr 2026) ────────────────────────────────
+// ─── Arqen pricing (spreadsheet Apr 2026) ────────────────────────────────
 
-describe('TruContext pricing', () => {
+describe('Arqen pricing', () => {
   beforeEach(() => vi.clearAllMocks());
 
-  it('defaults to TruContext and shows $7,995/mo in info text', () => {
+  it('defaults to Arqen and shows $7,995/mo in info text', () => {
     renderCalculator();
     expect(screen.getByText(/\$7,995\/mo/i)).toBeInTheDocument();
   });
@@ -115,18 +115,18 @@ describe('TruContext pricing', () => {
     expect(screen.getByText(/\$450\/agent/i)).toBeInTheDocument();
   });
 
-  it('shows node slider for TruContext', () => {
+  it('shows node slider for Arqen', () => {
     renderCalculator();
     const sliders = document.querySelectorAll('input[type="range"]');
     expect(sliders.length).toBeGreaterThanOrEqual(1);
   });
 
-  it('clicking Get Custom Quote calls onRequestQuote with trucontext', () => {
+  it('clicking Get Custom Quote calls onRequestQuote with arqen', () => {
     renderCalculator();
     const btn = screen.getAllByText(/Get Custom Quote/i)[0];
     act(() => fireEvent.click(btn));
     expect(mockOnRequestQuote).toHaveBeenCalledWith(
-      expect.objectContaining({ productInterest: 'trucontext' })
+      expect.objectContaining({ productInterest: 'arqen' })
     );
   });
 });
@@ -434,7 +434,7 @@ describe('Cost breakdown', () => {
     expect(screen.getByText('Base fee')).toBeInTheDocument();
   });
 
-  it('shows base fee label in breakdown for TruContext', () => {
+  it('shows base fee label in breakdown for Arqen', () => {
     renderCalculator();
     act(() => fireEvent.click(screen.getByText(/Show cost breakdown/i)));
     expect(screen.getByText(/First 10,000 nodes included/i)).toBeInTheDocument();

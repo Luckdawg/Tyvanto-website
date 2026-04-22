@@ -328,7 +328,7 @@ export default function GraphVisualization() {
                     <span>Vulnerabilities</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 rounded-full bg-purple-500"></div>
+                    <div className="w-3 h-3 rounded-full bg-blue-600"></div>
                     <span>Users</span>
                   </div>
                   <div className="flex items-center gap-2">

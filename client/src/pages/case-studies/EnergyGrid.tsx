@@ -38,7 +38,7 @@ export default function EnergyGridCaseStudy() {
       items: ["SCADA logs (15,000+ endpoints)", "IoT sensor data (real-time)", "Electrical distribution models", "Communication network logs", "Weather data feeds"]
     },
     {
-      component: "TruContext Integration",
+      component: "Arqen Integration",
       items: ["graph database (3D utility network)", "relational database (time-series data)", "Kafka ecosystem (event streaming)", "Tru-AI agents (fault prediction)", "TruTime (temporal correlation)"]
     },
     {
@@ -61,7 +61,7 @@ export default function EnergyGridCaseStudy() {
               Metropolitan Power Authority: <span className="text-primary">Transforming Grid Resilience</span>
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed mb-8">
-              How a major metropolitan utility could deploy TruContext to create a Digital Twin of their electrical grid, potentially achieving 82% faster outage detection and $2.8M in annual savings through potential predictive maintenance and autonomous fault management.
+              How a major metropolitan utility could deploy Arqen to create a Digital Twin of their electrical grid, potentially achieving 82% faster outage detection and $2.8M in annual savings through potential predictive maintenance and autonomous fault management.
             </p>
             <div className="flex flex-wrap gap-6 text-sm">
               <div className="flex items-center gap-2">
@@ -140,9 +140,9 @@ export default function EnergyGridCaseStudy() {
       </section>
 
       {/* Solution Section */}
-      <section className="py-12 bg-gradient-to-br from-blue-50 to-purple-50">
+      <section className="py-12 bg-gradient-to-br from-blue-50 to-cyan-50">
         <div className="container max-w-5xl">
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">The TruContext Approach</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-8">The Arqen Approach</h2>
           <div className="space-y-6">
             {technicalComponents.map((component, index) => (
               <Card key={index} className="bg-white hover:shadow-xl transition-shadow">
@@ -165,7 +165,7 @@ export default function EnergyGridCaseStudy() {
             <CardContent className="p-10">
               <h3 className="text-2xl font-bold mb-4">Digital Twin Architecture</h3>
               <p className="text-lg opacity-90 leading-relaxed mb-6">
-                TruContext's patented Scalable Multi-Layered Graph Database would create a living Digital Twin of the entire electrical grid, modeling 850,000 meters, 15,000 SCADA endpoints, and complex subterranean relationships between electricity and gas lines. The graph structure enables real-time pathfinding queries to trace outage propagation and test resilience strategies before they impact live infrastructure.
+                Arqen's patented Scalable Multi-Layered Graph Database would create a living Digital Twin of the entire electrical grid, modeling 850,000 meters, 15,000 SCADA endpoints, and complex subterranean relationships between electricity and gas lines. The graph structure enables real-time pathfinding queries to trace outage propagation and test resilience strategies before they impact live infrastructure.
               </p>
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="bg-white/10 backdrop-blur rounded-lg p-4">
@@ -285,7 +285,7 @@ export default function EnergyGridCaseStudy() {
             Ready to Transform Your Energy Grid?
           </h2>
           <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
-            Discover how TruContext can deliver similar results for your utility infrastructure
+            Discover how Arqen can deliver similar results for your utility infrastructure
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/demo">

@@ -16,7 +16,7 @@ export default function TermsOfService() {
           {/* Introduction */}
           <section className="mb-8">
             <p className="text-gray-700 leading-relaxed mb-4">
-              These Terms of Service ("Terms") govern your access to and use of the website, platform, and services provided by Visium Technologies, Inc. ("Visium," "we," "us," or "our"), including our TruContext platform and related services (collectively, the "Services").
+              These Terms of Service ("Terms") govern your access to and use of the website, platform, and services provided by Tyvanto, Inc. ("Tyvanto," "we," "us," or "our"), including our Arqen platform and related services (collectively, the "Services").
             </p>
             <p className="text-gray-700 leading-relaxed">
               By accessing or using our Services, you agree to be bound by these Terms and our Privacy Policy. If you do not agree to these Terms, you may not access or use the Services. We reserve the right to modify these Terms at any time, and your continued use of the Services after changes are posted constitutes your acceptance of the modified Terms.
@@ -27,7 +27,7 @@ export default function TermsOfService() {
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Definitions</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              "Services" refers to the TruContext platform, website, software, applications, and any related services provided by Visium Technologies. "User," "you," or "your" refers to any individual or entity that accesses or uses our Services. "Content" refers to all information, data, text, software, graphics, images, and other materials available through the Services. "User Content" refers to any content that you submit, upload, or transmit through the Services.
+              "Services" refers to the Arqen platform, website, software, applications, and any related services provided by Tyvanto. "User," "you," or "your" refers to any individual or entity that accesses or uses our Services. "Content" refers to all information, data, text, software, graphics, images, and other materials available through the Services. "User Content" refers to any content that you submit, upload, or transmit through the Services.
             </p>
           </section>
 
@@ -57,13 +57,13 @@ export default function TermsOfService() {
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">4. Intellectual Property Rights</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              The Services and all content, features, and functionality, including but not limited to software, text, graphics, logos, images, audio, video, data compilations, and the compilation thereof, are owned by Visium Technologies or its licensors and are protected by United States and international copyright, trademark, patent, trade secret, and other intellectual property laws.
+              The Services and all content, features, and functionality, including but not limited to software, text, graphics, logos, images, audio, video, data compilations, and the compilation thereof, are owned by Tyvanto or its licensors and are protected by United States and international copyright, trademark, patent, trade secret, and other intellectual property laws.
             </p>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Our trademarks, service marks, and logos (collectively, "Trademarks") may not be used without our prior written consent. All other trademarks, service marks, and logos used on the Services are the property of their respective owners. The TruContext name, logo, and related marks are trademarks of Visium Technologies and may not be used without permission.
+              Our trademarks, service marks, and logos (collectively, "Trademarks") may not be used without our prior written consent. All other trademarks, service marks, and logos used on the Services are the property of their respective owners. The Arqen name, logo, and related marks are trademarks of Tyvanto and may not be used without permission.
             </p>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Visium Technologies holds patents related to scalable multi-layered graph database technology and other innovations incorporated into the TruContext platform. Unauthorized use of our patented technology is prohibited and may result in legal action.
+              Tyvanto holds patents related to scalable multi-layered graph database technology and other innovations incorporated into the Arqen platform. Unauthorized use of our patented technology is prohibited and may result in legal action.
             </p>
           </section>
 
@@ -104,7 +104,7 @@ export default function TermsOfService() {
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">8. Disclaimers</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              THE SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. TO THE FULLEST EXTENT PERMITTED BY LAW, VISIUM TECHNOLOGIES DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT.
+              THE SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. TO THE FULLEST EXTENT PERMITTED BY LAW, TYVANTO DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT.
             </p>
             <p className="text-gray-700 leading-relaxed mb-4">
               WE DO NOT WARRANT THAT THE SERVICES WILL BE UNINTERRUPTED, SECURE, OR ERROR-FREE, THAT DEFECTS WILL BE CORRECTED, OR THAT THE SERVICES OR THE SERVERS THAT MAKE THEM AVAILABLE ARE FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS. WE DO NOT WARRANT OR MAKE ANY REPRESENTATIONS REGARDING THE USE OR THE RESULTS OF THE USE OF THE SERVICES IN TERMS OF ACCURACY, RELIABILITY, OR OTHERWISE.
@@ -118,7 +118,7 @@ export default function TermsOfService() {
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">9. Limitation of Liability</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL VISIUM TECHNOLOGIES, ITS AFFILIATES, OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, OR LICENSORS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF PROFITS, DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES, ARISING OUT OF OR RELATED TO YOUR ACCESS TO OR USE OF OR INABILITY TO ACCESS OR USE THE SERVICES, WHETHER BASED ON WARRANTY, CONTRACT, TORT (INCLUDING NEGLIGENCE), STATUTE, OR ANY OTHER LEGAL THEORY, AND WHETHER OR NOT WE HAVE BEEN INFORMED OF THE POSSIBILITY OF SUCH DAMAGE.
+              TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL TYVANTO, ITS AFFILIATES, OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, OR LICENSORS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF PROFITS, DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES, ARISING OUT OF OR RELATED TO YOUR ACCESS TO OR USE OF OR INABILITY TO ACCESS OR USE THE SERVICES, WHETHER BASED ON WARRANTY, CONTRACT, TORT (INCLUDING NEGLIGENCE), STATUTE, OR ANY OTHER LEGAL THEORY, AND WHETHER OR NOT WE HAVE BEEN INFORMED OF THE POSSIBILITY OF SUCH DAMAGE.
             </p>
             <p className="text-gray-700 leading-relaxed mb-4">
               OUR TOTAL LIABILITY TO YOU FOR ALL CLAIMS ARISING OUT OF OR RELATED TO THESE TERMS OR THE SERVICES, WHETHER IN CONTRACT, TORT, OR OTHERWISE, IS LIMITED TO THE AMOUNT YOU PAID US IN THE TWELVE (12) MONTHS PRECEDING THE EVENT GIVING RISE TO THE LIABILITY, OR ONE HUNDRED DOLLARS ($100) IF NO SUCH PAYMENTS HAVE BEEN MADE.
@@ -132,7 +132,7 @@ export default function TermsOfService() {
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">10. Indemnification</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              You agree to indemnify, defend, and hold harmless Visium Technologies, its affiliates, officers, directors, employees, agents, licensors, and suppliers from and against all claims, losses, liabilities, expenses, damages, and costs, including reasonable attorneys' fees, arising out of or related to: (a) your use of the Services; (b) your violation of these Terms; (c) your violation of any rights of another party, including any intellectual property rights; (d) your User Content; or (e) any allegation that your User Content caused damage to a third party.
+              You agree to indemnify, defend, and hold harmless Tyvanto, its affiliates, officers, directors, employees, agents, licensors, and suppliers from and against all claims, losses, liabilities, expenses, damages, and costs, including reasonable attorneys' fees, arising out of or related to: (a) your use of the Services; (b) your violation of these Terms; (c) your violation of any rights of another party, including any intellectual property rights; (d) your User Content; or (e) any allegation that your User Content caused damage to a third party.
             </p>
             <p className="text-gray-700 leading-relaxed mb-4">
               We reserve the right to assume the exclusive defense and control of any matter subject to indemnification by you, and you agree to cooperate with our defense of such claims. You will not settle any claim that affects us or our affiliates without our prior written consent.
@@ -146,7 +146,7 @@ export default function TermsOfService() {
               Any dispute, controversy, or claim arising out of or relating to these Terms or the Services, including the formation, interpretation, breach, or termination thereof, shall be resolved through binding arbitration administered by the American Arbitration Association (AAA) in accordance with its Commercial Arbitration Rules. The arbitration shall be conducted in English and shall take place in Virginia, United States, unless otherwise agreed by the parties.
             </p>
             <p className="text-gray-700 leading-relaxed mb-4">
-              YOU AND VISIUM TECHNOLOGIES AGREE THAT ANY DISPUTE RESOLUTION PROCEEDINGS WILL BE CONDUCTED ONLY ON AN INDIVIDUAL BASIS AND NOT IN A CLASS, CONSOLIDATED, OR REPRESENTATIVE ACTION. If for any reason a claim proceeds in court rather than in arbitration, you and Visium Technologies each waive any right to a jury trial.
+              YOU AND TYVANTO AGREE THAT ANY DISPUTE RESOLUTION PROCEEDINGS WILL BE CONDUCTED ONLY ON AN INDIVIDUAL BASIS AND NOT IN A CLASS, CONSOLIDATED, OR REPRESENTATIVE ACTION. If for any reason a claim proceeds in court rather than in arbitration, you and Tyvanto each waive any right to a jury trial.
             </p>
             <p className="text-gray-700 leading-relaxed mb-4">
               Notwithstanding the foregoing, either party may seek injunctive or other equitable relief in any court of competent jurisdiction to prevent the actual or threatened infringement, misappropriation, or violation of a party's intellectual property rights.
@@ -181,7 +181,7 @@ export default function TermsOfService() {
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">15. Miscellaneous</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              These Terms constitute the entire agreement between you and Visium Technologies regarding the Services and supersede all prior agreements and understandings. If any provision of these Terms is found to be invalid or unenforceable, the remaining provisions will remain in full force and effect. Our failure to enforce any right or provision of these Terms will not be deemed a waiver of such right or provision.
+              These Terms constitute the entire agreement between you and Tyvanto regarding the Services and supersede all prior agreements and understandings. If any provision of these Terms is found to be invalid or unenforceable, the remaining provisions will remain in full force and effect. Our failure to enforce any right or provision of these Terms will not be deemed a waiver of such right or provision.
             </p>
             <p className="text-gray-700 leading-relaxed mb-4">
               You may not assign or transfer these Terms or your rights hereunder, in whole or in part, without our prior written consent. We may assign these Terms at any time without notice. These Terms will be binding upon and inure to the benefit of the parties and their respective successors and permitted assigns.
@@ -198,10 +198,10 @@ export default function TermsOfService() {
               If you have questions about these Terms, please contact us:
             </p>
             <div className="bg-gray-50 p-6 rounded-lg">
-              <p className="text-gray-700 font-semibold mb-2">Visium Technologies, Inc.</p>
+              <p className="text-gray-700 font-semibold mb-2">Tyvanto, Inc.</p>
               <p className="text-gray-700">Email:{" "}
-                <a href="mailto:info@visiumtechnologies.com" className="text-primary hover:underline">
-                  info@visiumtechnologies.com
+                <a href="mailto:info@tyvanto.com" className="text-primary hover:underline">
+                  info@tyvanto.com
                 </a>
               </p>
               <p className="text-gray-700">Phone: +1 (888) 344-9850</p>

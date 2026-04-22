@@ -14,13 +14,13 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
+    <nav className="bg-white border-b border-[#1B3A8C]/20 sticky top-0 z-50 shadow-sm">
       <div className="container">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/">
             <div className="flex items-center space-x-2 cursor-pointer">
-              <img src="/visium-analytics-logo-new.png" alt="Visium Analytics" className="h-10 sm:h-12 object-contain" />
+              <img src="/tyvanto_logo.png" alt="Tyvanto" className="h-16 sm:h-18 md:h-20 object-contain" />
             </div>
           </Link>
 
@@ -132,14 +132,14 @@ const Navigation = () => {
               )}
             </div>
 
-            {/* Why TruContext Dropdown */}
+            {/* Why Arqen Dropdown */}
             <div className="relative group">
               <Button
                 variant="ghost"
                 className="text-gray-700 hover:text-white hover:bg-primary"
                 onMouseEnter={() => setOpenDropdown("why")}
               >
-                Why TruContext <ChevronDown className="ml-1 h-4 w-4" />
+                Why Arqen <ChevronDown className="ml-1 h-4 w-4" />
               </Button>
               {openDropdown === "why" && (
                 <div
@@ -193,9 +193,6 @@ const Navigation = () => {
                   <Link href="/resources/videos">
                     <div className="px-4 py-2 hover:bg-primary hover:text-white cursor-pointer transition-colors">Videos & Webinars</div>
                   </Link>
-                  <Link href="/blog">
-                    <div className="px-4 py-2 hover:bg-primary hover:text-white cursor-pointer transition-colors border-t border-gray-100">Blog & Insights</div>
-                  </Link>
                   <Link href="/graph-demo">
                     <div className="px-4 py-2 hover:bg-primary hover:text-white cursor-pointer transition-colors border-t border-gray-100 font-semibold text-primary">🎯 Interactive Graph Demo</div>
                   </Link>
@@ -218,19 +215,13 @@ const Navigation = () => {
                   onMouseLeave={() => setOpenDropdown(null)}
                 >
                   <Link href="/company/about">
-                    <div className="px-4 py-2 hover:bg-primary hover:text-white cursor-pointer transition-colors">About Visium</div>
-                  </Link>
-                  <Link href="/company/leadership">
-                    <div className="px-4 py-2 hover:bg-primary hover:text-white cursor-pointer transition-colors">Leadership Team</div>
+                    <div className="px-4 py-2 hover:bg-primary hover:text-white cursor-pointer transition-colors">About Tyvanto</div>
                   </Link>
                   <Link href="/company/careers">
                     <div className="px-4 py-2 hover:bg-primary hover:text-white cursor-pointer transition-colors">Careers</div>
                   </Link>
                   <Link href="/company/news">
                     <div className="px-4 py-2 hover:bg-primary hover:text-white cursor-pointer transition-colors">News & Press</div>
-                  </Link>
-                  <Link href="/company/investors">
-                    <div className="px-4 py-2 hover:bg-primary hover:text-white cursor-pointer transition-colors">Investor Relations</div>
                   </Link>
                   <Link href="/company/contact">
                     <div className="px-4 py-2 hover:bg-primary hover:text-white cursor-pointer transition-colors">Contact</div>
@@ -337,7 +328,7 @@ const Navigation = () => {
                   className="w-full justify-between text-base py-3"
                   onClick={() => toggleDropdown("why-mobile")}
                 >
-                  Why TruContext <ChevronDown className={`h-4 w-4 transition-transform ${openDropdown === "why-mobile" ? "rotate-180" : ""}`} />
+                  Why Arqen <ChevronDown className={`h-4 w-4 transition-transform ${openDropdown === "why-mobile" ? "rotate-180" : ""}`} />
                 </Button>
                 {openDropdown === "why-mobile" && (
                   <div className="pl-4 mt-1 space-y-1 bg-gray-50 rounded-lg py-2">
@@ -360,7 +351,6 @@ const Navigation = () => {
                 {openDropdown === "resources-mobile" && (
                   <div className="pl-4 mt-1 space-y-1 bg-gray-50 rounded-lg py-2">
                     <Link href="/resources/videos" onClick={() => setMobileMenuOpen(false)}><div className="py-2 px-3 hover:bg-white rounded">Videos & Webinars</div></Link>
-                    <Link href="/blog" onClick={() => setMobileMenuOpen(false)}><div className="py-2 px-3 hover:bg-white rounded">Blog & Insights</div></Link>
                     <Link href="/graph-demo" onClick={() => setMobileMenuOpen(false)}><div className="py-2 px-3 hover:bg-white rounded">Interactive Demo</div></Link>
                   </div>
                 )}
@@ -376,10 +366,8 @@ const Navigation = () => {
                 </Button>
                 {openDropdown === "company-mobile" && (
                   <div className="pl-4 mt-1 space-y-1 bg-gray-50 rounded-lg py-2">
-                    <Link href="/company/about" onClick={() => setMobileMenuOpen(false)}><div className="py-2 px-3 hover:bg-white rounded">About Visium</div></Link>
-                    <Link href="/company/leadership" onClick={() => setMobileMenuOpen(false)}><div className="py-2 px-3 hover:bg-white rounded">Leadership Team</div></Link>
+                    <Link href="/company/about" onClick={() => setMobileMenuOpen(false)}><div className="py-2 px-3 hover:bg-white rounded">About Tyvanto</div></Link>
                     <Link href="/company/news" onClick={() => setMobileMenuOpen(false)}><div className="py-2 px-3 hover:bg-white rounded">News & Press</div></Link>
-                    <Link href="/company/investors" onClick={() => setMobileMenuOpen(false)}><div className="py-2 px-3 hover:bg-white rounded">Investor Relations</div></Link>
                     <Link href="/company/contact" onClick={() => setMobileMenuOpen(false)}><div className="py-2 px-3 hover:bg-white rounded">Contact</div></Link>
                   </div>
                 )}

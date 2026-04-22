@@ -134,7 +134,7 @@ export default function AdminConsole() {
                     </Badge>
                   </div>
 
-                  <div className="flex items-center justify-between p-3 bg-purple-50 border border-purple-200 rounded">
+                  <div className="flex items-center justify-between p-3 bg-blue-50 border border-blue-200 rounded">
                     <span className="font-medium">Conflict Policies</span>
                     <Badge variant="outline">
                       {metricsQuery.data?.activePolicies || 0}/{metricsQuery.data?.totalConflictPolicies || 0}

@@ -21,12 +21,12 @@ export default function Careers() {
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-primary/10 via-blue-50 to-purple-50 py-12">
         <div className="container">
-          {/* Visium Technologies Logo - Upper Left */}
+          {/* Tyvanto Logo - Upper Left */}
           <div className="mb-6">
             <img 
-              src="/visium-technologies-logo-new.png" 
-              alt="Visium Technologies" 
-              className="h-12 sm:h-14 md:h-16 object-contain"
+              src="/tyvanto_logo.png" 
+              alt="Tyvanto" 
+              className="h-16 sm:h-20 md:h-24 object-contain"
             />
           </div>
           <div className="max-w-4xl mx-auto text-center">
@@ -38,17 +38,17 @@ export default function Careers() {
               Build the Future of Intelligence
             </h1>
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              At Visium Technologies, we're pioneering the next generation of agentic AI-powered security and intelligence platforms. Join a team of innovators, problem-solvers, and visionaries who are transforming how organizations understand and protect their digital ecosystems.
+              At Tyvanto, we're pioneering the next generation of agentic AI-powered security and intelligence platforms. Join a team of innovators, problem-solvers, and visionaries who are transforming how organizations understand and protect their digital ecosystems.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Why Visium Section */}
+      {/* Why Tyvanto Section */}
       <section className="py-16 bg-white">
         <div className="container">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Work at Visium?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Work at Tyvanto?</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               We're not just building software—we're shaping the future of cybersecurity and intelligence analysis
             </p>
@@ -81,8 +81,8 @@ export default function Careers() {
 
             <Card className="border-2 hover:border-primary transition-all hover:shadow-lg">
               <CardContent className="p-6">
-                <div className="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-4">
-                  <TrendingUp className="h-6 w-6 text-purple-600" />
+                <div className="w-12 h-12 bg-blue-600/10 rounded-lg flex items-center justify-center mb-4">
+                  <TrendingUp className="h-6 w-6 text-blue-600" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3">Growth Opportunities</h3>
                 <p className="text-gray-600">
@@ -153,7 +153,7 @@ export default function Careers() {
                   <Button 
                     size="lg" 
                     className="bg-gradient-to-r from-primary to-blue-600 hover:from-primary/90 hover:to-blue-600/90 text-white px-8"
-                    onClick={() => window.location.href = 'mailto:info@visiumtechnologies.com?subject=Career Inquiry - Resume Submission'}
+                    onClick={() => window.location.href = 'mailto:info@tyvanto.com?subject=Career Inquiry - Resume Submission'}
                   >
                     <Mail className="h-5 w-5 mr-2" />
                     Email Us Your Resume
@@ -162,7 +162,7 @@ export default function Careers() {
 
                 <div className="mt-8 pt-8 border-t border-gray-200">
                   <p className="text-sm text-gray-500">
-                    Visium Technologies is an equal opportunity employer. We celebrate diversity and are committed to creating an inclusive environment for all employees.
+                    Tyvanto is an equal opportunity employer. We celebrate diversity and are committed to creating an inclusive environment for all employees.
                   </p>
                 </div>
               </CardContent>
@@ -177,7 +177,7 @@ export default function Careers() {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Follow Us</h2>
             <p className="text-lg text-gray-600 mb-8">
-              Stay connected with Visium Technologies on social media for company updates, career opportunities, and industry insights
+              Stay connected with Tyvanto on social media for company updates, career opportunities, and industry insights
             </p>
             
             <div className="flex flex-wrap justify-center gap-4">
@@ -197,7 +197,7 @@ export default function Careers() {
                 size="lg"
                 variant="outline"
                 className="border-2 border-blue-600 hover:bg-blue-600 hover:text-white hover:scale-110 hover:shadow-lg transition-all duration-300 px-8"
-                onClick={() => window.open('https://www.linkedin.com/company/visium-technologies-inc', '_blank')}
+                onClick={() => window.open('https://www.linkedin.com/company/tyvanto-technologies-inc', '_blank')}
               >
                 <Linkedin className="h-5 w-5 mr-2" />
                 LinkedIn
@@ -217,7 +217,7 @@ export default function Careers() {
                 size="lg"
                 variant="outline"
                 className="border-2 border-red-600 hover:bg-red-600 hover:text-white hover:scale-110 hover:shadow-lg transition-all duration-300 px-8"
-                onClick={() => window.open('https://www.youtube.com/@visiumanalytics874', '_blank')}
+                onClick={() => window.open('https://www.youtube.com/@tyvanto', '_blank')}
               >
                 <Youtube className="h-5 w-5 mr-2" />
                 YouTube
@@ -275,12 +275,12 @@ export default function Careers() {
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold">LinkedIn</h3>
-                    <p className="text-sm text-gray-500">Visium Technologies, Inc.</p>
+                    <p className="text-sm text-gray-500">Tyvanto, Inc.</p>
                   </div>
                 </div>
                 <Card className="border-2">
                   <CardContent className="p-4">
-                    <LinkedInFeed companyId="visium-technologies-inc" height={500} />
+                    <LinkedInFeed companyId="tyvanto-technologies-inc" height={500} />
                   </CardContent>
                 </Card>
               </div>

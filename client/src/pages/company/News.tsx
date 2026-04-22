@@ -8,111 +8,111 @@ export default function News() {
   const newsStories = [
     {
       date: "April 14, 2026",
-      title: "Visium Technologies Eliminates Over $182,000 in Outstanding Debt and All Conversion Overhang Through Full Settlement of Labrys Notes and Talos Warrants",
-      excerpt: "Visium Technologies announces the execution of a definitive Settlement Agreement providing for the full and final extinguishment of all outstanding obligations under the Labrys Notes and the Talos Warrants. The settlement eliminates all conversion rights, derivative liabilities, and potential dilution associated with these instruments — representing a negotiated compromise of more than 18% below the current face amount — strengthening Visium's capital structure as the Company executes its strategic transformation following the recently announced Letter of Intent to acquire ConnexUs AI.",
-      url: "https://www.einpresswire.com/article/904942308/visium-technologies-eliminates-over-182-000-in-outstanding-debt-and-all-conversion-overhang-through-full-settlement-of-labrys-notes-and-talos",
+      title: "Tyvanto Eliminates Over $182,000 in Outstanding Debt and All Conversion Overhang Through Full Settlement of Labrys Notes and Talos Warrants",
+      excerpt: "Tyvanto announces the execution of a definitive Settlement Agreement providing for the full and final extinguishment of all outstanding obligations under the Labrys Notes and the Talos Warrants. The settlement eliminates all conversion rights, derivative liabilities, and potential dilution associated with these instruments — representing a negotiated compromise of more than 18% below the current face amount — strengthening Tyvanto's capital structure as the Company executes its strategic transformation following the recently announced Letter of Intent to acquire ConnexUs AI.",
+      url: "https://www.einpresswire.com/article/904942308/tyvanto-technologies-eliminates-over-182-000-in-outstanding-debt-and-all-conversion-overhang-through-full-settlement-of-labrys-notes-and-talos",
       source: "EIN Presswire",
       category: "Corporate News"
     },
     {
       date: "March 19, 2026",
-      title: "Visium Technologies Launches TruContext™ AI Governance Layer to Contain OpenClaw Style Autonomous Agent Risks",
-      excerpt: "Visium Technologies announces the launch of a new AI Governance Layer within TruContext, designed to address emerging security risks from autonomous AI agents. The governance layer enhances the platform's ability to contain and mitigate threats while maintaining transparent, explainable AI operations for defense, cybersecurity, and critical infrastructure applications.",
-      url: "https://www.otcmarkets.com/stock/VISM/news/Visium-Technologies-Launches-TruContext-AI-Governance-Layer-to-Contain-OpenClaw-Style-Autonomous-Agent-Risks",
+      title: "Tyvanto Launches Arqen™ AI Governance Layer to Contain OpenClaw Style Autonomous Agent Risks",
+      excerpt: "Tyvanto announces the launch of a new AI Governance Layer within Arqen, designed to address emerging security risks from autonomous AI agents. The governance layer enhances the platform's ability to contain and mitigate threats while maintaining transparent, explainable AI operations for defense, cybersecurity, and critical infrastructure applications.",
+      url: "https://www.otcmarkets.com/stock/VISM/news/Tyvanto-Technologies-Launches-Arqen-AI-Governance-Layer-to-Contain-OpenClaw-Style-Autonomous-Agent-Risks",
       source: "OTC Disclosure & News Service",
       category: "Product Launch"
     },
     {
       date: "January 30, 2026",
-      title: "Visium Technologies and IREX.AI to Host Webinar on Peru's 54,000-Camera AI Surveillance Network",
+      title: "Tyvanto and IREX.AI to Host Webinar on Peru's 54,000-Camera AI Surveillance Network",
       excerpt: "CEOs Calvin Yadav and Mark Lucky Will Discuss Landmark Deployment Addressing Latin American Security; Government-to-Government Regional Expansion Strategy",
-      url: "https://www.otcmarkets.com/stock/VISM/news/Visium-Technologies-and-IREXAI-to-Host-Webinar-on-Perus-54000-Camera-AI-Surveillance-Network?id=508740",
+      url: "https://www.otcmarkets.com/stock/VISM/news/Tyvanto-Technologies-and-IREXAI-to-Host-Webinar-on-Perus-54000-Camera-AI-Surveillance-Network?id=508740",
       source: "EIN Presswire",
       category: "Industry Events"
     },
     {
       date: "December 23, 2025",
-      title: "Visium Technologies Announces Campus Security Initiative with IREX.AI to Advance Ethical, AI-Driven Public Safety",
-      excerpt: "Visium launches new Campus Security Initiative in partnership with IREX.AI, leveraging ELI™ (Ethical Layered Intelligence) framework to enhance campus safety while upholding transparency, civil liberties, and responsible AI governance. Initiative brings together Visium's TruContext™ platform and IREX.AI's real-time video analytics for higher-education environments.",
-      url: "https://www.otcmarkets.com/stock/VISM/news/Visium-Technologies-Announces-Campus-Security-Initiative-with-IREXAI-to-Advance-Ethical-AI-Driven-Public-Safety?id=504927",
+      title: "Tyvanto Announces Campus Security Initiative with IREX.AI to Advance Ethical, AI-Driven Public Safety",
+      excerpt: "Tyvanto launches new Campus Security Initiative in partnership with IREX.AI, leveraging ELI™ (Ethical Layered Intelligence) framework to enhance campus safety while upholding transparency, civil liberties, and responsible AI governance. Initiative brings together Tyvanto's Arqen™ platform and IREX.AI's real-time video analytics for higher-education environments.",
+      url: "https://www.otcmarkets.com/stock/VISM/news/Tyvanto-Technologies-Announces-Campus-Security-Initiative-with-IREXAI-to-Advance-Ethical-AI-Driven-Public-Safety?id=504927",
       source: "OTC Markets",
       category: "Partnerships"
     },
     {
       date: "December 9, 2025",
-      title: "Visium Technologies Enters $1.3 Trillion AI Market with TruContext—The First Fully Transparent Agentic AI Platform",
-      excerpt: "Visium Technologies announces bold pivot and transformation into pure-play AI company, launching next generation of mission-critical intelligence. TruContext platform enhanced with Agentic AI capabilities eliminates hallucinations and delivers verifiable intelligence for defense, cybersecurity, and critical infrastructure.",
-      url: "https://www.otcmarkets.com/stock/VISM/news/Visium-Technologies-Enters-13-Trillion-AI-Market-with-TruContextThe-First-Fully-Transparent-Agentic-AI-Platform?id=503210",
+      title: "Tyvanto Enters $1.3 Trillion AI Market with Arqen—The First Fully Transparent Agentic AI Platform",
+      excerpt: "Tyvanto announces bold pivot and transformation into pure-play AI company, launching next generation of mission-critical intelligence. Arqen platform enhanced with Agentic AI capabilities eliminates hallucinations and delivers verifiable intelligence for defense, cybersecurity, and critical infrastructure.",
+      url: "https://www.otcmarkets.com/stock/VISM/news/Tyvanto-Technologies-Enters-13-Trillion-AI-Market-with-ArqenThe-First-Fully-Transparent-Agentic-AI-Platform?id=503210",
       source: "OTC Markets",
       category: "Corporate News"
     },
     {
       date: "October 14, 2025",
-      title: "Visium Technologies, Inc. Issues Letter to Shareholders",
-      excerpt: "Strategic Contracts Establish Foundation for Expansion in High-Growth Emerging Markets Across South America and Africa. Visium Technologies highlights multi-year contracts and partnerships establishing foundation for growth in emerging markets.",
-      url: "https://www.einpresswire.com/article/767638942/visium-technologies-inc-issues-letter-to-shareholders",
+      title: "Tyvanto, Inc. Issues Letter to Shareholders",
+      excerpt: "Strategic Contracts Establish Foundation for Expansion in High-Growth Emerging Markets Across South America and Africa. Tyvanto highlights multi-year contracts and partnerships establishing foundation for growth in emerging markets.",
+      url: "https://www.einpresswire.com/article/767638942/tyvanto-technologies-inc-issues-letter-to-shareholders",
       source: "EIN Presswire",
       category: "Corporate News"
     },
     {
       date: "October 9, 2025",
-      title: "Visium Technologies Selected by IREX.AI for Major Public Safety Technology Deployment in Peru",
-      excerpt: "Groundbreaking Partnership to Enhance Urban Security Through Advanced Video Analytics. Visium announced a pivotal contract with IREX.AI for deployment of AI-driven public safety solutions with the Peruvian National Police.",
+      title: "Tyvanto Selected by IREX.AI for Major Public Safety Technology Deployment in Peru",
+      excerpt: "Groundbreaking Partnership to Enhance Urban Security Through Advanced Video Analytics. Tyvanto announced a pivotal contract with IREX.AI for deployment of AI-driven public safety solutions with the Peruvian National Police.",
       url: "https://www.otcmarkets.com/news-otcapi/news/document/content/id?id=85258",
       source: "OTC Markets",
       category: "Partnerships"
     },
     {
       date: "September 23, 2025",
-      title: "Visium Technologies Participates in U.S. EXIM Bank Announcement of $100M Financing Guarantee for Africa's Digital Sector",
-      excerpt: "Visium Technologies participated in the U.S. Export-Import Bank's announcement of $100 million financing guarantee supporting digital infrastructure development across Africa.",
-      url: "https://www.kxan.com/business/press-releases/accesswire/1077188/visium-technologies-participates-in-u-s-exim-bank-announcement-of-100m-financing-guarantee-for-africas-digital-sector",
+      title: "Tyvanto Participates in U.S. EXIM Bank Announcement of $100M Financing Guarantee for Africa's Digital Sector",
+      excerpt: "Tyvanto participated in the U.S. Export-Import Bank's announcement of $100 million financing guarantee supporting digital infrastructure development across Africa.",
+      url: "https://www.kxan.com/business/press-releases/accesswire/1077188/tyvanto-technologies-participates-in-u-s-exim-bank-announcement-of-100m-financing-guarantee-for-africas-digital-sector",
       source: "AccessWire",
       category: "Industry Events"
     },
     {
       date: "September 16, 2025",
-      title: "Visium Technologies Expands TruContext™ with Tru-InSight™",
+      title: "Tyvanto Expands Arqen™ with Tru-InSight™",
       excerpt: "Transforming Existing Camera Networks into Proactive Video Intelligence. New module converts passive security footage into an active intelligence layer for preemptive threat detection and rapid investigation.",
-      url: "https://www.otcmarkets.com/stock/VISM/news/Visium-Technologies-Expands-TruContextTM-with-Tru-InSightTM---Transforming-Existing-Camera-Networks-into-Proactive-Video?id=492632",
+      url: "https://www.otcmarkets.com/stock/VISM/news/Tyvanto-Technologies-Expands-ArqenTM-with-Tru-InSightTM---Transforming-Existing-Camera-Networks-into-Proactive-Video?id=492632",
       source: "OTC Markets",
       category: "Product Launch"
     },
     {
       date: "June 30, 2025",
-      title: "Visium Technologies Represented at 2025 U.S.-Africa Business Summit",
-      excerpt: "Through partnership with GB Group Global, Visium was represented at the 2025 U.S.-Africa Business Summit from June 22-25 in Luanda, Angola, showcasing TruContext platform capabilities.",
+      title: "Tyvanto Represented at 2025 U.S.-Africa Business Summit",
+      excerpt: "Through partnership with GB Group Global, Tyvanto was represented at the 2025 U.S.-Africa Business Summit from June 22-25 in Luanda, Angola, showcasing Arqen platform capabilities.",
       url: "https://www.otcmarkets.com/stock/VISM/news?id=484402",
       source: "OTC Markets",
       category: "Industry Events"
     },
     {
       date: "June 25, 2024",
-      title: "Visium Technologies and Angel Consultants Sign Memorandum of Understanding",
+      title: "Tyvanto and Angel Consultants Sign Memorandum of Understanding",
       excerpt: "Strategic partnership agreement to collaborate on cybersecurity and analytics solutions for enterprise and government customers.",
-      url: "https://www.nasdaq.com/press-release/visium-technologies-and-angel-consultants-sign-memorandum-understanding-2024-06-25",
+      url: "https://www.nasdaq.com/press-release/tyvanto-technologies-and-angel-consultants-sign-memorandum-understanding-2024-06-25",
       source: "NASDAQ",
       category: "Partnerships"
     },
     {
       date: "December 10, 2024",
-      title: "Visium Announces Launch of Generative Artificial Intelligence Division",
-      excerpt: "Visium Technologies announced the launch of its Generative AI division, expanding capabilities in AI-powered cybersecurity and data analytics solutions.",
-      url: "https://www.einpresswire.com/article/767638942/visium-technologies-inc-issues-letter-to-shareholders",
+      title: "Tyvanto Announces Launch of Generative Artificial Intelligence Division",
+      excerpt: "Tyvanto announced the launch of its Generative AI division, expanding capabilities in AI-powered cybersecurity and data analytics solutions.",
+      url: "https://www.einpresswire.com/article/767638942/tyvanto-technologies-inc-issues-letter-to-shareholders",
       source: "EIN Presswire",
       category: "Corporate News"
     },
     {
       date: "November 25, 2024",
-      title: "Visium Technologies Signs Letter of Intent with Nate Vision & Co. Ltd. to Drive Smart Innovation in Tanzania",
-      excerpt: "Project to provide state-of-the-art hub for mining and industrial innovation, leveraging TruContext platform for smart mining operations.",
+      title: "Tyvanto Signs Letter of Intent with Nate Vision & Co. Ltd. to Drive Smart Innovation in Tanzania",
+      excerpt: "Project to provide state-of-the-art hub for mining and industrial innovation, leveraging Arqen platform for smart mining operations.",
       url: "https://www.einpresswire.com/newsroom/visium_tech/",
       source: "EIN Presswire",
       category: "Partnerships"
     },
     {
       date: "March 8, 2024",
-      title: "IREX AI and Visium Technologies Win Multi-Million Dollar Contract With Peru's Public Service Sector",
+      title: "IREX AI and Tyvanto Win Multi-Million Dollar Contract With Peru's Public Service Sector",
       excerpt: "Two-year contract with option for additional 3 years with City of Miraflores for deployment of AI-driven public safety and surveillance solutions.",
       url: "https://www.einpresswire.com/newsroom/visium_tech/",
       source: "EIN Presswire",
@@ -120,9 +120,9 @@ export default function News() {
     },
     {
       date: "March 4, 2022",
-      title: "You Can't Secure What You Can't See: Apply TruContext™ to Your Splunk Data",
-      excerpt: "Webinar hosted by Splunk, Visium Analytics & Carahsoft demonstrating TruContext integration with Splunk for enhanced cybersecurity visibility.",
-      url: "https://www.carahsoft.com/podcast/82-you-can-27t-secure-what-you-can-27t-see-3a-apply-trucontext-e2-84-a2-to-your-splunk-data",
+      title: "You Can't Secure What You Can't See: Apply Arqen™ to Your Splunk Data",
+      excerpt: "Webinar hosted by Splunk, Tyvanto & Carahsoft demonstrating Arqen integration with Splunk for enhanced cybersecurity visibility.",
+      url: "https://www.carahsoft.com/podcast/82-you-can-27t-secure-what-you-can-27t-see-3a-apply-arqen-e2-84-a2-to-your-splunk-data",
       source: "Carahsoft",
       category: "Webinars"
     }
@@ -140,12 +140,12 @@ export default function News() {
       {/* Hero Section */}
       <section className="gradient-hero py-8">
         <div className="container">
-          {/* Visium Technologies Logo - Upper Left */}
+          {/* Tyvanto Logo - Upper Left */}
           <div className="mb-6">
             <img 
-              src="/visium-technologies-logo-new.png" 
-              alt="Visium Technologies" 
-              className="h-12 sm:h-14 md:h-16 object-contain"
+              src="/tyvanto_logo.png" 
+              alt="Tyvanto" 
+              className="h-16 sm:h-20 md:h-24 object-contain"
             />
           </div>
           <div className="max-w-4xl mx-auto text-center">
@@ -154,7 +154,7 @@ export default function News() {
               News & <span className="text-primary">Press</span>
             </h1>
             <p className="text-xl text-gray-600">
-              Latest announcements, partnerships, and developments from Visium Technologies
+              Latest announcements, partnerships, and developments from Tyvanto
             </p>
           </div>
         </div>
@@ -254,7 +254,7 @@ export default function News() {
                 View Latest VISM News on OTC Markets
               </h3>
               <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-                Get the most up-to-date news, press releases, and company announcements for Visium Technologies (VISM) directly from the official OTC Markets platform. News updates automatically as new releases are published.
+                Get the most up-to-date news, press releases, and company announcements for Tyvanto (VISM) directly from the official OTC Markets platform. News updates automatically as new releases are published.
               </p>
               <a
                 href="https://www.otcmarkets.com/stock/VISM/news"
@@ -284,7 +284,7 @@ export default function News() {
                 Stay Informed
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                Subscribe to receive the latest news, press releases, and company updates from Visium Technologies
+                Subscribe to receive the latest news, press releases, and company updates from Tyvanto
               </p>
               <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
                 <input
@@ -344,7 +344,7 @@ export default function News() {
                 <p className="text-gray-600 mb-4">
                   Get in touch with our media relations team
                 </p>
-                <a href="mailto:info@visiumtechnologies.com">
+                <a href="mailto:info@tyvanto.com">
                   <Button variant="outline" className="w-full">
                     Contact Media Team
                   </Button>

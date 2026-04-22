@@ -10,7 +10,7 @@ describe("TruClaw Featured Video", () => {
       category: "product-features",
       playlist: "getting-started",
       engagementScore: 100,
-      description: "Introducing TruClaw: Visium's advanced security framework that secures the agentic frontier, protecting against autonomous AI agent risks and emerging threats."
+      description: "Introducing TruClaw: Tyvanto's advanced security framework that secures the agentic frontier, protecting against autonomous AI agent risks and emerging threats."
     };
 
     expect(truclawVideo.title).toBe("TruClaw Secures The Agentic Frontier");
@@ -49,7 +49,7 @@ describe("TruClaw Featured Video", () => {
         engagementScore: 100
       },
       {
-        title: "Visium TruContext Intro",
+        title: "Tyvanto Arqen Intro",
         category: "training",
         engagementScore: 95
       }
@@ -74,7 +74,7 @@ describe("TruClaw Featured Video", () => {
   });
 
   it("should have proper description length", () => {
-    const description = "Introducing TruClaw: Visium's advanced security framework that secures the agentic frontier, protecting against autonomous AI agent risks and emerging threats.";
+    const description = "Introducing TruClaw: Tyvanto's advanced security framework that secures the agentic frontier, protecting against autonomous AI agent risks and emerging threats.";
     
     expect(description.length).toBeGreaterThan(50);
     expect(description).toContain("TruClaw");
@@ -85,7 +85,7 @@ describe("TruClaw Featured Video", () => {
     const featuredVideoStyles = {
       section: "py-12 bg-gradient-to-r from-purple-900 via-purple-800 to-indigo-900",
       title: "text-3xl md:text-4xl font-bold text-white",
-      button: "inline-flex items-center gap-3 bg-white text-purple-900 px-8 py-3 rounded-lg font-bold hover:bg-purple-100 transition-colors shadow-lg",
+      button: "inline-flex items-center gap-3 bg-white text-purple-900 px-8 py-3 rounded-lg font-bold hover:bg-blue-100 transition-colors shadow-lg",
       thumbnail: "w-full h-full object-cover group-hover:scale-105 transition-transform duration-300",
       buttonText: "Watch Now"
     };

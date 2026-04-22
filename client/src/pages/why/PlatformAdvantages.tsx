@@ -51,8 +51,8 @@ export default function PlatformAdvantages() {
     {
       icon: <Shield className="h-8 w-8" />,
       title: "Defense-Grade Provenance",
-      description: "Enhanced commercialized version of MITRE's Cygraph cyber tool, designed for DoD and Army Cyber command. Inherently optimized for resilience, threat analysis, and operation in high-risk networked environments.",
-      metrics: "MITRE Heritage",
+      description: "Enhanced commercialized version of an independent research organization's advanced graph intelligence tool, designed for enterprise security operations. Inherently optimized for resilience, threat analysis, and operation in high-risk networked environments.",
+      metrics: "an independent research organization Heritage",
       color: "from-purple-600 to-pink-600"
     },
     {
@@ -60,14 +60,14 @@ export default function PlatformAdvantages() {
       title: "Complete Data Fusion",
       description: "Multi-source data fusion integrates network traffic (PCAP), vulnerability tools (Tenable), and log management (Splunk/Datadog) with complete overlay capability to break down operational data silos.",
       metrics: "Unified Intelligence",
-      color: "from-indigo-500 to-purple-500"
+      color: "from-blue-600 to-blue-400"
     }
   ];
 
   const keyDifferentiators = [
     {
       title: "Cyber-Physical Integration",
-      description: "TruContext bridges IT security log data with Operational Technology (OT) sensor data, identifying external network entries and mapping them to vulnerable physical assets. This transforms reactive incident response into proactive threat hunting within critical municipal networks.",
+      description: "Arqen bridges IT security log data with Operational Technology (OT) sensor data, identifying external network entries and mapping them to vulnerable physical assets. This transforms reactive incident response into proactive threat hunting within critical municipal networks.",
       icon: <Network className="h-12 w-12 text-primary" />
     },
     {
@@ -77,7 +77,7 @@ export default function PlatformAdvantages() {
     },
     {
       title: "Architectural Transparency",
-      description: "Unlike \"black box\" AI algorithms, TruContext's knowledge graph provides structurally visible, traceable relationships with full audit trails including geolocation, timestamps, and approval trails. This fulfills the ethical mandate for clarity in data-driven governance.",
+      description: "Unlike \"black box\" AI algorithms, Arqen's knowledge graph provides structurally visible, traceable relationships with full audit trails including geolocation, timestamps, and approval trails. This fulfills the ethical mandate for clarity in data-driven governance.",
       icon: <Eye className="h-12 w-12 text-primary" />
     }
   ];
@@ -152,7 +152,7 @@ export default function PlatformAdvantages() {
     {
       challenge: "Cyber-Physical Threat Protection",
       solution: "Critical Infrastructure Security",
-      mechanism: "MITRE Cygraph heritage with CVSS/CVE grouping and Tru-AI for autonomous threat isolation",
+      mechanism: "an independent research organization Cygraph heritage with CVSS/CVE grouping and Tru-AI for autonomous threat isolation",
       outcome: "Superior threat hunting and risk prioritization"
     },
     {
@@ -179,7 +179,7 @@ export default function PlatformAdvantages() {
               Urban Intelligence Platform
             </Badge>
             <h1 className="text-5xl font-bold text-gray-900 mb-6">
-              TruContext <span className="text-primary">Platform Advantages</span>
+              Arqen <span className="text-primary">Platform Advantages</span>
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed">
               An architectural shift from traditional relational data models toward highly scalable, relationship-focused graph databases—uniquely engineered to transform fragmented urban data into unified, actionable intelligence.
@@ -196,7 +196,7 @@ export default function PlatformAdvantages() {
               Six Core Architectural Advantages
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              TruContext's patented architecture delivers unmatched performance, intelligence, and resilience for critical urban infrastructure
+              Arqen's patented architecture delivers unmatched performance, intelligence, and resilience for critical urban infrastructure
             </p>
           </div>
 
@@ -228,7 +228,7 @@ export default function PlatformAdvantages() {
               Strategic Differentiators
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              What sets TruContext apart as the definitive urban intelligence platform
+              What sets Arqen apart as the definitive urban intelligence platform
             </p>
           </div>
 
@@ -251,7 +251,7 @@ export default function PlatformAdvantages() {
         <div className="container max-w-6xl">
           <div className="text-center mb-10">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Smart City Challenges & TruContext Solutions
+              Smart City Challenges & Arqen Solutions
             </h2>
             <p className="text-xl text-gray-600">
               Architectural solutions aligned to critical urban infrastructure requirements
@@ -288,14 +288,14 @@ export default function PlatformAdvantages() {
       </section>
 
       {/* Application Domains */}
-      <section className="py-12 bg-gradient-to-br from-purple-50 to-blue-50">
+      <section className="py-12 bg-gradient-to-br from-blue-50 to-cyan-50">
         <div className="container">
           <div className="text-center mb-10">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Application Domains
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              TruContext's versatility across critical urban infrastructure sectors
+              Arqen's versatility across critical urban infrastructure sectors
             </p>
           </div>
 
@@ -364,7 +364,7 @@ export default function PlatformAdvantages() {
                   Transforming Passive Data into Active Guardians
                 </h2>
                 <p className="text-xl opacity-90 leading-relaxed">
-                  TruContext represents an architectural shift toward highly scalable, relationship-focused graph databases, uniquely engineered to meet the demands of data-driven urbanism.
+                  Arqen represents an architectural shift toward highly scalable, relationship-focused graph databases, uniquely engineered to meet the demands of data-driven urbanism.
                 </p>
               </div>
 
@@ -419,7 +419,7 @@ export default function PlatformAdvantages() {
             Ready to Transform Your Urban Intelligence?
           </h2>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Discover how TruContext's patented architecture can drive resilience and efficiency across your critical infrastructure
+            Discover how Arqen's patented architecture can drive resilience and efficiency across your critical infrastructure
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/demo">

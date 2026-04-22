@@ -2,13 +2,13 @@ import { describe, it, expect } from 'vitest';
 
 describe('TruClaw Solution Page', () => {
   it('should have correct page title', () => {
-    const title = "TruClaw™ AI Agent Governance | Agentic AI Security | Visium";
+    const title = "TruClaw™ AI Agent Governance | Agentic AI Security | Tyvanto";
     expect(title).toContain('TruClaw');
     expect(title).toContain('AI Agent Governance');
   });
 
   it('should have correct canonical URL', () => {
-    const canonical = "https://www.visiumtechnologies.com/solutions/truclaw";
+    const canonical = "https://www.tyvanto.com/solutions/truclaw";
     expect(canonical).toContain('/solutions/truclaw');
     expect(canonical).toMatch(/^https:\/\//);
   });
@@ -46,7 +46,7 @@ describe('TruClaw Solution Page', () => {
   });
 
   it('should contain What is TruClaw section', () => {
-    const section = "TruClaw™: Agentic AI Governance Inside TruContext™";
+    const section = "TruClaw™: Agentic AI Governance Inside Arqen™";
     expect(section).toContain('TruClaw');
     expect(section).toContain('Agentic AI Governance');
   });
@@ -59,7 +59,7 @@ describe('TruClaw Solution Page', () => {
 
   it('should have all 5 capability tags', () => {
     const tags = [
-      'MITRE ATLAS Aligned',
+      'an independent research organization ATLAS Aligned',
       'Zero Trust for AI',
       'ELI Integration',
       'NIST AI RMF',
@@ -124,7 +124,7 @@ describe('TruClaw Solution Page', () => {
       'Multi-Agent Chain Visualization',
       'AI Supply Chain Integrity',
       'Explainable AI Governance',
-      'MITRE ATLAS Alignment',
+      'an independent research organization ATLAS Alignment',
       'Real-Time Autonomous Response'
     ];
     expect(comparisons.length).toBe(8);
@@ -164,7 +164,7 @@ describe('TruClaw Solution Page', () => {
   });
 
   it('should have proper SEO description', () => {
-    const description = "TruClaw™ is Visium's agentic AI governance and control layer within TruContext™. Stop Shadow AI, prevent autonomous agent exploitation, and enforce zero-trust for every AI agent across your enterprise.";
+    const description = "TruClaw™ is Tyvanto's agentic AI governance and control layer within Arqen™. Stop Shadow AI, prevent autonomous agent exploitation, and enforce zero-trust for every AI agent across your enterprise.";
     expect(description).toContain('TruClaw');
     expect(description).toContain('agentic AI governance');
     expect(description).toContain('Shadow AI');

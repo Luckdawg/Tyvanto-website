@@ -82,14 +82,14 @@ describe('RequestQuoteModal', () => {
   });
 
   it('pre-fills product when defaultProduct is provided', () => {
-    render(<RequestQuoteModal {...defaultProps} defaultProduct="TruContext Core Platform" />);
-    const productSelect = screen.getByDisplayValue('TruContext Core Platform');
+    render(<RequestQuoteModal {...defaultProps} defaultProduct="Arqen Core Platform" />);
+    const productSelect = screen.getByDisplayValue('Arqen Core Platform');
     expect(productSelect).toBeInTheDocument();
   });
 
   it('displays pricing snapshot summary when provided', () => {
     const pricingSnapshot = {
-      productInterest: 'TruContext Core Platform',
+      productInterest: 'Arqen Core Platform',
       estimatedNodes: 5000,
       estimatedAgents: 10,
       estimatedMonthlyBudget: '$12,500/mo',

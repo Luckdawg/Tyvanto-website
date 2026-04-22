@@ -13,9 +13,9 @@ export default function TruClaw() {
   return (
     <div className="min-h-screen">
       <SEOHead 
-        title="TruClaw™ AI Agent Governance | Agentic AI Security | Visium"
-        description="TruClaw™ is Visium's agentic AI governance and control layer within TruContext™. Stop Shadow AI, prevent autonomous agent exploitation, and enforce zero-trust for every AI agent across your enterprise."
-        canonicalUrl="https://www.visiumtechnologies.com/solutions/truclaw"
+        title="TruClaw™ AI Agent Governance | Agentic AI Security | Tyvanto"
+        description="TruClaw™ is Tyvanto's agentic AI governance and control layer within Arqen™. Stop Shadow AI, prevent autonomous agent exploitation, and enforce zero-trust for every AI agent across your enterprise."
+        canonicalUrl="https://www.tyvanto.com/solutions/truclaw"
       />
 
       {/* Hero Section */}
@@ -30,7 +30,7 @@ export default function TruClaw() {
               <span className="text-primary">TruClaw™</span> Govern Every AI Agent.<br />Stop Every Shadow Agent.
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              TruClaw™ is Visium's agentic AI governance and control layer — built into TruContext™ — that monitors, constrains, and governs autonomous AI agents in real time, closing the attack surface opened by tools like OpenClaw and other open-source agentic frameworks before they can exploit your environment.
+              TruClaw™ is Tyvanto's agentic AI governance and control layer — built into Arqen™ — that monitors, constrains, and governs autonomous AI agents in real time, closing the attack surface opened by tools like OpenClaw and other open-source agentic frameworks before they can exploit your environment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <Link href="/demo">
@@ -40,7 +40,7 @@ export default function TruClaw() {
               </Link>
               <Link href="/platform">
                 <Button size="lg" variant="outline">
-                  Explore TruContext Platform
+                  Explore Arqen Platform
                 </Button>
               </Link>
             </div>
@@ -127,22 +127,22 @@ export default function TruClaw() {
       <section className="py-16 gradient-purple-blue">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">TruClaw™: <span className="text-primary">Agentic AI Governance</span> Inside TruContext™</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">TruClaw™: <span className="text-primary">Agentic AI Governance</span> Inside Arqen™</h2>
             <p className="text-xl text-gray-600">
-              TruClaw is the AI governance and control layer within the TruContext™ platform — sitting between your AI agents and enterprise systems to enforce policy, log every action, and terminate unauthorized behavior in real time.
+              TruClaw is the AI governance and control layer within the Arqen™ platform — sitting between your AI agents and enterprise systems to enforce policy, log every action, and terminate unauthorized behavior in real time.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div>
               <p className="text-gray-600 mb-4 leading-relaxed">
-                Built on TruContext's patented dual-database architecture and MITRE CyGraph heritage, TruClaw extends graph-based threat intelligence to the agent layer — mapping AI agent relationships, permissions, actions, and dependencies the same way TruContext maps network threats.
+                Built on Arqen's patented dual-database architecture and an independent research organization graph intelligence heritage, TruClaw extends graph-based threat intelligence to the agent layer — mapping AI agent relationships, permissions, actions, and dependencies the same way Arqen maps network threats.
               </p>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                TruClaw integrates directly with Visium's <strong>ELI (Ethical Layered Intelligence)</strong> framework to enforce configurable governance policies — giving security teams full, explainable control over every AI agent operating inside or adjacent to their environment.
+                TruClaw integrates directly with Tyvanto's <strong>ELI (Ethical Layered Intelligence)</strong> framework to enforce configurable governance policies — giving security teams full, explainable control over every AI agent operating inside or adjacent to their environment.
               </p>
               <div className="flex flex-wrap gap-2">
-                <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-semibold border border-primary/20">MITRE ATLAS Aligned</span>
+                <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-semibold border border-primary/20">an independent research organization ATLAS Aligned</span>
                 <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-semibold border border-primary/20">Zero Trust for AI</span>
                 <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-semibold border border-primary/20">ELI Integration</span>
                 <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-semibold border border-primary/20">NIST AI RMF</span>
@@ -152,7 +152,7 @@ export default function TruClaw() {
 
             <Card className="bg-white border-2 border-primary/20">
               <CardContent className="p-8">
-                <h3 className="font-bold text-lg mb-6 text-gray-900">TruContext™ Platform Stack</h3>
+                <h3 className="font-bold text-lg mb-6 text-gray-900">Arqen™ Platform Stack</h3>
                 <div className="space-y-3">
                   <div className="bg-primary/10 border border-primary/30 rounded-lg p-3 text-sm font-semibold text-gray-900">
                     🌐 External AI Agents / User Requests
@@ -165,9 +165,9 @@ export default function TruClaw() {
                   <div className="bg-secondary/10 border border-secondary/30 rounded-lg p-3 text-sm font-semibold text-gray-900">
                     🧠 ELI — Ethical Layered Intelligence
                   </div>
-                  <div className="text-center text-gray-400 text-xs">context-enriched by TruContext</div>
+                  <div className="text-center text-gray-400 text-xs">context-enriched by Arqen</div>
                   <div className="bg-primary/10 border border-primary/30 rounded-lg p-3 text-sm font-semibold text-gray-900">
-                    📊 TruContext™ Graph + Relational DB Engine
+                    📊 Arqen™ Graph + Relational DB Engine
                   </div>
                   <div className="text-center text-gray-400 text-xs">isolated & logged</div>
                   <div className="bg-gray-100 border border-gray-300 rounded-lg p-3 text-sm font-semibold text-gray-900">
@@ -235,7 +235,7 @@ export default function TruClaw() {
               <CardContent className="p-6">
                 <Network className="h-10 w-10 text-primary mb-4" />
                 <h3 className="text-lg font-bold mb-2">Multi-Agent Graph Mapping</h3>
-                <p className="text-gray-600">Leveraging TruContext's graph database, TruClaw visualizes trust relationships and communication patterns between AI agents — exposing lateral movement paths, rogue orchestration chains, and multi-agent attack progressions.</p>
+                <p className="text-gray-600">Leveraging Arqen's graph database, TruClaw visualizes trust relationships and communication patterns between AI agents — exposing lateral movement paths, rogue orchestration chains, and multi-agent attack progressions.</p>
               </CardContent>
             </Card>
           </div>
@@ -256,7 +256,7 @@ export default function TruClaw() {
             <div className="space-y-6">
               {[
                 { num: 1, title: "Discover & Inventory", desc: "TruClaw scans your environment — cloud, on-prem, and hybrid — to build a complete inventory of all AI agents, LLM integrations, and agentic frameworks, authorized or otherwise." },
-                { num: 2, title: "Map & Contextualize", desc: "Using TruContext's graph engine, TruClaw maps each agent's permission scope, data access patterns, tool dependencies, and inter-agent relationships — giving you a complete picture of your agentic attack surface." },
+                { num: 2, title: "Map & Contextualize", desc: "Using Arqen's graph engine, TruClaw maps each agent's permission scope, data access patterns, tool dependencies, and inter-agent relationships — giving you a complete picture of your agentic attack surface." },
                 { num: 3, title: "Monitor & Detect", desc: "Every agent action is compared against its baseline and policy in real time. TruClaw detects anomalies — unusual data access, privilege escalation, prompt injection indicators, and unauthorized tool use — as they occur." },
                 { num: 4, title: "Enforce & Respond", desc: "When policy violations are detected, TruClaw — guided by ELI governance rules — can alert, throttle, redirect, or quarantine the offending agent autonomously, with full documentation for compliance and incident response." }
               ].map((step, idx) => (
@@ -386,7 +386,7 @@ export default function TruClaw() {
               <thead>
                 <tr className="border-b-2 border-gray-300">
                   <th className="text-left p-4 font-bold text-gray-900">Capability</th>
-                  <th className="text-left p-4 font-bold text-primary">TruClaw™ (Visium)</th>
+                  <th className="text-left p-4 font-bold text-primary">TruClaw™ (Tyvanto)</th>
                   <th className="text-left p-4 font-bold text-gray-900">Traditional SIEM</th>
                   <th className="text-left p-4 font-bold text-gray-900">Generic AI Security Tools</th>
                 </tr>
@@ -399,7 +399,7 @@ export default function TruClaw() {
                   { cap: "Multi-Agent Chain Visualization", tc: "✓ Graph-based mapping", siem: "✗ No agent awareness", generic: "✗ Single-agent only" },
                   { cap: "AI Supply Chain Integrity", tc: "✓ Model + plugin validation", siem: "✗ Not applicable", generic: "⚠️ Vendor-specific only" },
                   { cap: "Explainable AI Governance", tc: "✓ Full audit trail via ELI", siem: "⚠️ Log-based, no context", generic: "⚠️ Black-box decisions" },
-                  { cap: "MITRE ATLAS Alignment", tc: "✓ Native integration", siem: "✗ MITRE ATT&CK only", generic: "✗ Not aligned" },
+                  { cap: "an independent research organization ATLAS Alignment", tc: "✓ Native integration", siem: "✗ an independent research organization ATT&CK only", generic: "✗ Not aligned" },
                   { cap: "Real-Time Autonomous Response", tc: "✓ Quarantine, throttle, alert", siem: "⚠️ Alert only", generic: "⚠️ Alert only" }
                 ].map((row, idx) => (
                   <tr key={idx} className="border-b border-gray-200 hover:bg-gray-50">
@@ -427,7 +427,7 @@ export default function TruClaw() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: "🏛️", title: "Government & Defense", desc: "Enforce strict governance over AI agents operating in classified or sensitive environments, with MITRE ATLAS-aligned detection and full FedRAMP-ready audit trails." },
+              { icon: "🏛️", title: "Government & Defense", desc: "Enforce strict governance over AI agents operating in classified or sensitive environments, with an independent research organization ATLAS-aligned detection and full FedRAMP-ready audit trails." },
               { icon: "🏥", title: "Healthcare", desc: "Control AI agents accessing EHR systems and patient data. Prevent unauthorized data exfiltration and enforce HIPAA-compliant agent permissions in clinical AI deployments." },
               { icon: "🏦", title: "Financial Services", desc: "Govern AI trading agents, fraud detection models, and customer-facing LLMs. Detect prompt injection attempts targeting financial AI and enforce SOC 2-aligned agent policies." },
               { icon: "⚡", title: "Critical Infrastructure", desc: "Protect OT/ICS environments from AI agents operating beyond their sanctioned scope. Graph-map agent relationships to SCADA systems to detect and prevent cross-domain lateral movement." },

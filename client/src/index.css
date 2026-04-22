@@ -44,77 +44,86 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+/* 
+  Tyvanto Brand Color Palette:
+  - Deep Navy:    #0D1B3E  (oklch ~0.17 0.07 255)
+  - Mid Blue:     #1B3A8C  (oklch ~0.33 0.14 258)
+  - Bright Blue:  #00A3FF  (oklch ~0.65 0.18 228)
+  - Light Blue:   #38BDF8  (oklch ~0.73 0.14 225)
+*/
+
 :root {
-  /* Visium purple primary color */
-  --primary: oklch(0.47 0.15 290);
+  /* Tyvanto bright blue as primary */
+  --primary: oklch(0.55 0.20 228);
   --primary-foreground: oklch(1 0 0);
-  --sidebar-primary: oklch(0.47 0.15 290);
+  --sidebar-primary: oklch(0.55 0.20 228);
   --sidebar-primary-foreground: oklch(1 0 0);
-  /* Chart colors - purple and blue variants */
-  --chart-1: oklch(0.7 0.12 290);
-  --chart-2: oklch(0.6 0.15 250);
-  --chart-3: oklch(0.5 0.15 290);
-  --chart-4: oklch(0.47 0.15 290);
-  --chart-5: oklch(0.4 0.15 290);
+  /* Chart colors - blue spectrum */
+  --chart-1: oklch(0.65 0.18 228);
+  --chart-2: oklch(0.55 0.20 228);
+  --chart-3: oklch(0.45 0.16 248);
+  --chart-4: oklch(0.33 0.14 258);
+  --chart-5: oklch(0.17 0.07 255);
   --radius: 0.75rem;
   --background: oklch(1 0 0);
-  --foreground: oklch(0.235 0.015 65);
+  --foreground: oklch(0.17 0.07 255);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.235 0.015 65);
+  --card-foreground: oklch(0.17 0.07 255);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.235 0.015 65);
-  --secondary: oklch(0.6 0.15 250);
+  --popover-foreground: oklch(0.17 0.07 255);
+  /* Mid blue as secondary */
+  --secondary: oklch(0.33 0.14 258);
   --secondary-foreground: oklch(1 0 0);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.47 0.15 290);
+  --muted: oklch(0.96 0.005 228);
+  --muted-foreground: oklch(0.50 0.05 228);
+  --accent: oklch(0.65 0.18 228);
   --accent-foreground: oklch(1 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.47 0.15 290);
+  --border: oklch(0.88 0.01 228);
+  --input: oklch(0.88 0.01 228);
+  --ring: oklch(0.55 0.20 228);
   --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.235 0.015 65);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.47 0.15 290);
+  --sidebar-foreground: oklch(0.17 0.07 255);
+  --sidebar-accent: oklch(0.96 0.005 228);
+  --sidebar-accent-foreground: oklch(0.17 0.07 255);
+  --sidebar-border: oklch(0.88 0.01 228);
+  --sidebar-ring: oklch(0.55 0.20 228);
 }
 
 .dark {
-  --primary: oklch(0.55 0.15 290);
+  --primary: oklch(0.65 0.18 228);
   --primary-foreground: oklch(1 0 0);
-  --sidebar-primary: oklch(0.55 0.15 290);
+  --sidebar-primary: oklch(0.65 0.18 228);
   --sidebar-primary-foreground: oklch(1 0 0);
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.85 0.005 65);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.85 0.005 65);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.85 0.005 65);
-  --secondary: oklch(0.6 0.15 250);
+  --background: oklch(0.17 0.07 255);
+  --foreground: oklch(0.92 0.01 228);
+  --card: oklch(0.22 0.07 255);
+  --card-foreground: oklch(0.92 0.01 228);
+  --popover: oklch(0.22 0.07 255);
+  --popover-foreground: oklch(0.92 0.01 228);
+  --secondary: oklch(0.45 0.16 248);
   --secondary-foreground: oklch(1 0 0);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.55 0.15 290);
-  --accent-foreground:  oklch(1 0 0);
+  --muted: oklch(0.27 0.06 255);
+  --muted-foreground: oklch(0.65 0.06 228);
+  --accent: oklch(0.65 0.18 228);
+  --accent-foreground: oklch(1 0 0);
   --destructive: oklch(0.704 0.191 22.216);
   --destructive-foreground: oklch(0.985 0 0);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.55 0.15 290);
-  --chart-1: oklch(0.7 0.12 290);
-  --chart-2: oklch(0.6 0.15 250);
-  --chart-3: oklch(0.5 0.15 290);
-  --chart-4: oklch(0.47 0.15 290);
-  --chart-5: oklch(0.4 0.15 290);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.85 0.005 65);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground:  oklch(0.985 0 0);
+  --ring: oklch(0.65 0.18 228);
+  --chart-1: oklch(0.65 0.18 228);
+  --chart-2: oklch(0.55 0.20 228);
+  --chart-3: oklch(0.45 0.16 248);
+  --chart-4: oklch(0.33 0.14 258);
+  --chart-5: oklch(0.25 0.10 255);
+  --sidebar: oklch(0.22 0.07 255);
+  --sidebar-foreground: oklch(0.92 0.01 228);
+  --sidebar-accent: oklch(0.27 0.06 255);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.55 0.15 290);
+  --sidebar-ring: oklch(0.65 0.18 228);
 }
 
 @layer base {
@@ -139,24 +148,11 @@
 }
 
 @layer components {
-  /**
-   * Custom container utility that centers content and adds responsive padding.
-   *
-   * This overrides Tailwind's default container behavior to:
-   * - Auto-center content (mx-auto)
-   * - Add responsive horizontal padding
-   * - Set max-width for large screens
-   *
-   * Usage: <div className="container">...</div>
-   *
-   * For custom widths, use max-w-* utilities directly:
-   * <div className="max-w-6xl mx-auto px-4">...</div>
-   */
   .container {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
+    padding-left: 1rem;
     padding-right: 1rem;
   }
 
@@ -167,31 +163,36 @@
 
   @media (min-width: 640px) {
     .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
+      padding-left: 1.5rem;
       padding-right: 1.5rem;
     }
   }
 
   @media (min-width: 1024px) {
     .container {
-      padding-left: 2rem; /* 32px - desktop padding */
+      padding-left: 2rem;
       padding-right: 2rem;
-      max-width: 1280px; /* Standard content width */
+      max-width: 1280px;
     }
   }
 
-  /* Decorative circular dotted pattern */
+  /* Decorative circular dotted pattern - Tyvanto blue */
   .dot-pattern {
-    background-image: radial-gradient(circle, rgba(91, 75, 138, 0.15) 1px, transparent 1px);
+    background-image: radial-gradient(circle, rgba(0, 163, 255, 0.15) 1px, transparent 1px);
     background-size: 24px 24px;
   }
 
-  /* Gradient backgrounds */
+  /* Gradient backgrounds - Tyvanto navy to blue */
   .gradient-purple-blue {
-    background: linear-gradient(135deg, rgba(91, 75, 138, 0.1) 0%, rgba(96, 165, 250, 0.1) 100%);
+    background: linear-gradient(135deg, rgba(13, 27, 62, 0.08) 0%, rgba(0, 163, 255, 0.10) 100%);
   }
 
   .gradient-hero {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    background: linear-gradient(135deg, #f0f4ff 0%, #e0eeff 100%);
+  }
+
+  /* Tyvanto brand gradient utility */
+  .tyvanto-gradient {
+    background: linear-gradient(135deg, #0D1B3E 0%, #1B3A8C 50%, #00A3FF 100%);
   }
 }

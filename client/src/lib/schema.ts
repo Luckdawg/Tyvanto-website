@@ -19,12 +19,12 @@ export interface SchemaProps {
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Visium Technologies",
-  "url": "https://visiumtechnologies.com",
-  "logo": "https://visiumtechnologies.com/visium_logo.svg",
-  "description": "Explainable AI for Real-Time Business Analytics - TruContext platform for cybersecurity and enterprise intelligence",
+  "name": "Tyvanto",
+  "url": "https://tyvanto.com",
+  "logo": "https://tyvanto.com/visium_logo.svg",
+  "description": "Explainable AI for Real-Time Business Analytics - Arqen platform for cybersecurity and enterprise intelligence",
   "sameAs": [
-    "https://www.linkedin.com/company/visium-technologies",
+    "https://www.linkedin.com/company/tyvanto-technologies",
     "https://twitter.com/visiumtech",
     "https://www.facebook.com/visiumtech"
   ],
@@ -32,7 +32,7 @@ export const organizationSchema = {
     "@type": "ContactPoint",
     "contactType": "Sales",
     "telephone": "+1-888-344-9850",
-    "email": "sales@visiumtechnologies.com"
+    "email": "sales@tyvanto.com"
   },
   "address": {
     "@type": "PostalAddress",
@@ -45,14 +45,14 @@ export const organizationSchema = {
 };
 
 /**
- * SoftwareApplication schema - For TruContext platform
+ * SoftwareApplication schema - For Arqen platform
  */
 export const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "TruContext",
+  "name": "Arqen",
   "description": "Explainable AI-powered analytics platform for real-time threat detection, incident response, and business intelligence",
-  "url": "https://visiumtechnologies.com/platform",
+  "url": "https://tyvanto.com/platform",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Cloud-based",
   "offers": {
@@ -65,7 +65,7 @@ export const softwareApplicationSchema = {
     "ratingValue": "4.8",
     "ratingCount": "50"
   },
-  "image": "https://visiumtechnologies.com/trucontext-platform.png"
+  "image": "https://tyvanto.com/arqen-platform.png"
 };
 
 /**
@@ -79,8 +79,8 @@ export const createServiceSchema = (name: string, description: string, url: stri
   "url": url,
   "provider": {
     "@type": "Organization",
-    "name": "Visium Technologies",
-    "url": "https://visiumtechnologies.com"
+    "name": "Tyvanto",
+    "url": "https://tyvanto.com"
   },
   "areaServed": "US",
   "serviceType": "Enterprise Software"
@@ -99,14 +99,14 @@ export const createBlogPostingSchema = (props: SchemaProps) => ({
   "dateModified": props.dateModified,
   "author": {
     "@type": "Organization",
-    "name": props.author || "Visium Technologies"
+    "name": props.author || "Tyvanto"
   },
   "publisher": {
     "@type": "Organization",
-    "name": "Visium Technologies",
+    "name": "Tyvanto",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://visiumtechnologies.com/visium_logo.svg"
+      "url": "https://tyvanto.com/visium_logo.svg"
     }
   }
 });
@@ -147,10 +147,10 @@ export const createFAQSchema = (faqs: Array<{ question: string; answer: string }
 export const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "Visium Technologies",
-  "image": "https://visiumtechnologies.com/visium_logo.svg",
+  "name": "Tyvanto",
+  "image": "https://tyvanto.com/visium_logo.svg",
   "description": "Enterprise AI and cybersecurity analytics company",
-  "url": "https://visiumtechnologies.com",
+  "url": "https://tyvanto.com",
   "telephone": "+1-888-344-9850",
   "address": {
     "@type": "PostalAddress",

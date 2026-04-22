@@ -55,7 +55,7 @@ export const leadsRouter = router({
 
         const notificationSent = await notifyOwner({
           title: `New Whitepaper Lead: ${input.company}`,
-          content: `A new lead has downloaded the TruContext Architecture Whitepaper.
+          content: `A new lead has downloaded the Arqen Architecture Whitepaper.
 
 **Lead Details:**
 - **Name:** ${input.name}
@@ -65,7 +65,7 @@ export const leadsRouter = router({
 - **Timestamp:** ${timestamp}
 - **Lead ID:** ${lead.id}
 
-Please follow up with this prospect at info@visiumtechnologies.com or call +1 (888) 344-9850.
+Please follow up with this prospect at info@tyvanto.com or call +1 (888) 344-9850.
 
 This lead has shown high intent by downloading technical documentation and should be prioritized for sales outreach.`
         });

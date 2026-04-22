@@ -9,9 +9,9 @@ export default function SmartCities() {
   return (
     <div className="min-h-screen">
       <SEOHead 
-        title="Smart City Security Analytics & Public Safety Platform | Visium"
+        title="Smart City Security Analytics & Public Safety Platform | Tyvanto"
         description="Intelligent city security system connecting video intelligence, IoT sensors, and 911 systems. Real-time situational awareness and predictive analytics for urban operations and public safety."
-        canonicalUrl="https://www.visiumtechnologies.com/solutions/smart-cities"
+        canonicalUrl="https://www.tyvanto.com/solutions/smart-cities"
       />
       {/* Hero Section */}
       <section className="gradient-hero py-12">
@@ -50,7 +50,7 @@ export default function SmartCities() {
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Smart City Security Analytics Solution</h2>
             <p className="text-xl text-gray-600">
-              TruContext is an intelligent city security system that connects video intelligence, IoT sensors, 911 systems, and traffic data to provide real-time situational awareness and predictive analytics. Our smart city threat detection platform enables faster emergency response, traffic optimization, and incident prevention through advanced security analytics.
+              Arqen is an intelligent city security system that connects video intelligence, IoT sensors, 911 systems, and traffic data to provide real-time situational awareness and predictive analytics. Our smart city threat detection platform enables faster emergency response, traffic optimization, and incident prevention through advanced security analytics.
             </p>
           </div>
 
@@ -183,7 +183,7 @@ export default function SmartCities() {
         <div className="container text-center">
           <h2 className="text-4xl font-bold mb-6">Build Your Smart City Platform</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-            See how TruContext can unify your municipal systems for enhanced public safety
+            See how Arqen can unify your municipal systems for enhanced public safety
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/demo">

@@ -326,7 +326,7 @@ export default function AdminDealsManagement() {
                               setSelectedDeal(deal);
                               setShowAttachments(true);
                             }}
-                            className="bg-purple-600 text-white"
+                            className="bg-blue-700 text-white"
                           >
                             <Upload className="w-4 h-4" />
                           </Button>

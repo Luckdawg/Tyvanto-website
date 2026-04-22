@@ -149,14 +149,14 @@ const products: Product[] = [
     pricingTiers: [
       { label: 'Base Platform', price: '$7,499/mo', included: 'Core video analytics' },
       { label: 'Metered Inference', price: '$2.00/camera', included: 'Per camera/endpoint above base' },
-      { label: 'Bundle Discount', price: 'Save 10%', included: 'When paired with TruContext' },
+      { label: 'Bundle Discount', price: 'Save 10%', included: 'When paired with Arqen' },
     ],
     features: [
       'Gemini/Z.ai vision AI integration',
       'Selective frame analysis (cost-optimized)',
       'Batch processing for off-peak savings',
       'Real-time anomaly detection',
-      'Integrates with TruContext graph',
+      'Integrates with Arqen graph',
       'Camera-agnostic deployment',
     ],
     cta: 'Learn More',
@@ -190,14 +190,14 @@ const products: Product[] = [
     ctaHref: '/demo',
   },
   {
-    id: 'trucontext',
+    id: 'arqen',
     dbId: 1,
     basePrice: 7995,
     icon: <Network className="h-8 w-8" />,
-    name: 'TruContext Core Platform',
+    name: 'Arqen Core Platform',
     tagline: 'Explainable AI Cybersecurity & Data Analytics',
     description:
-      "Visium's flagship graph-based intelligence platform. Real-time correlation across billions of events with full explainability, MITRE ATT&CK mapping, and 30-day time-to-value. Enhanced from MITRE Corporation's CyGraph — the only patented scalable multi-layered graph database for cybersecurity.",
+      "Tyvanto's flagship graph-based intelligence platform. Real-time correlation across billions of events with full explainability, an independent research organization ATT&CK mapping, and 30-day time-to-value. Enhanced from an advanced graph intelligence — the only patented scalable multi-layered graph database for cybersecurity.",
     type: 'Monthly SaaS (Hybrid)',
     entryPrice: 7995,
     pricingTiers: [
@@ -207,11 +207,11 @@ const products: Product[] = [
     ],
     features: [
       'Real-time graph correlation across billions of events',
-      'MITRE ATT&CK framework integration',
+      'an independent research organization ATT&CK framework integration',
       'Predictive threat intelligence & root cause analysis',
       '30-day time-to-value guarantee',
       'Annual billing saves ~10%',
-      'DoD & Army Cyber Command heritage',
+      'Enterprise security heritage',
     ],
     cta: 'Request Demo',
     ctaHref: '/demo',
@@ -222,8 +222,8 @@ const products: Product[] = [
 
 const bundles: Bundle[] = [
   {
-    name: 'TruContext Essentials',
-    includes: 'TruContext Core',
+    name: 'Arqen Essentials',
+    includes: 'Arqen Core',
     monthlyRange: 'From $7,995/mo',
     bestFor: 'SOC teams & threat analysts',
   },
@@ -237,21 +237,21 @@ const bundles: Bundle[] = [
   },
   {
     name: 'Tru-InSight Intelligence',
-    includes: 'TruContext + Tru-InSight',
+    includes: 'Arqen + Tru-InSight',
     monthlyRange: 'From $15,494/mo',
     bestFor: 'Physical + cyber convergence',
     savings: 'Save 10%',
   },
   {
     name: 'Complete Defense Suite',
-    includes: 'TruContext + TruClaw + Tru-InSight',
+    includes: 'Arqen + TruClaw + Tru-InSight',
     monthlyRange: 'Custom (save 10%)',
     bestFor: 'Enterprise full-stack defense',
     savings: 'Save 10%',
   },
   {
     name: 'ELI National',
-    includes: 'ELI + TruContext',
+    includes: 'ELI + Arqen',
     monthlyRange: 'Custom',
     bestFor: 'National infrastructure & government',
   },
@@ -261,16 +261,16 @@ const bundles: Bundle[] = [
 
 const verticalProducts: VerticalProduct[] = [
   {
-    id: 'trucontext-oil-gas',
+    id: 'arqen-oil-gas',
     category: 'Oil & Gas · Industrial OT',
     categoryColor: '#FFA500',
     icon: <Zap className="h-6 w-6" />,
-    name: 'TruContext™ for Oil & Gas Operations',
+    name: 'Arqen™ for Oil & Gas Operations',
     tagline: 'AI-driven refinery operations intelligence with 3D digital twins, predictive maintenance, and SCADA/IT-OT threat detection — built for critical energy infrastructure.',
     features: [
       'Interactive 3D facility digital twins with live equipment state visualization',
       'Predictive maintenance AI — RUL scoring, anomaly detection, and failure forecasting',
-      'IT/OT convergence with SCADA threat topology and MITRE ATT&CK mapping',
+      'IT/OT convergence with SCADA threat topology and an independent research organization ATT&CK mapping',
       'ESG and emissions compliance dashboards aligned to national energy frameworks',
     ],
     startingPrice: '$8,000/mo',
@@ -281,7 +281,7 @@ const verticalProducts: VerticalProduct[] = [
     category: 'Smart City · National Government',
     categoryColor: '#4A90D9',
     icon: <Globe className="h-6 w-6" />,
-    name: 'TruContext™ Smart City Suite — Government Edition',
+    name: 'Arqen™ Smart City Suite — Government Edition',
     tagline: 'Comprehensive national smart city command platform covering 10+ urban domains with AI agents, no-code automation marketplace, and 3D geospatial terrain visualization.',
     features: [
       'Unified command dashboard: cybersecurity, traffic, water, energy, health, environment, and infrastructure',
@@ -297,7 +297,7 @@ const verticalProducts: VerticalProduct[] = [
     category: 'Smart City · Municipal',
     categoryColor: '#64C864',
     icon: <Building2 className="h-6 w-6" />,
-    name: 'TruContext™ Smart City Command Center',
+    name: 'Arqen™ Smart City Command Center',
     tagline: 'Municipal-scale smart infrastructure monitoring integrating IoT device networks, AI-powered operational insights, predictive maintenance scoring, and D3 network topology visualization.',
     features: [
       'Real-time device fleet monitoring with Mapbox 3D map layer, heatmaps, and clustering',
@@ -398,7 +398,7 @@ const verticalProducts: VerticalProduct[] = [
     features: [
       'Full-stack demo environment with GPU-accelerated geospatial and 3D map visualization',
       'Pre-built ROI and investment return models (based on $85M / $150M+ 10-year framework)',
-      'Standards documentation package: FIWARE NGSI-LD, MITRE ATT&CK, OGC SensorThings, GTFS',
+      'Standards documentation package: FIWARE NGSI-LD, an independent research organization ATT&CK, OGC SensorThings, GTFS',
       'White-label and systems integrator licensing available',
     ],
     startingPrice: '$4,750/mo',
@@ -518,7 +518,7 @@ export default function Shop() {
       toast.success('Subscription activated!', {
         description: productName
           ? `Your ${decodeURIComponent(productName)} subscription is now active.`
-          : 'Your subscription is now active. Welcome to Visium Technologies.',
+          : 'Your subscription is now active. Welcome to Tyvanto.',
         duration: 8000,
       });
       // Clean up URL
@@ -606,7 +606,7 @@ export default function Shop() {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'ItemList',
-            name: 'Visium Technologies Enterprise AI Products',
+            name: 'Tyvanto Enterprise AI Products',
             description: 'Agentic AI governance, explainable AI cybersecurity, and token-efficient agent platforms',
             itemListElement: products.map((p, i) => ({
               '@type': 'ListItem',
@@ -615,7 +615,7 @@ export default function Shop() {
                 '@type': 'Product',
                 name: p.name,
                 description: p.description,
-                brand: { '@type': 'Brand', name: 'Visium Technologies' },
+                brand: { '@type': 'Brand', name: 'Tyvanto' },
                 offers: {
                   '@type': 'Offer',
                   priceCurrency: 'USD',
@@ -690,7 +690,7 @@ export default function Shop() {
           {/* Trust badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-sm font-medium mb-8">
             <Shield className="h-4 w-4" />
-            MITRE CyGraph Heritage · Used by Critical Infrastructure &amp; Government
+            an independent research organization graph intelligence Heritage · Used by Critical Infrastructure &amp; Government
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
@@ -699,7 +699,7 @@ export default function Shop() {
           </h1>
 
           <p className="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-10">
-            Deploy autonomous agents with TruContext intelligence and NemoClaw security. Our hybrid
+            Deploy autonomous agents with Arqen intelligence and NemoClaw security. Our hybrid
             pricing gives you predictable costs even at scale — because runaway token spend is a
             security risk too.
           </p>
@@ -782,11 +782,11 @@ export default function Shop() {
                 icon: <Shield className="h-8 w-8" />,
                 color: '#00E5FF',
                 persona: 'Security & SOC Teams',
-                description: 'You need real-time threat detection, MITRE ATT&CK mapping, and explainable AI across your entire network.',
-                recommendation: 'TruContext Core Platform',
-                recommendationHref: '#product-trucontext',
+                description: 'You need real-time threat detection, an independent research organization ATT&CK mapping, and explainable AI across your entire network.',
+                recommendation: 'Arqen Core Platform',
+                recommendationHref: '#product-arqen',
                 price: 'From $7,995/mo',
-                bullets: ['Graph-based threat correlation', 'MITRE ATT&CK integration', '30-day time to value'],
+                bullets: ['Graph-based threat correlation', 'an independent research organization ATT&CK integration', '30-day time to value'],
               },
               {
                 icon: <Brain className="h-8 w-8" />,
@@ -889,7 +889,7 @@ export default function Shop() {
               { name: 'ASPIRE', entry: '$3,499/mo', entryNum: 3499, model: 'Flat rate', bestFor: 'Public agencies', href: '#product-aspire-reporting', color: '#22C55E' },
               { name: 'PanelPulse', entry: '$3,995/mo', entryNum: 3995, model: 'Flat rate', bestFor: 'Research & NGO ops', href: '#product-panelpulse', color: '#00CED1' },
               { name: 'Smart City Demo', entry: '$4,750/mo', entryNum: 4750, model: 'Flat rate', bestFor: 'Systems integrators', href: '#product-smart-city-demo', color: '#FF69B4' },
-              { name: 'TruContext', entry: '$7,995/mo', entryNum: 7995, model: 'Base + tiered node rate', bestFor: 'SOC & threat analysts', href: '#product-trucontext', color: '#00E5FF' },
+              { name: 'Arqen', entry: '$7,995/mo', entryNum: 7995, model: 'Base + tiered node rate', bestFor: 'SOC & threat analysts', href: '#product-arqen', color: '#00E5FF' },
               { name: 'Tru-InSight', entry: '$7,499/mo', entryNum: 7499, model: 'Base + $2.00/camera', bestFor: 'Video intelligence', href: '#product-truinsight', color: '#0EA5E9' },
               { name: 'ELI', entry: '$9,499/mo', entryNum: 9499, model: 'Base + $4/node overage', bestFor: 'Physical security ops', href: '#product-eli', color: '#F59E0B' },
               { name: 'TruAddress', entry: '$19,950/mo', entryNum: 19950, model: 'Usage-based', bestFor: 'National address programs', href: '#product-truaddress', color: '#DC143C' },
@@ -1171,8 +1171,8 @@ export default function Shop() {
               Industry Solutions &amp; Vertical Platforms
             </h2>
             <p className="text-slate-400 max-w-3xl mx-auto">
-              Purpose-built applications powered by TruContext™ intelligence — deployable standalone
-              or integrated with the full Visium platform suite. Each solution is available for
+              Purpose-built applications powered by Arqen™ intelligence — deployable standalone
+              or integrated with the full Tyvanto platform suite. Each solution is available for
               custom scoping, white-label deployment, and government procurement vehicles.
             </p>
           </div>
@@ -1412,7 +1412,7 @@ export default function Shop() {
 
               <p className="text-slate-300 text-lg max-w-2xl mx-auto mb-10">
                 Join critical infrastructure operators, government agencies, and Fortune 500
-                security teams who trust Visium's NemoClaw-governed AI platforms.
+                security teams who trust Tyvanto's NemoClaw-governed AI platforms.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

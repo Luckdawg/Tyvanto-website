@@ -5,9 +5,10 @@ import { orders, orderItems, products } from '../../drizzle/schema';
 import { eq } from 'drizzle-orm';
 import { notifyOwner } from './notification';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
-  apiVersion: '2024-04-10' as any,
-});
+const stripeKey = process.env.STRIPE_SECRET_KEY || '';
+const stripe = stripeKey && stripeKey !== 'sk_test_placeholder_key_for_hosting'
+  ? new Stripe(stripeKey, { apiVersion: '2024-04-10' as any })
+  : null as unknown as Stripe;
 
 export async function handleStripeWebhook(req: Request, res: Response) {
   const sig = req.headers['stripe-signature'] as string;

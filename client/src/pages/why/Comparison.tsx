@@ -7,31 +7,31 @@ export default function Comparison() {
     {
       feature: "Data Integration",
       traditional: "Manual ETL, limited sources",
-      trucontext: "Unified platform, multiple sources",
+      arqen: "Unified platform, multiple sources",
       value: "Save time, reduce errors"
     },
     {
       feature: "Analytics & Visualization",
       traditional: "Basic charts, limited interactivity",
-      trucontext: "Interactive dashboards, AI insights",
+      arqen: "Interactive dashboards, AI insights",
       value: "Faster, more accurate decisions"
     },
     {
       feature: "Scalability",
       traditional: "Degrades with large data",
-      trucontext: "Seamlessly handles large datasets",
+      arqen: "Seamlessly handles large datasets",
       value: "Reliable enterprise performance"
     },
     {
       feature: "Security & Access Control",
       traditional: "Basic or inconsistent",
-      trucontext: "Enterprise-grade permissions & audit logs",
+      arqen: "Enterprise-grade permissions & audit logs",
       value: "Compliance & secure collaboration"
     },
     {
       feature: "Maintenance & Overhead",
       traditional: "High manual effort",
-      trucontext: "Managed platform with automation",
+      arqen: "Managed platform with automation",
       value: "Reduced operational burden"
     }
   ];
@@ -69,10 +69,10 @@ export default function Comparison() {
       <section className="bg-gradient-to-br from-slate-50 to-blue-50 py-12 sm:py-16">
         <div className="container max-w-4xl text-center">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
-            How TruContext Compares
+            How Arqen Compares
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-6 sm:mb-8 max-w-3xl mx-auto">
-            Explore potential applications, see how TruContext stands out from traditional tools, 
+            Explore potential applications, see how Arqen stands out from traditional tools, 
             and discover the value it could deliver.
           </p>
           <Link href="/demo">
@@ -97,7 +97,7 @@ export default function Comparison() {
                     Traditional / Legacy Tools
                   </th>
                   <th className="text-left py-3 px-3 sm:px-4 text-sm sm:text-base font-semibold">
-                    TruContext
+                    Arqen
                   </th>
                   <th className="text-left py-3 px-3 sm:px-4 text-sm sm:text-base font-semibold">
                     Potential Value / Outcome
@@ -114,7 +114,7 @@ export default function Comparison() {
                       {row.traditional}
                     </td>
                     <td className="py-3 px-3 sm:px-4 text-sm sm:text-base text-blue-600 font-medium">
-                      {row.trucontext}
+                      {row.arqen}
                     </td>
                     <td className="py-3 px-3 sm:px-4 text-sm sm:text-base text-green-600 font-medium">
                       {row.value}
@@ -145,7 +145,7 @@ export default function Comparison() {
                     <strong className="text-gray-900">Challenge:</strong> {useCase.challenge}
                   </p>
                   <p className="text-sm sm:text-base text-gray-700">
-                    <strong className="text-blue-600">TruContext Application:</strong> {useCase.application}
+                    <strong className="text-blue-600">Arqen Application:</strong> {useCase.application}
                   </p>
                   <p className="text-sm sm:text-base text-gray-700">
                     <strong className="text-green-600">Potential Outcome:</strong> {useCase.outcome}

@@ -13,13 +13,13 @@ import { ADMIN_EMAILS } from "../../shared/const";
 
 describe("ADMIN_EMAILS constant", () => {
   it("contains exactly the three authorised admin emails", () => {
-    expect(ADMIN_EMAILS.has("mlucky@visiumtechnologies.com")).toBe(true);
-    expect(ADMIN_EMAILS.has("edevane@visiumtechnologies.com")).toBe(true);
-    expect(ADMIN_EMAILS.has("inoble.ctr@visiumtechnologies.com")).toBe(true);
+    expect(ADMIN_EMAILS.has("mlucky@tyvanto.com")).toBe(true);
+    expect(ADMIN_EMAILS.has("edevane@tyvanto.com")).toBe(true);
+    expect(ADMIN_EMAILS.has("inoble.ctr@tyvanto.com")).toBe(true);
   });
 
   it("does not contain unlisted addresses", () => {
-    expect(ADMIN_EMAILS.has("unknown@visiumtechnologies.com")).toBe(false);
+    expect(ADMIN_EMAILS.has("unknown@tyvanto.com")).toBe(false);
     expect(ADMIN_EMAILS.has("admin@example.com")).toBe(false);
     expect(ADMIN_EMAILS.has("")).toBe(false);
   });
@@ -47,16 +47,16 @@ function resolveRole(
 
 describe("resolveRole (auto-promotion logic)", () => {
   describe("ADMIN_EMAILS auto-promotion", () => {
-    it("promotes mlucky@visiumtechnologies.com to admin", () => {
-      expect(resolveRole("mlucky@visiumtechnologies.com")).toBe("admin");
+    it("promotes mlucky@tyvanto.com to admin", () => {
+      expect(resolveRole("mlucky@tyvanto.com")).toBe("admin");
     });
 
-    it("promotes edevane@visiumtechnologies.com to admin", () => {
-      expect(resolveRole("edevane@visiumtechnologies.com")).toBe("admin");
+    it("promotes edevane@tyvanto.com to admin", () => {
+      expect(resolveRole("edevane@tyvanto.com")).toBe("admin");
     });
 
-    it("promotes inoble.ctr@visiumtechnologies.com to admin", () => {
-      expect(resolveRole("inoble.ctr@visiumtechnologies.com")).toBe("admin");
+    it("promotes inoble.ctr@tyvanto.com to admin", () => {
+      expect(resolveRole("inoble.ctr@tyvanto.com")).toBe("admin");
     });
 
     it("is case-insensitive — uppercase email still promotes to admin", () => {
@@ -67,7 +67,7 @@ describe("resolveRole (auto-promotion logic)", () => {
 
   describe("non-admin emails default to user", () => {
     it("assigns 'user' role to an unlisted email", () => {
-      expect(resolveRole("other@visiumtechnologies.com")).toBe("user");
+      expect(resolveRole("other@tyvanto.com")).toBe("user");
     });
 
     it("assigns 'user' role when email is null", () => {
@@ -81,7 +81,7 @@ describe("resolveRole (auto-promotion logic)", () => {
 
   describe("explicit role always wins", () => {
     it("honours explicit 'user' role even for an admin email", () => {
-      expect(resolveRole("mlucky@visiumtechnologies.com", "user")).toBe("user");
+      expect(resolveRole("mlucky@tyvanto.com", "user")).toBe("user");
     });
 
     it("honours explicit 'super_admin' role for any email", () => {
@@ -89,7 +89,7 @@ describe("resolveRole (auto-promotion logic)", () => {
     });
 
     it("honours explicit 'editor' role", () => {
-      expect(resolveRole("edevane@visiumtechnologies.com", "editor")).toBe("editor");
+      expect(resolveRole("edevane@tyvanto.com", "editor")).toBe("editor");
     });
   });
 

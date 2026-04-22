@@ -47,9 +47,9 @@ export default function Partners() {
       description: "Cloud infrastructure partnership for scalable, reliable deployment"
     },
     {
-      name: "MITRE",
+      name: "an independent research organization",
       logo: "/partner_mitre.webp",
-      description: "Strategic partnership leveraging MITRE ATT&CK framework and Cygraph technology"
+      description: "Strategic partnership leveraging an independent research organization ATT&CK framework and Cygraph technology"
     },
     {
       name: "Carahsoft",
@@ -66,9 +66,9 @@ export default function Partners() {
   return (
     <div className="min-h-screen">
       <SEOHead 
-        title="Partner Ecosystem | Visium Technologies"
-        description="Join Visium's partner ecosystem. Strategic alliances and technology integrations delivering innovative cybersecurity solutions at scale."
-        canonicalUrl="https://www.visiumtechnologies.com/partners"
+        title="Partner Ecosystem | Tyvanto"
+        description="Join Tyvanto's partner ecosystem. Strategic alliances and technology integrations delivering innovative cybersecurity solutions at scale."
+        canonicalUrl="https://www.tyvanto.com/partners"
       />
       {/* Hero Section */}
       <section className="gradient-hero py-12">
@@ -79,7 +79,7 @@ export default function Partners() {
               Partner <span className="text-primary">Ecosystem</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              Visium works with partners to promote cybersecurity on all scales, delivering innovative solutions through strategic alliances and technology integrations
+              Tyvanto works with partners to promote cybersecurity on all scales, delivering innovative solutions through strategic alliances and technology integrations
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -111,7 +111,7 @@ export default function Partners() {
           <div className="max-w-3xl mx-auto text-center mb-10">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Partner Program</h2>
             <p className="text-xl text-gray-600 mb-8">
-              Visium partners with organizations that offer complementary expertise, skills, technology solutions, and services. Our partnership distinguishes your business, builds your network, connects you with new prospects, and gives you incomparable access to one of the most exciting movements in enterprise software.
+              Tyvanto partners with organizations that offer complementary expertise, skills, technology solutions, and services. Our partnership distinguishes your business, builds your network, connects you with new prospects, and gives you incomparable access to one of the most exciting movements in enterprise software.
             </p>
           </div>
 
@@ -131,7 +131,7 @@ export default function Partners() {
                 <TrendingUp className="h-12 w-12 text-secondary mx-auto mb-3" />
                 <h3 className="text-lg font-bold mb-2">License Resellers</h3>
                 <p className="text-sm text-gray-600">
-                  Authorized resellers delivering TruContext to end customers
+                  Authorized resellers delivering Arqen to end customers
                 </p>
               </CardContent>
             </Card>
@@ -165,7 +165,7 @@ export default function Partners() {
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Partners</h2>
             <p className="text-xl text-gray-600">
-              Visium has entered into partnerships to host the new TruContext™ SaaS model, providing redundancy, high availability, and scalability to our evolving platform. We collaborate with industry leaders to deliver comprehensive cybersecurity solutions.
+              Tyvanto has entered into partnerships to host the new Arqen™ SaaS model, providing redundancy, high availability, and scalability to our evolving platform. We collaborate with industry leaders to deliver comprehensive cybersecurity solutions.
             </p>
           </div>
 
@@ -197,14 +197,14 @@ export default function Partners() {
               We Make Great Products Better Together
             </h2>
             <p className="text-xl text-gray-700 leading-relaxed">
-              Visium partners with organizations that offer complementary expertise, skills, technology solutions, and services. Our partnership distinguishes your business, builds your network, connects you with new prospects, and gives you incomparable access to one of the most exciting movements in enterprise software.
+              Tyvanto partners with organizations that offer complementary expertise, skills, technology solutions, and services. Our partnership distinguishes your business, builds your network, connects you with new prospects, and gives you incomparable access to one of the most exciting movements in enterprise software.
             </p>
           </div>
 
-          <Card className="bg-gradient-to-br from-purple-50 to-blue-50 border-2 border-primary/20">
+          <Card className="bg-gradient-to-br from-blue-50 to-cyan-50 border-2 border-primary/20">
             <CardContent className="p-8">
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                Call attention to your organization by joining forces with Visium. Leverage our highly demanded tool and graphing technology to drive customer value and build a new class of solutions. No matter your specialty, we look forward to helping you succeed because at Visium we are committed to supporting our partners.
+                Call attention to your organization by joining forces with Tyvanto. Leverage our highly demanded tool and graphing technology to drive customer value and build a new class of solutions. No matter your specialty, we look forward to helping you succeed because at Tyvanto we are committed to supporting our partners.
               </p>
               <div className="text-center">
                 <Link href="/demo">
@@ -219,12 +219,12 @@ export default function Partners() {
       </section>
 
       {/* Partner Benefits */}
-      <section className="py-12 bg-gradient-to-br from-gray-50 to-purple-50">
+      <section className="py-12 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="container max-w-5xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Partner Benefits</h2>
             <p className="text-xl text-gray-600">
-              Why leading organizations choose to partner with Visium Analytics
+              Why leading organizations choose to partner with Tyvanto
             </p>
           </div>
 
@@ -343,7 +343,7 @@ export default function Partners() {
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">ITES-SW 2 (U.S. Army)</h3>
                 <p className="text-gray-700">
-                  The purpose of the ITES-SW 2 acquisition is to support Army, Department of Defense (DoD), and all Federal Agency enterprise Information Technology (IT) infrastructure goals by leveraging Commercially available Off-The-Shelf (COTS) software products and maintenance in 14 product categories, in addition to related incidental services and hardware. These 14 categories align with the major software categories identified by U.S. Army Network Enterprise Technology Command (NETCOM).
+                  The ITES-SW 2 acquisition supports Federal Agency enterprise Information Technology (IT) infrastructure goals by leveraging Commercially available Off-The-Shelf (COTS) software products and maintenance in 14 product categories, in addition to related incidental services and hardware.
                 </p>
               </CardContent>
             </Card>
@@ -354,7 +354,7 @@ export default function Partners() {
       {/* CTA Section */}
       <section className="py-12 bg-gradient-to-r from-primary to-secondary text-white">
         <div className="container text-center">
-          <h2 className="text-4xl font-bold mb-6">Ready to Partner with Visium?</h2>
+          <h2 className="text-4xl font-bold mb-6">Ready to Partner with Tyvanto?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
             Join our ecosystem and deliver cutting-edge agentic AI-powered cybersecurity solutions to your customers
           </p>

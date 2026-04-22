@@ -38,7 +38,7 @@ export default function PartnerLogin() {
         <div className="container py-6">
           <div className="flex items-center gap-3">
             <Handshake className="h-8 w-8 text-primary" />
-            <h1 className="text-2xl font-bold text-gray-900">Visium Partner Portal</h1>
+            <h1 className="text-2xl font-bold text-gray-900">Tyvanto Partner Portal</h1>
           </div>
         </div>
       </div>
@@ -52,7 +52,7 @@ export default function PartnerLogin() {
               Welcome to Your <span className="text-primary">Partner Portal</span>
             </h2>
             <p className="text-xl text-gray-600 mb-12">
-              Manage your partnership with Visium Technologies. Track deals, submit MDF claims, access resources, and monitor your performance—all in one place.
+              Manage your partnership with Tyvanto. Track deals, submit MDF claims, access resources, and monitor your performance—all in one place.
             </p>
 
             <div className="space-y-6">
@@ -85,13 +85,13 @@ export default function PartnerLogin() {
                 <div className="space-y-6">
                   <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
                     <p className="text-sm text-gray-700">
-                      <strong>New to the partner program?</strong> Contact our partner team at <a href="mailto:partners@visiumtech.com" className="text-primary hover:underline">partners@visiumtech.com</a> to get started.
+                      <strong>New to the partner program?</strong> Contact our partner team at <a href="mailto:partners@tyvanto.com" className="text-primary hover:underline">partners@tyvanto.com</a> to get started.
                     </p>
                   </div>
 
                   <div className="space-y-4">
                     <p className="text-gray-600 text-center">
-                      Click below to sign in with your Visium account
+                      Click below to sign in with your Tyvanto account
                     </p>
                     <Button
                       onClick={handleLogin}
@@ -123,7 +123,7 @@ export default function PartnerLogin() {
               Why Join Our Partner Program?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Grow your business with Visium's industry-leading cybersecurity platform
+              Grow your business with Tyvanto's industry-leading cybersecurity platform
             </p>
           </div>
 

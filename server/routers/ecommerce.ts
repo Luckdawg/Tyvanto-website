@@ -19,7 +19,10 @@ import { getDb } from "../db";
 import { products } from "../../drizzle/schema";
 import { eq, gte, lte, inArray, or, like, asc, desc } from "drizzle-orm";
 
-const stripe = new Stripe(ENV.stripeSecretKey);
+// Guard: only initialize Stripe if a real key is provided
+const stripe = ENV.stripeSecretKey && ENV.stripeSecretKey !== 'sk_test_placeholder_key_for_hosting'
+  ? new Stripe(ENV.stripeSecretKey)
+  : null as unknown as Stripe;
 
 export const ecommerceRouter = router({
   // Get all active products

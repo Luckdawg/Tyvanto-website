@@ -7,7 +7,7 @@ import { FileText, Download, ExternalLink, Search } from "lucide-react";
 const resourceLibrary = [
   {
     id: 1,
-    title: "TruContext Product Overview",
+    title: "Arqen Product Overview",
     category: "Sales Collateral",
     type: "PDF",
     size: "2.4 MB",

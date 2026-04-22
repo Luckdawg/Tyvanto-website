@@ -28,7 +28,7 @@ export default function Demo() {
       `Message:\n${formData.message}`
     );
     
-    window.location.href = `mailto:info@visiumtechnologies.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:info@tyvanto.com?subject=${subject}&body=${body}`;
     
     toast.success("Thank you! We'll contact you shortly to schedule your demo.");
     setFormData({ name: "", email: "", company: "", phone: "", message: "" });
@@ -37,9 +37,9 @@ export default function Demo() {
   return (
     <div className="min-h-screen">
       <SEOHead 
-        title="Schedule a Demo | TruContext Platform | Visium Technologies"
-        description="Schedule a personalized demo of TruContext, the AI-powered intelligence platform. See real-time threat detection and analytics in action."
-        canonicalUrl="https://www.visiumtechnologies.com/demo"
+        title="Schedule a Demo | Arqen Platform | Tyvanto"
+        description="Schedule a personalized demo of Arqen, the AI-powered intelligence platform. See real-time threat detection and analytics in action."
+        canonicalUrl="https://www.tyvanto.com/demo"
       />
       <section className="gradient-hero py-12">
         <div className="container">
@@ -48,7 +48,7 @@ export default function Demo() {
               Schedule a <span className="text-primary">Demo</span>
             </h1>
             <p className="text-xl text-gray-600">
-              See TruContext in action and discover how it can transform your operations
+              See Arqen in action and discover how it can transform your operations
             </p>
           </div>
         </div>

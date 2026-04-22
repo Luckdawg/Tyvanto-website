@@ -73,7 +73,7 @@ describe("Deal Submission Workflow - Complete Integration", () => {
         dealAmount: "500000.00",
         dealStage: "Proposal",
         expectedCloseDate: new Date("2026-12-31"),
-        productInterest: JSON.stringify(["TruContext", "Tru-InSight", "Video Intelligence"]),
+        productInterest: JSON.stringify(["Arqen", "Tru-InSight", "Video Intelligence"]),
         description: "Enterprise-wide cybersecurity platform deployment",
         submittedBy: testUserId,
         notes: "High priority account",
@@ -321,7 +321,7 @@ describe("Deal Submission Workflow - Complete Integration", () => {
     });
 
     it("should support product interest tracking", async () => {
-      const products = ["TruContext", "Tru-InSight", "Video Intelligence"];
+      const products = ["Arqen", "Tru-InSight", "Video Intelligence"];
       const dealData = {
         partnerCompanyId: testPartnerId,
         dealName: "Product Interest Test",

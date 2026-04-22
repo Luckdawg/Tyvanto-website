@@ -25,7 +25,7 @@ export default function Contact() {
       `Message:\n${formData.message}`
     );
     
-    window.location.href = `mailto:info@visiumtechnologies.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:info@tyvanto.com?subject=${subject}&body=${body}`;
     
     toast.success("Thank you! We'll get back to you soon.");
     setFormData({ name: "", email: "", subject: "", message: "" });
@@ -40,7 +40,7 @@ export default function Contact() {
               Contact <span className="text-primary">Us</span>
             </h1>
             <p className="text-xl text-gray-600">
-              Get in touch with our team to learn more about TruContext
+              Get in touch with our team to learn more about Arqen
             </p>
           </div>
         </div>
@@ -53,7 +53,7 @@ export default function Contact() {
               <CardContent className="p-6 text-center">
                 <Mail className="h-12 w-12 text-primary mx-auto mb-4" />
                 <h3 className="text-lg font-bold mb-2">Email</h3>
-                <p className="text-gray-600">info@visiumtechnologies.com</p>
+                <p className="text-gray-600">info@tyvanto.com</p>
               </CardContent>
             </Card>
 
@@ -81,7 +81,7 @@ export default function Contact() {
                 <CardContent className="p-8">
                   <h2 className="text-2xl font-bold text-gray-900 mb-4">Follow Us</h2>
                   <p className="text-gray-600 mb-6">
-                    Stay connected with Visium Technologies on social media for company updates, career opportunities, and industry insights
+                    Stay connected with Tyvanto on social media for company updates, career opportunities, and industry insights
                   </p>
                   
                   <div className="flex flex-col gap-3">
@@ -101,7 +101,7 @@ export default function Contact() {
                       size="lg"
                       variant="outline"
                       className="border-2 border-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300 w-full justify-start"
-                      onClick={() => window.open('https://www.linkedin.com/company/visium-technologies-inc', '_blank')}
+                      onClick={() => window.open('https://www.linkedin.com/company/tyvanto-technologies-inc', '_blank')}
                     >
                       <Linkedin className="h-5 w-5 mr-3" />
                       LinkedIn
@@ -121,7 +121,7 @@ export default function Contact() {
                       size="lg"
                       variant="outline"
                       className="border-2 border-red-600 hover:bg-red-600 hover:text-white transition-all duration-300 w-full justify-start"
-                      onClick={() => window.open('https://www.youtube.com/@visiumanalytics874', '_blank')}
+                      onClick={() => window.open('https://www.youtube.com/@tyvanto', '_blank')}
                     >
                       <Youtube className="h-5 w-5 mr-3" />
                       YouTube

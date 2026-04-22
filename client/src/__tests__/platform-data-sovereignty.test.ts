@@ -21,7 +21,7 @@ describe('Platform - Data Sovereignty Section', () => {
 
   it('should describe local data ownership benefits', () => {
     const section = 'Local Data Ownership';
-    const description = 'TruContext enables municipalities and other entities to retain full ownership and control of their jurisdictional data, preventing unauthorized centralization or external access.';
+    const description = 'Arqen enables municipalities and other entities to retain full ownership and control of their jurisdictional data, preventing unauthorized centralization or external access.';
     
     expect(section).toContain('Local Data Ownership');
     expect(description).toContain('full ownership');

@@ -8,22 +8,22 @@ export default function ComparisonSIEM() {
   return (
     <>
       <SEOHead
-        title="TruContext vs Traditional SIEM | Graph-Based Threat Detection Comparison"
-        description="Compare TruContext's graph-based threat detection platform with traditional SIEM solutions. Learn why graph databases outperform legacy SIEM for threat correlation and detection."
-        keywords="TruContext vs SIEM, graph-based threat detection, SIEM comparison, legacy threat detection, graph database security, threat correlation, advanced threat detection, SIEM alternative"
+        title="Arqen vs Traditional SIEM | Graph-Based Threat Detection Comparison"
+        description="Compare Arqen's graph-based threat detection platform with traditional SIEM solutions. Learn why graph databases outperform legacy SIEM for threat correlation and detection."
+        keywords="Arqen vs SIEM, graph-based threat detection, SIEM comparison, legacy threat detection, graph database security, threat correlation, advanced threat detection, SIEM alternative"
         canonicalUrl="/why/comparison-siem"
       />
       
       <div className="min-h-screen">
         {/* Hero Section */}
-        <section className="py-8 md:py-12 lg:py-16 bg-gradient-to-br from-blue-50 to-purple-50">
+        <section className="py-8 md:py-12 lg:py-16 bg-gradient-to-br from-blue-50 to-cyan-50">
           <div className="container">
             <div className="max-w-3xl">
               <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
-                TruContext vs Traditional SIEM: <span className="text-primary">Graph-Based Threat Detection</span>
+                Arqen vs Traditional SIEM: <span className="text-primary">Graph-Based Threat Detection</span>
               </h1>
               <p className="text-lg text-gray-700 mb-8">
-                Traditional SIEM platforms struggle with threat correlation and detection speed. TruContext's graph-based threat detection platform processes billions of events in real-time, correlating relationships across your entire security landscape to detect threats that legacy SIEM solutions miss.
+                Traditional SIEM platforms struggle with threat correlation and detection speed. Arqen's graph-based threat detection platform processes billions of events in real-time, correlating relationships across your entire security landscape to detect threats that legacy SIEM solutions miss.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/demo">
@@ -83,10 +83,10 @@ export default function ComparisonSIEM() {
         </section>
 
         {/* Feature Comparison */}
-        <section className="py-8 md:py-12 bg-gradient-to-br from-purple-50 to-blue-50">
+        <section className="py-8 md:py-12 bg-gradient-to-br from-blue-50 to-cyan-50">
           <div className="container">
             <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
-              Feature Comparison: TruContext vs Traditional SIEM
+              Feature Comparison: Arqen vs Traditional SIEM
             </h2>
 
             <div className="overflow-x-auto">
@@ -94,7 +94,7 @@ export default function ComparisonSIEM() {
                 <thead>
                   <tr className="border-b-2 border-gray-300">
                     <th className="text-left py-4 px-4 font-bold text-gray-900">Feature</th>
-                    <th className="text-center py-4 px-4 font-bold text-primary">TruContext</th>
+                    <th className="text-center py-4 px-4 font-bold text-primary">Arqen</th>
                     <th className="text-center py-4 px-4 font-bold text-gray-600">Traditional SIEM</th>
                   </tr>
                 </thead>
@@ -196,7 +196,7 @@ export default function ComparisonSIEM() {
             <div className="grid md:grid-cols-2 gap-8">
               <Card className="border-2 border-primary">
                 <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold text-primary mb-6">TruContext</h3>
+                  <h3 className="text-2xl font-bold text-primary mb-6">Arqen</h3>
                   
                   <div className="space-y-4">
                     <div className="flex items-start space-x-3">
@@ -310,7 +310,7 @@ export default function ComparisonSIEM() {
         </section>
 
         {/* Why Graph-Based Detection */}
-        <section className="py-8 md:py-12 bg-gradient-to-br from-purple-50 to-blue-50">
+        <section className="py-8 md:py-12 bg-gradient-to-br from-blue-50 to-cyan-50">
           <div className="container">
             <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
               Why Graph-Based Threat Detection Outperforms Legacy SIEM
@@ -324,7 +324,7 @@ export default function ComparisonSIEM() {
                     <h3 className="text-xl font-bold text-gray-900">Relationship Analysis</h3>
                   </div>
                   <p className="text-gray-600">
-                    Graph databases excel at analyzing relationships between entities. TruContext correlates users, assets, behaviors, and threats across your entire environment to detect sophisticated attacks that traditional SIEM misses.
+                    Graph databases excel at analyzing relationships between entities. Arqen correlates users, assets, behaviors, and threats across your entire environment to detect sophisticated attacks that traditional SIEM misses.
                   </p>
                 </CardContent>
               </Card>
@@ -336,7 +336,7 @@ export default function ComparisonSIEM() {
                     <h3 className="text-xl font-bold text-gray-900">Real-Time Performance</h3>
                   </div>
                   <p className="text-gray-600">
-                    Graph databases process queries 4x faster than traditional databases. TruContext analyzes billions of events in real-time, enabling immediate threat detection and response.
+                    Graph databases process queries 4x faster than traditional databases. Arqen analyzes billions of events in real-time, enabling immediate threat detection and response.
                   </p>
                 </CardContent>
               </Card>
@@ -348,7 +348,7 @@ export default function ComparisonSIEM() {
                     <h3 className="text-xl font-bold text-gray-900">Scalability</h3>
                   </div>
                   <p className="text-gray-600">
-                    TruContext scales to billions of events without performance degradation. Traditional SIEM solutions slow down as data volume increases, limiting their effectiveness in large environments.
+                    Arqen scales to billions of events without performance degradation. Traditional SIEM solutions slow down as data volume increases, limiting their effectiveness in large environments.
                   </p>
                 </CardContent>
               </Card>
@@ -360,7 +360,7 @@ export default function ComparisonSIEM() {
                     <h3 className="text-xl font-bold text-gray-900">Intelligent Correlation</h3>
                   </div>
                   <p className="text-gray-600">
-                    AI-powered correlation automatically discovers threat patterns without manual rule creation. TruContext learns from your environment and adapts to new attack techniques.
+                    AI-powered correlation automatically discovers threat patterns without manual rule creation. Arqen learns from your environment and adapts to new attack techniques.
                   </p>
                 </CardContent>
               </Card>
@@ -381,7 +381,7 @@ export default function ComparisonSIEM() {
                   <h3 className="text-lg font-bold text-gray-900 mb-4">Scenario: Multi-Stage APT Attack</h3>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <p className="font-semibold text-primary mb-2">TruContext Detection</p>
+                      <p className="font-semibold text-primary mb-2">Arqen Detection</p>
                       <p className="text-gray-600 text-sm">
                         Correlates initial compromise, lateral movement, privilege escalation, and data exfiltration across the attack chain. Detects the attack within hours and identifies all compromised systems.
                       </p>
@@ -401,7 +401,7 @@ export default function ComparisonSIEM() {
                   <h3 className="text-lg font-bold text-gray-900 mb-4">Scenario: Insider Threat</h3>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <p className="font-semibold text-primary mb-2">TruContext Detection</p>
+                      <p className="font-semibold text-primary mb-2">Arqen Detection</p>
                       <p className="text-gray-600 text-sm">
                         Behavioral analytics identify unusual access patterns, data downloads, and privilege abuse. Detects the threat within days and provides evidence of unauthorized activity.
                       </p>
@@ -421,7 +421,7 @@ export default function ComparisonSIEM() {
                   <h3 className="text-lg font-bold text-gray-900 mb-4">Scenario: Ransomware Attack</h3>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <p className="font-semibold text-primary mb-2">TruContext Detection</p>
+                      <p className="font-semibold text-primary mb-2">Arqen Detection</p>
                       <p className="text-gray-600 text-sm">
                         Detects reconnaissance, lateral movement, and encryption patterns before widespread encryption. Enables rapid response to stop the attack and prevent data loss.
                       </p>
@@ -440,7 +440,7 @@ export default function ComparisonSIEM() {
         </section>
 
         {/* Cost Comparison */}
-        <section className="py-8 md:py-12 bg-gradient-to-br from-purple-50 to-blue-50">
+        <section className="py-8 md:py-12 bg-gradient-to-br from-blue-50 to-cyan-50">
           <div className="container">
             <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
               Total Cost of Ownership Comparison
@@ -463,7 +463,7 @@ export default function ComparisonSIEM() {
 
               <Card className="border-2 border-primary">
                 <CardContent className="p-6">
-                  <h3 className="text-lg font-bold text-primary mb-4">TruContext</h3>
+                  <h3 className="text-lg font-bold text-primary mb-4">Arqen</h3>
                   <div className="space-y-3 text-gray-600 text-sm">
                     <p><strong>Platform License:</strong> $300K-$800K annually</p>
                     <p><strong>Implementation:</strong> $100K-$250K</p>
@@ -477,7 +477,7 @@ export default function ComparisonSIEM() {
             </div>
 
             <div className="mt-8 bg-white rounded-lg p-8 border border-gray-200">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Additional Cost Savings with TruContext</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Additional Cost Savings with Arqen</h3>
               <div className="grid md:grid-cols-3 gap-6">
                 <div>
                   <p className="font-semibold text-primary mb-2">Reduced Incident Response</p>
@@ -503,7 +503,7 @@ export default function ComparisonSIEM() {
               Ready to Move Beyond Traditional SIEM?
             </h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-              See how TruContext's graph-based threat detection outperforms legacy SIEM solutions with faster detection, fewer false positives, and lower total cost of ownership
+              See how Arqen's graph-based threat detection outperforms legacy SIEM solutions with faster detection, fewer false positives, and lower total cost of ownership
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/demo">

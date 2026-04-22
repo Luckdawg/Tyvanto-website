@@ -49,10 +49,10 @@ export function redirectMiddleware(req: Request, res: Response, next: NextFuncti
     return res.redirect(301, redirectMap[path]);
   }
   
-  // Handle subdomain redirects (tyofbadmin.visiumtechnologies.com -> main domain)
+  // Handle subdomain redirects (tyofbadmin.tyvanto.com -> main domain)
   const host = req.get('host') || '';
   if (host.includes('tyofbadmin.')) {
-    return res.redirect(301, `https://www.visiumtechnologies.com/`);
+    return res.redirect(301, `https://www.tyvanto.com/`);
   }
   
   // Continue to next middleware
@@ -107,8 +107,8 @@ export const redirectConfig = {
     ],
     subdomainRedirects: [
       {
-        from: 'tyofbadmin.visiumtechnologies.com',
-        to: 'www.visiumtechnologies.com',
+        from: 'tyofbadmin.tyvanto.com',
+        to: 'www.tyvanto.com',
         status: 301,
         reason: 'Legacy admin subdomain'
       }

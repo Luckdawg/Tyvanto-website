@@ -38,7 +38,7 @@ export default function Home() {
 
   // Schema for breadcrumbs
   const breadcrumbSchema = createBreadcrumbSchema([
-    { name: "Home", url: "https://visiumtechnologies.com" }
+    { name: "Home", url: "https://tyvanto.com" }
   ]);
 
   // Scroll animations for AT A GLANCE section
@@ -52,20 +52,20 @@ export default function Home() {
   const tourSteps: TourStep[] = [
     {
       target: ".hero-section",
-      title: "Welcome to TruContext!",
+      title: "Welcome to Arqen!",
       content: "Discover how our agentic AI-powered platform transforms cybersecurity and intelligence operations with autonomous agents and dual database architecture.",
       placement: "bottom"
     },
     {
-      target: ".trucontext-overview",
-      title: "TruContext Platform Overview",
-      content: "Learn how TruContext fuses cyber, physical, and operational data using MITRE ATT&CK framework and advanced graph analytics to provide unmatched context.",
+      target: ".arqen-overview",
+      title: "Arqen Platform Overview",
+      content: "Learn how Arqen fuses cyber, physical, and operational data using an independent research organization ATT&CK framework and advanced graph analytics to provide unmatched context.",
       placement: "top"
     },
     {
       target: ".platform-differentiators",
-      title: "Why TruContext?",
-      content: "Explore our six core advantages including MITRE heritage, patented technology, agentic AI, and defense-grade provenance that set us apart.",
+      title: "Why Arqen?",
+      content: "Explore our six core advantages including an independent research organization heritage, patented technology, agentic AI, and enterprise-grade provenance that set us apart.",
       placement: "top"
     },
     {
@@ -77,13 +77,13 @@ export default function Home() {
     {
       target: ".industry-solutions",
       title: "Industry Solutions",
-      content: "See how TruContext serves 8 vertical markets from cybersecurity to smart cities, each with proven ROI and measurable outcomes.",
+      content: "See how Arqen serves 8 vertical markets from cybersecurity to smart cities, each with proven ROI and measurable outcomes.",
       placement: "top"
     },
     {
       target: ".cta-section",
       title: "Ready to Get Started?",
-      content: "Schedule a consultation to see how TruContext can transform your cybersecurity operations with agentic AI and dual database architecture.",
+      content: "Schedule a consultation to see how Arqen can transform your cybersecurity operations with agentic AI and dual database architecture.",
       placement: "top"
     }
   ];
@@ -91,10 +91,10 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Explainable AI Cybersecurity Analytics Platform | TruContext by Visium"
+        title="Explainable AI Cybersecurity Analytics Platform | Arqen by Tyvanto"
         description="Enterprise threat detection platform with explainable AI and graph-based threat detection. Real-time security analytics for government, critical infrastructure, and smart cities. NIST-compliant cybersecurity solution."
         keywords="explainable AI cybersecurity platform, graph-based threat detection, graph-based threat detection government, smart city security analytics, enterprise threat detection platform, cybersecurity analytics platform, real-time threat detection, AI-driven security analytics, threat hunting software, graph database cybersecurity, government cybersecurity platform, critical infrastructure security"
-        canonicalUrl="https://www.visiumtechnologies.com/"
+        canonicalUrl="https://www.tyvanto.com/"
       />
       <SchemaHead schema={organizationSchema} />
       <SchemaHead schema={softwareApplicationSchema} />
@@ -115,23 +115,23 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-primary/5 to-white/90" />
         
         <div className="container relative z-10">
-          {/* Visium Technologies Logo - Upper Left */}
+          {/* Tyvanto Logo - Upper Left */}
           <div className="mb-6">
             <img 
-              src="/visium-technologies-logo-new.png" 
-              alt="Visium Technologies" 
-              className="h-12 sm:h-14 md:h-16 object-contain"
+              src="/tyvanto_logo.png" 
+              alt="Tyvanto" 
+              className="h-16 sm:h-20 md:h-24 object-contain"
             />
           </div>
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-lg md:text-2xl font-bold italic text-primary mb-4">
-              TruContext: From Data Chaos to Decision Confidence.
+              Arqen: From Data Chaos to Decision Confidence.
             </p>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6">
               Explainable AI for <span className="text-primary">Real-Time Business Analytics</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              Transform complex data into actionable intelligence in real-time. TruContext's explainable AI platform processes billions of events instantly, revealing hidden patterns and connections across your entire business ecosystem. Make faster, smarter decisions with complete visibility and predictive insights.
+              Transform complex data into actionable intelligence in real-time. Arqen's explainable AI platform processes billions of events instantly, revealing hidden patterns and connections across your entire business ecosystem. Make faster, smarter decisions with complete visibility and predictive insights.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/demo">
@@ -163,7 +163,7 @@ export default function Home() {
       </section>
 
       {/* AT A GLANCE - Two Column Layout */}
-      <section className="trucontext-overview py-8 bg-gray-50">
+      <section className="arqen-overview py-8 bg-gray-50">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left Column - AT A GLANCE Information */}
@@ -176,10 +176,10 @@ export default function Home() {
               >
                 <p className="text-sm font-semibold text-primary uppercase tracking-wide mb-2">AT A GLANCE</p>
                 <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
-                  <span className="text-secondary">TruContext™</span> Graph-Based Threat Detection Platform
+                  <span className="text-secondary">Arqen™</span> Graph-Based Threat Detection Platform
                 </h2>
                 <p className="text-lg text-gray-600">
-                  TruContext is an explainable AI cybersecurity analytics platform that leverages graph-based threat detection and Kafka streaming security analytics to process billions of events in real-time. Trusted by government agencies and enterprises for NIST-compliant threat intelligence and security operations.
+                  Arqen is an explainable AI cybersecurity analytics platform that leverages graph-based threat detection and Kafka streaming security analytics to process billions of events in real-time. Trusted by government agencies and enterprises for NIST-compliant threat intelligence and security operations.
                 </p>
               </div>
 
@@ -189,17 +189,17 @@ export default function Home() {
                   featuresVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
               >
-                {/* Feature 1 - MITRE CyGraph */}
+                {/* Feature 1 - an independent research organization graph intelligence */}
                 <div className="group relative p-4 rounded-lg border border-gray-200 bg-white hover:bg-primary/5 hover:border-primary hover:shadow-md transition-all duration-300 cursor-pointer">
                   <div className="flex items-start space-x-3">
                     <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-1 group-hover:scale-110 transition-transform duration-300" />
                     <div className="flex-1">
                       <p className="text-gray-700 font-medium">
-                        Enhanced commercialized version of <strong>MITRE's CyGraph</strong> cyber tool
+                        Enhanced commercialized version of <strong>an independent research organization's graph intelligence</strong> cyber tool
                       </p>
                       <div className="max-h-0 overflow-hidden group-hover:max-h-40 transition-all duration-500 ease-in-out">
                         <p className="text-sm text-gray-600 mt-2 pt-2 border-t border-gray-200">
-                          Originally developed for US Army Cyber Command, TruContext builds upon MITRE's proven CyGraph technology, bringing military-grade threat intelligence capabilities to enterprise cybersecurity operations.
+                          Originally developed for enterprise security operations, Arqen builds upon an independent research organization's proven graph intelligence technology, bringing enterprise-grade threat intelligence capabilities to enterprise cybersecurity operations.
                         </p>
                       </div>
                     </div>
@@ -223,17 +223,17 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Feature 3 - DoD Heritage */}
+                {/* Feature 3 - Enterprise Heritage */}
                 <div className="group relative p-4 rounded-lg border border-gray-200 bg-white hover:bg-primary/5 hover:border-primary hover:shadow-md transition-all duration-300 cursor-pointer">
                   <div className="flex items-start space-x-3">
                     <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-1 group-hover:scale-110 transition-transform duration-300" />
                     <div className="flex-1">
                       <p className="text-gray-700 font-medium">
-                        Designed for use within the <strong>DoD, Army Cyber Command</strong>
+                        Designed for use within <strong>enterprise and government security</strong>
                       </p>
                       <div className="max-h-0 overflow-hidden group-hover:max-h-40 transition-all duration-500 ease-in-out">
                         <p className="text-sm text-gray-600 mt-2 pt-2 border-t border-gray-200">
-                          Battle-tested in the most demanding defense environments, TruContext meets the rigorous security and performance standards required by Department of Defense operations and critical infrastructure protection.
+                          Battle-tested in the most demanding defense environments, Arqen meets the rigorous security and performance standards required by Department of Defense operations and critical infrastructure protection.
                         </p>
                       </div>
                     </div>
@@ -250,7 +250,7 @@ export default function Home() {
                       </p>
                       <div className="max-h-0 overflow-hidden group-hover:max-h-40 transition-all duration-500 ease-in-out">
                         <p className="text-sm text-gray-600 mt-2 pt-2 border-t border-gray-200">
-                          Leveraging Apache Kafka's distributed streaming platform, TruContext ingests and processes massive data volumes with sub-second latency, ensuring real-time threat detection and immediate response capabilities.
+                          Leveraging Apache Kafka's distributed streaming platform, Arqen ingests and processes massive data volumes with sub-second latency, ensuring real-time threat detection and immediate response capabilities.
                         </p>
                       </div>
                     </div>
@@ -267,7 +267,7 @@ export default function Home() {
                       </p>
                       <div className="max-h-0 overflow-hidden group-hover:max-h-40 transition-all duration-500 ease-in-out">
                         <p className="text-sm text-gray-600 mt-2 pt-2 border-t border-gray-200">
-                          From network sensors and security tools to IoT devices and cloud services, TruContext seamlessly integrates with your entire technology stack, creating a unified intelligence platform that scales with your organization.
+                          From network sensors and security tools to IoT devices and cloud services, Arqen seamlessly integrates with your entire technology stack, creating a unified intelligence platform that scales with your organization.
                         </p>
                       </div>
                     </div>
@@ -292,7 +292,7 @@ export default function Home() {
                   >
                     <img 
                       src="/hero_illustration.webp" 
-                      alt="TruContext Platform" 
+                      alt="Arqen Platform" 
                       className="w-full h-auto object-cover"
                     />
                   </div>
@@ -302,10 +302,10 @@ export default function Home() {
           </div>
 
           <div className="text-center space-y-6 mt-12">
-              {/* TruContext Logo */}
+              {/* Arqen Logo */}
               <img 
-                src="/trucontext_logo_v2.png" 
-                alt="TruContext" 
+                src="/arqen_logo_v2.png" 
+                alt="Arqen" 
                 className="mx-auto h-12 sm:h-14 md:h-16 object-contain"
               />
           </div>
@@ -317,8 +317,8 @@ export default function Home() {
         <div className="container">
           <div className="text-center mb-8">
             <p className="text-sm font-semibold text-primary uppercase tracking-wide mb-2">FEATURED VIDEO</p>
-            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">See TruContext in Action</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">Watch how TruContext delivers real-time threat detection and analysis capabilities</p>
+            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">See Arqen in Action</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">Watch how Arqen delivers real-time threat detection and analysis capabilities</p>
           </div>
           
           <div className="flex justify-center">
@@ -327,7 +327,7 @@ export default function Home() {
                 width="100%"
                 height="100%"
                 src="https://www.youtube.com/embed/eKru13gMZv4?si=aYija-0_HAUJxQH_"
-                title="TruContext Platform Demo"
+                title="Arqen Platform Demo"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
@@ -342,7 +342,7 @@ export default function Home() {
       <section className="platform-differentiators py-8 gradient-purple-blue">
         <div className="container">
           <div className="text-center mb-8">
-            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">Why TruContext</h2>
+            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">Why Arqen</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               The only AI-powered platform that shows you what happened, why it matters, what's connected, and what's likely to happen next
             </p>
@@ -354,9 +354,9 @@ export default function Home() {
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
                   <Shield className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold mb-3">Military Heritage</h3>
+                <h3 className="text-xl font-bold mb-3">Enterprise Heritage</h3>
                 <p className="text-gray-600">
-                  Enhanced from MITRE Corporation's CyGraph platform, originally developed for US Army Cyber Command
+                  originally developed for enterprise security operations
                 </p>
               </CardContent>
             </Card>
@@ -425,7 +425,7 @@ export default function Home() {
       </section>
 
       {/* Key Capabilities */}
-      <section className="key-capabilities py-8 bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 text-white relative overflow-hidden">
+      <section className="key-capabilities py-8 bg-gradient-to-br from-[#0D1B3E] via-[#1B3A8C] to-[#1B3A8C] text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
             backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.4\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")'
@@ -433,9 +433,9 @@ export default function Home() {
         </div>
         <div className="container relative z-10">
           <div className="text-center mb-8">
-            <h2 className="text-2xl md:text-4xl font-bold mb-4">TruContext Capabilities</h2>
+            <h2 className="text-2xl md:text-4xl font-bold mb-4">Arqen Capabilities</h2>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              TruContext gives analysts the power to analyze threats in real time to quickly isolate incidents, accelerate root cause analysis, and perform advanced modeling
+              Arqen gives analysts the power to analyze threats in real time to quickly isolate incidents, accelerate root cause analysis, and perform advanced modeling
             </p>
           </div>
 
@@ -487,21 +487,21 @@ export default function Home() {
         </div>
       </section>
 
-      {/* MITRE ATT&CK */}
-      <section className="py-8 bg-gradient-to-br from-indigo-900 via-blue-900 to-purple-900 text-white">
+      {/* an independent research organization ATT&CK */}
+      <section className="py-8 bg-gradient-to-br from-[#0D1B3E] via-[#1B3A8C] to-[#1B3A8C] text-white">
         <div className="container">
           <div className="text-center mb-8">
             <img 
               src="/mitre_attack_logo.webp" 
-              alt="MITRE ATT&CK" 
+              alt="an independent research organization ATT&CK" 
               className="mx-auto h-16 sm:h-20 md:h-24 mb-6 object-contain"
             />
             <p className="text-xl text-blue-100 max-w-4xl mx-auto">
-              TruContext™ applies MITRE's ATT&CK framework — a globally-accessible catalog of adversarial tactics, techniques, and procedures (TTPs). Visium leverages the framework to employ an effective, threat-informed defense.
+              Arqen™ applies an independent research organization's ATT&CK framework — a globally-accessible catalog of adversarial tactics, techniques, and procedures (TTPs). Tyvanto leverages the framework to employ an effective, threat-informed defense.
             </p>
             <Link href="/platform/ai-capabilities">
               <Button size="lg" variant="outline" className="mt-8 bg-white/10 border-white/30 hover:bg-white/20 text-white">
-                Learn How to Leverage the Power of MITRE ATT&CK
+                Learn How to Leverage the Power of an independent research organization ATT&CK
               </Button>
             </Link>
           </div>
@@ -517,7 +517,7 @@ export default function Home() {
               Making Sense of Complex Connected Data
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-              The possibilities of the TruContext platform extend far beyond just cybersecurity. Our advanced graphing capabilities are combined with artificial intelligence and machine learning to provide insight across multiple industries.
+              The possibilities of the Arqen platform extend far beyond just cybersecurity. Our advanced graphing capabilities are combined with artificial intelligence and machine learning to provide insight across multiple industries.
             </p>
           </div>
 
@@ -622,7 +622,7 @@ export default function Home() {
           <div className="text-center mt-8">
             <Link href="/solutions/cybersecurity">
               <Button size="lg" className="bg-primary hover:bg-primary/90">
-                Learn More About TruContext Solutions <ArrowRight className="ml-2 h-5 w-5" />
+                Learn More About Arqen Solutions <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
           </div>
@@ -635,7 +635,7 @@ export default function Home() {
       <section className="py-12 bg-white">
         <div className="container">
           <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">TruContext vs Traditional SIEM</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Arqen vs Traditional SIEM</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">See how our real-time analytics platform outperforms legacy solutions</p>
           </div>
 
@@ -644,7 +644,7 @@ export default function Home() {
               <thead>
                 <tr className="bg-gray-100">
                   <th className="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">Feature</th>
-                  <th className="border border-gray-300 px-4 py-3 text-center font-semibold text-primary">TruContext</th>
+                  <th className="border border-gray-300 px-4 py-3 text-center font-semibold text-primary">Arqen</th>
                   <th className="border border-gray-300 px-4 py-3 text-center font-semibold text-gray-600">Traditional SIEM</th>
                 </tr>
               </thead>
@@ -698,7 +698,7 @@ export default function Home() {
         <div className="container text-center">
           <h2 className="text-2xl md:text-4xl font-bold mb-6">Ready to Transform Your Data Intelligence?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-            See how TruContext can help your organization gain actionable insights within 30 days
+            See how Arqen can help your organization gain actionable insights within 30 days
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/demo">

@@ -6,8 +6,8 @@ import CompetitorComparisonOverlay from '../CompetitorComparisonOverlay';
 const defaultProps = {
   open: true,
   onClose: vi.fn(),
-  selectedProduct: 'trucontext',
-  productLabel: 'TruContext',
+  selectedProduct: 'arqen',
+  productLabel: 'Arqen',
   productColor: '#00E5FF',
   visiumMonthlyCost: 5000,
   nodes: 10000,
@@ -30,7 +30,7 @@ describe('CompetitorComparisonOverlay', () => {
 
   it('displays the selected product label in the header', () => {
     render(<CompetitorComparisonOverlay {...defaultProps} />);
-    expect(screen.getAllByText('TruContext').length).toBeGreaterThan(0);
+    expect(screen.getAllByText('Arqen').length).toBeGreaterThan(0);
   });
 
   it('displays all four competitors', () => {
@@ -80,7 +80,7 @@ describe('CompetitorComparisonOverlay', () => {
     // Check a few key features are listed
     expect(screen.getByText('Graph Database (Neo4j)')).toBeInTheDocument();
     expect(screen.getByText('Agentic AI (Autonomous Agents)')).toBeInTheDocument();
-    expect(screen.getByText('MITRE ATT&CK Native Integration')).toBeInTheDocument();
+    expect(screen.getByText('an independent research organization ATT&CK Native Integration')).toBeInTheDocument();
   });
 
   it('shows the cost comparison section', () => {
@@ -89,15 +89,15 @@ describe('CompetitorComparisonOverlay', () => {
     expect(screen.getByText('YOUR CHOICE')).toBeInTheDocument();
   });
 
-  it('shows the Why Visium Wins section', () => {
+  it('shows the Why Tyvanto Wins section', () => {
     render(<CompetitorComparisonOverlay {...defaultProps} />);
-    expect(screen.getByText('Why Visium Wins at Enterprise Scale')).toBeInTheDocument();
+    expect(screen.getByText('Why Tyvanto Wins at Enterprise Scale')).toBeInTheDocument();
     expect(screen.getByText('Graph-Native Architecture')).toBeInTheDocument();
     expect(screen.getByText('Agentic AI, Not Just ML')).toBeInTheDocument();
     expect(screen.getByText('Cyber + Physical Fusion')).toBeInTheDocument();
   });
 
-  it('displays the visium monthly cost in the header', () => {
+  it('displays the tyvanto monthly cost in the header', () => {
     render(<CompetitorComparisonOverlay {...defaultProps} visiumMonthlyCost={5000} />);
     expect(screen.getByText('$5.0K/mo')).toBeInTheDocument();
   });

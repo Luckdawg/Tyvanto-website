@@ -145,8 +145,8 @@ export default function OrderConfirmation() {
           <div className="mt-8 text-center text-sm text-gray-600">
             <p>
               Questions? Contact our support team at{' '}
-              <a href="mailto:support@visiumtechnologies.com" className="text-primary hover:underline">
-                support@visiumtechnologies.com
+              <a href="mailto:support@tyvanto.com" className="text-primary hover:underline">
+                support@tyvanto.com
               </a>
             </p>
           </div>

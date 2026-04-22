@@ -30,126 +30,126 @@ export default function Comparison() {
     {
       category: "architecture",
       feature: "Graph Database Architecture",
-      trucontext: { status: "full", detail: "Patented Scalable Multi-Layered Graph Database (graph database)" },
+      arqen: { status: "full", detail: "Patented Scalable Multi-Layered Graph Database (graph database)" },
       traditional: { status: "none", detail: "Relational databases only" },
       advantage: "20 QPS pathfinding vs 5 QPS traditional - 4x faster relationship queries"
     },
     {
       category: "architecture",
       feature: "Dual Database Persistence",
-      trucontext: { status: "full", detail: "graph database (relationships) + relational database (time-series)" },
+      arqen: { status: "full", detail: "graph database (relationships) + relational database (time-series)" },
       traditional: { status: "partial", detail: "Single database architecture" },
       advantage: "Best-of-both-worlds: relationship intelligence + time-series efficiency"
     },
     {
       category: "architecture",
       feature: "Real-Time Event Streaming",
-      trucontext: { status: "full", detail: "Kafka ecosystem with 100K+ events/sec" },
+      arqen: { status: "full", detail: "Kafka ecosystem with 100K+ events/sec" },
       traditional: { status: "partial", detail: "Batch processing or limited streaming" },
       advantage: "Millisecond-latency data flow across all components"
     },
     {
       category: "ai",
       feature: "Agentic AI Capabilities",
-      trucontext: { status: "full", detail: "Autonomous agents with iterative multi-step planning" },
+      arqen: { status: "full", detail: "Autonomous agents with iterative multi-step planning" },
       traditional: { status: "none", detail: "Rule-based automation only" },
       advantage: "90% reduction in manual analysis time through autonomous workflows"
     },
     {
       category: "ai",
       feature: "AI-Powered Icon Generation",
-      trucontext: { status: "full", detail: "Automatic custom icon creation for entities" },
+      arqen: { status: "full", detail: "Automatic custom icon creation for entities" },
       traditional: { status: "none", detail: "Manual icon management" },
       advantage: "Instant visual representation of new entities and threats"
     },
     {
       category: "ai",
       feature: "Video Intelligence (Tru-InSight)",
-      trucontext: { status: "full", detail: "Autonomous video AI with behavioral analytics" },
+      arqen: { status: "full", detail: "Autonomous video AI with behavioral analytics" },
       traditional: { status: "partial", detail: "Basic motion detection only" },
       advantage: "Real-time behavioral anomaly detection across 1,200+ camera feeds"
     },
     {
       category: "ai",
       feature: "Predictive Analytics",
-      trucontext: { status: "full", detail: "ML models for threat prediction & link analysis" },
+      arqen: { status: "full", detail: "ML models for threat prediction & link analysis" },
       traditional: { status: "partial", detail: "Limited statistical analysis" },
       advantage: "78% crime prevention rate vs 52% traditional"
     },
     {
       category: "performance",
       feature: "Query Performance",
-      trucontext: { status: "full", detail: "20 QPS for complex pathfinding queries" },
+      arqen: { status: "full", detail: "20 QPS for complex pathfinding queries" },
       traditional: { status: "partial", detail: "5 QPS for similar queries" },
       advantage: "4x faster relationship traversal and threat correlation"
     },
     {
       category: "performance",
       feature: "Temporal Contextualization",
-      trucontext: { status: "full", detail: "TruTime with microsecond precision" },
+      arqen: { status: "full", detail: "TruTime with microsecond precision" },
       traditional: { status: "partial", detail: "Basic timestamp correlation" },
       advantage: "75% faster incident investigation through precise event sequencing"
     },
     {
       category: "performance",
       feature: "Scalability",
-      trucontext: { status: "full", detail: "Horizontal scaling to millions of nodes" },
+      arqen: { status: "full", detail: "Horizontal scaling to millions of nodes" },
       traditional: { status: "partial", detail: "Vertical scaling limitations" },
       advantage: "Linear performance scaling with data growth"
     },
     {
       category: "security",
-      feature: "MITRE ATT&CK Integration",
-      trucontext: { status: "full", detail: "Native MITRE framework mapping with heritage" },
-      traditional: { status: "partial", detail: "Manual MITRE mapping required" },
+      feature: "an independent research organization ATT&CK Integration",
+      arqen: { status: "full", detail: "Native an independent research organization framework mapping with heritage" },
+      traditional: { status: "partial", detail: "Manual an independent research organization mapping required" },
       advantage: "Automatic threat technique identification and correlation"
     },
     {
       category: "security",
       feature: "CVE/CVSS Risk Mapping",
-      trucontext: { status: "full", detail: "Automated vulnerability correlation with infrastructure" },
+      arqen: { status: "full", detail: "Automated vulnerability correlation with infrastructure" },
       traditional: { status: "partial", detail: "Separate vulnerability scanning tools" },
       advantage: "Cyber-physical threat correlation prevents cascading failures"
     },
     {
       category: "security",
       feature: "Defense-Grade Provenance",
-      trucontext: { status: "full", detail: "Full audit trails with geolocation & timestamps" },
+      arqen: { status: "full", detail: "Full audit trails with geolocation & timestamps" },
       traditional: { status: "partial", detail: "Basic logging" },
       advantage: "100% compliance with NIST, NERC CIP, and regulatory requirements"
     },
     {
       category: "security",
       feature: "Ethical Transparency",
-      trucontext: { status: "full", detail: "Explainable AI with Cypher query visibility" },
+      arqen: { status: "full", detail: "Explainable AI with Cypher query visibility" },
       traditional: { status: "none", detail: "Black box algorithms" },
       advantage: "Full transparency for predictive policing and governance applications"
     },
     {
       category: "integration",
       feature: "SCADA/IoT Integration",
-      trucontext: { status: "full", detail: "Native support for Modbus, DNP3, OPC UA" },
+      arqen: { status: "full", detail: "Native support for Modbus, DNP3, OPC UA" },
       traditional: { status: "partial", detail: "Limited industrial protocol support" },
       advantage: "Direct integration with critical infrastructure systems"
     },
     {
       category: "integration",
       feature: "SIEM Compatibility",
-      trucontext: { status: "full", detail: "Splunk, QRadar, ArcSight connectors" },
+      arqen: { status: "full", detail: "Splunk, QRadar, ArcSight connectors" },
       traditional: { status: "full", detail: "Standard SIEM integration" },
       advantage: "Augments existing SIEM with graph analytics and AI"
     },
     {
       category: "integration",
       feature: "Digital Twin Capability",
-      trucontext: { status: "full", detail: "3D utility network simulation & co-simulation" },
+      arqen: { status: "full", detail: "3D utility network simulation & co-simulation" },
       traditional: { status: "none", detail: "No digital twin support" },
       advantage: "Test resilience strategies before impacting live infrastructure"
     },
     {
       category: "integration",
       feature: "Cloud & On-Premises Deployment",
-      trucontext: { status: "full", detail: "AWS, Azure, GCP, hybrid, air-gapped" },
+      arqen: { status: "full", detail: "AWS, Azure, GCP, hybrid, air-gapped" },
       traditional: { status: "partial", detail: "Cloud-only or on-premises only" },
       advantage: "Flexible deployment for any security posture"
     }
@@ -183,10 +183,10 @@ export default function Comparison() {
       title: "Agentic AI",
       description: "Autonomous agents vs rule-based automation",
       icon: TrendingUp,
-      color: "from-purple-500 to-pink-500"
+      color: "from-blue-500 to-cyan-500"
     },
     {
-      title: "MITRE Heritage",
+      title: "an independent research organization Heritage",
       description: "Native ATT&CK integration with framework origins",
       icon: Shield,
       color: "from-blue-500 to-cyan-500"
@@ -204,10 +204,10 @@ export default function Comparison() {
               Competitive Comparison
             </Badge>
             <h1 className="text-5xl font-bold text-gray-900 mb-6">
-              TruContext vs <span className="text-primary">Traditional SIEM Platforms</span>
+              Arqen vs <span className="text-primary">Traditional SIEM Platforms</span>
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed mb-8">
-              See how TruContext's patented graph database architecture, agentic AI capabilities, and MITRE heritage deliver superior performance compared to traditional SIEM and analytics platforms. Our dual database design and autonomous agents provide capabilities that legacy systems simply cannot match.
+              See how Arqen's patented graph database architecture, agentic AI capabilities, and an independent research organization heritage deliver superior performance compared to traditional SIEM and analytics platforms. Our dual database design and autonomous agents provide capabilities that legacy systems simply cannot match.
             </p>
             <div className="flex gap-4">
               <Link href="/demo">
@@ -271,7 +271,7 @@ export default function Comparison() {
             {/* Header */}
             <div className="grid grid-cols-12 gap-4 pb-4 border-b-2 border-gray-300 font-bold text-gray-900">
               <div className="col-span-4">Feature</div>
-              <div className="col-span-3 text-center">TruContext</div>
+              <div className="col-span-3 text-center">Arqen</div>
               <div className="col-span-3 text-center">Traditional SIEM</div>
               <div className="col-span-2 text-center">Advantage</div>
             </div>
@@ -289,13 +289,13 @@ export default function Comparison() {
                     </div>
                     <div className="col-span-3">
                       <div className="flex items-center justify-center gap-3 mb-2">
-                        {renderStatus(item.trucontext.status)}
+                        {renderStatus(item.arqen.status)}
                         <span className="text-sm font-semibold text-green-700">
-                          {item.trucontext.status === "full" ? "Full Support" : 
-                           item.trucontext.status === "partial" ? "Partial" : "Not Available"}
+                          {item.arqen.status === "full" ? "Full Support" : 
+                           item.arqen.status === "partial" ? "Partial" : "Not Available"}
                         </span>
                       </div>
-                      <div className="text-xs text-gray-600 text-center">{item.trucontext.detail}</div>
+                      <div className="text-xs text-gray-600 text-center">{item.arqen.detail}</div>
                     </div>
                     <div className="col-span-3">
                       <div className="flex items-center justify-center gap-3 mb-2">
@@ -328,7 +328,7 @@ export default function Comparison() {
           <div className="grid md:grid-cols-2 gap-6">
             <Card>
               <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-primary mb-6">TruContext Performance</h3>
+                <h3 className="text-2xl font-bold text-primary mb-6">Arqen Performance</h3>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center pb-3 border-b border-gray-200">
                     <span className="text-gray-700">Graph Query Speed</span>
@@ -449,7 +449,7 @@ export default function Comparison() {
             See the Difference for Yourself
           </h2>
           <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
-            Schedule a side-by-side comparison demo to experience TruContext's superior capabilities firsthand
+            Schedule a side-by-side comparison demo to experience Arqen's superior capabilities firsthand
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/demo">

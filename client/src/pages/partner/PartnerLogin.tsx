@@ -54,7 +54,7 @@ export default function PartnerLogin() {
 
           <div className="text-center text-xs text-gray-500">
             <p>Don't have a partner account?</p>
-            <p className="mt-1">Contact us at partners@visiumtech.com</p>
+            <p className="mt-1">Contact us at partners@tyvanto.com</p>
           </div>
         </CardContent>
       </Card>

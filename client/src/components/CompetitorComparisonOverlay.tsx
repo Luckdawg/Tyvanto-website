@@ -2,7 +2,7 @@
  * CompetitorComparisonOverlay.tsx
  *
  * Full-screen modal overlay that shows a side-by-side feature and pricing
- * comparison between the selected Visium product and major competitors:
+ * comparison between the selected Tyvanto product and major competitors:
  *   Splunk Enterprise Security, CrowdStrike Falcon, Palo Alto Cortex XSIAM,
  *   IBM QRadar SIEM.
  *
@@ -23,7 +23,7 @@ interface FeatureRow {
   category: string;
   feature: string;
   tooltip?: string;
-  visium: FeatureLevel;
+  tyvanto: FeatureLevel;
   splunk: FeatureLevel;
   crowdstrike: FeatureLevel;
   paloalto: FeatureLevel;
@@ -76,119 +76,119 @@ const FEATURE_ROWS: FeatureRow[] = [
     category: 'Architecture',
     feature: 'Graph Database (Neo4j)',
     tooltip: 'Native multi-layered graph DB for relationship-aware threat analysis',
-    visium: 'full', splunk: 'none', crowdstrike: 'none', paloalto: 'partial', ibmqradar: 'none',
+    tyvanto: 'full', splunk: 'none', crowdstrike: 'none', paloalto: 'partial', ibmqradar: 'none',
   },
   {
     category: 'Architecture',
     feature: 'Dual DB (Graph + Relational)',
     tooltip: 'Combines Neo4j graph analytics with PostgreSQL for structured queries',
-    visium: 'full', splunk: 'none', crowdstrike: 'none', paloalto: 'none', ibmqradar: 'none',
+    tyvanto: 'full', splunk: 'none', crowdstrike: 'none', paloalto: 'none', ibmqradar: 'none',
   },
   {
     category: 'Architecture',
     feature: 'Real-time Kafka Event Streaming',
     tooltip: 'Processes billions of events/sec via Kafka ecosystem',
-    visium: 'full', splunk: 'partial', crowdstrike: 'partial', paloalto: 'partial', ibmqradar: 'partial',
+    tyvanto: 'full', splunk: 'partial', crowdstrike: 'partial', paloalto: 'partial', ibmqradar: 'partial',
   },
   {
     category: 'Architecture',
     feature: 'On-Prem + Cloud Hybrid Deployment',
     tooltip: 'Flexible deployment across air-gapped, hybrid, and cloud environments',
-    visium: 'full', splunk: 'full', crowdstrike: 'partial', paloalto: 'partial', ibmqradar: 'full',
+    tyvanto: 'full', splunk: 'full', crowdstrike: 'partial', paloalto: 'partial', ibmqradar: 'full',
   },
   // AI & Analytics
   {
     category: 'AI & Analytics',
     feature: 'Agentic AI (Autonomous Agents)',
     tooltip: 'Self-directed AI agents that continuously analyze and act on threats',
-    visium: 'full', splunk: 'none', crowdstrike: 'partial', paloalto: 'partial', ibmqradar: 'none',
+    tyvanto: 'full', splunk: 'none', crowdstrike: 'partial', paloalto: 'partial', ibmqradar: 'none',
   },
   {
     category: 'AI & Analytics',
-    feature: 'MITRE ATT&CK Native Integration',
-    tooltip: 'Built on MITRE CyGraph; ATT&CK TTPs mapped at the data layer',
-    visium: 'full', splunk: 'partial', crowdstrike: 'full', paloalto: 'partial', ibmqradar: 'partial',
+    feature: 'an independent research organization ATT&CK Native Integration',
+    tooltip: 'Built on an independent research organization graph intelligence; ATT&CK TTPs mapped at the data layer',
+    tyvanto: 'full', splunk: 'partial', crowdstrike: 'full', paloalto: 'partial', ibmqradar: 'partial',
   },
   {
     category: 'AI & Analytics',
     feature: 'Predictive Threat Modeling',
     tooltip: 'ML-based prediction of attack paths before exploitation',
-    visium: 'full', splunk: 'partial', crowdstrike: 'partial', paloalto: 'partial', ibmqradar: 'none',
+    tyvanto: 'full', splunk: 'partial', crowdstrike: 'partial', paloalto: 'partial', ibmqradar: 'none',
   },
   {
     category: 'AI & Analytics',
     feature: 'Automated Root Cause Analysis',
     tooltip: 'Graph traversal auto-identifies root cause across the kill chain',
-    visium: 'full', splunk: 'partial', crowdstrike: 'partial', paloalto: 'partial', ibmqradar: 'partial',
+    tyvanto: 'full', splunk: 'partial', crowdstrike: 'partial', paloalto: 'partial', ibmqradar: 'partial',
   },
   {
     category: 'AI & Analytics',
     feature: 'Explainable AI (XAI)',
     tooltip: 'Every AI decision includes human-readable reasoning chain',
-    visium: 'full', splunk: 'none', crowdstrike: 'none', paloalto: 'partial', ibmqradar: 'none',
+    tyvanto: 'full', splunk: 'none', crowdstrike: 'none', paloalto: 'partial', ibmqradar: 'none',
   },
   // Data Fusion
   {
     category: 'Data Fusion',
     feature: 'Cyber + Physical Data Fusion',
     tooltip: 'Correlates IT/OT/IoT events with physical security and video feeds',
-    visium: 'full', splunk: 'none', crowdstrike: 'none', paloalto: 'none', ibmqradar: 'none',
+    tyvanto: 'full', splunk: 'none', crowdstrike: 'none', paloalto: 'none', ibmqradar: 'none',
   },
   {
     category: 'Data Fusion',
     feature: 'Video Intelligence (CCTV/IP Cam)',
     tooltip: 'Tru-InSight integrates video analytics into the threat graph',
-    visium: 'full', splunk: 'none', crowdstrike: 'none', paloalto: 'none', ibmqradar: 'none',
+    tyvanto: 'full', splunk: 'none', crowdstrike: 'none', paloalto: 'none', ibmqradar: 'none',
   },
   {
     category: 'Data Fusion',
     feature: 'Supply Chain Risk Monitoring',
     tooltip: 'Tracks third-party and supply chain exposure in the graph',
-    visium: 'full', splunk: 'partial', crowdstrike: 'partial', paloalto: 'partial', ibmqradar: 'none',
+    tyvanto: 'full', splunk: 'partial', crowdstrike: 'partial', paloalto: 'partial', ibmqradar: 'none',
   },
   {
     category: 'Data Fusion',
     feature: 'Geospatial / Smart City Integration',
     tooltip: 'Supports urban IoT, traffic, and infrastructure data sources',
-    visium: 'full', splunk: 'none', crowdstrike: 'none', paloalto: 'none', ibmqradar: 'none',
+    tyvanto: 'full', splunk: 'none', crowdstrike: 'none', paloalto: 'none', ibmqradar: 'none',
   },
   // Compliance & Governance
   {
     category: 'Compliance',
-    feature: 'DoD / Army Cyber Command Certified',
-    tooltip: 'Designed for use within DoD and Army Cyber Command environments',
-    visium: 'full', splunk: 'partial', crowdstrike: 'partial', paloalto: 'none', ibmqradar: 'partial',
+    feature: 'Enterprise Security Certified',
+    tooltip: 'Designed for use within enterprise and government security environments',
+    tyvanto: 'full', splunk: 'partial', crowdstrike: 'partial', paloalto: 'none', ibmqradar: 'partial',
   },
   {
     category: 'Compliance',
     feature: 'FedRAMP / CMMC Alignment',
     tooltip: 'Architecture supports FedRAMP High and CMMC Level 3 requirements',
-    visium: 'full', splunk: 'full', crowdstrike: 'full', paloalto: 'partial', ibmqradar: 'full',
+    tyvanto: 'full', splunk: 'full', crowdstrike: 'full', paloalto: 'partial', ibmqradar: 'full',
   },
   {
     category: 'Compliance',
     feature: 'Patented Multi-Layer Graph Technology',
     tooltip: 'Only patented scalable multi-layered graph DB solution for cybersecurity',
-    visium: 'full', splunk: 'none', crowdstrike: 'none', paloalto: 'none', ibmqradar: 'none',
+    tyvanto: 'full', splunk: 'none', crowdstrike: 'none', paloalto: 'none', ibmqradar: 'none',
   },
   // Pricing Model
   {
     category: 'Pricing',
     feature: 'Transparent Hybrid Pricing',
     tooltip: 'Fixed platform fee + per-node + per-agent; no hidden ingest charges',
-    visium: 'full', splunk: 'none', crowdstrike: 'partial', paloalto: 'none', ibmqradar: 'none',
+    tyvanto: 'full', splunk: 'none', crowdstrike: 'partial', paloalto: 'none', ibmqradar: 'none',
   },
   {
     category: 'Pricing',
     feature: 'No Ingest-Based Overage Fees',
     tooltip: 'Pricing is not tied to data volume — no surprise bills',
-    visium: 'full', splunk: 'none', crowdstrike: 'full', paloalto: 'partial', ibmqradar: 'partial',
+    tyvanto: 'full', splunk: 'none', crowdstrike: 'full', paloalto: 'partial', ibmqradar: 'partial',
   },
   {
     category: 'Pricing',
     feature: 'Annual Commitment Discounts',
     tooltip: 'Multi-year contracts unlock significant per-unit savings',
-    visium: 'full', splunk: 'full', crowdstrike: 'full', paloalto: 'full', ibmqradar: 'full',
+    tyvanto: 'full', splunk: 'full', crowdstrike: 'full', paloalto: 'full', ibmqradar: 'full',
   },
 ];
 
@@ -270,9 +270,9 @@ export default function CompetitorComparisonOverlay({
     return Array.from(map.entries());
   }, []);
 
-  // Count visium advantages
+  // Count tyvanto advantages
   const visiumWins = useMemo(
-    () => FEATURE_ROWS.filter((r) => r.visium === 'full').length,
+    () => FEATURE_ROWS.filter((r) => r.tyvanto === 'full').length,
     []
   );
 
@@ -345,7 +345,7 @@ export default function CompetitorComparisonOverlay({
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-              {/* Visium card */}
+              {/* Tyvanto card */}
               <div
                 className="rounded-2xl p-5 flex flex-col relative overflow-hidden"
                 style={{
@@ -361,7 +361,7 @@ export default function CompetitorComparisonOverlay({
                   YOUR CHOICE
                 </div>
                 <div className="text-2xl mb-2">🔷</div>
-                <div className="font-bold text-white text-sm mb-1">Visium {productLabel}</div>
+                <div className="font-bold text-white text-sm mb-1">Tyvanto {productLabel}</div>
                 <div
                   className="text-3xl font-black tabular-nums mt-auto mb-1"
                   style={{ color: productColor }}
@@ -433,7 +433,7 @@ export default function CompetitorComparisonOverlay({
               <h3 className="text-white font-bold text-lg">Feature Comparison Matrix</h3>
             </div>
             <p className="text-slate-500 text-sm mb-6">
-              Visium leads on <span className="text-emerald-400 font-semibold">{visiumWins} of {FEATURE_ROWS.length} capabilities</span>.
+              Tyvanto leads on <span className="text-emerald-400 font-semibold">{visiumWins} of {FEATURE_ROWS.length} capabilities</span>.
               <span className="ml-3 text-xs">
                 <CheckCircle2 className="h-3 w-3 text-emerald-400 inline mr-1" />Full &nbsp;
                 <MinusCircle className="h-3 w-3 text-amber-400 inline mr-1" />Partial &nbsp;
@@ -447,7 +447,7 @@ export default function CompetitorComparisonOverlay({
                   <tr style={{ background: 'rgba(255,255,255,0.04)', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
                     <th className="text-left px-5 py-3 text-slate-400 font-semibold w-64">Feature</th>
                     <th className="px-4 py-3 text-center font-bold w-28" style={{ color: productColor }}>
-                      Visium {productLabel}
+                      Tyvanto {productLabel}
                     </th>
                     {COMPETITORS.map((c) => (
                       <th key={c.id} className="px-4 py-3 text-center text-slate-400 font-semibold w-28">
@@ -484,7 +484,7 @@ export default function CompetitorComparisonOverlay({
                             )}
                           </td>
                           <td className="px-4 py-3 text-center">
-                            <FeatureIcon level={row.visium} />
+                            <FeatureIcon level={row.tyvanto} />
                           </td>
                           <td className="px-4 py-3 text-center"><FeatureIcon level={row.splunk} /></td>
                           <td className="px-4 py-3 text-center"><FeatureIcon level={row.crowdstrike} /></td>
@@ -507,14 +507,14 @@ export default function CompetitorComparisonOverlay({
             </div>
           </div>
 
-          {/* ── Why Visium Wins ── */}
+          {/* ── Why Tyvanto Wins ── */}
           <div
             className="rounded-2xl p-6"
             style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.07)' }}
           >
             <div className="flex items-center gap-2 mb-4">
               <Zap className="h-5 w-5" style={{ color: productColor }} />
-              <h3 className="text-white font-bold">Why Visium Wins at Enterprise Scale</h3>
+              <h3 className="text-white font-bold">Why Tyvanto Wins at Enterprise Scale</h3>
             </div>
             <div className="grid md:grid-cols-3 gap-4">
               {[
@@ -524,7 +524,7 @@ export default function CompetitorComparisonOverlay({
                 },
                 {
                   title: 'Agentic AI, Not Just ML',
-                  body: 'Autonomous agents continuously hunt, correlate, and respond — not just alert. Competitors bolt on AI; Visium is built on it.',
+                  body: 'Autonomous agents continuously hunt, correlate, and respond — not just alert. Competitors bolt on AI; Tyvanto is built on it.',
                 },
                 {
                   title: 'Cyber + Physical Fusion',

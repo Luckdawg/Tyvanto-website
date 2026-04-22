@@ -17,10 +17,10 @@ export function StructuredData({ type, data }: StructuredDataProps) {
         structuredData = {
           "@context": "https://schema.org",
           "@type": "Organization",
-          "name": "Visium Technologies, Inc.",
-          "alternateName": "Visium Analytics",
-          "url": "https://www.visiumtechnologies.com",
-          "logo": "https://www.visiumtechnologies.com/logo.svg",
+          "name": "Tyvanto, Inc.",
+          "alternateName": "Tyvanto",
+          "url": "https://www.tyvanto.com",
+          "logo": "https://www.tyvanto.com/logo.svg",
           "description": "Leading agentic AI-powered cybersecurity analytics platform for real-time cyber threat detection and security operations",
           "foundingDate": "2013",
           "address": {
@@ -28,13 +28,13 @@ export function StructuredData({ type, data }: StructuredDataProps) {
             "addressCountry": "US"
           },
           "sameAs": [
-            "https://www.linkedin.com/company/visium-technologies",
+            "https://www.linkedin.com/company/tyvanto-technologies",
             "https://www.otcmarkets.com/stock/VISM/overview"
           ],
           "contactPoint": {
             "@type": "ContactPoint",
             "contactType": "Sales",
-            "email": "info@visiumtechnologies.com"
+            "email": "info@tyvanto.com"
           }
         };
         break;
@@ -43,9 +43,9 @@ export function StructuredData({ type, data }: StructuredDataProps) {
         structuredData = {
           "@context": "https://schema.org",
           "@type": "SoftwareApplication",
-          "name": "TruContext",
+          "name": "Arqen",
           "applicationCategory": "SecurityApplication",
-          "description": "Agentic AI-powered cybersecurity analytics platform with graph-based threat detection, MITRE ATT&CK mapping, and real-time security operations analytics",
+          "description": "Agentic AI-powered cybersecurity analytics platform with graph-based threat detection, an independent research organization ATT&CK mapping, and real-time security operations analytics",
           "operatingSystem": "Cloud-based",
           "offers": {
             "@type": "Offer",
@@ -54,12 +54,12 @@ export function StructuredData({ type, data }: StructuredDataProps) {
           },
           "provider": {
             "@type": "Organization",
-            "name": "Visium Technologies, Inc."
+            "name": "Tyvanto, Inc."
           },
           "featureList": [
             "Real-time cyber threat detection",
             "Graph-based security analytics",
-            "MITRE ATT&CK threat mapping",
+            "an independent research organization ATT&CK threat mapping",
             "AI-driven threat hunting",
             "Security operations analytics",
             "Big data security analytics",
@@ -104,7 +104,7 @@ export function generateBreadcrumbs(path: string) {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://www.visiumtechnologies.com/"
+      "item": "https://www.tyvanto.com/"
     }
   ];
   
@@ -115,7 +115,7 @@ export function generateBreadcrumbs(path: string) {
       "@type": "ListItem",
       "position": index + 2,
       "name": segment.charAt(0).toUpperCase() + segment.slice(1).replace(/-/g, ' '),
-      "item": `https://www.visiumtechnologies.com${currentPath}`
+      "item": `https://www.tyvanto.com${currentPath}`
     });
   });
   

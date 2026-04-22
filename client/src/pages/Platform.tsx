@@ -11,14 +11,14 @@ import { organizationSchema, softwareApplicationSchema, createBreadcrumbSchema, 
 
 export default function Platform() {
   const breadcrumbSchema = createBreadcrumbSchema([
-    { name: "Home", url: "https://visiumtechnologies.com" },
-    { name: "Platform", url: "https://visiumtechnologies.com/platform" }
+    { name: "Home", url: "https://tyvanto.com" },
+    { name: "Platform", url: "https://tyvanto.com/platform" }
   ]);
 
   const tourSteps: TourStep[] = [
     {
       target: ".platform-hero",
-      title: "TruContext Platform Overview",
+      title: "Arqen Platform Overview",
       content: "Explore our agentic AI-powered intelligence platform with dual database architecture that delivers unmatched performance and capabilities.",
       placement: "bottom"
     },
@@ -45,9 +45,9 @@ export default function Platform() {
   return (
     <div className="min-h-screen">
       <SEOHead 
-        title="TruContext Platform | Agentic AI Intelligence Platform | Visium Technologies"
+        title="Arqen Platform | Agentic AI Intelligence Platform | Tyvanto"
         description="Enterprise-grade dual database architecture combining graph and relational databases. Real-time threat detection, predictive intelligence, and multi-dimensional correlation for cybersecurity and business analytics."
-        canonicalUrl="https://www.visiumtechnologies.com/platform"
+        canonicalUrl="https://www.tyvanto.com/platform"
       />
       <SchemaHead schema={organizationSchema} />
       <SchemaHead schema={softwareApplicationSchema} />
@@ -59,10 +59,10 @@ export default function Platform() {
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
-              The TruContext <span className="text-primary">Platform</span>
+              The Arqen <span className="text-primary">Platform</span>
             </h1>
             <p className="text-lg md:text-xl font-bold italic text-primary mb-8">
-              TruContext: From Data Chaos to Decision Confidence.
+              Arqen: From Data Chaos to Decision Confidence.
             </p>
             <p className="text-xl text-gray-600 mb-8">
               Agentic AI-powered intelligence platform with dual database architecture that transforms data into actionable insights across cyber, physical, and operational domains
@@ -85,10 +85,10 @@ export default function Platform() {
                 Enterprise-Grade Dual Database Architecture
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                TruContext is built on a revolutionary dual database architecture combining graph database for real-time network relationships with relational database for persistent storage and analytics. This patented scalable multi-layered approach processes billions of events with joins and aggregations in real-time, providing unmatched context and performance that conventional platforms cannot match.
+                Arqen is built on a revolutionary dual database architecture combining graph database for real-time network relationships with relational database for persistent storage and analytics. This patented scalable multi-layered approach processes billions of events with joins and aggregations in real-time, providing unmatched context and performance that conventional platforms cannot match.
               </p>
               <p className="text-lg text-gray-600 mb-6">
-                Enhanced from MITRE Corporation's CyGraph platform, originally developed for US Army Cyber Command, TruContext brings defense-grade intelligence capabilities to enterprise organizations with automatic synchronization and zero data loss.
+                originally developed for enterprise security operations, Arqen brings enterprise-grade intelligence capabilities to enterprise organizations with automatic synchronization and zero data loss.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="flex items-center space-x-2">
@@ -113,14 +113,14 @@ export default function Platform() {
           </div>
 
           {/* Agentic AI Section */}
-          <div className="agentic-ai bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-8 mb-12">
+          <div className="agentic-ai bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8 mb-12">
             <div className="text-center mb-12">
               <Brain className="h-16 w-16 text-primary mx-auto mb-4" />
               <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
                 Agentic AI at the Core
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                TruContext features autonomous AI agents that continuously analyze threats, recommend actions, and automate workflows without human intervention. Our agentic AI capabilities set us apart as a leader in AI-driven cybersecurity solutions.
+                Arqen features autonomous AI agents that continuously analyze threats, recommend actions, and automate workflows without human intervention. Our agentic AI capabilities set us apart as a leader in AI-driven cybersecurity solutions.
               </p>
             </div>
 
@@ -204,7 +204,7 @@ export default function Platform() {
                 <Shield className="h-12 w-12 text-primary mb-4" />
                 <h3 className="text-xl font-bold mb-3">Threat Path Analysis</h3>
                 <p className="text-gray-600">
-                  Comprehensive attack chain visualization and analysis with MITRE ATT&CK integration for threat-informed defense strategies
+                  Comprehensive attack chain visualization and analysis with an independent research organization ATT&CK integration for threat-informed defense strategies
                 </p>
               </CardContent>
             </Card>
@@ -220,20 +220,20 @@ export default function Platform() {
             </Card>
           </div>
 
-          {/* MITRE Heritage */}
-          <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8 mb-10">
+          {/* an independent research organization Heritage */}
+          <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8 mb-10">
             <div className="max-w-3xl mx-auto text-center">
               <Shield className="h-16 w-16 text-primary mx-auto mb-6" />
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                Built on Military-Grade Technology
+                Built on Enterprise-Grade Technology
               </h2>
               <p className="text-lg text-gray-700 mb-6">
-                Enhanced from MITRE Corporation's CyGraph platform, originally developed for US Army Cyber Command. This connection establishes immediate trust and validates the platform's robustness for federal agencies and critical infrastructure operators.
+                originally developed for enterprise security operations. This connection establishes immediate trust and validates the platform's robustness for federal agencies and critical infrastructure operators.
               </p>
               <div className="flex justify-center">
                 <img 
                   src="/mitre_attack_logo.webp" 
-                  alt="MITRE ATT&CK" 
+                  alt="an independent research organization ATT&CK" 
                   className="h-16"
                 />
               </div>
@@ -294,7 +294,7 @@ export default function Platform() {
 
             <div className="bg-white rounded-lg shadow-lg p-8 border-l-4 border-l-primary">
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                Visium Technologies' TruContext platform addresses data sovereignty challenges through its <span className="font-semibold">Ethical Layered Intelligence (ELI)</span> technology, which incorporates a proprietary framework designed to maintain local control over data while facilitating secure, inter-jurisdictional collaboration.
+                Tyvanto' Arqen platform addresses data sovereignty challenges through its <span className="font-semibold">Ethical Layered Intelligence (ELI)</span> technology, which incorporates a proprietary framework designed to maintain local control over data while facilitating secure, inter-jurisdictional collaboration.
               </p>
 
               <div className="grid md:grid-cols-2 gap-8 mb-6">
@@ -304,7 +304,7 @@ export default function Platform() {
                     Local Data Ownership
                   </h3>
                   <p className="text-gray-700">
-                    TruContext enables municipalities and other entities to retain full ownership and control of their jurisdictional data, preventing unauthorized centralization or external access.
+                    Arqen enables municipalities and other entities to retain full ownership and control of their jurisdictional data, preventing unauthorized centralization or external access.
                   </p>
                 </div>
 
@@ -341,7 +341,7 @@ export default function Platform() {
         <div className="container text-center">
           <h2 className="text-2xl md:text-4xl font-bold mb-6">Explore Platform Capabilities</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-            Discover how TruContext's agentic AI-powered features and video intelligence transform your operations
+            Discover how Arqen's agentic AI-powered features and video intelligence transform your operations
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/platform/ai-capabilities">

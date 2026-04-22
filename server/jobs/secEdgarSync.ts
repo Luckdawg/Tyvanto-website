@@ -23,7 +23,7 @@ const FEED_URL =
   `&type=&dateb=&owner=include&count=40&search_text=&output=atom`;
 
 const USER_AGENT =
-  "VisiumTechnologies-AutoSync/1.0 (info@visiumtechnologies.com)";
+  "VisiumTechnologies-AutoSync/1.0 (info@tyvanto.com)";
 
 /** A single parsed entry from the SEC EDGAR Atom feed */
 export interface SecEdgarEntry {

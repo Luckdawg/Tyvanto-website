@@ -9,23 +9,23 @@ export default function About() {
   return (
     <div className="min-h-screen">
       <SEOHead 
-        title="About Visium Technologies | AI-Powered Intelligence Platform"
-        description="Learn about Visium Technologies, creator of TruContext - an AI-powered intelligence platform for cybersecurity, smart cities, and critical infrastructure. Built on MITRE technology."
-        canonicalUrl="https://www.visiumtechnologies.com/company/about"
+        title="About Tyvanto | AI-Powered Intelligence Platform"
+        description="Learn about Tyvanto, creator of Arqen - an AI-powered intelligence platform for cybersecurity, smart cities, and critical infrastructure. Built on an independent research organization technology."
+        canonicalUrl="https://www.tyvanto.com/company/about"
       />
       <section className="gradient-hero py-8">
         <div className="container">
-          {/* Visium Technologies Logo - Upper Left */}
+          {/* Tyvanto Logo - Upper Left */}
           <div className="mb-6">
             <img 
-              src="/visium-technologies-logo-new.png" 
-              alt="Visium Technologies" 
-              className="h-12 sm:h-14 md:h-16 object-contain"
+              src="/tyvanto_logo.png" 
+              alt="Tyvanto" 
+              className="h-16 sm:h-20 md:h-24 object-contain"
             />
           </div>
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              About <span className="text-primary">Visium Technologies</span>
+              About <span className="text-primary">Tyvanto</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-600">
               Transforming data into actionable intelligence for enterprises worldwide
@@ -37,22 +37,12 @@ export default function About() {
       <section className="py-8 bg-white">
         <div className="container">
           <div className="max-w-3xl mx-auto">
-            {/* Subsidiary Relationship */}
-            <div className="bg-blue-50 border-l-4 border-primary p-6 mb-8 rounded-r-lg">
-              <p className="text-lg font-semibold text-gray-900 mb-2">
-                Visium Analytics is a subsidiary of Visium Technologies
-              </p>
-              <p className="text-gray-700">
-                Together, we deliver cutting-edge intelligence solutions that combine advanced analytics with enterprise-grade security and scalability.
-              </p>
-            </div>
-
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Mission</h2>
             <p className="text-lg text-gray-700 mb-6">
-              Visium Technologies is dedicated to empowering organizations with AI-powered intelligence platforms that transform complex data into actionable insights. Our TruContext platform brings defense-grade capabilities to enterprise cybersecurity, smart cities, and critical infrastructure protection.
+              Tyvanto is dedicated to empowering organizations with AI-powered intelligence platforms that transform complex data into actionable insights. Our Arqen platform brings enterprise-grade capabilities to enterprise cybersecurity, smart cities, and critical infrastructure protection.
             </p>
             <p className="text-lg text-gray-700 mb-6">
-              Built on technology enhanced from MITRE Corporation's CyGraph platform, TruContext represents the evolution of military-grade intelligence for commercial applications. We believe that every organization deserves access to the most advanced threat detection and operational intelligence capabilities.
+              Arqen represents the evolution of enterprise-grade intelligence for commercial applications. We believe that every organization deserves access to the most advanced threat detection and operational intelligence capabilities.
             </p>
           </div>
 
@@ -60,9 +50,9 @@ export default function About() {
             <Card className="text-center">
               <CardContent className="p-8">
                 <Shield className="h-16 w-16 text-primary mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-3">Military Heritage</h3>
+                <h3 className="text-xl font-bold mb-3">Enterprise Heritage</h3>
                 <p className="text-gray-600">
-                  Enhanced from technology developed for US Army Cyber Command
+                  Built with advanced enterprise-grade technology
                 </p>
               </CardContent>
             </Card>

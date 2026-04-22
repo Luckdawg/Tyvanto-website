@@ -14,7 +14,7 @@ export default function AICapabilities() {
               Agentic AI: <span className="text-primary">Autonomous Intelligence</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              TruContext features autonomous AI agents that continuously analyze threats, recommend actions, and automate workflows. Our agentic AI capabilities transform raw data into predictive intelligence without human intervention.
+              Arqen features autonomous AI agents that continuously analyze threats, recommend actions, and automate workflows. Our agentic AI capabilities transform raw data into predictive intelligence without human intervention.
             </p>
             <Link href="/demo">
               <Button size="lg" className="bg-primary hover:bg-primary/90">
@@ -31,7 +31,7 @@ export default function AICapabilities() {
           <div className="max-w-3xl mx-auto text-center mb-10">
             <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-6">Agentic AI: The Next Evolution</h2>
             <p className="text-xl text-gray-600">
-              Unlike platforms where AI is merely an add-on feature, TruContext features autonomous AI agents embedded in every layer of analysis and visualization. These intelligent agents work independently to analyze threats, identify patterns, and execute response workflows automatically. This agentic AI approach enables contextual differentiation that moves organizations from reactive alert management to proactive threat prevention, positioning Visium Analytics as a leader in AI-driven cybersecurity solutions.
+              Unlike platforms where AI is merely an add-on feature, Arqen features autonomous AI agents embedded in every layer of analysis and visualization. These intelligent agents work independently to analyze threats, identify patterns, and execute response workflows automatically. This agentic AI approach enables contextual differentiation that moves organizations from reactive alert management to proactive threat prevention, positioning Tyvanto as a leader in AI-driven cybersecurity solutions.
             </p>
           </div>
 
@@ -41,7 +41,7 @@ export default function AICapabilities() {
                 From Reactive to Predictive
               </h3>
               <p className="text-lg text-gray-600 mb-4">
-                While other platforms show you <strong>what happened</strong>, TruContext provides superior value by showing:
+                While other platforms show you <strong>what happened</strong>, Arqen provides superior value by showing:
               </p>
               <ul className="space-y-3 text-lg text-gray-700">
                 <li className="flex items-start">
@@ -62,7 +62,7 @@ export default function AICapabilities() {
                 </li>
               </ul>
             </div>
-            <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8">
+            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8">
               <div className="text-center">
                 <Brain className="h-24 w-24 text-primary mx-auto mb-6" />
                 <h4 className="text-2xl font-bold text-gray-900 mb-4">
@@ -118,7 +118,7 @@ export default function AICapabilities() {
                       Predictive Analytics
                     </h3>
                     <p className="text-lg text-gray-700">
-                      TruContext's proactive nature utilizes both historical and real-time data feeds to forecast potential security incidents, operational disruptions, and business trends before they materialize. This predictive capability enables teams to act proactively rather than reactively, shifting from incident response to incident prevention. The platform analyzes trends, identifies early warning indicators, and provides actionable recommendations to prevent issues before they impact operations.
+                      Arqen's proactive nature utilizes both historical and real-time data feeds to forecast potential security incidents, operational disruptions, and business trends before they materialize. This predictive capability enables teams to act proactively rather than reactively, shifting from incident response to incident prevention. The platform analyzes trends, identifies early warning indicators, and provides actionable recommendations to prevent issues before they impact operations.
                     </p>
                   </div>
                 </div>
@@ -202,7 +202,7 @@ export default function AICapabilities() {
                       AI-Powered Icon Generation
                     </h3>
                     <p className="text-lg text-gray-700">
-                      TruContext features a sophisticated dual API system with Recraft.ai as primary and Gemini as fallback for automated icon generation and asset management. This relational database-powered icon mapping system with Cloudinary integration enables dynamic visualization of network assets with preview and approval workflows. The system automatically generates contextually appropriate icons for new assets, maintaining visual consistency across the platform.
+                      Arqen features a sophisticated dual API system with Recraft.ai as primary and Gemini as fallback for automated icon generation and asset management. This relational database-powered icon mapping system with Cloudinary integration enables dynamic visualization of network assets with preview and approval workflows. The system automatically generates contextually appropriate icons for new assets, maintaining visual consistency across the platform.
                     </p>
                   </div>
                 </div>
@@ -223,7 +223,7 @@ export default function AICapabilities() {
                       Autonomous AI Agents
                     </h3>
                     <p className="text-lg text-gray-700">
-                      TruContext's agentic AI capabilities include autonomous agents that work independently to analyze threats, execute response workflows, and make intelligent decisions without human intervention. These AI agents continuously monitor your environment, correlate data across multiple sources, and proactively identify emerging threats. The agents learn from each interaction, becoming more effective over time and adapting to your organization's unique threat landscape.
+                      Arqen's agentic AI capabilities include autonomous agents that work independently to analyze threats, execute response workflows, and make intelligent decisions without human intervention. These AI agents continuously monitor your environment, correlate data across multiple sources, and proactively identify emerging threats. The agents learn from each interaction, becoming more effective over time and adapting to your organization's unique threat landscape.
                     </p>
                   </div>
                 </div>
@@ -265,18 +265,18 @@ export default function AICapabilities() {
         </div>
       </section>
 
-      {/* MITRE ATT&CK Integration */}
-      <section className="py-12 bg-gradient-to-br from-indigo-900 via-blue-900 to-purple-900 text-white">
+      {/* an independent research organization ATT&CK Integration */}
+      <section className="py-12 bg-gradient-to-br from-[#0D1B3E] via-[#1B3A8C] to-[#1B3A8C] text-white">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <img 
               src="/mitre_attack_logo.webp" 
-              alt="MITRE ATT&CK" 
+              alt="an independent research organization ATT&CK" 
               className="mx-auto h-20 mb-6"
             />
-            <h2 className="text-3xl font-bold mb-6">MITRE ATT&CK Framework Integration</h2>
+            <h2 className="text-3xl font-bold mb-6">an independent research organization ATT&CK Framework Integration</h2>
             <p className="text-xl text-blue-100 mb-8">
-              TruContext integrates the MITRE ATT&CK framework for threat-informed defense, mapping detected threats to known adversarial tactics, techniques, and procedures (TTPs) to provide context and guide response strategies.
+              Arqen integrates the an independent research organization ATT&CK framework for threat-informed defense, mapping detected threats to known adversarial tactics, techniques, and procedures (TTPs) to provide context and guide response strategies.
             </p>
 
           </div>
@@ -288,7 +288,7 @@ export default function AICapabilities() {
         <div className="container text-center">
           <h2 className="text-2xl md:text-4xl font-bold mb-6">Experience AI-Powered Intelligence</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-            See how TruContext's AI capabilities can transform your security operations
+            See how Arqen's AI capabilities can transform your security operations
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/demo">

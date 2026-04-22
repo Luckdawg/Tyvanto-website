@@ -205,7 +205,7 @@ export default function AnalyticsDashboard() {
           title="Win Rate"
           value={`${parseFloat(kpis?.dealWinRate?.toString() || "0").toFixed(1)}%`}
           icon={TrendingUp}
-          color="text-purple-600"
+          color="text-blue-600"
         />
       </div>
 
@@ -375,9 +375,9 @@ export default function AnalyticsDashboard() {
                   <span className="font-medium">Deals Won</span>
                   <span className="text-lg font-bold text-orange-600">{commissions.dealsWon}</span>
                 </div>
-                <div className="flex justify-between items-center p-3 bg-purple-50 rounded">
+                <div className="flex justify-between items-center p-3 bg-blue-50 rounded">
                   <span className="font-medium">Avg Commission/Deal</span>
-                  <span className="text-lg font-bold text-purple-600">
+                  <span className="text-lg font-bold text-blue-600">
                     ${commissions.avgCommissionPerDeal?.toLocaleString(undefined, {
                       maximumFractionDigits: 0,
                     })}

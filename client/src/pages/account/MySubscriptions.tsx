@@ -1,7 +1,7 @@
 /**
  * MySubscriptions.tsx
  *
- * /account/subscriptions — Authenticated page showing all active Visium
+ * /account/subscriptions — Authenticated page showing all active Tyvanto
  * subscriptions for the current user, with Stripe Customer Portal link
  * for managing / cancelling subscriptions.
  */
@@ -136,7 +136,7 @@ export default function MySubscriptions() {
             <div>
               <h1 className="text-3xl font-bold text-white">My Subscriptions</h1>
               <p className="text-slate-400 text-sm mt-0.5">
-                {user?.name ? `Signed in as ${user.name}` : 'Manage your active Visium subscriptions'}
+                {user?.name ? `Signed in as ${user.name}` : 'Manage your active Tyvanto subscriptions'}
               </p>
             </div>
           </div>
@@ -184,7 +184,7 @@ export default function MySubscriptions() {
             </div>
             <h2 className="text-xl font-bold text-white mb-2">No active subscriptions</h2>
             <p className="text-slate-400 mb-8 max-w-sm mx-auto">
-              You don't have any active Visium subscriptions yet. Explore our products and get started today.
+              You don't have any active Tyvanto subscriptions yet. Explore our products and get started today.
             </p>
             <Link href="/shop">
               <Button

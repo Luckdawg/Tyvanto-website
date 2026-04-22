@@ -44,7 +44,7 @@ export default function Architecture() {
       id: "kafka",
       title: "Kafka Ecosystem",
       icon: Zap,
-      color: "from-purple-500 to-pink-500",
+      color: "from-blue-500 to-cyan-500",
       description: "Real-time event streaming and message brokering",
       details: [
         "Distributed event streaming platform",
@@ -92,7 +92,7 @@ export default function Architecture() {
       id: "tru-ai",
       title: "Tru-AI Agentic Engine",
       icon: Cpu,
-      color: "from-indigo-500 to-purple-500",
+      color: "from-blue-600 to-blue-400",
       description: "Autonomous AI agents for intelligent automation",
       details: [
         "Iterative multi-step planning",
@@ -209,10 +209,10 @@ export default function Architecture() {
               Technical Architecture
             </Badge>
             <h1 className="text-5xl font-bold text-gray-900 mb-6">
-              TruContext <span className="text-primary">Platform Architecture</span>
+              Arqen <span className="text-primary">Platform Architecture</span>
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed mb-8">
-              Explore the patented Scalable Multi-Layered Graph Database architecture that powers TruContext's industry-leading performance. Our dual database design combines graph database's relationship intelligence with relational database's time-series efficiency, orchestrated by Kafka event streaming and enhanced by agentic AI automation.
+              Explore the patented Scalable Multi-Layered Graph Database architecture that powers Arqen's industry-leading performance. Our dual database design combines graph database's relationship intelligence with relational database's time-series efficiency, orchestrated by Kafka event streaming and enhanced by agentic AI automation.
             </p>
             <div className="flex gap-4">
               <Link href="/demo">
@@ -238,7 +238,7 @@ export default function Architecture() {
         <div className="container max-w-6xl">
           <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">Interactive Architecture Diagram</h2>
           <p className="text-lg text-gray-600 mb-12 text-center max-w-3xl mx-auto">
-            Click on any component to explore its role in the TruContext ecosystem
+            Click on any component to explore its role in the Arqen ecosystem
           </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
@@ -389,7 +389,7 @@ export default function Architecture() {
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="h-5 w-5 text-green-600 flex-shrink-0" />
-                    <span className="text-gray-700">MITRE ATT&CK framework integration</span>
+                    <span className="text-gray-700">an independent research organization ATT&CK framework integration</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="h-5 w-5 text-green-600 flex-shrink-0" />
@@ -413,7 +413,7 @@ export default function Architecture() {
             Ready to Experience the Architecture?
           </h2>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Schedule a technical deep dive with our architects to explore how TruContext's patented architecture can transform your operations
+            Schedule a technical deep dive with our architects to explore how Arqen's patented architecture can transform your operations
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/demo">

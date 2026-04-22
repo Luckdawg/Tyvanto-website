@@ -26,7 +26,6 @@ import Telecommunications from "./pages/solutions/Telecommunications";
 import Manufacturing from "./pages/solutions/Manufacturing";
 import Demo from "./pages/Demo";
 import About from "./pages/company/About";
-import Leadership from "./pages/company/Leadership";
 import News from "./pages/company/News";
 import InvestorRelations from "./pages/company/InvestorRelations";
 import AdminLeadsDashboard from "./pages/AdminLeadsDashboard";
@@ -102,7 +101,6 @@ function Router() {
       <Route path={"/solutions/manufacturing"} component={Manufacturing} />
       <Route path={"/demo"} component={Demo} />
       <Route path={"/company/about"} component={About} />
-      <Route path={"/company/leadership"} component={Leadership} />
        <Route path="/company/news" component={News} />
       <Route path="/admin/leads" component={AdminLeadsDashboard} />
       <Route path="/legal/privacy" component={PrivacyPolicy} />

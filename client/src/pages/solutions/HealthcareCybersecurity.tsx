@@ -10,22 +10,22 @@ export default function HealthcareCybersecurity() {
   return (
     <>
       <SEOHead
-        title="Healthcare Cybersecurity Analytics Platform | HIPAA Compliance | TruContext"
-        description="Protect patient data with TruContext's healthcare cybersecurity platform. Real-time threat detection, HIPAA compliance, and ransomware protection for healthcare organizations."
+        title="Healthcare Cybersecurity Analytics Platform | HIPAA Compliance | Arqen"
+        description="Protect patient data with Arqen's healthcare cybersecurity platform. Real-time threat detection, HIPAA compliance, and ransomware protection for healthcare organizations."
         keywords="healthcare cybersecurity, HIPAA compliance, healthcare data protection, ransomware protection healthcare, medical device security, healthcare threat detection, patient data security"
         canonicalUrl="/solutions/healthcare-cybersecurity"
       />
       
       <div className="min-h-screen">
         {/* Hero Section */}
-        <section className="py-8 md:py-12 lg:py-16 bg-gradient-to-br from-blue-50 to-purple-50">
+        <section className="py-8 md:py-12 lg:py-16 bg-gradient-to-br from-blue-50 to-cyan-50">
           <div className="container">
             <div className="max-w-3xl">
               <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
                 Healthcare Cybersecurity Platform with <span className="text-primary">HIPAA Compliance</span>
               </h1>
               <p className="text-lg text-gray-700 mb-8">
-                Protect patient data and medical devices with real-time threat detection and ransomware protection. TruContext delivers healthcare-specific cybersecurity analytics ensuring HIPAA compliance, HITECH Act adherence, and comprehensive medical device security.
+                Protect patient data and medical devices with real-time threat detection and ransomware protection. Arqen delivers healthcare-specific cybersecurity analytics ensuring HIPAA compliance, HITECH Act adherence, and comprehensive medical device security.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/demo">
@@ -81,7 +81,7 @@ export default function HealthcareCybersecurity() {
               <Card className="border-l-4 border-l-purple-500">
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-3">
-                    <Lock className="h-6 w-6 text-purple-500 flex-shrink-0 mt-1" />
+                    <Lock className="h-6 w-6 text-blue-500 flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="font-bold text-gray-900 mb-2">Compliance Complexity</h3>
                       <p className="text-gray-600">HIPAA, HITECH, and state breach notification laws create audit burden</p>
@@ -94,13 +94,13 @@ export default function HealthcareCybersecurity() {
         </section>
 
         {/* Solution Section */}
-        <section className="py-8 md:py-12 bg-gradient-to-br from-purple-50 to-blue-50">
+        <section className="py-8 md:py-12 bg-gradient-to-br from-blue-50 to-cyan-50">
           <div className="container">
             <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
               Healthcare-Specific Threat Detection & Compliance
             </h2>
             <p className="text-lg text-gray-700 mb-8 text-center max-w-3xl mx-auto">
-              TruContext is a healthcare cybersecurity analytics platform delivering real-time threat detection for patient data systems, medical devices, and clinical networks. Our healthcare data protection solution ensures HIPAA compliance while detecting ransomware, insider threats, and unauthorized access attempts.
+              Arqen is a healthcare cybersecurity analytics platform delivering real-time threat detection for patient data systems, medical devices, and clinical networks. Our healthcare data protection solution ensures HIPAA compliance while detecting ransomware, insider threats, and unauthorized access attempts.
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 mb-8">
@@ -245,7 +245,7 @@ export default function HealthcareCybersecurity() {
         </section>
 
         {/* Compliance Section */}
-        <section className="py-8 md:py-12 bg-gradient-to-br from-purple-50 to-blue-50">
+        <section className="py-8 md:py-12 bg-gradient-to-br from-blue-50 to-cyan-50">
           <div className="container">
             <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
               Regulatory Compliance & Standards
@@ -297,7 +297,7 @@ export default function HealthcareCybersecurity() {
               Protect Patient Data with Healthcare-Specific Cybersecurity
             </h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-              See how TruContext helps healthcare organizations detect threats, ensure compliance, and protect patient safety
+              See how Arqen helps healthcare organizations detect threats, ensure compliance, and protect patient safety
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/demo">

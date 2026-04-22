@@ -11,21 +11,21 @@ export default function FinancialServicesCybersecurity() {
     <>
       <SEOHead
         title="Financial Services Cybersecurity Platform | PCI-DSS Compliance | Fraud Detection"
-        description="Protect financial institutions with TruContext's fraud detection and cybersecurity platform. Real-time threat detection, PCI-DSS compliance, and transaction security for banks and fintech."
+        description="Protect financial institutions with Arqen's fraud detection and cybersecurity platform. Real-time threat detection, PCI-DSS compliance, and transaction security for banks and fintech."
         keywords="financial services cybersecurity, PCI-DSS compliance, fraud detection platform, banking security, fintech cybersecurity, transaction security, financial data protection, insider threat detection banking"
         canonicalUrl="/solutions/financial-services-cybersecurity"
       />
       
       <div className="min-h-screen">
         {/* Hero Section */}
-        <section className="py-8 md:py-12 lg:py-16 bg-gradient-to-br from-blue-50 to-purple-50">
+        <section className="py-8 md:py-12 lg:py-16 bg-gradient-to-br from-blue-50 to-cyan-50">
           <div className="container">
             <div className="max-w-3xl">
               <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
                 Financial Services Cybersecurity with <span className="text-primary">Fraud Detection</span>
               </h1>
               <p className="text-lg text-gray-700 mb-8">
-                Protect financial institutions from cyber threats and fraud with real-time threat detection and transaction analytics. TruContext delivers PCI-DSS compliant cybersecurity for banks, credit unions, fintech platforms, and payment processors with advanced fraud detection and insider threat monitoring.
+                Protect financial institutions from cyber threats and fraud with real-time threat detection and transaction analytics. Arqen delivers PCI-DSS compliant cybersecurity for banks, credit unions, fintech platforms, and payment processors with advanced fraud detection and insider threat monitoring.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/demo">
@@ -81,7 +81,7 @@ export default function FinancialServicesCybersecurity() {
               <Card className="border-l-4 border-l-purple-500">
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-3">
-                    <Lock className="h-6 w-6 text-purple-500 flex-shrink-0 mt-1" />
+                    <Lock className="h-6 w-6 text-blue-500 flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="font-bold text-gray-900 mb-2">Regulatory Burden</h3>
                       <p className="text-gray-600">PCI-DSS, SOX, GLBA, and state privacy laws create compliance complexity</p>
@@ -94,13 +94,13 @@ export default function FinancialServicesCybersecurity() {
         </section>
 
         {/* Solution Section */}
-        <section className="py-8 md:py-12 bg-gradient-to-br from-purple-50 to-blue-50">
+        <section className="py-8 md:py-12 bg-gradient-to-br from-blue-50 to-cyan-50">
           <div className="container">
             <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
               Financial Fraud Detection & Cybersecurity Analytics
             </h2>
             <p className="text-lg text-gray-700 mb-8 text-center max-w-3xl mx-auto">
-              TruContext is a financial services cybersecurity platform delivering real-time fraud detection and threat analytics for banking systems, payment networks, and transaction processing. Our fraud detection platform ensures PCI-DSS compliance while detecting account takeover, payment fraud, and insider threats.
+              Arqen is a financial services cybersecurity platform delivering real-time fraud detection and threat analytics for banking systems, payment networks, and transaction processing. Our fraud detection platform ensures PCI-DSS compliance while detecting account takeover, payment fraud, and insider threats.
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 mb-8">
@@ -245,7 +245,7 @@ export default function FinancialServicesCybersecurity() {
         </section>
 
         {/* Compliance Section */}
-        <section className="py-8 md:py-12 bg-gradient-to-br from-purple-50 to-blue-50">
+        <section className="py-8 md:py-12 bg-gradient-to-br from-blue-50 to-cyan-50">
           <div className="container">
             <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
               Regulatory Compliance & Standards
@@ -297,7 +297,7 @@ export default function FinancialServicesCybersecurity() {
               Protect Financial Assets with Advanced Fraud Detection
             </h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-              See how TruContext helps financial institutions detect fraud, prevent cyber attacks, and maintain regulatory compliance
+              See how Arqen helps financial institutions detect fraud, prevent cyber attacks, and maintain regulatory compliance
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/demo">

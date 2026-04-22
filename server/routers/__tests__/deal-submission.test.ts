@@ -72,7 +72,7 @@ describe("Deal Submission Workflow", () => {
   it("should submit a deal with correct field mapping", async () => {
     const dealData = {
       partnerCompanyId: testPartnerId,
-      dealName: "Test Deal - TruContext Platform",
+      dealName: "Test Deal - Arqen Platform",
       customerName: "Acme Corporation",
       customerEmail: "contact@acme.com",
       customerPhone: "+1-555-0100",
@@ -81,7 +81,7 @@ describe("Deal Submission Workflow", () => {
       dealAmount: "250000.00", // Decimal as string
       dealStage: "Proposal",
       expectedCloseDate: new Date("2026-06-30"),
-      productInterest: JSON.stringify(["TruContext", "Tru-InSight"]),
+      productInterest: JSON.stringify(["Arqen", "Tru-InSight"]),
       description: "Enterprise security platform implementation",
       submittedBy: testUserId,
       notes: "Deal submitted via partner portal",
@@ -104,7 +104,7 @@ describe("Deal Submission Workflow", () => {
     expect(deals).toHaveLength(1);
     const deal = deals[0];
 
-    expect(deal.dealName).toBe("Test Deal - TruContext Platform");
+    expect(deal.dealName).toBe("Test Deal - Arqen Platform");
     expect(deal.customerName).toBe("Acme Corporation");
     expect(deal.customerEmail).toBe("contact@acme.com");
     expect(deal.customerIndustry).toBe("Cybersecurity");

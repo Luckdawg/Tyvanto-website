@@ -16,7 +16,7 @@ const submitQuoteSchema = z.object({
   company: z.string().min(1, "Company is required").max(255),
   jobTitle: z.string().max(255).optional(),
   phone: z.string().max(50).optional(),
-  productInterest: z.enum(["trucontext", "truclaw", "truinsight", "eli", "bundle", "other"]),
+  productInterest: z.enum(["arqen", "truclaw", "truinsight", "eli", "bundle", "other"]),
   useCase: z.string().max(2000).optional(),
   estimatedNodes: z.number().int().min(0).max(10_000_000).optional(),
   estimatedAgents: z.number().int().min(0).max(10_000).optional(),
@@ -53,7 +53,7 @@ export const quoteRouter = router({
 
       // Notify the owner of the new quote lead
       const productLabels: Record<string, string> = {
-        trucontext: "TruContext Core Platform",
+        arqen: "Arqen Core Platform",
         truclaw: "TruClaw Agentic AI Governance",
         truinsight: "Tru-InSight Video Intelligence",
         eli: "ELI Unified Surveillance Intelligence",

@@ -56,10 +56,10 @@ export default function GraphDemo() {
               Interactive Demo
             </Badge>
             <h1 className="text-5xl font-bold mb-4">
-              Experience TruContext Graph Intelligence
+              Experience Arqen Graph Intelligence
             </h1>
             <p className="text-xl text-white/90 mb-6">
-              Explore how TruContext's patented graph database technology maps relationships between threats, assets, and vulnerabilities to provide unparalleled security insights.
+              Explore how Arqen's patented graph database technology maps relationships between threats, assets, and vulnerabilities to provide unparalleled security insights.
             </p>
             <div className="flex gap-4">
               <Link href="/demo">
@@ -108,7 +108,7 @@ export default function GraphDemo() {
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Click on any node to explore connections. Drag to pan, use zoom controls to navigate. 
-              This simplified demo shows how TruContext maps your security landscape.
+              This simplified demo shows how Arqen maps your security landscape.
             </p>
           </div>
 
@@ -154,7 +154,7 @@ export default function GraphDemo() {
                 Enterprise-Grade Graph Analytics
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                TruContext's graph database architecture delivers 20 queries per second (QPS) compared to 
+                Arqen's graph database architecture delivers 20 queries per second (QPS) compared to 
                 just 5 QPS for traditional relational databases, enabling real-time threat correlation at scale.
               </p>
               <div className="space-y-3">
@@ -169,7 +169,7 @@ export default function GraphDemo() {
               </div>
             </div>
 
-            <Card className="bg-gradient-to-br from-blue-50 to-purple-50 border-2 border-primary/20">
+            <Card className="bg-gradient-to-br from-blue-50 to-cyan-50 border-2 border-primary/20">
               <CardContent className="p-8">
                 <div className="space-y-6">
                   <div>
@@ -206,13 +206,13 @@ export default function GraphDemo() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-12 bg-gradient-to-br from-blue-50 to-purple-50">
+      <section className="py-12 bg-gradient-to-br from-blue-50 to-cyan-50">
         <div className="container max-w-4xl text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Ready to See TruContext in Action?
+            Ready to See Arqen in Action?
           </h2>
           <p className="text-lg text-gray-600 mb-8">
-            Schedule a personalized demo to see how TruContext can transform your security operations 
+            Schedule a personalized demo to see how Arqen can transform your security operations 
             with graph-based intelligence.
           </p>
           <div className="flex gap-4 justify-center">

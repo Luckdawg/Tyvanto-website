@@ -9,9 +9,9 @@ export default function FinancialServices() {
   return (
     <div className="min-h-screen">
       <SEOHead 
-        title="Financial Services Fraud Detection & Compliance Platform | Visium"
+        title="Financial Services Fraud Detection & Compliance Platform | Tyvanto"
         description="Detect sophisticated fraud rings and ensure regulatory compliance. Financial services analytics platform with real-time threat detection and operational intelligence."
-        canonicalUrl="https://www.visiumtechnologies.com/solutions/financial-services"
+        canonicalUrl="https://www.tyvanto.com/solutions/financial-services"
       />
       <section className="gradient-hero py-12">
         <div className="container">
@@ -36,7 +36,7 @@ export default function FinancialServices() {
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Comprehensive Solution</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              TruContext provides the intelligence and insights needed to optimize operations, enhance security, and ensure compliance in financial services & fraud detection.
+              Arqen provides the intelligence and insights needed to optimize operations, enhance security, and ensure compliance in financial services & fraud detection.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -69,7 +69,7 @@ export default function FinancialServices() {
         <div className="container text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Get Started?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-            See how TruContext can transform your operations
+            See how Arqen can transform your operations
           </p>
           <Link href="/demo">
             <Button size="lg" variant="secondary" className="bg-white text-primary hover:bg-gray-100">

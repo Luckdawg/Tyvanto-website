@@ -15,7 +15,7 @@ interface Video {
 }
 
 const PLAYLISTS = [
-  { id: 'getting-started', label: 'Getting Started', description: 'New to TruContext? Start here' },
+  { id: 'getting-started', label: 'Getting Started', description: 'New to Arqen? Start here' },
   { id: 'industry-solutions', label: 'Industry Solutions', description: 'Vertical-specific implementations' },
   { id: 'advanced-features', label: 'Advanced Features', description: 'Deep dives into platform capabilities' },
 ];
@@ -52,10 +52,10 @@ export default function Videos() {
       playlist: "getting-started",
       engagementScore: 100,
       thumbnail: getYouTubeThumbnail('https://youtu.be/skDDVvoIdcY'),
-      description: "Introducing TruClaw: Visium's advanced security framework that secures the agentic frontier, protecting against autonomous AI agent risks and emerging threats."
+      description: "Introducing TruClaw: Tyvanto's advanced security framework that secures the agentic frontier, protecting against autonomous AI agent risks and emerging threats."
     },
     {
-      title: "Visium TruContext Intro",
+      title: "Tyvanto Arqen Intro",
       url: "https://youtu.be/g21CdbOvniw?si=cVMSSpgd-nU4xNWh",
       duration: "2:33",
       views: "4.1K",
@@ -63,10 +63,10 @@ export default function Videos() {
       playlist: "getting-started",
       engagementScore: 95,
       thumbnail: getYouTubeThumbnail('https://youtu.be/g21CdbOvniw'),
-      description: "Introduction to the TruContext platform and its core capabilities."
+      description: "Introduction to the Arqen platform and its core capabilities."
     },
     {
-      title: "Visium 2025 In Review and AI's Future",
+      title: "Tyvanto 2025 In Review and AI's Future",
       url: "https://youtu.be/jmO6XXxg8sE?si=UOLnMVzOtBgrewWH",
       duration: "1:12",
       views: "3.2K",
@@ -74,10 +74,10 @@ export default function Videos() {
       playlist: "getting-started",
       engagementScore: 94,
       thumbnail: getYouTubeThumbnail('https://youtu.be/jmO6XXxg8sE'),
-      description: "2025 Year End Recap highlighting Visium Technologies' achievements and AI's future in cybersecurity."
+      description: "2025 Year End Recap highlighting Tyvanto' achievements and AI's future in cybersecurity."
     },
     {
-      title: "TruContext Cyber Security",
+      title: "Arqen Cyber Security",
       url: "https://youtu.be/SSjWyVWIz6U?si=3xdBKYkL5kTplC-c",
       duration: "3:11",
       views: "2.8K",
@@ -85,10 +85,10 @@ export default function Videos() {
       playlist: "industry-solutions",
       engagementScore: 93,
       thumbnail: getYouTubeThumbnail('https://youtu.be/SSjWyVWIz6U'),
-      description: "Comprehensive cybersecurity threat detection and response with TruContext."
+      description: "Comprehensive cybersecurity threat detection and response with Arqen."
     },
     {
-      title: "TruContext Agentic AI for NOC and SOC operations",
+      title: "Arqen Agentic AI for NOC and SOC operations",
       url: "https://youtu.be/I8gPwg23iqQ",
       duration: "0:00",
       views: "0",
@@ -96,7 +96,7 @@ export default function Videos() {
       playlist: "industry-solutions",
       engagementScore: 92,
       thumbnail: getYouTubeThumbnail('https://youtu.be/I8gPwg23iqQ'),
-      description: "Explore how TruContext's agentic AI transforms Network Operations Centers (NOC) and Security Operations Centers (SOC) with autonomous threat detection and response capabilities."
+      description: "Explore how Arqen's agentic AI transforms Network Operations Centers (NOC) and Security Operations Centers (SOC) with autonomous threat detection and response capabilities."
     },
     {
       title: "Smart City",
@@ -107,10 +107,10 @@ export default function Videos() {
       playlist: "industry-solutions",
       engagementScore: 91,
       thumbnail: getYouTubeThumbnail('https://youtu.be/m9YQl1QfhKo'),
-      description: "Unified intelligence for public safety and urban operations with TruContext."
+      description: "Unified intelligence for public safety and urban operations with Arqen."
     },
     {
-      title: "Intro to ELI - TruContext and IREX.AI",
+      title: "Intro to ELI - Arqen and IREX.AI",
       url: "https://youtu.be/8VUUYBYiQ-E",
       duration: "2:15",
       views: "1.8K",
@@ -118,7 +118,7 @@ export default function Videos() {
       playlist: "getting-started",
       engagementScore: 90,
       thumbnail: getYouTubeThumbnail('https://youtu.be/8VUUYBYiQ-E'),
-      description: "Introduction to Ethical Layered Intelligence (ELI) framework combining TruContext and IREX.AI for advanced threat detection and public safety."
+      description: "Introduction to Ethical Layered Intelligence (ELI) framework combining Arqen and IREX.AI for advanced threat detection and public safety."
     },
     {
       title: "A discussion about the major deployment of ELI (Ethical Layered Intelligence) AI Platform",
@@ -132,7 +132,7 @@ export default function Videos() {
       description: "CEOs Calvin Yadav and Mark Lucky discuss the landmark 54,000-camera AI surveillance network deployment in Peru and its strategic implications for Latin American security."
     },
     {
-      title: "TruContext Agentic AI for Cyber Defense",
+      title: "Arqen Agentic AI for Cyber Defense",
       url: "https://youtu.be/GmVOss9m2aU",
       duration: "0:00",
       views: "0",
@@ -140,10 +140,10 @@ export default function Videos() {
       playlist: "advanced-features",
       engagementScore: 88,
       thumbnail: getYouTubeThumbnail('https://youtu.be/GmVOss9m2aU'),
-      description: "Discover how TruContext's agentic AI capabilities deliver autonomous threat detection and response for enterprise cybersecurity operations."
+      description: "Discover how Arqen's agentic AI capabilities deliver autonomous threat detection and response for enterprise cybersecurity operations."
     },
     {
-      title: "TruContext Fraud Detection & Anti-Money Laundering",
+      title: "Arqen Fraud Detection & Anti-Money Laundering",
       url: "https://youtu.be/iXVQ7pcLbvQ?si=MXe4TXfcUYTy3opD",
       duration: "1:54",
       views: "2.1K",
@@ -151,7 +151,7 @@ export default function Videos() {
       playlist: "industry-solutions",
       engagementScore: 88,
       thumbnail: getYouTubeThumbnail('https://youtu.be/iXVQ7pcLbvQ'),
-      description: "Advanced fraud detection and anti-money laundering capabilities with TruContext."
+      description: "Advanced fraud detection and anti-money laundering capabilities with Arqen."
     },
     {
       title: "Zero Trust Network Architecture v2",
@@ -162,7 +162,7 @@ export default function Videos() {
       playlist: "advanced-features",
       engagementScore: 87,
       thumbnail: getYouTubeThumbnail('https://youtu.be/8wkYqfqpBgo'),
-      description: "An explainer on how Visium's TruContext delivers a Zero Trust Network Architecture (ZTNA) for modern distributed networks and security operations."
+      description: "An explainer on how Tyvanto's Arqen delivers a Zero Trust Network Architecture (ZTNA) for modern distributed networks and security operations."
     },
     {
       title: "Campus Safety",
@@ -176,7 +176,7 @@ export default function Videos() {
       description: "Campus Security Initiative with IREX.AI for ethical AI-driven public safety."
     },
     {
-      title: "Visium & IREX Peru AI Security with ELI",
+      title: "Tyvanto & IREX Peru AI Security with ELI",
       url: "https://youtu.be/UNwTSzhhisA",
       duration: "0:00",
       views: "0",
@@ -184,7 +184,7 @@ export default function Videos() {
       playlist: "industry-solutions",
       engagementScore: 85,
       thumbnail: getYouTubeThumbnail('https://youtu.be/UNwTSzhhisA'),
-      description: "Visium Technologies and IREX Peru demonstrate AI-powered security solutions using the Ethical Layered Intelligence (ELI) framework."
+      description: "Tyvanto and IREX Peru demonstrate AI-powered security solutions using the Ethical Layered Intelligence (ELI) framework."
     },
     {
       title: "Insider Risks",
@@ -195,10 +195,10 @@ export default function Videos() {
       playlist: "industry-solutions",
       engagementScore: 84,
       thumbnail: getYouTubeThumbnail('https://youtu.be/7aar2CnxpKo'),
-      description: "Detect and prevent insider threats with TruContext's advanced behavioral analytics and anomaly detection."
+      description: "Detect and prevent insider threats with Arqen's advanced behavioral analytics and anomaly detection."
     },
     {
-      title: "TruContext™ ELI and Law Enforcement",
+      title: "Arqen™ ELI and Law Enforcement",
       url: "https://youtu.be/0eRj8_nKWj8?si=r5Bv7lvPQA5He590",
       duration: "2:20",
       views: "458",
@@ -206,7 +206,7 @@ export default function Videos() {
       playlist: "industry-solutions",
       engagementScore: 83,
       thumbnail: getYouTubeThumbnail('https://youtu.be/0eRj8_nKWj8'),
-      description: "See how TruContext serves law enforcement and emergency response teams."
+      description: "See how Arqen serves law enforcement and emergency response teams."
     },
     {
       title: "Logistics, Ports and Supply Chain",
@@ -217,7 +217,7 @@ export default function Videos() {
       playlist: "industry-solutions",
       engagementScore: 82,
       thumbnail: getYouTubeThumbnail('https://youtu.be/xvLLPZzuEec'),
-      description: "TruContext solutions for logistics, port operations, and supply chain security."
+      description: "Arqen solutions for logistics, port operations, and supply chain security."
     },
   ];
 
@@ -242,7 +242,7 @@ export default function Videos() {
         <div className="container">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Videos & Webinars</h1>
           <p className="text-xl text-purple-100 max-w-3xl">
-            Explore our collection of product demonstrations, industry solutions, webinars, and interviews showcasing the power of TruContext™ platform.
+            Explore our collection of product demonstrations, industry solutions, webinars, and interviews showcasing the power of Arqen™ platform.
           </p>
         </div>
       </section>
@@ -258,7 +258,7 @@ export default function Videos() {
                 onClick={() => setSelectedPlaylist(selectedPlaylist === playlist.id ? null : playlist.id)}
                 className={`p-6 rounded-lg border-2 transition-all text-left ${
                   selectedPlaylist === playlist.id
-                    ? 'border-purple-500 bg-purple-50'
+                    ? 'border-blue-500 bg-blue-50'
                     : 'border-gray-200 hover:border-purple-300'
                 }`}
               >
@@ -281,7 +281,7 @@ export default function Videos() {
                 onClick={() => handleCategoryToggle(category.id)}
                 className={`px-4 py-2 rounded-full font-medium transition-all ${
                   selectedCategories.includes(category.id)
-                    ? 'bg-purple-600 text-white'
+                    ? 'bg-blue-700 text-white'
                     : 'bg-white border-2 border-gray-300 text-gray-700 hover:border-purple-400'
                 }`}
               >
@@ -345,7 +345,7 @@ export default function Videos() {
                   href={industryVideos[0].url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 bg-white text-purple-900 px-8 py-3 rounded-lg font-bold hover:bg-purple-100 transition-colors shadow-lg"
+                  className="inline-flex items-center gap-3 bg-white text-purple-900 px-8 py-3 rounded-lg font-bold hover:bg-blue-100 transition-colors shadow-lg"
                 >
                   <Play className="w-5 h-5 fill-purple-900" />
                   Watch Now
@@ -402,12 +402,12 @@ export default function Videos() {
                   {/* Content */}
                   <div className="p-4">
                     <div className="flex items-center gap-2 mb-2">
-                      <span className="text-xs font-semibold text-purple-600 bg-purple-100 px-2 py-1 rounded-full capitalize">
+                      <span className="text-xs font-semibold text-blue-600 bg-blue-100 px-2 py-1 rounded-full capitalize">
                         {video.category}
                       </span>
                       <span className="text-xs text-gray-500">{video.views} views</span>
                     </div>
-                    <h3 className="font-bold text-base mb-2 line-clamp-2 group-hover:text-purple-600 transition-colors">
+                    <h3 className="font-bold text-base mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors">
                       {video.title}
                     </h3>
                     <p className="text-sm text-gray-600 line-clamp-2 mb-3">
@@ -417,7 +417,7 @@ export default function Videos() {
                       <div className="flex items-center gap-1">
                         <div className="w-full bg-gray-200 rounded-full h-2">
                           <div
-                            className="bg-purple-600 h-2 rounded-full"
+                            className="bg-blue-700 h-2 rounded-full"
                             style={{ width: `${video.engagementScore}%` }}
                           />
                         </div>

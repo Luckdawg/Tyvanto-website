@@ -27,50 +27,50 @@ export default function ChatWidget() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const quickReplies: QuickReply[] = [
-    { text: "What is TruContext?", response: "TruContext is an agentic AI-powered intelligence platform with dual database architecture (graph database + relational database) that transforms cybersecurity and operational intelligence. Our platform delivers 4x faster query performance, 90% reduction in false positives, and autonomous AI agents that plan and execute complex workflows without human intervention." },
-    { text: "Pricing information", response: "Visium Technologies offers transparent, hybrid pricing — a predictable base fee plus metered usage. Entry points range from $1,299/mo (TruClaw AI Governance) to $19,950/mo (TruAddress). TruContext starts at $7,995/mo, Tru-InSight at $7,499/mo, and ELI at $9,499/mo. Annual billing saves 10% across all products. Visit our Shop page for the full comparison table and interactive pricing calculator, or speak with our sales team for a custom quote." },
-    { text: "Key features", response: "TruContext's key features include: (1) Dual Database Architecture with graph database + relational database, (2) Agentic AI with autonomous workflow execution, (3) Real-time threat detection with 75% faster MTTD, (4) Tru-InSight™ Video Intelligence, (5) MITRE ATT&CK framework integration, (6) Digital twin capabilities, and (7) Defense-grade provenance. Which feature would you like to learn more about?" },
+    { text: "What is Arqen?", response: "Arqen is an agentic AI-powered intelligence platform with dual database architecture (graph database + relational database) that transforms cybersecurity and operational intelligence. Our platform delivers 4x faster query performance, 90% reduction in false positives, and autonomous AI agents that plan and execute complex workflows without human intervention." },
+    { text: "Pricing information", response: "Tyvanto offers transparent, hybrid pricing — a predictable base fee plus metered usage. Entry points range from $1,299/mo (TruClaw AI Governance) to $19,950/mo (TruAddress). Arqen starts at $7,995/mo, Tru-InSight at $7,499/mo, and ELI at $9,499/mo. Annual billing saves 10% across all products. Visit our Shop page for the full comparison table and interactive pricing calculator, or speak with our sales team for a custom quote." },
+    { text: "Key features", response: "Arqen's key features include: (1) Dual Database Architecture with graph database + relational database, (2) Agentic AI with autonomous workflow execution, (3) Real-time threat detection with 75% faster MTTD, (4) Tru-InSight™ Video Intelligence, (5) an independent research organization ATT&CK framework integration, (6) Digital twin capabilities, and (7) Defense-grade provenance. Which feature would you like to learn more about?" },
     { text: "Schedule a demo", response: "I'd be happy to help you schedule a demo! To get you connected with the right team member, I'll need a few details. Let me collect your information." }
   ];
 
   const knowledgeBase: { [key: string]: string } = {
     // Platform & Technology
-    "agentic ai": "TruContext features autonomous AI agents that iteratively plan and execute complex workflows without human intervention. Our agentic AI capabilities include automatic icon generation, multi-step threat investigations, behavioral anomaly detection, and self-optimizing algorithms. This delivers a 90% reduction in manual analysis time.",
+    "agentic ai": "Arqen features autonomous AI agents that iteratively plan and execute complex workflows without human intervention. Our agentic AI capabilities include automatic icon generation, multi-step threat investigations, behavioral anomaly detection, and self-optimizing algorithms. This delivers a 90% reduction in manual analysis time.",
     "dual database": "Our patented dual database architecture combines graph database for real-time relationship intelligence with relational database for time-series efficiency. This delivers 20 QPS pathfinding performance vs 5 QPS for traditional systems—4x faster query performance with complete analytical coverage.",
-    "graph database": "TruContext uses native graph storage for complex relationship traversals in milliseconds. Our patented Scalable Multi-Layered Graph Database architecture enables 3D utility network representation, co-offending network analysis, and link prediction with 20 QPS performance.",
+    "graph database": "Arqen uses native graph storage for complex relationship traversals in milliseconds. Our patented Scalable Multi-Layered Graph Database architecture enables 3D utility network representation, co-offending network analysis, and link prediction with 20 QPS performance.",
     "graph database engine": "Our graph database serves as our relationship intelligence engine, providing subject-predicate-object modeling, transparent graph queries, and 20 QPS pathfinding performance. Combined with relational database for time-series data, this dual database approach delivers unmatched analytical capabilities.",
     
     // Features & Capabilities
     "video intelligence": "Tru-InSight™ is our autonomous video intelligence platform that provides real-time face recognition, license plate detection (ALPR), behavioral analytics, and multi-camera event correlation. It can analyze 1,200+ video streams simultaneously with autonomous investigation planning.",
     "tru-insight": "Tru-InSight™ is our autonomous video intelligence platform that provides real-time face recognition, license plate detection (ALPR), behavioral analytics, and multi-camera event correlation. It can analyze 1,200+ video streams simultaneously with autonomous investigation planning.",
-    "mitre": "TruContext has deep MITRE heritage—enhanced from MITRE Corporation's CyGraph platform originally developed for US Army Cyber Command. We provide native MITRE ATT&CK framework integration with automatic threat technique identification and correlation.",
-    "threat detection": "TruContext delivers 75% faster Mean Time to Detect (MTTD) through real-time graph analytics, agentic AI correlation, and temporal contextualization. We reduce false positives by 90% (from 35-41% to 6-9%) through intelligent relationship analysis.",
+    "mitre": "Arqen has deep an independent research organization heritage—enhanced from an advanced graph intelligence platform originally developed for enterprise security operations. We provide native an independent research organization ATT&CK framework integration with automatic threat technique identification and correlation.",
+    "threat detection": "Arqen delivers 75% faster Mean Time to Detect (MTTD) through real-time graph analytics, agentic AI correlation, and temporal contextualization. We reduce false positives by 90% (from 35-41% to 6-9%) through intelligent relationship analysis.",
     
     // Performance & ROI
-    "performance": "TruContext delivers: 20 QPS graph query performance (vs 5 QPS traditional), 100K+ events/second throughput, sub-second dashboard refresh rates, 75% faster MTTD, 90% reduction in false positives, and 60% faster incident response.",
+    "performance": "Arqen delivers: 20 QPS graph query performance (vs 5 QPS traditional), 100K+ events/second throughput, sub-second dashboard refresh rates, 75% faster MTTD, 90% reduction in false positives, and 60% faster incident response.",
     "roi": "Customers achieve an average 340% ROI within 18 months with $2.8M average annual savings. Cost savings come from 90% reduction in manual analysis time, 75% faster incident resolution, 83% reduction in false positives, and prevented cascading failures. Typical payback period is 6 months.",
-    "pricing": "Visium Technologies uses hybrid pricing — a predictable base fee plus transparent metered usage. Our product lineup: TruClaw AI Governance from $1,299/mo (flat tier + agent count), CaseForge Legal from $3,499/mo (flat rate), ASPIRE Reporting from $3,499/mo (flat rate), PanelPulse from $3,995/mo (flat rate), Smart City Demo Suite from $4,750/mo (flat rate), Tru-InSight Video Intelligence from $7,499/mo (base + $2.00/camera), TruContext from $7,995/mo (base + tiered node rate), ELI Physical Security from $9,499/mo (base + $4/node overage), and TruAddress from $19,950/mo (usage-based). Annual billing saves 10% on all products. Visit our Shop page for the interactive pricing calculator and full comparison table.",
+    "pricing": "Tyvanto uses hybrid pricing — a predictable base fee plus transparent metered usage. Our product lineup: TruClaw AI Governance from $1,299/mo (flat tier + agent count), CaseForge Legal from $3,499/mo (flat rate), ASPIRE Reporting from $3,499/mo (flat rate), PanelPulse from $3,995/mo (flat rate), Smart City Demo Suite from $4,750/mo (flat rate), Tru-InSight Video Intelligence from $7,499/mo (base + $2.00/camera), Arqen from $7,995/mo (base + tiered node rate), ELI Physical Security from $9,499/mo (base + $4/node overage), and TruAddress from $19,950/mo (usage-based). Annual billing saves 10% on all products. Visit our Shop page for the interactive pricing calculator and full comparison table.",
     
     // Industries & Solutions
-    "cybersecurity": "TruContext serves cybersecurity with real-time threat detection, MITRE ATT&CK integration, CVE/CVSS risk mapping, and behavioral anomaly detection. We deliver 75% faster MTTD, 90% reduction in false positives, and automatic threat correlation across cyber-physical systems.",
-    "smart cities": "For smart cities, TruContext provides intelligent transportation management, public safety analytics, video intelligence, and infrastructure monitoring. Customers achieve 78% crime prevention rates, 40% faster emergency response, and 35% reduction in traffic congestion.",
-    "critical infrastructure": "TruContext protects critical infrastructure with cyber-physical threat correlation, digital twin simulation, SCADA integration, and cascading failure prevention. Customers achieve zero cascading failures and 50% lower maintenance costs.",
+    "cybersecurity": "Arqen serves cybersecurity with real-time threat detection, an independent research organization ATT&CK integration, CVE/CVSS risk mapping, and behavioral anomaly detection. We deliver 75% faster MTTD, 90% reduction in false positives, and automatic threat correlation across cyber-physical systems.",
+    "smart cities": "For smart cities, Arqen provides intelligent transportation management, public safety analytics, video intelligence, and infrastructure monitoring. Customers achieve 78% crime prevention rates, 40% faster emergency response, and 35% reduction in traffic congestion.",
+    "critical infrastructure": "Arqen protects critical infrastructure with cyber-physical threat correlation, digital twin simulation, SCADA integration, and cascading failure prevention. Customers achieve zero cascading failures and 50% lower maintenance costs.",
     
     // Comparison & Differentiation
-    "vs siem": "TruContext outperforms traditional SIEM platforms with: 4x faster queries (20 QPS vs 5 QPS), agentic AI vs rule-based automation, 90% vs 35-41% false positive rates, native MITRE ATT&CK integration, dual database architecture, and digital twin capabilities that legacy systems lack.",
-    "competitors": "TruContext differentiates through: (1) Patented dual database architecture, (2) Autonomous agentic AI, (3) MITRE heritage and native ATT&CK integration, (4) 4x faster graph query performance, (5) Digital twin capabilities, and (6) Defense-grade provenance with full audit trails.",
+    "vs siem": "Arqen outperforms traditional SIEM platforms with: 4x faster queries (20 QPS vs 5 QPS), agentic AI vs rule-based automation, 90% vs 35-41% false positive rates, native an independent research organization ATT&CK integration, dual database architecture, and digital twin capabilities that legacy systems lack.",
+    "competitors": "Arqen differentiates through: (1) Patented dual database architecture, (2) Autonomous agentic AI, (3) an independent research organization heritage and native ATT&CK integration, (4) 4x faster graph query performance, (5) Digital twin capabilities, and (6) Defense-grade provenance with full audit trails.",
     
     // Company & Support
-    "demo": "To schedule a demo, I'll need your name, email, and company. Our team will reach out within 24 hours to schedule a personalized demonstration of TruContext's capabilities tailored to your use case.",
-    "contact": "You can reach our team at: Sales inquiries - contact through our demo request form, Technical support - available through the customer portal, General inquiries - info@visiumtechnologies.com, or call our main office.",
-    "support": "TruContext customers receive 24/7 technical support, dedicated customer success managers, quarterly business reviews, training and certification programs, and access to our knowledge base and API documentation.",
+    "demo": "To schedule a demo, I'll need your name, email, and company. Our team will reach out within 24 hours to schedule a personalized demonstration of Arqen's capabilities tailored to your use case.",
+    "contact": "You can reach our team at: Sales inquiries - contact through our demo request form, Technical support - available through the customer portal, General inquiries - info@tyvanto.com, or call our main office.",
+    "support": "Arqen customers receive 24/7 technical support, dedicated customer success managers, quarterly business reviews, training and certification programs, and access to our knowledge base and API documentation.",
   };
 
   useEffect(() => {
     if (isOpen && messages.length === 0) {
       // Welcome message
       setTimeout(() => {
-        addBotMessage("Hello! I'm the TruContext AI assistant. I can help you learn about our agentic AI-powered intelligence platform, pricing, features, and schedule a demo. What would you like to know?");
+        addBotMessage("Hello! I'm the Arqen AI assistant. I can help you learn about our agentic AI-powered intelligence platform, pricing, features, and schedule a demo. What would you like to know?");
       }, 500);
     }
   }, [isOpen]);
@@ -122,12 +122,12 @@ export default function ChatWidget() {
 
     // Greeting responses
     if (lowerMessage.match(/\b(hi|hello|hey|greetings)\b/)) {
-      return "Hello! I'm here to help you learn about TruContext. You can ask me about our platform features, pricing, ROI, industry solutions, or schedule a demo. What interests you most?";
+      return "Hello! I'm here to help you learn about Arqen. You can ask me about our platform features, pricing, ROI, industry solutions, or schedule a demo. What interests you most?";
     }
 
     // Thank you responses
     if (lowerMessage.match(/\b(thanks|thank you|appreciate)\b/)) {
-      return "You're welcome! Is there anything else you'd like to know about TruContext? I'm here to help with questions about features, pricing, demos, or any other aspect of our platform.";
+      return "You're welcome! Is there anything else you'd like to know about Arqen? I'm here to help with questions about features, pricing, demos, or any other aspect of our platform.";
     }
 
     // Default response with suggestions
@@ -172,10 +172,10 @@ export default function ChatWidget() {
       `Source: Chat Widget Demo Request`
     );
     
-    window.location.href = `mailto:info@visiumtechnologies.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:info@tyvanto.com?subject=${subject}&body=${body}`;
     
     setShowLeadForm(false);
-    addBotMessage(`Thank you, ${leadInfo.name}! I've recorded your information. Our team will reach out to ${leadInfo.email} within 24 hours to schedule your personalized TruContext demo. In the meantime, feel free to ask me any questions!`);
+    addBotMessage(`Thank you, ${leadInfo.name}! I've recorded your information. Our team will reach out to ${leadInfo.email} within 24 hours to schedule your personalized Arqen demo. In the meantime, feel free to ask me any questions!`);
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
@@ -209,7 +209,7 @@ export default function ChatWidget() {
                   <Bot className="h-6 w-6" />
                 </div>
                 <div>
-                  <div className="font-bold">TruContext AI Assistant</div>
+                  <div className="font-bold">Arqen AI Assistant</div>
                   <div className="text-xs opacity-90 flex items-center gap-1">
                     <span className="h-2 w-2 bg-green-400 rounded-full"></span>
                     Online - Instant replies
@@ -349,7 +349,7 @@ export default function ChatWidget() {
               </Button>
             </div>
             <div className="text-xs text-gray-500 mt-2 text-center">
-              Powered by TruContext AI
+              Powered by Arqen AI
             </div>
           </div>
         </Card>

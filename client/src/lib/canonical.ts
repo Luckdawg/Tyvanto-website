@@ -3,7 +3,7 @@
  * Generates canonical URLs for all pages to prevent duplicate content issues
  */
 
-const BASE_URL = 'https://www.visiumtechnologies.com';
+const BASE_URL = 'https://www.tyvanto.com';
 
 export function getCanonicalUrl(path: string): string {
   // Remove trailing slashes and ensure consistent formatting

@@ -37,7 +37,7 @@ export async function sendEmail(options: SendEmailOptions): Promise<boolean> {
   }
 
   try {
-    const fromEmail = options.from || ENV.sendgridFromEmail || "noreply@visium.com";
+    const fromEmail = options.from || ENV.sendgridFromEmail || "noreply@tyvanto.com";
 
     await sendgridClient.send({
       to: options.to,
@@ -85,7 +85,7 @@ export async function sendPasswordResetEmail(
           </div>
           <div class="content">
             <p>Hello,</p>
-            <p>We received a request to reset your password for your Visium Technologies Partner Portal account. If you didn't make this request, you can ignore this email.</p>
+            <p>We received a request to reset your password for your Tyvanto Partner Portal account. If you didn't make this request, you can ignore this email.</p>
             
             <p>Click the button below to reset your password:</p>
             <a href="${resetLink}" class="button">Reset Password</a>
@@ -99,11 +99,11 @@ export async function sendPasswordResetEmail(
               <strong>⚠️ Security Note:</strong> This link will expire in 1 hour. If you didn't request a password reset, please ignore this email or contact support if you have concerns about your account security.
             </div>
             
-            <p>Best regards,<br>Visium Technologies Team</p>
+            <p>Best regards,<br>Tyvanto Team</p>
             
             <div class="footer">
               <p>This is an automated message. Please do not reply to this email.</p>
-              <p>© 2026 Visium Technologies. All rights reserved.</p>
+              <p>© 2026 Tyvanto. All rights reserved.</p>
             </div>
           </div>
         </div>
@@ -116,7 +116,7 @@ Password Reset Request
 
 Hello,
 
-We received a request to reset your password for your Visium Technologies Partner Portal account. If you didn't make this request, you can ignore this email.
+We received a request to reset your password for your Tyvanto Partner Portal account. If you didn't make this request, you can ignore this email.
 
 Click the link below to reset your password:
 ${resetLink}
@@ -124,10 +124,10 @@ ${resetLink}
 This link will expire in 1 hour. If you didn't request a password reset, please ignore this email or contact support if you have concerns about your account security.
 
 Best regards,
-Visium Technologies Team
+Tyvanto Team
 
 This is an automated message. Please do not reply to this email.
-© 2026 Visium Technologies. All rights reserved.
+© 2026 Tyvanto. All rights reserved.
   `;
 
   return sendEmail({
@@ -169,7 +169,7 @@ export async function sendWelcomeEmail(
           </div>
           <div class="content">
             <p>Hello,</p>
-            <p>Welcome to the Visium Technologies Partner Portal! We're excited to have <strong>${companyName}</strong> as part of our partner ecosystem.</p>
+            <p>Welcome to the Tyvanto Partner Portal! We're excited to have <strong>${companyName}</strong> as part of our partner ecosystem.</p>
             
             <p>Your partner account is now active and ready to use. Log in to access:</p>
             <div class="feature-list">
@@ -184,10 +184,10 @@ export async function sendWelcomeEmail(
             
             <p>If you have any questions or need assistance, please don't hesitate to contact our partner support team.</p>
             
-            <p>Best regards,<br>Visium Technologies Team</p>
+            <p>Best regards,<br>Tyvanto Team</p>
             
             <div class="footer">
-              <p>© 2026 Visium Technologies. All rights reserved.</p>
+              <p>© 2026 Tyvanto. All rights reserved.</p>
             </div>
           </div>
         </div>
@@ -251,10 +251,10 @@ export async function sendDealApprovalEmail(
             
             <p>If you have questions about this decision, please contact our partner team.</p>
             
-            <p>Best regards,<br>Visium Technologies Team</p>
+            <p>Best regards,<br>Tyvanto Team</p>
             
             <div class="footer">
-              <p>© 2026 Visium Technologies. All rights reserved.</p>
+              <p>© 2026 Tyvanto. All rights reserved.</p>
             </div>
           </div>
         </div>

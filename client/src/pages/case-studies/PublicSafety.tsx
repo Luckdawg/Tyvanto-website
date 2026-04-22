@@ -29,17 +29,17 @@ export default function PublicSafetyCaseStudy() {
   const timeline = [
     { phase: "Security Assessment", duration: "5 weeks", activities: ["Threat landscape analysis", "Infrastructure vulnerability audit", "Historical crime data review", "Stakeholder requirements"] },
     { phase: "Pilot District", duration: "12 weeks", activities: ["Deploy in high-risk district", "Integrate crime databases", "Connect surveillance network", "Train predictive models"] },
-    { phase: "City-Wide Deployment", duration: "18 weeks", activities: ["Expand to all precincts", "MITRE ATT&CK integration", "CVE/CVSS risk mapping", "Officer training program"] },
+    { phase: "City-Wide Deployment", duration: "18 weeks", activities: ["Expand to all precincts", "an independent research organization ATT&CK integration", "CVE/CVSS risk mapping", "Officer training program"] },
     { phase: "Advanced Analytics", duration: "Ongoing", activities: ["Co-offending network analysis", "Link prediction refinement", "Ethical transparency audits", "Continuous model improvement"] }
   ];
 
   const technicalComponents = [
     {
       component: "Data Sources",
-      items: ["Historical crime data", "Public infrastructure violations", "Network external entry logs", "MITRE vulnerability databases", "Surveillance camera feeds", "911 dispatch records"]
+      items: ["Historical crime data", "Public infrastructure violations", "Network external entry logs", "an independent research organization vulnerability databases", "Surveillance camera feeds", "911 dispatch records"]
     },
     {
-      component: "TruContext Integration",
+      component: "Arqen Integration",
       items: ["Graph analytics (co-offending networks)", "CVE/CVSS risk grouping", "Subnet isolation & filtering", "Link prediction algorithms", "External entry identification", "Audit trail transparency"]
     },
     {
@@ -54,7 +54,7 @@ export default function PublicSafetyCaseStudy() {
       <section className="gradient-hero py-12">
         <div className="container">
           <div className="max-w-4xl">
-            <Badge className="mb-6 bg-purple-500/10 text-purple-700 border-purple-500/20">
+            <Badge className="mb-6 bg-blue-600/10 text-blue-700 border-blue-500/20">
               <Shield className="h-4 w-4 mr-2" />
               Public Safety Use Case Scenario
             </Badge>
@@ -62,7 +62,7 @@ export default function PublicSafetyCaseStudy() {
               Metro Police Department: <span className="text-primary">Predictive Policing & Threat Intelligence</span>
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed mb-8">
-              How a major metropolitan police department could deploy TruContext to achieve 50% improvement in crime prevention, 78% reduction in false positives, and ethical transparency in predictive policing through graph analytics, cyber-physical threat correlation, and MITRE ATT&CK integration.
+              How a major metropolitan police department could deploy Arqen to achieve 50% improvement in crime prevention, 78% reduction in false positives, and ethical transparency in predictive policing through graph analytics, cyber-physical threat correlation, and an independent research organization ATT&CK integration.
             </p>
             <div className="flex flex-wrap gap-6 text-sm">
               <div className="flex items-center gap-2">
@@ -143,7 +143,7 @@ export default function PublicSafetyCaseStudy() {
       {/* Solution Section */}
       <section className="py-12 bg-gradient-to-br from-purple-50 to-pink-50">
         <div className="container max-w-5xl">
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">The TruContext Approach</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-8">The Arqen Approach</h2>
           <div className="space-y-6">
             {technicalComponents.map((component, index) => (
               <Card key={index} className="bg-white hover:shadow-xl transition-shadow">
@@ -166,7 +166,7 @@ export default function PublicSafetyCaseStudy() {
             <CardContent className="p-10">
               <h3 className="text-2xl font-bold mb-4">Graph Analytics for Predictive Policing</h3>
               <p className="text-lg opacity-90 leading-relaxed mb-6">
-                TruContext's graph database architecture is uniquely could position for predictive policing applications. Co-offending Network Analysis links individuals who have committed crimes together, while Link Prediction identifies emerging criminal network relationships. The platform fuses historical crime data with infrastructure data—such as mapping crime hot spots against broken windows or graffiti—to prioritize high-risk areas for intervention. Unlike "black box" AI algorithms, TruContext's knowledge graph provides structurally visible, traceable relationships with full audit trails, fulfilling the ethical mandate for clarity in data-driven governance.
+                Arqen's graph database architecture is uniquely could position for predictive policing applications. Co-offending Network Analysis links individuals who have committed crimes together, while Link Prediction identifies emerging criminal network relationships. The platform fuses historical crime data with infrastructure data—such as mapping crime hot spots against broken windows or graffiti—to prioritize high-risk areas for intervention. Unlike "black box" AI algorithms, Arqen's knowledge graph provides structurally visible, traceable relationships with full audit trails, fulfilling the ethical mandate for clarity in data-driven governance.
               </p>
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="bg-white/10 backdrop-blur rounded-lg p-4">
@@ -283,10 +283,10 @@ export default function PublicSafetyCaseStudy() {
       <section className="py-12 bg-white">
         <div className="container max-w-5xl">
           <h2 className="text-4xl font-bold text-gray-900 mb-8">Ethical Transparency & Accountability</h2>
-          <Card className="bg-gradient-to-br from-blue-50 to-purple-50 border-2 border-primary/20">
+          <Card className="bg-gradient-to-br from-blue-50 to-cyan-50 border-2 border-primary/20">
             <CardContent className="p-10">
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                In the ethically sensitive area of predictive policing, TruContext provides a critical advantage: architectural transparency. Analysis derived from a knowledge graph, unlike some proprietary "black box" AI algorithms, is based on structurally visible, traceable relationships. The graph explicitly maps the nodes (e.g., individuals or locations) and the edges (relationships or past crimes) used in the analysis.
+                In the ethically sensitive area of predictive policing, Arqen provides a critical advantage: architectural transparency. Analysis derived from a knowledge graph, unlike some proprietary "black box" AI algorithms, is based on structurally visible, traceable relationships. The graph explicitly maps the nodes (e.g., individuals or locations) and the edges (relationships or past crimes) used in the analysis.
               </p>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
@@ -344,7 +344,7 @@ export default function PublicSafetyCaseStudy() {
             Ready to Transform Your Public Safety Operations?
           </h2>
           <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
-            Discover how TruContext can deliver similar results for your law enforcement and security operations
+            Discover how Arqen can deliver similar results for your law enforcement and security operations
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/demo">

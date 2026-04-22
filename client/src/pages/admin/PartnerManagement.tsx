@@ -190,8 +190,8 @@ export default function PartnerManagement() {
                 <p className="text-sm text-gray-600 mb-1">Total MDF Spent</p>
                 <p className="text-2xl font-bold text-gray-900">${(stats.totalMdfSpent / 1000).toFixed(1)}K</p>
               </div>
-              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
-                <Clock className="w-6 h-6 text-purple-600" />
+              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                <Clock className="w-6 h-6 text-blue-600" />
               </div>
             </div>
           </CardContent>

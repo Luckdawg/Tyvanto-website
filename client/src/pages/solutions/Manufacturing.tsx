@@ -9,9 +9,9 @@ export default function Manufacturing() {
   return (
     <div className="min-h-screen">
       <SEOHead 
-        title="Manufacturing Industrial Operations & Predictive Maintenance | Visium"
+        title="Manufacturing Industrial Operations & Predictive Maintenance | Tyvanto"
         description="Predictive maintenance and quality control for optimized production. Manufacturing analytics platform with real-time threat detection and operational intelligence."
-        canonicalUrl="https://www.visiumtechnologies.com/solutions/manufacturing"
+        canonicalUrl="https://www.tyvanto.com/solutions/manufacturing"
       />
       <section className="gradient-hero py-12">
         <div className="container">
@@ -36,7 +36,7 @@ export default function Manufacturing() {
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Comprehensive Solution</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              TruContext provides the intelligence and insights needed to optimize operations, enhance security, and ensure compliance in manufacturing & industrial operations.
+              Arqen provides the intelligence and insights needed to optimize operations, enhance security, and ensure compliance in manufacturing & industrial operations.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -69,7 +69,7 @@ export default function Manufacturing() {
         <div className="container text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Get Started?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-            See how TruContext can transform your operations
+            See how Arqen can transform your operations
           </p>
           <Link href="/demo">
             <Button size="lg" variant="secondary" className="bg-white text-primary hover:bg-gray-100">

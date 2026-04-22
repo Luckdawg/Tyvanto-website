@@ -106,24 +106,24 @@ describe('Shop — Industry Solutions & Vertical Platforms section', () => {
 
   it('renders the section description paragraph', async () => {
     await renderShop();
-    expect(screen.getByText(/Purpose-built applications powered by TruContext/i)).toBeInTheDocument();
+    expect(screen.getByText(/Purpose-built applications powered by Arqen/i)).toBeInTheDocument();
   });
 
   // ── Card presence ──────────────────────────────────────────────────────────
 
-  it('renders Card 1: TruContext for Oil & Gas Operations', async () => {
+  it('renders Card 1: Arqen for Oil & Gas Operations', async () => {
     await renderShop();
-    expect(screen.getByText(/TruContext.*for Oil.*Gas Operations/i)).toBeInTheDocument();
+    expect(screen.getByText(/Arqen.*for Oil.*Gas Operations/i)).toBeInTheDocument();
   });
 
-  it('renders Card 2: TruContext Smart City Suite — Government Edition', async () => {
+  it('renders Card 2: Arqen Smart City Suite — Government Edition', async () => {
     await renderShop();
-    expect(screen.getByText(/TruContext.*Smart City Suite.*Government Edition/i)).toBeInTheDocument();
+    expect(screen.getByText(/Arqen.*Smart City Suite.*Government Edition/i)).toBeInTheDocument();
   });
 
-  it('renders Card 3: TruContext Smart City Command Center', async () => {
+  it('renders Card 3: Arqen Smart City Command Center', async () => {
     await renderShop();
-    expect(screen.getByText(/TruContext.*Smart City Command Center/i)).toBeInTheDocument();
+    expect(screen.getByText(/Arqen.*Smart City Command Center/i)).toBeInTheDocument();
   });
 
   it('renders Card 4: ELI Campus Security Intelligence Platform', async () => {

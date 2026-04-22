@@ -75,8 +75,8 @@ export default function WhitepaperDownloadDialog({
     
     // Create a temporary link and trigger download
     const link = document.createElement("a");
-    link.href = "/TruContext_Architecture_Whitepaper.pdf";
-    link.download = "TruContext_Architecture_Whitepaper.pdf";
+    link.href = "/Arqen_Architecture_Whitepaper.pdf";
+    link.download = "Arqen_Architecture_Whitepaper.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -108,7 +108,7 @@ export default function WhitepaperDownloadDialog({
             <DialogHeader>
               <DialogTitle className="text-2xl">Download Architecture Whitepaper</DialogTitle>
               <DialogDescription className="text-base pt-2">
-                Get instant access to our comprehensive 20-page technical whitepaper covering TruContext's patented Scalable Multi-Layered Graph Database architecture.
+                Get instant access to our comprehensive 20-page technical whitepaper covering Arqen's patented Scalable Multi-Layered Graph Database architecture.
               </DialogDescription>
             </DialogHeader>
             
@@ -173,7 +173,7 @@ export default function WhitepaperDownloadDialog({
               </div>
               
               <p className="text-xs text-muted-foreground text-center pt-2">
-                By downloading, you agree to receive occasional updates about TruContext. You can unsubscribe at any time.
+                By downloading, you agree to receive occasional updates about Arqen. You can unsubscribe at any time.
               </p>
             </form>
           </>
@@ -193,7 +193,7 @@ export default function WhitepaperDownloadDialog({
               )}
             </DialogDescription>
             <p className="text-sm text-muted-foreground mt-4">
-              We'll send you occasional updates about TruContext to <strong>{formData.email}</strong>
+              We'll send you occasional updates about Arqen to <strong>{formData.email}</strong>
             </p>
           </div>
         )}

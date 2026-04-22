@@ -4,9 +4,9 @@ describe("News Page - Press Release Links & Formatting", () => {
   it("should have the latest press release at the top", () => {
     const latestPressRelease = {
       date: "April 14, 2026",
-      title: "Visium Technologies Eliminates Over $182,000 in Outstanding Debt and All Conversion Overhang Through Full Settlement of Labrys Notes and Talos Warrants",
-      excerpt: "Visium Technologies announces the execution of a definitive Settlement Agreement providing for the full and final extinguishment of all outstanding obligations under the Labrys Notes and the Talos Warrants.",
-      url: "https://www.einpresswire.com/article/904942308/visium-technologies-eliminates-over-182-000-in-outstanding-debt-and-all-conversion-overhang-through-full-settlement-of-labrys-notes-and-talos",
+      title: "Tyvanto Eliminates Over $182,000 in Outstanding Debt and All Conversion Overhang Through Full Settlement of Labrys Notes and Talos Warrants",
+      excerpt: "Tyvanto announces the execution of a definitive Settlement Agreement providing for the full and final extinguishment of all outstanding obligations under the Labrys Notes and the Talos Warrants.",
+      url: "https://www.einpresswire.com/article/904942308/tyvanto-technologies-eliminates-over-182-000-in-outstanding-debt-and-all-conversion-overhang-through-full-settlement-of-labrys-notes-and-talos",
       source: "EIN Presswire",
       category: "Corporate News"
     };
@@ -21,28 +21,28 @@ describe("News Page - Press Release Links & Formatting", () => {
   });
 
   it("should have a valid OTC Markets URL for the latest press release", () => {
-    const url = "https://www.otcmarkets.com/stock/VISM/news/Visium-Technologies-Launches-TruContext-AI-Governance-Layer-to-Contain-OpenClaw-Style-Autonomous-Agent-Risks";
+    const url = "https://www.otcmarkets.com/stock/VISM/news/Tyvanto-Technologies-Launches-Arqen-AI-Governance-Layer-to-Contain-OpenClaw-Style-Autonomous-Agent-Risks";
     
     expect(url).toMatch(/^https:\/\/www\.otcmarkets\.com\//);
     expect(url).toContain("VISM");
-    expect(url).toContain("TruContext");
+    expect(url).toContain("Arqen");
   });
 
   it("should have consistent formatting across all press releases", () => {
     const pressReleases = [
       {
         date: "March 19, 2026",
-        title: "Visium Technologies Launches TruContext™ AI Governance Layer to Contain OpenClaw Style Autonomous Agent Risks",
-        excerpt: "Visium Technologies announces the launch of a new AI Governance Layer within TruContext, designed to address emerging security risks from autonomous AI agents.",
-        url: "https://www.otcmarkets.com/stock/VISM/news/Visium-Technologies-Launches-TruContext-AI-Governance-Layer-to-Contain-OpenClaw-Style-Autonomous-Agent-Risks",
+        title: "Tyvanto Launches Arqen™ AI Governance Layer to Contain OpenClaw Style Autonomous Agent Risks",
+        excerpt: "Tyvanto announces the launch of a new AI Governance Layer within Arqen, designed to address emerging security risks from autonomous AI agents.",
+        url: "https://www.otcmarkets.com/stock/VISM/news/Tyvanto-Technologies-Launches-Arqen-AI-Governance-Layer-to-Contain-OpenClaw-Style-Autonomous-Agent-Risks",
         source: "OTC Disclosure & News Service",
         category: "Product Launch"
       },
       {
         date: "January 30, 2026",
-        title: "Visium Technologies and IREX.AI to Host Webinar on Peru's 54,000-Camera AI Surveillance Network",
+        title: "Tyvanto and IREX.AI to Host Webinar on Peru's 54,000-Camera AI Surveillance Network",
         excerpt: "CEOs Calvin Yadav and Mark Lucky Will Discuss Landmark Deployment Addressing Latin American Security",
-        url: "https://www.otcmarkets.com/stock/VISM/news/Visium-Technologies-and-IREXAI-to-Host-Webinar-on-Perus-54000-Camera-AI-Surveillance-Network?id=508740",
+        url: "https://www.otcmarkets.com/stock/VISM/news/Tyvanto-Technologies-and-IREXAI-to-Host-Webinar-on-Perus-54000-Camera-AI-Surveillance-Network?id=508740",
         source: "EIN Presswire",
         category: "Industry Events"
       }
@@ -71,9 +71,9 @@ describe("News Page - Press Release Links & Formatting", () => {
 
   it("should have all press release URLs accessible", () => {
     const urls = [
-      "https://www.einpresswire.com/article/904942308/visium-technologies-eliminates-over-182-000-in-outstanding-debt-and-all-conversion-overhang-through-full-settlement-of-labrys-notes-and-talos",
-      "https://www.otcmarkets.com/stock/VISM/news/Visium-Technologies-Launches-TruContext-AI-Governance-Layer-to-Contain-OpenClaw-Style-Autonomous-Agent-Risks",
-      "https://www.otcmarkets.com/stock/VISM/news/Visium-Technologies-and-IREXAI-to-Host-Webinar-on-Perus-54000-Camera-AI-Surveillance-Network?id=508740",
+      "https://www.einpresswire.com/article/904942308/tyvanto-technologies-eliminates-over-182-000-in-outstanding-debt-and-all-conversion-overhang-through-full-settlement-of-labrys-notes-and-talos",
+      "https://www.otcmarkets.com/stock/VISM/news/Tyvanto-Technologies-Launches-Arqen-AI-Governance-Layer-to-Contain-OpenClaw-Style-Autonomous-Agent-Risks",
+      "https://www.otcmarkets.com/stock/VISM/news/Tyvanto-Technologies-and-IREXAI-to-Host-Webinar-on-Perus-54000-Camera-AI-Surveillance-Network?id=508740",
       "https://www.otcmarkets.com/stock/VISM/news?id=484402"
     ];
 

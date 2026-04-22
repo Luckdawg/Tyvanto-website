@@ -50,7 +50,7 @@ export default function ComplianceBadgeCarousel({
       {/* Carousel Container */}
       <div className="relative w-full max-w-md">
         {/* Badge Display */}
-        <div className="flex justify-center py-8 bg-gradient-to-br from-purple-50 to-blue-50 rounded-lg border border-purple-100">
+        <div className="flex justify-center py-8 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-lg border border-purple-100">
           <ComplianceBadge
             type={currentBadge}
             size="large"

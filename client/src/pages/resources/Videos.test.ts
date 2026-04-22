@@ -3,14 +3,14 @@ import { describe, it, expect } from 'vitest';
 // Mock video data for testing
 const mockVideos = [
   {
-    title: "TruContext Agentic AI for NOC and SOC operations",
+    title: "Arqen Agentic AI for NOC and SOC operations",
     url: "https://youtu.be/I8gPwg23iqQ",
     duration: "0:00",
     views: "0",
     category: "product-demo",
     playlist: "industry-solutions",
     engagementScore: 92,
-    description: "Explore how TruContext's agentic AI transforms NOC and SOC operations."
+    description: "Explore how Arqen's agentic AI transforms NOC and SOC operations."
   },
   {
     title: "Smart City",
@@ -23,7 +23,7 @@ const mockVideos = [
     description: "Unified intelligence for public safety and urban operations."
   },
   {
-    title: "Intro to ELI - TruContext and IREX.AI",
+    title: "Intro to ELI - Arqen and IREX.AI",
     url: "https://youtu.be/8VUUYBYiQ-E",
     duration: "2:15",
     views: "1.8K",
@@ -43,14 +43,14 @@ const mockVideos = [
     description: "Implement zero trust network access controls."
   },
   {
-    title: "Visium TruContext Intro",
+    title: "Tyvanto Arqen Intro",
     url: "https://youtu.be/pQrStUvWxYzKLmN0?si=N0pQrStUvWxYzKLm",
     duration: "2:33",
     views: "4.1K",
     category: "training",
     playlist: "getting-started",
     engagementScore: 95,
-    description: "Introduction to the TruContext platform."
+    description: "Introduction to the Arqen platform."
   }
 ];
 

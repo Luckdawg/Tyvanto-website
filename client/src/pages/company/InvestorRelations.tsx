@@ -127,9 +127,9 @@ export default function InvestorRelations() {
   return (
     <div className="min-h-screen">
       <SEOHead 
-        title="Investor Relations | Visium Technologies"
-        description="Investor relations for Visium Technologies (OTCQB: VISM). Access SEC filings, stock information, shareholder documents, and company announcements."
-        canonicalUrl="https://www.visiumtechnologies.com/company/investor-relations"
+        title="Investor Relations | Tyvanto"
+        description="Investor relations for Tyvanto (OTCQB: VISM). Access SEC filings, stock information, shareholder documents, and company announcements."
+        canonicalUrl="https://www.tyvanto.com/company/investor-relations"
       />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-primary to-secondary text-white py-16">
@@ -140,7 +140,7 @@ export default function InvestorRelations() {
             </Badge>
             <h1 className="text-5xl font-bold mb-4">Investor Relations</h1>
             <p className="text-xl text-white/90">
-              Visium Technologies is committed to providing transparent and timely information to our shareholders and the investment community.
+              Tyvanto is committed to providing transparent and timely information to our shareholders and the investment community.
             </p>
           </div>
         </div>
@@ -157,7 +157,7 @@ export default function InvestorRelations() {
               <CardContent className="p-8">
                 <div className="flex items-start justify-between mb-6">
                   <div>
-                    <div className="text-sm text-gray-600 mb-1">Visium Technologies Inc.</div>
+                    <div className="text-sm text-gray-600 mb-1">Tyvanto Inc.</div>
                     <div className="text-2xl font-bold text-gray-900">VISM</div>
                     <div className="text-xs text-gray-500">OTCQB</div>
                   </div>
@@ -326,7 +326,7 @@ export default function InvestorRelations() {
           )}
 
           <Button variant="outline" asChild className="w-full">
-            <a href="https://www.sec.gov/cgi-bin/browse-edgar?company=Visium+Technologies&match=starts-with&action=getcompany" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.sec.gov/cgi-bin/browse-edgar?company=Tyvanto+Technologies&match=starts-with&action=getcompany" target="_blank" rel="noopener noreferrer">
               View All SEC Filings
             </a>
           </Button>
@@ -412,8 +412,8 @@ export default function InvestorRelations() {
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-2">Email</h3>
-                  <a href="mailto:ir@visiumtechnologies.com" className="text-primary hover:underline">
-                    ir@visiumtechnologies.com
+                  <a href="mailto:ir@tyvanto.com" className="text-primary hover:underline">
+                    ir@tyvanto.com
                   </a>
                 </div>
                 <div>

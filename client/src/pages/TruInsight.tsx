@@ -17,7 +17,7 @@ export default function TruInsight() {
               Transform Passive Cameras Into <span className="text-primary">Proactive Intelligence Networks</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              Tru-InSight™ extends TruContext's AI capabilities into physical security and video surveillance, converting existing camera infrastructure into intelligent, predictive systems
+              Tru-InSight™ extends Arqen's AI capabilities into physical security and video surveillance, converting existing camera infrastructure into intelligent, predictive systems
             </p>
             <Link href="/demo">
               <Button size="lg" className="bg-primary hover:bg-primary/90">
@@ -34,7 +34,7 @@ export default function TruInsight() {
           <div className="max-w-3xl mx-auto text-center mb-10">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Overview</h2>
             <p className="text-xl text-gray-600">
-              Tru-InSight™ positions itself as the extension of TruContext's AI capabilities into physical security and video surveillance, converting existing camera infrastructure into intelligent, predictive systems without necessitating costly hardware replacement.
+              Tru-InSight™ positions itself as the extension of Arqen's AI capabilities into physical security and video surveillance, converting existing camera infrastructure into intelligent, predictive systems without necessitating costly hardware replacement.
             </p>
           </div>
 
@@ -76,7 +76,7 @@ export default function TruInsight() {
                 </div>
               </div>
             </div>
-            <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8">
+            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8">
               <Video className="h-32 w-32 text-primary mx-auto mb-6" />
             </div>
           </div>

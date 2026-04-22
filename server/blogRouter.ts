@@ -28,7 +28,7 @@ export const blogRouter = router({
         blogTitle: input.blogTitle,
       });
 
-      // Send email notification to info@visiumtechnologies.com
+      // Send email notification to info@tyvanto.com
       const notificationSent = await notifyOwner({
         title: `New Blog Download Lead: ${input.name}`,
         content: `

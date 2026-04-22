@@ -15,7 +15,7 @@ export default function ROICalculator() {
   const [avgBreachCost, setAvgBreachCost] = useState(4500000);
   const [currentMTTD, setCurrentMTTD] = useState(280); // days
 
-  // TruContext improvements (based on documented metrics)
+  // Arqen improvements (based on documented metrics)
   const MTTD_REDUCTION = 0.75; // 75% reduction
   const FALSE_POSITIVE_REDUCTION = 0.90; // 90% reduction
   const INVESTIGATION_TIME_REDUCTION = 0.60; // 60% faster
@@ -33,7 +33,7 @@ export default function ROICalculator() {
     // Estimated breach risk (assuming 1 breach per year on average for enterprises)
     const annualBreachRisk = avgBreachCost;
 
-    // With TruContext
+    // With Arqen
     const newFalsePositiveRate = falsePositiveRate * (1 - FALSE_POSITIVE_REDUCTION);
     const newFalsePositives = monthlyIncidents * (newFalsePositiveRate / 100);
     const reducedIncidents = monthlyIncidents - (falsePositives - newFalsePositives);
@@ -67,7 +67,7 @@ export default function ROICalculator() {
         annualInvestigationCost: currentAnnualInvestigationCost,
         mttd: currentMTTD,
       },
-      withTruContext: {
+      withArqen: {
         monthlyIncidents: reducedIncidents,
         falsePositives: newFalsePositives,
         investigationCost: newInvestigationCost,
@@ -116,7 +116,7 @@ export default function ROICalculator() {
               ROI <span className="text-primary">Calculator</span>
             </h1>
             <p className="text-xl text-gray-600">
-              Calculate your projected savings and benefits from TruContext's agentic AI-powered cybersecurity platform
+              Calculate your projected savings and benefits from Arqen's agentic AI-powered cybersecurity platform
             </p>
           </div>
         </div>
@@ -365,7 +365,7 @@ export default function ROICalculator() {
               {/* Key Improvements */}
               <Card className="bg-blue-50 border-2 border-blue-200">
                 <CardContent className="p-6">
-                  <h3 className="font-bold text-gray-900 mb-4">Key Improvements with TruContext</h3>
+                  <h3 className="font-bold text-gray-900 mb-4">Key Improvements with Arqen</h3>
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-gray-700">False Positive Reduction:</span>
@@ -381,7 +381,7 @@ export default function ROICalculator() {
                     </div>
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-gray-700">New MTTD:</span>
-                      <span className="font-bold text-secondary">{formatNumber(calculations.withTruContext.mttd)} days</span>
+                      <span className="font-bold text-secondary">{formatNumber(calculations.withArqen.mttd)} days</span>
                     </div>
                   </div>
                 </CardContent>
@@ -399,7 +399,7 @@ export default function ROICalculator() {
                     <tr className="border-b-2 border-gray-200">
                       <th className="text-left py-3 px-4 font-semibold text-gray-900">Metric</th>
                       <th className="text-right py-3 px-4 font-semibold text-gray-900">Current State</th>
-                      <th className="text-right py-3 px-4 font-semibold text-primary">With TruContext</th>
+                      <th className="text-right py-3 px-4 font-semibold text-primary">With Arqen</th>
                       <th className="text-right py-3 px-4 font-semibold text-green-600">Improvement</th>
                     </tr>
                   </thead>
@@ -407,41 +407,41 @@ export default function ROICalculator() {
                     <tr className="border-b border-gray-100">
                       <td className="py-3 px-4 text-gray-700">Monthly Incidents Investigated</td>
                       <td className="text-right py-3 px-4 font-semibold">{formatNumber(calculations.current.monthlyIncidents)}</td>
-                      <td className="text-right py-3 px-4 font-semibold text-primary">{formatNumber(calculations.withTruContext.monthlyIncidents)}</td>
+                      <td className="text-right py-3 px-4 font-semibold text-primary">{formatNumber(calculations.withArqen.monthlyIncidents)}</td>
                       <td className="text-right py-3 px-4 font-semibold text-green-600">
-                        -{formatNumber(calculations.current.monthlyIncidents - calculations.withTruContext.monthlyIncidents)}
+                        -{formatNumber(calculations.current.monthlyIncidents - calculations.withArqen.monthlyIncidents)}
                       </td>
                     </tr>
                     <tr className="border-b border-gray-100">
                       <td className="py-3 px-4 text-gray-700">False Positives Per Month</td>
                       <td className="text-right py-3 px-4 font-semibold">{formatNumber(calculations.current.falsePositives)}</td>
-                      <td className="text-right py-3 px-4 font-semibold text-primary">{formatNumber(calculations.withTruContext.falsePositives)}</td>
+                      <td className="text-right py-3 px-4 font-semibold text-primary">{formatNumber(calculations.withArqen.falsePositives)}</td>
                       <td className="text-right py-3 px-4 font-semibold text-green-600">
-                        -{formatNumber(calculations.current.falsePositives - calculations.withTruContext.falsePositives)}
+                        -{formatNumber(calculations.current.falsePositives - calculations.withArqen.falsePositives)}
                       </td>
                     </tr>
                     <tr className="border-b border-gray-100">
                       <td className="py-3 px-4 text-gray-700">Mean Time to Detect (Days)</td>
                       <td className="text-right py-3 px-4 font-semibold">{formatNumber(calculations.current.mttd)}</td>
-                      <td className="text-right py-3 px-4 font-semibold text-primary">{formatNumber(calculations.withTruContext.mttd)}</td>
+                      <td className="text-right py-3 px-4 font-semibold text-primary">{formatNumber(calculations.withArqen.mttd)}</td>
                       <td className="text-right py-3 px-4 font-semibold text-green-600">
-                        -{formatNumber(calculations.current.mttd - calculations.withTruContext.mttd)}
+                        -{formatNumber(calculations.current.mttd - calculations.withArqen.mttd)}
                       </td>
                     </tr>
                     <tr className="border-b border-gray-100">
                       <td className="py-3 px-4 text-gray-700">Monthly Investigation Cost</td>
                       <td className="text-right py-3 px-4 font-semibold">{formatCurrency(calculations.current.investigationCost)}</td>
-                      <td className="text-right py-3 px-4 font-semibold text-primary">{formatCurrency(calculations.withTruContext.investigationCost)}</td>
+                      <td className="text-right py-3 px-4 font-semibold text-primary">{formatCurrency(calculations.withArqen.investigationCost)}</td>
                       <td className="text-right py-3 px-4 font-semibold text-green-600">
-                        -{formatCurrency(calculations.current.investigationCost - calculations.withTruContext.investigationCost)}
+                        -{formatCurrency(calculations.current.investigationCost - calculations.withArqen.investigationCost)}
                       </td>
                     </tr>
                     <tr className="bg-gray-50">
                       <td className="py-3 px-4 font-bold text-gray-900">Annual Investigation Cost</td>
                       <td className="text-right py-3 px-4 font-bold">{formatCurrency(calculations.current.annualInvestigationCost)}</td>
-                      <td className="text-right py-3 px-4 font-bold text-primary">{formatCurrency(calculations.withTruContext.annualInvestigationCost)}</td>
+                      <td className="text-right py-3 px-4 font-bold text-primary">{formatCurrency(calculations.withArqen.annualInvestigationCost)}</td>
                       <td className="text-right py-3 px-4 font-bold text-green-600">
-                        -{formatCurrency(calculations.current.annualInvestigationCost - calculations.withTruContext.annualInvestigationCost)}
+                        -{formatCurrency(calculations.current.annualInvestigationCost - calculations.withArqen.annualInvestigationCost)}
                       </td>
                     </tr>
                   </tbody>
@@ -453,7 +453,7 @@ export default function ROICalculator() {
           {/* CTA */}
           <Card className="bg-gradient-to-r from-primary to-secondary text-white">
             <CardContent className="p-8 text-center">
-              <h3 className="text-3xl font-bold mb-4">See TruContext in Action</h3>
+              <h3 className="text-3xl font-bold mb-4">See Arqen in Action</h3>
               <p className="text-lg mb-6 opacity-90">
                 Schedule a demo to see how our agentic AI-powered platform can deliver these results for your organization
               </p>
@@ -484,10 +484,10 @@ export default function ROICalculator() {
             <CardContent className="p-8">
               <h3 className="text-xl font-bold text-gray-900 mb-4">Methodology Overview</h3>
               <p className="text-gray-700 leading-relaxed mb-4">
-                This ROI calculator estimates the financial impact of implementing TruContext's agentic AI-powered cybersecurity platform by analyzing three primary value drivers: investigation cost savings, breach prevention value, and Mean Time to Detect (MTTD) improvement value. The calculations are based on industry-standard metrics, documented customer results, and peer-reviewed cybersecurity research.
+                This ROI calculator estimates the financial impact of implementing Arqen's agentic AI-powered cybersecurity platform by analyzing three primary value drivers: investigation cost savings, breach prevention value, and Mean Time to Detect (MTTD) improvement value. The calculations are based on industry-standard metrics, documented customer results, and peer-reviewed cybersecurity research.
               </p>
               <p className="text-gray-700 leading-relaxed">
-                The model uses a conservative approach, focusing on quantifiable, measurable outcomes rather than intangible benefits. All improvement percentages are derived from actual TruContext customer deployments and validated against industry benchmarks.
+                The model uses a conservative approach, focusing on quantifiable, measurable outcomes rather than intangible benefits. All improvement percentages are derived from actual Arqen customer deployments and validated against industry benchmarks.
               </p>
             </CardContent>
           </Card>
@@ -518,11 +518,11 @@ export default function ROICalculator() {
                     Breach Prevention Savings = Average Breach Cost × Breach Prevention Rate
                   </div>
                   <p className="text-sm text-gray-700">
-                    This formula calculates the expected value of prevented breaches based on the probability that TruContext's early detection and automated response capabilities will stop attacks before they result in a full breach.
+                    This formula calculates the expected value of prevented breaches based on the probability that Arqen's early detection and automated response capabilities will stop attacks before they result in a full breach.
                   </p>
                 </div>
 
-                <div className="bg-purple-50 p-4 rounded-lg">
+                <div className="bg-blue-50 p-4 rounded-lg">
                   <h4 className="font-bold text-gray-900 mb-2">3. MTTD Improvement Value</h4>
                   <div className="font-mono text-sm bg-white p-3 rounded mb-3">
                     New MTTD = Current MTTD × (1 - MTTD Reduction Rate)
@@ -551,7 +551,7 @@ export default function ROICalculator() {
               
               <div className="space-y-4 text-gray-700">
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">TruContext Performance Metrics (Based on Customer Data)</h4>
+                  <h4 className="font-semibold text-gray-900 mb-2">Arqen Performance Metrics (Based on Customer Data)</h4>
                   <ul className="list-disc pl-6 space-y-1">
                     <li><strong>False Positive Reduction:</strong> 90% - Validated across 12+ enterprise deployments</li>
                     <li><strong>Investigation Time Reduction:</strong> 60% - Measured through automated workflow analysis</li>
@@ -608,13 +608,13 @@ export default function ROICalculator() {
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                   <div>
-                    <strong>TruContext Customer Deployments:</strong> Anonymized performance data from 12+ enterprise customers across financial services, healthcare, and critical infrastructure sectors
+                    <strong>Arqen Customer Deployments:</strong> Anonymized performance data from 12+ enterprise customers across financial services, healthcare, and critical infrastructure sectors
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                   <div>
-                    <strong>MITRE ATT&CK Framework:</strong> Threat detection coverage metrics and attack pattern analysis used to validate breach prevention rates
+                    <strong>an independent research organization ATT&CK Framework:</strong> Threat detection coverage metrics and attack pattern analysis used to validate breach prevention rates
                   </div>
                 </div>
               </div>

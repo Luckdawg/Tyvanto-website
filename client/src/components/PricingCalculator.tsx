@@ -4,7 +4,7 @@
  *
  * Pricing sourced from Visium_Pricing_Formulas-01.xlsx (Apr 2026):
  *
- *   TruContext  — $7,995/mo (first 10K nodes) · $0.40/node (10K–100K) · $0.25/node (100K+)
+ *   Arqen  — $7,995/mo (first 10K nodes) · $0.40/node (10K–100K) · $0.25/node (100K+)
  *                 + $450/agent
  *   TruClaw     — $1,299/mo Starter (≤10 agents) · $6,995/mo Standard (11–50) · Enterprise (50+)
  *   Tru-InSight — $7,499/mo base + $2.00/camera metered
@@ -78,7 +78,7 @@ interface ProductConfig {
   sliderIsLog: boolean;     // use logarithmic scale for wide ranges
   sliderMarks: { value: number; label: string }[]; // tick marks on slider
 
-  // Agent slider (TruContext, Full Suite)
+  // Agent slider (Arqen, Full Suite)
   hasAgentSlider: boolean;
   agentRate: number;
   agentIncluded: number;
@@ -103,8 +103,8 @@ interface ProductConfig {
 const PRODUCTS: ProductConfig[] = [
   // ── Core Platforms ──────────────────────────────────────────────────────────
   {
-    id: 'trucontext',
-    label: 'TruContext',
+    id: 'arqen',
+    label: 'Arqen',
     icon: <Shield className="h-4 w-4" />,
     color: '#00E5FF',
     category: 'Core',
@@ -141,7 +141,7 @@ const PRODUCTS: ProductConfig[] = [
     annualDiscount: 0.10,
     infoText: (
       <>
-        <strong className="text-slate-300">TruContext</strong>: $7,995/mo (first 10K nodes) ·
+        <strong className="text-slate-300">Arqen</strong>: $7,995/mo (first 10K nodes) ·
         $0.40/node (10K–100K) · $0.25/node (100K+) · $450/agent.
         Tiered pricing rewards scale — the more you monitor, the lower the per-unit cost.
       </>
@@ -225,7 +225,7 @@ const PRODUCTS: ProductConfig[] = [
       <>
         <strong className="text-slate-300">Tru-InSight</strong>: $7,499/mo base platform ·
         $2.00/camera metered inference. All cameras are metered — no included allowance.
-        Save 10% when bundled with TruContext via the Full Suite.
+        Save 10% when bundled with Arqen via the Full Suite.
       </>
     ),
   },
@@ -350,7 +350,7 @@ const PRODUCTS: ProductConfig[] = [
     annualDiscount: 0.10,
     infoText: (
       <>
-        <strong className="text-slate-300">TruContext Oil &amp; Gas</strong>: $8,000/mo base (first 500 OT endpoints) ·
+        <strong className="text-slate-300">Arqen Oil &amp; Gas</strong>: $8,000/mo base (first 500 OT endpoints) ·
         $2.00/endpoint above 500. Includes 3D digital twin, SCADA/IT-OT threat detection, and ESG dashboards.
         Example: 2,000 endpoints → $8,000 + (1,500 × $2.00) = $11,000/mo.
       </>
@@ -900,7 +900,7 @@ function TruClawTierBar({ agents, color }: { agents: number; color: string }) {
 // ─── Main Component ───────────────────────────────────────────────────────────
 
 export default function PricingCalculator({ onRequestQuote }: PricingCalculatorProps) {
-  const [selectedProduct, setSelectedProduct] = useState<string>('trucontext');
+  const [selectedProduct, setSelectedProduct] = useState<string>('arqen');
   const [units, setUnits] = useState<number>(10_000);
   const [agents, setAgents] = useState<number>(0);
   const [showBreakdown, setShowBreakdown] = useState<boolean>(false);
@@ -1214,7 +1214,7 @@ export default function PricingCalculator({ onRequestQuote }: PricingCalculatorP
                   />
                 )}
 
-                {/* Agent slider — shown for TruContext and Full Suite */}
+                {/* Agent slider — shown for Arqen and Full Suite */}
                 {product.hasAgentSlider && (
                   <PricingSlider
                     label="Active AI Agents"

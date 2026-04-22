@@ -58,7 +58,7 @@ const TRUCLAW_TIERS: TruClawTier[] = [
     features: [
       'Up to 10 AI agents monitored',
       'Real-time behavioral analysis',
-      'MITRE ATT&CK mapping',
+      'an independent research organization ATT&CK mapping',
       'Automated alert triage',
       'Standard API integrations',
       'Email & Slack notifications',
@@ -78,7 +78,7 @@ const TRUCLAW_TIERS: TruClawTier[] = [
     features: [
       'Up to 50 AI agents monitored',
       'Advanced threat correlation engine',
-      'Full MITRE ATT&CK & D3FEND coverage',
+      'Full an independent research organization ATT&CK & D3FEND coverage',
       'Autonomous remediation workflows',
       'Custom policy rule builder',
       'SIEM / SOAR integrations',
@@ -95,7 +95,7 @@ const TRUCLAW_TIERS: TruClawTier[] = [
     annualDiscount: 0.10,
     icon: <Building2 className="h-6 w-6" />,
     badge: 'Custom Pricing',
-    badgeColor: 'bg-purple-500/20 text-purple-300 border border-purple-500/40',
+    badgeColor: 'bg-blue-600/20 text-purple-300 border border-blue-500/40',
     features: [
       'Unlimited AI agents',
       'Multi-tenant / multi-cloud deployment',

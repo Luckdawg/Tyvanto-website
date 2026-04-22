@@ -22,14 +22,14 @@ import {
 describe('VISIUM_PRODUCTS registry', () => {
   it('contains all 16 expected products', () => {
     const expectedIds = [
-      'trucontext',
+      'arqen',
       'truclaw-starter',
       'truclaw-standard',
       'truclaw-enterprise',
       'truinsight',
       'eli',
       'full-suite-bundle',
-      'trucontext-oil-gas',
+      'arqen-oil-gas',
       'smart-city-gov',
       'smart-city-municipal',
       'campus-security',
@@ -46,10 +46,10 @@ describe('VISIUM_PRODUCTS registry', () => {
   });
 
   it('has correct categories for all products', () => {
-    const corePlatforms = ['trucontext', 'truclaw-starter', 'truclaw-standard', 'truclaw-enterprise', 'truinsight', 'eli'];
+    const corePlatforms = ['arqen', 'truclaw-starter', 'truclaw-standard', 'truclaw-enterprise', 'truinsight', 'eli'];
     const bundles = ['full-suite-bundle'];
     const verticals = [
-      'trucontext-oil-gas', 'smart-city-gov', 'smart-city-municipal',
+      'arqen-oil-gas', 'smart-city-gov', 'smart-city-municipal',
       'campus-security', 'caseforge-legal', 'aspire-reporting',
       'truaddress', 'panelpulse', 'smart-city-demo',
     ];
@@ -66,13 +66,13 @@ describe('VISIUM_PRODUCTS registry', () => {
   });
 
   it('has correct base prices matching the spreadsheet (v2 Apr 2026)', () => {
-    expect(VISIUM_PRODUCTS['trucontext'].monthlyBaseUsd).toBe(7995);
+    expect(VISIUM_PRODUCTS['arqen'].monthlyBaseUsd).toBe(7995);
     expect(VISIUM_PRODUCTS['truclaw-starter'].monthlyBaseUsd).toBe(1299);
     expect(VISIUM_PRODUCTS['truclaw-standard'].monthlyBaseUsd).toBe(6995);
     expect(VISIUM_PRODUCTS['truinsight'].monthlyBaseUsd).toBe(7499);
     expect(VISIUM_PRODUCTS['eli'].monthlyBaseUsd).toBe(9499);
     expect(VISIUM_PRODUCTS['full-suite-bundle'].monthlyBaseUsd).toBe(14995);
-    expect(VISIUM_PRODUCTS['trucontext-oil-gas'].monthlyBaseUsd).toBe(8000);
+    expect(VISIUM_PRODUCTS['arqen-oil-gas'].monthlyBaseUsd).toBe(8000);
     expect(VISIUM_PRODUCTS['smart-city-gov'].monthlyBaseUsd).toBe(16000);
     expect(VISIUM_PRODUCTS['smart-city-municipal'].monthlyBaseUsd).toBe(12495);
     expect(VISIUM_PRODUCTS['campus-security'].monthlyBaseUsd).toBe(7995);
@@ -85,9 +85,9 @@ describe('VISIUM_PRODUCTS registry', () => {
 
   it('has uniform 10% annual discount for all products', () => {
     const allProducts = [
-      'trucontext', 'truclaw-starter', 'truclaw-standard', 'truinsight', 'eli',
+      'arqen', 'truclaw-starter', 'truclaw-standard', 'truinsight', 'eli',
       'full-suite-bundle',
-      'trucontext-oil-gas', 'smart-city-gov', 'smart-city-municipal',
+      'arqen-oil-gas', 'smart-city-gov', 'smart-city-municipal',
       'campus-security', 'caseforge-legal', 'aspire-reporting',
       'truaddress', 'panelpulse', 'smart-city-demo',
     ];
@@ -119,12 +119,12 @@ describe('VISIUM_PRODUCTS registry', () => {
 
 describe('getStripePrice', () => {
   it('returns monthly price ID for monthly billing', () => {
-    const priceId = getStripePrice('trucontext', 'monthly');
+    const priceId = getStripePrice('arqen', 'monthly');
     expect(priceId).toBe('price_1TLuXD2eZs8bKGLsQW7smUw3');
   });
 
   it('returns annual price ID for annual billing', () => {
-    const priceId = getStripePrice('trucontext', 'annual');
+    const priceId = getStripePrice('arqen', 'annual');
     expect(priceId).toBe('price_1TLuXD2eZs8bKGLs0RBYhAJz');
   });
 
@@ -187,8 +187,8 @@ describe('getProductsByCategory', () => {
 // ─── Annual price calculation verification ────────────────────────────────────
 
 describe('Annual price calculations', () => {
-  it('TruContext annual price is 10% off monthly * 12', () => {
-    const product = VISIUM_PRODUCTS['trucontext'];
+  it('Arqen annual price is 10% off monthly * 12', () => {
+    const product = VISIUM_PRODUCTS['arqen'];
     const expectedAnnual = Math.round(product.monthlyBaseUsd * 100 * 12 * (1 - product.annualDiscount));
     // $7,995 * 12 * 0.90 = $86,346 → 8634600 cents
     expect(expectedAnnual).toBe(8634600);

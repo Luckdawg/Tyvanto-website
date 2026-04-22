@@ -16,11 +16,11 @@ export default function PrivacyPolicy() {
           {/* Introduction */}
           <section className="mb-8">
             <p className="text-gray-700 leading-relaxed mb-4">
-              Visium Technologies, Inc. ("Visium," "we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website{" "}
-              <a href="https://www.visiumtechnologies.com" className="text-primary hover:underline">
-                www.visiumtechnologies.com
+              Tyvanto, Inc. ("Tyvanto," "we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website{" "}
+              <a href="https://www.tyvanto.com" className="text-primary hover:underline">
+                www.tyvanto.com
               </a>{" "}
-              (the "Site") and use our TruContext platform and related services (collectively, the "Services").
+              (the "Site") and use our Arqen platform and related services (collectively, the "Services").
             </p>
             <p className="text-gray-700 leading-relaxed">
               Please read this Privacy Policy carefully. By accessing or using our Site and Services, you acknowledge that you have read, understood, and agree to be bound by the terms of this Privacy Policy. If you do not agree with the terms of this Privacy Policy, please do not access the Site or use the Services.
@@ -113,7 +113,7 @@ export default function PrivacyPolicy() {
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">9. Third-Party Links</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Our Site may contain links to third-party websites, applications, or services that are not owned or controlled by Visium Technologies. This Privacy Policy does not apply to those third-party sites. We are not responsible for the privacy practices or content of third parties. We encourage you to review the privacy policies of any third-party sites you visit.
+              Our Site may contain links to third-party websites, applications, or services that are not owned or controlled by Tyvanto. This Privacy Policy does not apply to those third-party sites. We are not responsible for the privacy practices or content of third parties. We encourage you to review the privacy policies of any third-party sites you visit.
             </p>
           </section>
 
@@ -154,10 +154,10 @@ export default function PrivacyPolicy() {
               If you have questions, concerns, or requests regarding this Privacy Policy or our privacy practices, please contact us:
             </p>
             <div className="bg-gray-50 p-6 rounded-lg">
-              <p className="text-gray-700 font-semibold mb-2">Visium Technologies, Inc.</p>
+              <p className="text-gray-700 font-semibold mb-2">Tyvanto, Inc.</p>
               <p className="text-gray-700">Email:{" "}
-                <a href="mailto:info@visiumtechnologies.com" className="text-primary hover:underline">
-                  info@visiumtechnologies.com
+                <a href="mailto:info@tyvanto.com" className="text-primary hover:underline">
+                  info@tyvanto.com
                 </a>
               </p>
               <p className="text-gray-700">Phone: +1 (888) 344-9850</p>

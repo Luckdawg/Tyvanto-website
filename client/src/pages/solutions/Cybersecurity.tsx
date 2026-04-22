@@ -9,9 +9,9 @@ export default function Cybersecurity() {
   return (
     <div className="min-h-screen">
       <SEOHead 
-        title="Enterprise Threat Detection Platform | Cybersecurity Solution | Visium"
-        description="TruContext: Graph-based threat detection and security operations analytics with MITRE ATT&CK framework. Real-time cyber threat detection powered by explainable AI for enterprise SOC automation."
-        canonicalUrl="https://www.visiumtechnologies.com/solutions/cybersecurity"
+        title="Enterprise Threat Detection Platform | Cybersecurity Solution | Tyvanto"
+        description="Arqen: Graph-based threat detection and security operations analytics with an independent research organization ATT&CK framework. Real-time cyber threat detection powered by explainable AI for enterprise SOC automation."
+        canonicalUrl="https://www.tyvanto.com/solutions/cybersecurity"
       />
       {/* Hero Section */}
       <section className="gradient-hero py-20">
@@ -21,7 +21,7 @@ export default function Cybersecurity() {
               Enterprise <span className="text-primary">Threat Detection Platform</span> with Explainable AI
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              Graph-based threat detection and security operations analytics with MITRE ATT&CK threat-informed defense. Real-time cyber threat detection powered by explainable AI-driven security analytics. Enterprise-grade threat hunting platform for SOC automation and incident response.
+              Graph-based threat detection and security operations analytics with an independent research organization ATT&CK threat-informed defense. Real-time cyber threat detection powered by explainable AI-driven security analytics. Enterprise-grade threat hunting platform for SOC automation and incident response.
             </p>
             <Link href="/demo">
               <Button size="lg" className="bg-primary hover:bg-primary/90">
@@ -74,7 +74,7 @@ export default function Cybersecurity() {
           <div className="max-w-3xl mx-auto text-center mb-8">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Enterprise Threat Detection & Security Analytics</h2>
             <p className="text-xl text-gray-600">
-              TruContext is an explainable AI cybersecurity analytics platform delivering real-time threat detection through graph-based threat detection. Our enterprise threat detection platform provides root cause analysis for cyber attacks, MITRE ATT&CK threat-informed defense, NIST framework compliance, and SOC automation for comprehensive security operations center solutions.
+              Arqen is an explainable AI cybersecurity analytics platform delivering real-time threat detection through graph-based threat detection. Our enterprise threat detection platform provides root cause analysis for cyber attacks, an independent research organization ATT&CK threat-informed defense, NIST framework compliance, and SOC automation for comprehensive security operations center solutions.
             </p>
           </div>
 
@@ -95,10 +95,10 @@ export default function Cybersecurity() {
               <CardContent className="p-8">
                 <Network className="h-12 w-12 text-secondary mb-4" />
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  AI-Powered MITRE ATT&CK Mapping
+                  AI-Powered an independent research organization ATT&CK Mapping
                 </h3>
                 <p className="text-gray-700">
-                  Agentic AI automatically maps detected threats to MITRE ATT&CK tactics, techniques, and procedures (TTPs) for threat-informed defense. Autonomous agents understand adversary behavior and prioritize response based on attack progression without human intervention.
+                  Agentic AI automatically maps detected threats to an independent research organization ATT&CK tactics, techniques, and procedures (TTPs) for threat-informed defense. Autonomous agents understand adversary behavior and prioritize response based on attack progression without human intervention.
                 </p>
               </CardContent>
             </Card>
@@ -194,7 +194,7 @@ export default function Cybersecurity() {
             </Card>
           </div>
 
-          <Card className="bg-gradient-to-br from-blue-50 to-purple-50 border-2 border-primary">
+          <Card className="bg-gradient-to-br from-blue-50 to-cyan-50 border-2 border-primary">
             <CardContent className="p-8 text-center">
               <Clock className="h-16 w-16 text-primary mx-auto mb-4" />
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
@@ -214,7 +214,7 @@ export default function Cybersecurity() {
         <div className="container text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Security Operations?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-            See how TruContext can reduce your MTTD by 75% and eliminate alert fatigue
+            See how Arqen can reduce your MTTD by 75% and eliminate alert fatigue
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/demo">

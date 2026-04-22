@@ -10,21 +10,21 @@ export default function TelecomCybersecurity() {
     <>
       <SEOHead
         title="Telecommunications Network Security | 5G Cybersecurity | Network Threat Detection"
-        description="Protect telecom networks with TruContext's network security platform. Real-time threat detection for 5G, network infrastructure, and subscriber data with carrier-grade compliance."
+        description="Protect telecom networks with Arqen's network security platform. Real-time threat detection for 5G, network infrastructure, and subscriber data with carrier-grade compliance."
         keywords="telecommunications cybersecurity, network security platform, 5G security, telecom threat detection, network infrastructure security, subscriber data protection, carrier security, telecom compliance"
         canonicalUrl="/solutions/telecom-cybersecurity"
       />
       
       <div className="min-h-screen">
         {/* Hero Section */}
-        <section className="py-8 md:py-12 lg:py-16 bg-gradient-to-br from-blue-50 to-purple-50">
+        <section className="py-8 md:py-12 lg:py-16 bg-gradient-to-br from-blue-50 to-cyan-50">
           <div className="container">
             <div className="max-w-3xl">
               <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
                 Telecommunications Network Security for <span className="text-primary">5G & Beyond</span>
               </h1>
               <p className="text-lg text-gray-700 mb-8">
-                Protect telecom networks, 5G infrastructure, and subscriber data with real-time network threat detection. TruContext delivers carrier-grade cybersecurity for telecommunications providers ensuring network integrity, subscriber privacy, and regulatory compliance with NIST, 3GPP, and telecom-specific security standards.
+                Protect telecom networks, 5G infrastructure, and subscriber data with real-time network threat detection. Arqen delivers carrier-grade cybersecurity for telecommunications providers ensuring network integrity, subscriber privacy, and regulatory compliance with NIST, 3GPP, and telecom-specific security standards.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/demo">
@@ -80,7 +80,7 @@ export default function TelecomCybersecurity() {
               <Card className="border-l-4 border-l-purple-500">
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-3">
-                    <Lock className="h-6 w-6 text-purple-500 flex-shrink-0 mt-1" />
+                    <Lock className="h-6 w-6 text-blue-500 flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="font-bold text-gray-900 mb-2">Regulatory Complexity</h3>
                       <p className="text-gray-600">NIST, 3GPP, GDPR, and telecom-specific compliance requirements</p>
@@ -93,13 +93,13 @@ export default function TelecomCybersecurity() {
         </section>
 
         {/* Solution Section */}
-        <section className="py-8 md:py-12 bg-gradient-to-br from-purple-50 to-blue-50">
+        <section className="py-8 md:py-12 bg-gradient-to-br from-blue-50 to-cyan-50">
           <div className="container">
             <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
               Carrier-Grade Network Security & Threat Detection
             </h2>
             <p className="text-lg text-gray-700 mb-8 text-center max-w-3xl mx-auto">
-              TruContext is a telecommunications network security platform delivering real-time threat detection for 5G networks, network infrastructure, and subscriber systems. Our network threat detection solution monitors distributed telecom environments while ensuring NIST, 3GPP, and regulatory compliance.
+              Arqen is a telecommunications network security platform delivering real-time threat detection for 5G networks, network infrastructure, and subscriber systems. Our network threat detection solution monitors distributed telecom environments while ensuring NIST, 3GPP, and regulatory compliance.
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 mb-8">
@@ -244,7 +244,7 @@ export default function TelecomCybersecurity() {
         </section>
 
         {/* Compliance Section */}
-        <section className="py-8 md:py-12 bg-gradient-to-br from-purple-50 to-blue-50">
+        <section className="py-8 md:py-12 bg-gradient-to-br from-blue-50 to-cyan-50">
           <div className="container">
             <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
               Regulatory Compliance & Standards
@@ -291,7 +291,7 @@ export default function TelecomCybersecurity() {
               Secure Your Telecom Network with 5G-Ready Threat Detection
             </h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-              See how TruContext helps telecommunications providers detect threats, protect subscriber data, and maintain regulatory compliance
+              See how Arqen helps telecommunications providers detect threats, protect subscriber data, and maintain regulatory compliance
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/demo">

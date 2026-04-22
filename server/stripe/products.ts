@@ -36,9 +36,9 @@ export interface StripeProductEntry {
 
 export const VISIUM_PRODUCTS: Record<string, StripeProductEntry> = {
   // ── Core Platforms ─────────────────────────────────────────────────────────
-  trucontext: {
+  arqen: {
     productId: 'prod_UKYM2OGkqtDnkJ',
-    name: 'TruContext',
+    name: 'Arqen',
     category: 'Core Platform',
     monthlyBaseUsd: 7995,
     annualDiscount: 0.10,
@@ -118,9 +118,9 @@ export const VISIUM_PRODUCTS: Record<string, StripeProductEntry> = {
   },
 
   // ── Vertical Solutions ─────────────────────────────────────────────────────
-  'trucontext-oil-gas': {
+  'arqen-oil-gas': {
     productId: 'prod_UKYNvEOcpWxGka',
-    name: 'TruContext — Oil & Gas',
+    name: 'Arqen — Oil & Gas',
     category: 'Vertical Solution',
     monthlyBaseUsd: 8000,
     annualDiscount: 0.10,

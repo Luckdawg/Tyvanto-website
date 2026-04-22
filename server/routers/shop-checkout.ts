@@ -21,9 +21,10 @@ import {
   type BillingCycle,
 } from '../stripe/products';
 
-const stripe = new Stripe(ENV.stripeSecretKey, {
-  apiVersion: '2024-06-20',
-});
+// Guard: only initialize Stripe if a real key is provided
+const stripe = ENV.stripeSecretKey && ENV.stripeSecretKey !== 'sk_test_placeholder_key_for_hosting'
+  ? new Stripe(ENV.stripeSecretKey, { apiVersion: '2024-06-20' })
+  : null as unknown as Stripe;
 
 const billingCycleSchema = z.enum(['monthly', 'annual']);
 
@@ -87,7 +88,7 @@ export const shopCheckoutRouter = router({
         );
       }
 
-      const origin = ctx.req.headers.origin || 'https://visiumtechnologies.com';
+      const origin = ctx.req.headers.origin || 'https://tyvanto.com';
 
       // Determine customer email — use authenticated user's email if available
       const customerEmail =
@@ -183,7 +184,7 @@ export const shopCheckoutRouter = router({
       throw new Error('No email associated with your account.');
     }
 
-    const origin = (ctx.req.headers.origin as string) || 'https://visiumtechnologies.com';
+    const origin = (ctx.req.headers.origin as string) || 'https://tyvanto.com';
 
     // Find the Stripe customer record for this user
     const customers = await stripe.customers.list({ email: userEmail, limit: 1 });

@@ -8,7 +8,7 @@ export default function WebinarBanner() {
   if (!isVisible) return null;
 
   return (
-    <div className="w-full bg-gradient-to-r from-purple-600 via-purple-500 to-indigo-600 text-white shadow-2xl sticky top-0 z-50">
+    <div className="w-full bg-gradient-to-r from-blue-900 via-blue-700 to-blue-500 text-white shadow-2xl sticky top-0 z-50">
       <div className="container py-4 px-4">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           {/* Left Section - Announcement */}
@@ -24,7 +24,7 @@ export default function WebinarBanner() {
                   🎯 Webinar Alert
                 </h3>
                 <p className="text-sm md:text-base font-semibold leading-tight">
-                  Don't miss the <span className="font-bold text-yellow-200">Visium + IREX</span> live webinar on Peru's 54,000-camera AI surveillance network
+                  Don't miss the <span className="font-bold text-yellow-200">Tyvanto + IREX</span> live webinar on Peru's 54,000-camera AI surveillance network
                 </p>
                 <p className="text-xs md:text-sm text-white/90 mt-2">
                   Architecture, rollout, and growth roadmap
@@ -59,7 +59,7 @@ export default function WebinarBanner() {
               className="flex-1 md:flex-none"
             >
               <Button
-                className="w-full md:w-auto bg-white text-purple-600 hover:bg-yellow-200 font-bold transition-all duration-200 shadow-lg"
+                className="w-full md:w-auto bg-white text-blue-600 hover:bg-yellow-200 font-bold transition-all duration-200 shadow-lg"
               >
                 Register Now
               </Button>

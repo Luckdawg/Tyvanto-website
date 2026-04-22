@@ -53,7 +53,7 @@ describe('Capabilities Deck - Free PDF Viewing', () => {
       width: '100%',
       height: '900',
       border: 'none',
-      title: 'Visium Technologies Capabilities Deck'
+      title: 'Tyvanto Capabilities Deck'
     };
 
     expect(iframeConfig.src).toContain('pdf');
@@ -102,7 +102,7 @@ describe('Capabilities Deck - Free PDF Viewing', () => {
   it('should display hero section with download options', () => {
     const heroSection = {
       title: 'Capabilities Deck',
-      subtitle: 'Discover how TruContext\'s agentic AI platform transforms data chaos into decision confidence',
+      subtitle: 'Discover how Arqen\'s agentic AI platform transforms data chaos into decision confidence',
       buttons: 2,
       directDownload: true,
       optionalForm: true
@@ -119,7 +119,7 @@ describe('Capabilities Deck - Free PDF Viewing', () => {
       requiresForm: false,
       content: [
         'Intelligence Gap Problem',
-        'TruContext Solution',
+        'Arqen Solution',
         'Six Key Pillars',
         'Autonomous Intelligence Workflow'
       ]

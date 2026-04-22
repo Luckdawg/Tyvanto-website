@@ -46,7 +46,7 @@ type FormState = {
 };
 
 const PRODUCTS = [
-  'TruContext Core Platform',
+  'Arqen Core Platform',
   'TruClaw Agentic AI Governance',
   'Tru-InSight Video Intelligence',
   'ELI Unified Surveillance Intelligence',
@@ -153,7 +153,7 @@ Additional requirements: `;
 ${form.useCase || 'Not provided'}
 
 ---
-*Submitted via the Visium Technologies Shop page quote form.*
+*Submitted via the Tyvanto Shop page quote form.*
     `.trim();
 
     notifyMutation.mutate({ title, content });
@@ -228,11 +228,11 @@ ${form.useCase || 'Not provided'}
               <p className="text-slate-500 text-sm mb-8">
                 For urgent inquiries, contact us directly at{' '}
                 <a
-                  href="mailto:sales@visiumtechnologies.com"
+                  href="mailto:sales@tyvanto.com"
                   className="underline"
                   style={{ color: '#00E5FF' }}
                 >
-                  sales@visiumtechnologies.com
+                  sales@tyvanto.com
                 </a>
               </p>
               <Button
