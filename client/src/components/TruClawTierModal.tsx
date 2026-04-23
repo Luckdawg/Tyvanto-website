@@ -1,7 +1,7 @@
 /**
- * TruClawTierModal.tsx
+ * ArqenCommandTierModal.tsx
  *
- * Modal that appears when a user clicks "Subscribe Now" for TruClaw.
+ * Modal that appears when a user clicks "Subscribe Now" for Arqen Command.
  * Presents three tiers (Starter / Standard / Enterprise) with pricing,
  * feature lists, and a billing cycle toggle, then initiates the
  * Stripe checkout for the selected tier.
@@ -33,7 +33,7 @@ import {
 
 type BillingCycle = 'monthly' | 'annual';
 
-interface TruClawTier {
+interface ArqenCommandTier {
   id: string;
   name: string;
   tagline: string;
@@ -47,7 +47,7 @@ interface TruClawTier {
   contactSales?: boolean;
 }
 
-const TRUCLAW_TIERS: TruClawTier[] = [
+const TRUCLAW_TIERS: ArqenCommandTier[] = [
   {
     id: 'truclaw-starter',
     name: 'Starter',
@@ -114,7 +114,7 @@ const TRUCLAW_TIERS: TruClawTier[] = [
 // ─── Tier card ────────────────────────────────────────────────────────────────
 
 interface TierCardProps {
-  tier: TruClawTier;
+  tier: ArqenCommandTier;
   billingCycle: BillingCycle;
   selected: boolean;
   onSelect: () => void;
@@ -240,18 +240,18 @@ function TierCard({ tier, billingCycle, selected, onSelect }: TierCardProps) {
 
 // ─── Main modal ───────────────────────────────────────────────────────────────
 
-interface TruClawTierModalProps {
+interface ArqenCommandTierModalProps {
   open: boolean;
   onClose: () => void;
   /** Pre-selected billing cycle from the parent (e.g. from the billing toggle) */
   defaultBillingCycle?: BillingCycle;
 }
 
-export default function TruClawTierModal({
+export default function ArqenCommandTierModal({
   open,
   onClose,
   defaultBillingCycle = 'monthly',
-}: TruClawTierModalProps) {
+}: ArqenCommandTierModalProps) {
   const [selectedTierId, setSelectedTierId] = useState<string>('truclaw-standard');
   const [billingCycle, setBillingCycle] = useState<BillingCycle>(defaultBillingCycle);
 
@@ -274,7 +274,7 @@ export default function TruClawTierModal({
 
   const handleProceed = () => {
     if (selectedTier.contactSales) {
-      window.location.href = '/demo?product=TruClaw+Enterprise';
+      window.location.href = '/demo?product=Arqen Command+Enterprise';
       onClose();
       return;
     }
@@ -301,7 +301,7 @@ export default function TruClawTierModal({
             </div>
             <div>
               <DialogTitle className="text-white text-xl font-bold">
-                Choose Your TruClaw™ Plan
+                Choose Your Arqen Command™ Plan
               </DialogTitle>
               <DialogDescription className="text-slate-400 text-sm">
                 AI Agent Governance & Behavioral Security — select the tier that fits your deployment
@@ -365,7 +365,7 @@ export default function TruClawTierModal({
               <span>
                 Selected:{' '}
                 <strong className="text-white">
-                  TruClaw {selectedTier.name}
+                  Arqen Command {selectedTier.name}
                 </strong>{' '}
                 ·{' '}
                 {billingCycle === 'annual' ? (

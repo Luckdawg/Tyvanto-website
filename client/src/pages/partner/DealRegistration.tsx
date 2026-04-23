@@ -323,7 +323,7 @@ export default function DealRegistration() {
                 <div>
                   <label className="text-sm font-medium">Product Interest</label>
                   <div className="space-y-2 mt-2">
-                    {["Arqen", "Tru-InSight", "Video Intelligence", "Graph Analytics", "Threat Detection"].map((product) => (
+                    {["Arqen", "Arqen Vision", "Video Intelligence", "Graph Analytics", "Threat Detection"].map((product) => (
                       <div key={product} className="flex items-center">
                         <input
                           type="checkbox"

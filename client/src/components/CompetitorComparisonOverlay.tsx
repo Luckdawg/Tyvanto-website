@@ -137,7 +137,7 @@ const FEATURE_ROWS: FeatureRow[] = [
   {
     category: 'Data Fusion',
     feature: 'Video Intelligence (CCTV/IP Cam)',
-    tooltip: 'Tru-InSight integrates video analytics into the threat graph',
+    tooltip: 'Arqen Vision integrates video analytics into the threat graph',
     tyvanto: 'full', splunk: 'none', crowdstrike: 'none', paloalto: 'none', ibmqradar: 'none',
   },
   {

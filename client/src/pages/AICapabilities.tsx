@@ -298,7 +298,7 @@ export default function AICapabilities() {
             </Link>
             <Link href="/platform/tru-insight">
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                Explore Tru-InSight™
+                Explore Arqen Vision™
               </Button>
             </Link>
           </div>

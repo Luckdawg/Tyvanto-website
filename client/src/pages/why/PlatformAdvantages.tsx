@@ -108,7 +108,7 @@ export default function PlatformAdvantages() {
         "Spatio-temporal mobility contextualization with TruTime",
         "Rapid pathfinding for traffic light optimization",
         "Automated workflow dispatching to field services",
-        "Tru-InSight AI agents for video-based anomaly detection"
+        "Arqen Vision AI agents for video-based anomaly detection"
       ],
       outcomes: [
         "Faster incident clearance time",

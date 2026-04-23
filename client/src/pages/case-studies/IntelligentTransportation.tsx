@@ -27,7 +27,7 @@ export default function IntelligentTransportationCaseStudy() {
 
   const timeline = [
     { phase: "Assessment & Design", duration: "6 weeks", activities: ["Traffic pattern analysis", "Camera network audit", "Sensor inventory", "Integration architecture design"] },
-    { phase: "Pilot Corridor", duration: "10 weeks", activities: ["Deploy on 12-mile corridor", "Integrate 85 traffic cameras", "Connect 240 sensors", "Train Tru-InSight AI models"] },
+    { phase: "Pilot Corridor", duration: "10 weeks", activities: ["Deploy on 12-mile corridor", "Integrate 85 traffic cameras", "Connect 240 sensors", "Train Arqen Vision AI models"] },
     { phase: "City-Wide Rollout", duration: "16 weeks", activities: ["Expand to 180-mile network", "1,200+ camera integration", "Field service automation", "Staff training program"] },
     { phase: "Advanced Features", duration: "Ongoing", activities: ["Predictive maintenance", "ML model optimization", "Autonomous traffic control", "Real-time rerouting"] }
   ];
@@ -39,7 +39,7 @@ export default function IntelligentTransportationCaseStudy() {
     },
     {
       component: "Arqen Integration",
-      items: ["Graph pathfinding (transportation network)", "TruTime temporal sequencing", "Tru-InSight video AI agents", "Could automate workflow dispatching", "Supply chain optimization", "Real-time anomaly detection"]
+      items: ["Graph pathfinding (transportation network)", "TruTime temporal sequencing", "Arqen Vision video AI agents", "Could automate workflow dispatching", "Supply chain optimization", "Real-time anomaly detection"]
     },
     {
       component: "Key Capabilities",
@@ -61,7 +61,7 @@ export default function IntelligentTransportationCaseStudy() {
               Smart City Transit Authority: <span className="text-primary">Adaptive Traffic Intelligence</span>
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed mb-8">
-              How a major metropolitan transit authority could deploy Arqen with Tru-InSight video AI to achieve 61% faster incident clearance, 55% congestion reduction, and $2.1M in annual infrastructure maintenance savings through spatio-temporal analytics and autonomous traffic management.
+              How a major metropolitan transit authority could deploy Arqen with Arqen Vision video AI to achieve 61% faster incident clearance, 55% congestion reduction, and $2.1M in annual infrastructure maintenance savings through spatio-temporal analytics and autonomous traffic management.
             </p>
             <div className="flex flex-wrap gap-6 text-sm">
               <div className="flex items-center gap-2">
@@ -163,9 +163,9 @@ export default function IntelligentTransportationCaseStudy() {
 
           <Card className="mt-8 bg-gradient-to-br from-primary to-secondary text-white">
             <CardContent className="p-10">
-              <h3 className="text-2xl font-bold mb-4">Tru-InSight Video Intelligence</h3>
+              <h3 className="text-2xl font-bold mb-4">Arqen Vision Video Intelligence</h3>
               <p className="text-lg opacity-90 leading-relaxed mb-6">
-                Arqen's Tru-InSight agentic AI autonomously analyzes 1,200 traffic camera feeds in real-time, performing face recognition, license plate detection, and behavioral analytics. AI agents iteratively plan multi-step investigations—such as tracing event chains across cameras—and automate preemptive alerts for urban threats like erratic driving, unauthorized access, or crowd anomalies. The TruTime feature sequences events along the transportation network with precise timing, enabling rapid incident investigation and root cause analysis.
+                Arqen's Arqen Vision agentic AI autonomously analyzes 1,200 traffic camera feeds in real-time, performing face recognition, license plate detection, and behavioral analytics. AI agents iteratively plan multi-step investigations—such as tracing event chains across cameras—and automate preemptive alerts for urban threats like erratic driving, unauthorized access, or crowd anomalies. The TruTime feature sequences events along the transportation network with precise timing, enabling rapid incident investigation and root cause analysis.
               </p>
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="bg-white/10 backdrop-blur rounded-lg p-4">

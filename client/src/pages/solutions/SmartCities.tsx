@@ -71,7 +71,7 @@ export default function SmartCities() {
               <CardContent className="p-8">
                 <Video className="h-12 w-12 text-secondary mb-4" />
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  Tru-InSight™ for Public Safety
+                  Arqen Vision™ for Public Safety
                 </h3>
                 <p className="text-gray-700">
                   Apply AI-powered video intelligence for public safety threat identification, crowd monitoring during large-scale events, and automatic incident detection. Transform passive cameras into proactive security networks.
@@ -193,7 +193,7 @@ export default function SmartCities() {
             </Link>
             <Link href="/platform/tru-insight">
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                Explore Tru-InSight™
+                Explore Arqen Vision™
               </Button>
             </Link>
           </div>

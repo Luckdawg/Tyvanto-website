@@ -64,7 +64,7 @@ export default function Comparison() {
     },
     {
       category: "ai",
-      feature: "Video Intelligence (Tru-InSight)",
+      feature: "Video Intelligence (Arqen Vision)",
       arqen: { status: "full", detail: "Autonomous video AI with behavioral analytics" },
       traditional: { status: "partial", detail: "Basic motion detection only" },
       advantage: "Real-time behavioral anomaly detection across 1,200+ camera feeds"

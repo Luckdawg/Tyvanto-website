@@ -11,10 +11,10 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     id: "age-of-agentic-ai-arrived",
-    title: "The Age of Autonomous Agentic AI Has Arrived — And the Stakes Have Never Been Higher – Enter TruClaw",
+    title: "The Age of Autonomous Agentic AI Has Arrived — And the Stakes Have Never Been Higher – Enter Arqen Command",
     date: "February 2026",
     category: "CEO Corner",
-    excerpt: "The cybersecurity world is waking up to a new reality. Autonomous Agentic AI — systems that can reason, plan, act, and adapt across multi-step workflows without waiting for human approval at every turn — has moved from buzzword to battlefield. At Tyvanto, we've been building toward this moment for years. Arqen isn't just our response to this shift — it's the architecture we designed for it. And with the launch of TruClaw™, our AI governance and control layer built directly into Arqen, we're closing the attack surface that agentic AI opens before adversaries can exploit it.",
+    excerpt: "The cybersecurity world is waking up to a new reality. Autonomous Agentic AI — systems that can reason, plan, act, and adapt across multi-step workflows without waiting for human approval at every turn — has moved from buzzword to battlefield. At Tyvanto, we've been building toward this moment for years. Arqen isn't just our response to this shift — it's the architecture we designed for it. And with the launch of Arqen Command™, our AI governance and control layer built directly into Arqen, we're closing the attack surface that agentic AI opens before adversaries can exploit it.",
     image: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028236186/xQjDyzGyQaiYcNXT.png",
     pdfUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310419663028236186/d8D2GoF7wZHc9ZPzYZfLpT/The_Age_of_Agentic_AI_Has_Arrived_REVISED_68cbbec4.docx"
   },

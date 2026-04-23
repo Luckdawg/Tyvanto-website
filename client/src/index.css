@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 @import "tailwindcss";
 @import "tw-animate-css";
@@ -45,33 +44,46 @@
 }
 
 /* 
-  Tyvanto Brand Color Palette:
-  - Deep Navy:    #0D1B3E  (oklch ~0.17 0.07 255)
-  - Mid Blue:     #1B3A8C  (oklch ~0.33 0.14 258)
-  - Bright Blue:  #00A3FF  (oklch ~0.65 0.18 228)
-  - Light Blue:   #38BDF8  (oklch ~0.73 0.14 225)
+  Arqen / Tyvanto Brand Color Palette:
+  - Near Black:   #0A0F1A  — deep background
+  - Deep Navy:    #1E3A8A  — primary dark
+  - Primary Blue: #2D7FF9  — primary interactive
+  - Purple:       #7B61FF  — Arqen Vision accent
+  - Teal/Mint:    #00D1B2  — Arqen Sentinel accent
+  - Amber/Orange: #FF9D00  — Arqen Trace accent
+  - Neutral Gray: #A6ACB3
+  - Off-White:    #F2F4F3
+  
+  Product accent colors:
+  - Arqen Vision™    → #7B61FF  (purple)
+  - Arqen Sentinel™  → #00D1B2  (teal)
+  - Arqen Trace™     → #FF9D00  (amber)
+  - Arqen Command™   → #7B61FF  (purple/violet)
+  - Arqen Grid™      → #2D7FF9  (blue)
 */
 
 :root {
-  /* Tyvanto bright blue as primary */
+  /* Primary: Arqen blue */
   --primary: oklch(0.55 0.20 228);
   --primary-foreground: oklch(1 0 0);
   --sidebar-primary: oklch(0.55 0.20 228);
   --sidebar-primary-foreground: oklch(1 0 0);
-  /* Chart colors - blue spectrum */
-  --chart-1: oklch(0.65 0.18 228);
-  --chart-2: oklch(0.55 0.20 228);
-  --chart-3: oklch(0.45 0.16 248);
-  --chart-4: oklch(0.33 0.14 258);
-  --chart-5: oklch(0.17 0.07 255);
+
+  /* Chart colors — full Arqen palette */
+  --chart-1: oklch(0.65 0.18 228);   /* #2D7FF9 blue */
+  --chart-2: oklch(0.62 0.22 295);   /* #7B61FF purple */
+  --chart-3: oklch(0.76 0.14 178);   /* #00D1B2 teal */
+  --chart-4: oklch(0.73 0.17 65);    /* #FF9D00 amber */
+  --chart-5: oklch(0.33 0.14 258);   /* #1E3A8A navy */
+
   --radius: 0.75rem;
   --background: oklch(1 0 0);
-  --foreground: oklch(0.17 0.07 255);
+  --foreground: oklch(0.13 0.06 255);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.17 0.07 255);
+  --card-foreground: oklch(0.13 0.06 255);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.17 0.07 255);
-  /* Mid blue as secondary */
+  --popover-foreground: oklch(0.13 0.06 255);
+  /* Secondary: deep navy */
   --secondary: oklch(0.33 0.14 258);
   --secondary-foreground: oklch(1 0 0);
   --muted: oklch(0.96 0.005 228);
@@ -84,11 +96,24 @@
   --input: oklch(0.88 0.01 228);
   --ring: oklch(0.55 0.20 228);
   --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.17 0.07 255);
+  --sidebar-foreground: oklch(0.13 0.06 255);
   --sidebar-accent: oklch(0.96 0.005 228);
-  --sidebar-accent-foreground: oklch(0.17 0.07 255);
+  --sidebar-accent-foreground: oklch(0.13 0.06 255);
   --sidebar-border: oklch(0.88 0.01 228);
   --sidebar-ring: oklch(0.55 0.20 228);
+
+  /* Arqen product accent CSS variables */
+  --arqen-vision:    #7B61FF;
+  --arqen-sentinel:  #00D1B2;
+  --arqen-trace:     #FF9D00;
+  --arqen-command:   #7B61FF;
+  --arqen-grid:      #2D7FF9;
+  --arqen-blue:      #2D7FF9;
+  --arqen-navy:      #1E3A8A;
+  --arqen-dark:      #0A0F1A;
+  --arqen-purple:    #7B61FF;
+  --arqen-teal:      #00D1B2;
+  --arqen-amber:     #FF9D00;
 }
 
 .dark {
@@ -96,15 +121,15 @@
   --primary-foreground: oklch(1 0 0);
   --sidebar-primary: oklch(0.65 0.18 228);
   --sidebar-primary-foreground: oklch(1 0 0);
-  --background: oklch(0.17 0.07 255);
+  --background: oklch(0.13 0.06 255);
   --foreground: oklch(0.92 0.01 228);
-  --card: oklch(0.22 0.07 255);
+  --card: oklch(0.18 0.07 255);
   --card-foreground: oklch(0.92 0.01 228);
-  --popover: oklch(0.22 0.07 255);
+  --popover: oklch(0.18 0.07 255);
   --popover-foreground: oklch(0.92 0.01 228);
   --secondary: oklch(0.45 0.16 248);
   --secondary-foreground: oklch(1 0 0);
-  --muted: oklch(0.27 0.06 255);
+  --muted: oklch(0.22 0.06 255);
   --muted-foreground: oklch(0.65 0.06 228);
   --accent: oklch(0.65 0.18 228);
   --accent-foreground: oklch(1 0 0);
@@ -114,13 +139,13 @@
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.65 0.18 228);
   --chart-1: oklch(0.65 0.18 228);
-  --chart-2: oklch(0.55 0.20 228);
-  --chart-3: oklch(0.45 0.16 248);
-  --chart-4: oklch(0.33 0.14 258);
+  --chart-2: oklch(0.62 0.22 295);
+  --chart-3: oklch(0.76 0.14 178);
+  --chart-4: oklch(0.73 0.17 65);
   --chart-5: oklch(0.25 0.10 255);
-  --sidebar: oklch(0.22 0.07 255);
+  --sidebar: oklch(0.18 0.07 255);
   --sidebar-foreground: oklch(0.92 0.01 228);
-  --sidebar-accent: oklch(0.27 0.06 255);
+  --sidebar-accent: oklch(0.22 0.06 255);
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.65 0.18 228);
@@ -176,23 +201,70 @@
     }
   }
 
-  /* Decorative circular dotted pattern - Tyvanto blue */
+  /* Decorative circular dotted pattern */
   .dot-pattern {
-    background-image: radial-gradient(circle, rgba(0, 163, 255, 0.15) 1px, transparent 1px);
+    background-image: radial-gradient(circle, rgba(45, 127, 249, 0.15) 1px, transparent 1px);
     background-size: 24px 24px;
   }
 
-  /* Gradient backgrounds - Tyvanto navy to blue */
+  /* Gradient backgrounds */
   .gradient-purple-blue {
-    background: linear-gradient(135deg, rgba(13, 27, 62, 0.08) 0%, rgba(0, 163, 255, 0.10) 100%);
+    background: linear-gradient(135deg, rgba(30, 58, 138, 0.06) 0%, rgba(45, 127, 249, 0.08) 50%, rgba(123, 97, 255, 0.05) 100%);
   }
 
   .gradient-hero {
-    background: linear-gradient(135deg, #f0f4ff 0%, #e0eeff 100%);
+    background: linear-gradient(135deg, #f0f4ff 0%, #e8f0fe 50%, #f0e8ff 100%);
   }
 
-  /* Tyvanto brand gradient utility */
+  /* Tyvanto/Arqen brand gradient */
   .tyvanto-gradient {
-    background: linear-gradient(135deg, #0D1B3E 0%, #1B3A8C 50%, #00A3FF 100%);
+    background: linear-gradient(135deg, #0A0F1A 0%, #1E3A8A 50%, #2D7FF9 100%);
   }
+
+  .arqen-gradient {
+    background: linear-gradient(135deg, #0A0F1A 0%, #1E3A8A 40%, #2D7FF9 70%, #7B61FF 100%);
+  }
+
+  /* Product suite accent cards */
+  .product-vision {
+    border-left: 4px solid #7B61FF;
+    background: linear-gradient(135deg, rgba(123, 97, 255, 0.05) 0%, rgba(123, 97, 255, 0.02) 100%);
+  }
+  .product-sentinel {
+    border-left: 4px solid #00D1B2;
+    background: linear-gradient(135deg, rgba(0, 209, 178, 0.05) 0%, rgba(0, 209, 178, 0.02) 100%);
+  }
+  .product-trace {
+    border-left: 4px solid #FF9D00;
+    background: linear-gradient(135deg, rgba(255, 157, 0, 0.05) 0%, rgba(255, 157, 0, 0.02) 100%);
+  }
+  .product-command {
+    border-left: 4px solid #7B61FF;
+    background: linear-gradient(135deg, rgba(123, 97, 255, 0.05) 0%, rgba(123, 97, 255, 0.02) 100%);
+  }
+  .product-grid {
+    border-left: 4px solid #2D7FF9;
+    background: linear-gradient(135deg, rgba(45, 127, 249, 0.05) 0%, rgba(45, 127, 249, 0.02) 100%);
+  }
+
+  /* Arqen product badge pills */
+  .badge-vision   { background: rgba(123, 97, 255, 0.12); color: #7B61FF; border: 1px solid rgba(123, 97, 255, 0.3); }
+  .badge-sentinel { background: rgba(0, 209, 178, 0.12);  color: #00A896; border: 1px solid rgba(0, 209, 178, 0.3); }
+  .badge-trace    { background: rgba(255, 157, 0, 0.12);  color: #CC7A00; border: 1px solid rgba(255, 157, 0, 0.3); }
+  .badge-command  { background: rgba(123, 97, 255, 0.12); color: #7B61FF; border: 1px solid rgba(123, 97, 255, 0.3); }
+  .badge-grid     { background: rgba(45, 127, 249, 0.12); color: #1E5FC8; border: 1px solid rgba(45, 127, 249, 0.3); }
+
+  /* Section divider with Arqen gradient */
+  .arqen-divider {
+    height: 3px;
+    background: linear-gradient(90deg, #2D7FF9 0%, #7B61FF 50%, #00D1B2 100%);
+    border-radius: 2px;
+  }
+
+  /* Glowing accent for product icons */
+  .glow-vision   { box-shadow: 0 0 20px rgba(123, 97, 255, 0.3); }
+  .glow-sentinel { box-shadow: 0 0 20px rgba(0, 209, 178, 0.3); }
+  .glow-trace    { box-shadow: 0 0 20px rgba(255, 157, 0, 0.3); }
+  .glow-command  { box-shadow: 0 0 20px rgba(123, 97, 255, 0.3); }
+  .glow-grid     { box-shadow: 0 0 20px rgba(45, 127, 249, 0.3); }
 }

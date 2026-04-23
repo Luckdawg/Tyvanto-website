@@ -18,7 +18,7 @@ import { Link, useLocation } from 'wouter';
 import { Button } from '@/components/ui/button';
 import PricingCalculator from '@/components/PricingCalculator';
 import RequestQuoteModal from '@/components/RequestQuoteModal';
-import TruClawTierModal from '@/components/TruClawTierModal';
+import ArqenCommandTierModal from '@/components/TruClawTierModal';
 import { useCart } from '@/contexts/CartContext';
 import { toast } from 'sonner';
 import { trpc } from '@/lib/trpc';
@@ -112,7 +112,7 @@ const products: Product[] = [
     badge: 'Most Popular',
     badgeColor: 'cyan',
     icon: <Brain className="h-8 w-8" />,
-    name: 'TruClaw Agentic AI Governance',
+    name: 'Arqen Command Agentic AI Governance',
     tagline: 'Zero-Trust Orchestration for Autonomous AI Workforces',
     description:
       'Safely orchestrate your autonomous AI workforce with LangGraph, NemoClaw zero-trust guardrails, human approval gates, and real-time cost monitoring. Built-in token optimizations reduce agent spend by 40–70% without sacrificing capability.',
@@ -140,7 +140,7 @@ const products: Product[] = [
     dbId: 3,
     basePrice: 7499,
     icon: <Eye className="h-8 w-8" />,
-    name: 'Tru-InSight Video Intelligence',
+    name: 'Arqen Vision Video Intelligence',
     tagline: 'Proactive Camera Intelligence with Vision AI',
     description:
       'Turn existing cameras into proactive intelligence assets with Gemini/Z.ai vision AI. Selective frame analysis and batch processing keep inference costs low while delivering enterprise-grade situational awareness.',
@@ -228,23 +228,23 @@ const bundles: Bundle[] = [
     bestFor: 'SOC teams & threat analysts',
   },
   {
-    name: 'TruClaw Secure AI',
-    includes: 'TruClaw Governance',
+    name: 'Arqen Command Secure AI',
+    includes: 'Arqen Command Governance',
     monthlyRange: 'From $1,299/mo',
     bestFor: 'AI teams deploying autonomous agents',
     highlight: true,
     savings: 'Most Popular',
   },
   {
-    name: 'Tru-InSight Intelligence',
-    includes: 'Arqen + Tru-InSight',
+    name: 'Arqen Vision Intelligence',
+    includes: 'Arqen + Arqen Vision',
     monthlyRange: 'From $15,494/mo',
     bestFor: 'Physical + cyber convergence',
     savings: 'Save 10%',
   },
   {
     name: 'Complete Defense Suite',
-    includes: 'Arqen + TruClaw + Tru-InSight',
+    includes: 'Arqen + Arqen Command + Arqen Vision',
     monthlyRange: 'Custom (save 10%)',
     bestFor: 'Enterprise full-stack defense',
     savings: 'Save 10%',
@@ -329,12 +329,12 @@ const verticalProducts: VerticalProduct[] = [
     category: 'Legal Tech · Litigation',
     categoryColor: '#DAA520',
     icon: <Briefcase className="h-6 w-6" />,
-    name: 'CaseForge™ Legal Case Intelligence',
-    tagline: 'AI-powered litigation command center that transforms document repositories into interactive timelines, evidence matrices, and autonomous case management — powered by TruClaw™ agents.',
+    name: 'Arqen Command™ Legal Case Intelligence',
+    tagline: 'AI-powered litigation command center that transforms document repositories into interactive timelines, evidence matrices, and autonomous case management — powered by Arqen Command™ agents.',
     features: [
       'Consolidates 100+ source documents into a unified, searchable intelligence dashboard',
       'AI legal research with natural language queries and voice narration via ElevenLabs TTS',
-      'TruClaw™ autonomous agents for document analysis, court monitoring, and outreach automation',
+      'Arqen Command™ autonomous agents for document analysis, court monitoring, and outreach automation',
       'Interactive financial analytics, deposition timelines, and evidence matrix visualization',
     ],
     startingPrice: '$3,499/mo',
@@ -345,7 +345,7 @@ const verticalProducts: VerticalProduct[] = [
     category: 'Education · Accountability',
     categoryColor: '#6495ED',
     icon: <BookOpen className="h-6 w-6" />,
-    name: 'ASPIRE™ Public Reporting Platform',
+    name: 'Arqen Trace™ Supply Chain Platform',
     tagline: 'Automated, ADA-compliant public reporting system for charter school accountability frameworks — generating mobile-friendly performance reports from live data warehouse connections.',
     features: [
       'Dual-report architecture: system overview reports and per-school measure score reports',
@@ -361,7 +361,7 @@ const verticalProducts: VerticalProduct[] = [
     category: 'Government · National Infrastructure',
     categoryColor: '#DC143C',
     icon: <MapPin className="h-6 w-6" />,
-    name: 'TruAddress™ National Address Intelligence',
+    name: 'Arqen Grid™ National Address Intelligence',
     tagline: 'AI-powered national address data collection, verification, and management — enabling postal services, emergency response, financial inclusion, and e-government at scale.',
     features: [
       'Satellite-assisted AI address detection with mobile-first field verification workflows',
@@ -377,7 +377,7 @@ const verticalProducts: VerticalProduct[] = [
     category: 'Research · NGO · Government',
     categoryColor: '#00CED1',
     icon: <Radio className="h-6 w-6" />,
-    name: 'PanelPulse™ Research Panel Management',
+    name: 'Arqen Vision™ Research Panel Management',
     tagline: 'Full-stack sovereign survey panel platform — recruit panelists, distribute WhatsApp and SMS pulse surveys, manage airtime incentives, and analyze results with AI — no third-party panel providers required.',
     features: [
       'Multi-channel survey distribution via WhatsApp and SMS with real-time response tracking',
@@ -467,8 +467,8 @@ export default function Shop() {
   const [animatedNodes, setAnimatedNodes] = useState(0);
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [quoteDefaultProduct, setQuoteDefaultProduct] = useState<string>('');
-  const [truClawModalOpen, setTruClawModalOpen] = useState(false);
-  const [truClawBillingCycle, setTruClawBillingCycle] = useState<'monthly' | 'annual'>('monthly');
+  const [arqenCommandModalOpen, setArqenCommandModalOpen] = useState(false);
+  const [arqenCommandBillingCycle, setArqenCommandBillingCycle] = useState<'monthly' | 'annual'>('monthly');
   const [activeVerticalFilter, setActiveVerticalFilter] = useState<string>('All');
   const [stickyNavVisible, setStickyNavVisible] = useState(false);
   const [pricingSnapshot, setPricingSnapshot] = useState<{
@@ -498,10 +498,10 @@ export default function Shop() {
 
   const handleSubscribe = useCallback(
     (productId: string, billingCycle: 'monthly' | 'annual' = 'monthly') => {
-      // TruClaw requires tier selection before checkout
+      // Arqen Command requires tier selection before checkout
       if (productId === 'truclaw') {
-        setTruClawBillingCycle(billingCycle);
-        setTruClawModalOpen(true);
+        setArqenCommandBillingCycle(billingCycle);
+        setArqenCommandModalOpen(true);
         return;
       }
       checkoutMutation.mutate({ productId, billingCycle });
@@ -793,7 +793,7 @@ export default function Shop() {
                 color: '#7C3AED',
                 persona: 'AI & DevOps Teams',
                 description: 'You\'re deploying autonomous AI agents and need governance, cost controls, and zero-trust guardrails.',
-                recommendation: 'TruClaw Agentic AI Governance',
+                recommendation: 'Arqen Command Agentic AI Governance',
                 recommendationHref: '#product-truclaw',
                 price: 'From $1,299/mo',
                 bullets: ['Zero-trust AI guardrails', '40–70% token cost savings', 'Human approval gates'],
@@ -884,15 +884,15 @@ export default function Shop() {
             </div>
             {[
               // Sorted by entry price ascending (lowest → highest)
-              { name: 'TruClaw', entry: '$1,299/mo', entryNum: 1299, model: 'Flat tier + agent count', bestFor: 'AI governance teams', href: '#product-truclaw', color: '#7C3AED' },
-              { name: 'CaseForge', entry: '$3,499/mo', entryNum: 3499, model: 'Flat rate', bestFor: 'Legal teams', href: '#product-caseforge-legal', color: '#DAA520' },
-              { name: 'ASPIRE', entry: '$3,499/mo', entryNum: 3499, model: 'Flat rate', bestFor: 'Public agencies', href: '#product-aspire-reporting', color: '#22C55E' },
-              { name: 'PanelPulse', entry: '$3,995/mo', entryNum: 3995, model: 'Flat rate', bestFor: 'Research & NGO ops', href: '#product-panelpulse', color: '#00CED1' },
+              { name: 'Arqen Command', entry: '$1,299/mo', entryNum: 1299, model: 'Flat tier + agent count', bestFor: 'AI governance teams', href: '#product-truclaw', color: '#7C3AED' },
+              { name: 'Arqen Command', entry: '$3,499/mo', entryNum: 3499, model: 'Flat rate', bestFor: 'Legal teams', href: '#product-caseforge-legal', color: '#DAA520' },
+              { name: 'Arqen Trace', entry: '$3,499/mo', entryNum: 3499, model: 'Flat rate', bestFor: 'Public agencies', href: '#product-aspire-reporting', color: '#22C55E' },
+              { name: 'Arqen Vision', entry: '$3,995/mo', entryNum: 3995, model: 'Flat rate', bestFor: 'Research & NGO ops', href: '#product-panelpulse', color: '#00CED1' },
               { name: 'Smart City Demo', entry: '$4,750/mo', entryNum: 4750, model: 'Flat rate', bestFor: 'Systems integrators', href: '#product-smart-city-demo', color: '#FF69B4' },
               { name: 'Arqen', entry: '$7,995/mo', entryNum: 7995, model: 'Base + tiered node rate', bestFor: 'SOC & threat analysts', href: '#product-arqen', color: '#00E5FF' },
-              { name: 'Tru-InSight', entry: '$7,499/mo', entryNum: 7499, model: 'Base + $2.00/camera', bestFor: 'Video intelligence', href: '#product-truinsight', color: '#0EA5E9' },
+              { name: 'Arqen Vision', entry: '$7,499/mo', entryNum: 7499, model: 'Base + $2.00/camera', bestFor: 'Video intelligence', href: '#product-truinsight', color: '#0EA5E9' },
               { name: 'ELI', entry: '$9,499/mo', entryNum: 9499, model: 'Base + $4/node overage', bestFor: 'Physical security ops', href: '#product-eli', color: '#F59E0B' },
-              { name: 'TruAddress', entry: '$19,950/mo', entryNum: 19950, model: 'Usage-based', bestFor: 'National address programs', href: '#product-truaddress', color: '#DC143C' },
+              { name: 'Arqen Grid', entry: '$19,950/mo', entryNum: 19950, model: 'Usage-based', bestFor: 'National address programs', href: '#product-truaddress', color: '#DC143C' },
             ].sort((a, b) => a.entryNum - b.entryNum)
             .map((row, i, arr) => (
               <div
@@ -1453,11 +1453,11 @@ export default function Shop() {
         pricingSnapshot={pricingSnapshot}
       />
 
-      {/* ── TruClaw Tier Picker Modal ── */}
-      <TruClawTierModal
-        open={truClawModalOpen}
-        onClose={() => setTruClawModalOpen(false)}
-        defaultBillingCycle={truClawBillingCycle}
+      {/* ── Arqen Command Tier Picker Modal ── */}
+      <ArqenCommandTierModal
+        open={arqenCommandModalOpen}
+        onClose={() => setArqenCommandModalOpen(false)}
+        defaultBillingCycle={arqenCommandBillingCycle}
       />
     </div>
   );

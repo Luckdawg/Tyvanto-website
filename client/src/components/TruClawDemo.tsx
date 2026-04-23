@@ -80,7 +80,7 @@ const SHADOW_AGENTS: Agent[] = [
   }
 ];
 
-export default function TruClawDemo() {
+export default function ArqenCommandDemo() {
   const [demoState, setDemoState] = useState<DemoState>({
     isRunning: false,
     agents: INITIAL_AGENTS,
@@ -392,7 +392,7 @@ export default function TruClawDemo() {
       {/* Demo Info */}
       <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
         <p className="text-sm text-gray-600">
-          <strong>Demo Simulation:</strong> This interactive demo shows how TruClaw discovers shadow AI agents in real-time, monitors their behavior, and enforces governance policies. Watch as unauthorized agents are detected and quarantined automatically. In production, TruClaw provides sub-second detection latency and comprehensive audit trails for compliance.
+          <strong>Demo Simulation:</strong> This interactive demo shows how Arqen Command discovers shadow AI agents in real-time, monitors their behavior, and enforces governance policies. Watch as unauthorized agents are detected and quarantined automatically. In production, Arqen Command provides sub-second detection latency and comprehensive audit trails for compliance.
         </p>
       </div>
     </div>

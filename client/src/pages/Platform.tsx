@@ -278,6 +278,89 @@ export default function Platform() {
         </div>
       </section>
 
+      {/* Arqen Platform Suite */}
+      <section className="py-16 bg-white">
+        <div className="container">
+          <div className="text-center mb-12">
+            <p className="text-sm font-semibold uppercase tracking-widest mb-2" style={{color: '#2D7FF9'}}>ARQEN PLATFORM SUITE</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Five Modules. One Unified Intelligence Platform.</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">Each Arqen module is purpose-built for a specific intelligence domain, and all five work together as a single, unified operating system for your organization.</p>
+            <div className="arqen-divider w-24 mx-auto mt-6"></div>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Arqen Vision */}
+            <div className="product-vision rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 group">
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 glow-vision" style={{background: 'rgba(123,97,255,0.12)'}}>
+                <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="#7B61FF" strokeWidth={2}><circle cx="12" cy="12" r="3"/><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="1" fill="#7B61FF"/></svg>
+              </div>
+              <div className="mb-1">
+                <span className="text-xs font-bold uppercase tracking-widest" style={{color: '#7B61FF'}}>ARQEN</span>
+                <h3 className="text-xl font-bold" style={{color: '#7B61FF'}}>VISION™</h3>
+              </div>
+              <p className="text-gray-500 text-sm mb-3">Video and sensor intelligence</p>
+              <p className="text-gray-700 text-sm">AI-powered video analytics, multi-camera correlation, and real-time sensor fusion for physical security and situational awareness.</p>
+            </div>
+
+            {/* Arqen Sentinel */}
+            <div className="product-sentinel rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 group">
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 glow-sentinel" style={{background: 'rgba(0,209,178,0.12)'}}>
+                <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="#00D1B2" strokeWidth={2}><path d="M12 2l7 4v6c0 5-3.5 9.74-7 11-3.5-1.26-7-6-7-11V6l7-4z"/><path d="M9 12l2 2 4-4" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </div>
+              <div className="mb-1">
+                <span className="text-xs font-bold uppercase tracking-widest" style={{color: '#00D1B2'}}>ARQEN</span>
+                <h3 className="text-xl font-bold" style={{color: '#00A896'}}>SENTINEL™</h3>
+              </div>
+              <p className="text-gray-500 text-sm mb-3">Cyber threat detection and protection</p>
+              <p className="text-gray-700 text-sm">Graph-based threat detection, NIST-compliant security analytics, and real-time cyber defense for enterprise and government environments.</p>
+            </div>
+
+            {/* Arqen Trace */}
+            <div className="product-trace rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 group">
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 glow-trace" style={{background: 'rgba(255,157,0,0.12)'}}>
+                <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="#FF9D00" strokeWidth={2}><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+              </div>
+              <div className="mb-1">
+                <span className="text-xs font-bold uppercase tracking-widest" style={{color: '#FF9D00'}}>ARQEN</span>
+                <h3 className="text-xl font-bold" style={{color: '#CC7A00'}}>TRACE™</h3>
+              </div>
+              <p className="text-gray-500 text-sm mb-3">Supply chain, logistics and mineral tracing</p>
+              <p className="text-gray-700 text-sm">End-to-end supply chain visibility, provenance tracking, and logistics intelligence with real-time anomaly detection.</p>
+            </div>
+
+            {/* Arqen Command */}
+            <div className="product-command rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 group">
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 glow-command" style={{background: 'rgba(123,97,255,0.12)'}}>
+                <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="#7B61FF" strokeWidth={2}><polyline points="17 11 21 7 17 3"/><line x1="21" y1="7" x2="9" y2="7"/><polyline points="7 21 3 17 7 13"/><line x1="15" y1="17" x2="3" y2="17"/></svg>
+              </div>
+              <div className="mb-1">
+                <span className="text-xs font-bold uppercase tracking-widest" style={{color: '#7B61FF'}}>ARQEN</span>
+                <h3 className="text-xl font-bold" style={{color: '#7B61FF'}}>COMMAND™</h3>
+              </div>
+              <p className="text-gray-500 text-sm mb-3">Decision intelligence and agent orchestration</p>
+              <p className="text-gray-700 text-sm">Autonomous AI agent governance, multi-step decision orchestration, and intelligent workflow automation across your enterprise.</p>
+            </div>
+
+            {/* Arqen Grid */}
+            <div className="product-grid rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 group md:col-span-2 lg:col-span-1">
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 glow-grid" style={{background: 'rgba(45,127,249,0.12)'}}>
+                <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="#2D7FF9" strokeWidth={2}><circle cx="12" cy="12" r="2"/><circle cx="4" cy="6" r="2"/><circle cx="20" cy="6" r="2"/><circle cx="4" cy="18" r="2"/><circle cx="20" cy="18" r="2"/><line x1="6" y1="6" x2="10" y2="11"/><line x1="18" y1="6" x2="14" y2="11"/><line x1="6" y1="18" x2="10" y2="13"/><line x1="18" y1="18" x2="14" y2="13"/></svg>
+              </div>
+              <div className="mb-1">
+                <span className="text-xs font-bold uppercase tracking-widest" style={{color: '#2D7FF9'}}>ARQEN</span>
+                <h3 className="text-xl font-bold" style={{color: '#1E5FC8'}}>GRID™</h3>
+              </div>
+              <p className="text-gray-500 text-sm mb-3">Infrastructure and smart systems</p>
+              <p className="text-gray-700 text-sm">Smart city operations, critical infrastructure monitoring, and IoT/OT network intelligence for connected urban and industrial environments.</p>
+            </div>
+          </div>
+
+          <div className="mt-10 text-center">
+            <p className="text-sm text-gray-500 italic">All five modules share a unified graph database, Kafka streaming backbone, and agentic AI layer — giving you complete cross-domain intelligence in a single platform.</p>
+          </div>
+        </div>
+      </section>
+
       {/* Data Sovereignty Section */}
       <section className="py-12 bg-gradient-to-br from-blue-50 to-indigo-50">
         <div className="container">
@@ -351,7 +434,7 @@ export default function Platform() {
             </Link>
             <Link href="/platform/tru-insight">
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                Tru-InSight™ Video Intelligence
+                Arqen Vision™ Video Intelligence
               </Button>
             </Link>
           </div>

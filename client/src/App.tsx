@@ -48,7 +48,7 @@ import HealthcareCybersecurity from "./pages/solutions/HealthcareCybersecurity";
 import FinancialServicesCybersecurity from "./pages/solutions/FinancialServicesCybersecurity";
 import TelecomCybersecurity from "./pages/solutions/TelecomCybersecurity";
 import GovernmentFederal from "./pages/solutions/GovernmentFederal";
-import TruClaw from "./pages/solutions/TruClaw";
+import ArqenCommand from "./pages/solutions/TruClaw";
 import Blog from "./pages/Blog";
 import BlogDetail from "./pages/BlogDetail";
 import Videos from "./pages/resources/Videos";
@@ -123,7 +123,8 @@ function Router() {
       <Route path="/solutions/financial-services-cybersecurity" component={FinancialServicesCybersecurity} />
       <Route path="/solutions/telecom-cybersecurity" component={TelecomCybersecurity} />
       <Route path="/solutions/government-federal" component={GovernmentFederal} />
-      <Route path="/solutions/truclaw" component={TruClaw} />
+      <Route path="/solutions/arqen-command" component={ArqenCommand} />
+      <Route path="/solutions/truclaw" component={ArqenCommand} />
       <Route path="/blog" component={Blog} />
       <Route path="/blog/:id" component={BlogDetail} />
       <Route path="/resources" component={Blog} />

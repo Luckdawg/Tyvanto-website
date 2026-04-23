@@ -17,7 +17,7 @@ export default function TruInsight() {
               Transform Passive Cameras Into <span className="text-primary">Proactive Intelligence Networks</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              Tru-InSight™ extends Arqen's AI capabilities into physical security and video surveillance, converting existing camera infrastructure into intelligent, predictive systems
+              Arqen Vision™ extends Arqen's AI capabilities into physical security and video surveillance, converting existing camera infrastructure into intelligent, predictive systems
             </p>
             <Link href="/demo">
               <Button size="lg" className="bg-primary hover:bg-primary/90">
@@ -34,7 +34,7 @@ export default function TruInsight() {
           <div className="max-w-3xl mx-auto text-center mb-10">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Overview</h2>
             <p className="text-xl text-gray-600">
-              Tru-InSight™ positions itself as the extension of Arqen's AI capabilities into physical security and video surveillance, converting existing camera infrastructure into intelligent, predictive systems without necessitating costly hardware replacement.
+              Arqen Vision™ positions itself as the extension of Arqen's AI capabilities into physical security and video surveillance, converting existing camera infrastructure into intelligent, predictive systems without necessitating costly hardware replacement.
             </p>
           </div>
 
@@ -44,7 +44,7 @@ export default function TruInsight() {
                 No Hardware Replacement Required
               </h3>
               <p className="text-lg text-gray-600 mb-6">
-                Leverage your existing video surveillance infrastructure with AI-powered intelligence. Tru-InSight™ integrates seamlessly with any Video Management System (VMS) via webhook, RTSP, or API, transforming passive cameras into active threat detection and behavioral analysis systems.
+                Leverage your existing video surveillance infrastructure with AI-powered intelligence. Arqen Vision™ integrates seamlessly with any Video Management System (VMS) via webhook, RTSP, or API, transforming passive cameras into active threat detection and behavioral analysis systems.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
@@ -154,7 +154,7 @@ export default function TruInsight() {
                     Enhanced with IREX.AI Technology
                   </h2>
                   <p className="text-xl text-gray-700 mb-8">
-                    Tru-InSight™ integrates with IREX.AI's Searchveillance™ technology for facial recognition and license plate detection capabilities, establishing the platform's role in advanced physical security applications.
+                    Arqen Vision™ integrates with IREX.AI's Searchveillance™ technology for facial recognition and license plate detection capabilities, establishing the platform's role in advanced physical security applications.
                   </p>
                   <div className="grid md:grid-cols-2 gap-6 text-left">
                     <div className="flex items-start space-x-3">
@@ -269,7 +269,7 @@ export default function TruInsight() {
         <div className="container text-center">
           <h2 className="text-4xl font-bold mb-6">Transform Your Video Surveillance</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-            See how Tru-InSight™ can turn your existing cameras into an intelligent security network
+            See how Arqen Vision™ can turn your existing cameras into an intelligent security network
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/demo">

@@ -47,8 +47,8 @@ type FormState = {
 
 const PRODUCTS = [
   'Arqen Core Platform',
-  'TruClaw Agentic AI Governance',
-  'Tru-InSight Video Intelligence',
+  'Arqen Command Agentic AI Governance',
+  'Arqen Vision Video Intelligence',
   'ELI Unified Surveillance Intelligence',
   'Complete Defense Suite (Bundle)',
   'Not sure — need guidance',

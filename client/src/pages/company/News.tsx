@@ -72,9 +72,9 @@ export default function News() {
     },
     {
       date: "September 16, 2025",
-      title: "Tyvanto Expands Arqen™ with Tru-InSight™",
+      title: "Tyvanto Expands Arqen™ with Arqen Vision™",
       excerpt: "Transforming Existing Camera Networks into Proactive Video Intelligence. New module converts passive security footage into an active intelligence layer for preemptive threat detection and rapid investigation.",
-      url: "https://www.otcmarkets.com/stock/VISM/news/Tyvanto-Technologies-Expands-ArqenTM-with-Tru-InSightTM---Transforming-Existing-Camera-Networks-into-Proactive-Video?id=492632",
+      url: "https://www.otcmarkets.com/stock/VISM/news/Tyvanto-Technologies-Expands-ArqenTM-with-Arqen VisionTM---Transforming-Existing-Camera-Networks-into-Proactive-Video?id=492632",
       source: "OTC Markets",
       category: "Product Launch"
     },

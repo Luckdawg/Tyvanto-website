@@ -122,7 +122,7 @@ export default function Architecture() {
     },
     {
       id: "tru-insight",
-      title: "Tru-InSight Video AI",
+      title: "Arqen Vision Video AI",
       icon: Shield,
       color: "from-pink-500 to-rose-500",
       description: "Autonomous video intelligence and analytics",
@@ -134,7 +134,7 @@ export default function Architecture() {
         "Autonomous investigation planning",
         "Threat alerting automation"
       ],
-      technical: "Tru-InSight agents autonomously analyze video feeds, plan multi-step investigations, and correlate events across camera networks without human intervention"
+      technical: "Arqen Vision agents autonomously analyze video feeds, plan multi-step investigations, and correlate events across camera networks without human intervention"
     },
     {
       id: "dashboards",
@@ -162,7 +162,7 @@ export default function Architecture() {
     { from: "Relational DB", to: "TruTime", label: "Temporal sequencing" },
     { from: "Tru-AI Engine", to: "Dashboards", label: "AI insights" },
     { from: "TruTime", to: "Dashboards", label: "Contextualized events" },
-    { from: "Tru-InSight", to: "Graph Database", label: "Video event correlation" }
+    { from: "Arqen Vision", to: "Graph Database", label: "Video event correlation" }
   ];
 
   const keyAdvantages = [

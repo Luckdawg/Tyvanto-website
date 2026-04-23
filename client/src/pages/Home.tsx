@@ -399,8 +399,62 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Arqen Platform Suite — Home Page */}
+      <section className="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div className="container">
+          <div className="text-center mb-10">
+            <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{color: '#2D7FF9'}}>ARQEN PLATFORM SUITE</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">Intelligence in Action</h2>
+            <p className="text-gray-500 max-w-2xl mx-auto">Five purpose-built modules. One unified intelligence operating system.</p>
+            <div className="arqen-divider w-20 mx-auto mt-4"></div>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            <div className="product-vision rounded-xl p-5 text-center hover:shadow-lg transition-all duration-300 cursor-pointer">
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center mx-auto mb-3" style={{background: 'rgba(123,97,255,0.12)'}}>
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="#7B61FF" strokeWidth={2}><circle cx="12" cy="12" r="3"/><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/></svg>
+              </div>
+              <p className="text-xs font-bold uppercase tracking-wider" style={{color: '#7B61FF'}}>ARQEN</p>
+              <p className="text-base font-bold" style={{color: '#7B61FF'}}>VISION™</p>
+              <p className="text-xs text-gray-500 mt-1">Video &amp; sensor intelligence</p>
+            </div>
+            <div className="product-sentinel rounded-xl p-5 text-center hover:shadow-lg transition-all duration-300 cursor-pointer">
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center mx-auto mb-3" style={{background: 'rgba(0,209,178,0.12)'}}>
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="#00D1B2" strokeWidth={2}><path d="M12 2l7 4v6c0 5-3.5 9.74-7 11-3.5-1.26-7-6-7-11V6l7-4z"/></svg>
+              </div>
+              <p className="text-xs font-bold uppercase tracking-wider" style={{color: '#00D1B2'}}>ARQEN</p>
+              <p className="text-base font-bold" style={{color: '#00A896'}}>SENTINEL™</p>
+              <p className="text-xs text-gray-500 mt-1">Cyber threat detection</p>
+            </div>
+            <div className="product-trace rounded-xl p-5 text-center hover:shadow-lg transition-all duration-300 cursor-pointer">
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center mx-auto mb-3" style={{background: 'rgba(255,157,0,0.12)'}}>
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="#FF9D00" strokeWidth={2}><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+              </div>
+              <p className="text-xs font-bold uppercase tracking-wider" style={{color: '#FF9D00'}}>ARQEN</p>
+              <p className="text-base font-bold" style={{color: '#CC7A00'}}>TRACE™</p>
+              <p className="text-xs text-gray-500 mt-1">Supply chain &amp; logistics</p>
+            </div>
+            <div className="product-command rounded-xl p-5 text-center hover:shadow-lg transition-all duration-300 cursor-pointer">
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center mx-auto mb-3" style={{background: 'rgba(123,97,255,0.12)'}}>
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="#7B61FF" strokeWidth={2}><polyline points="17 11 21 7 17 3"/><line x1="21" y1="7" x2="9" y2="7"/><polyline points="7 21 3 17 7 13"/><line x1="15" y1="17" x2="3" y2="17"/></svg>
+              </div>
+              <p className="text-xs font-bold uppercase tracking-wider" style={{color: '#7B61FF'}}>ARQEN</p>
+              <p className="text-base font-bold" style={{color: '#7B61FF'}}>COMMAND™</p>
+              <p className="text-xs text-gray-500 mt-1">Decision &amp; agent AI</p>
+            </div>
+            <div className="product-grid rounded-xl p-5 text-center hover:shadow-lg transition-all duration-300 cursor-pointer col-span-2 md:col-span-1">
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center mx-auto mb-3" style={{background: 'rgba(45,127,249,0.12)'}}>
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="#2D7FF9" strokeWidth={2}><circle cx="12" cy="12" r="2"/><circle cx="4" cy="6" r="2"/><circle cx="20" cy="6" r="2"/><circle cx="4" cy="18" r="2"/><circle cx="20" cy="18" r="2"/><line x1="6" y1="6" x2="10" y2="11"/><line x1="18" y1="6" x2="14" y2="11"/><line x1="6" y1="18" x2="10" y2="13"/><line x1="18" y1="18" x2="14" y2="13"/></svg>
+              </div>
+              <p className="text-xs font-bold uppercase tracking-wider" style={{color: '#2D7FF9'}}>ARQEN</p>
+              <p className="text-base font-bold" style={{color: '#1E5FC8'}}>GRID™</p>
+              <p className="text-xs text-gray-500 mt-1">Infrastructure &amp; smart systems</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Key Capabilities */}
-      <section className="key-capabilities py-8 bg-gradient-to-br from-[#0D1B3E] via-[#1B3A8C] to-[#1B3A8C] text-white relative overflow-hidden">
+      <section className="key-capabilities py-8 bg-gradient-to-br from-[#0A0F1A] via-[#1E3A8A] to-[#1E3A8A] text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
             backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.4\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")'

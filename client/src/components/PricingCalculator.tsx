@@ -6,18 +6,18 @@
  *
  *   Arqen  — $7,995/mo (first 10K nodes) · $0.40/node (10K–100K) · $0.25/node (100K+)
  *                 + $450/agent
- *   TruClaw     — $1,299/mo Starter (≤10 agents) · $6,995/mo Standard (11–50) · Enterprise (50+)
- *   Tru-InSight — $7,499/mo base + $2.00/camera metered
+ *   Arqen Command     — $1,299/mo Starter (≤10 agents) · $6,995/mo Standard (11–50) · Enterprise (50+)
+ *   Arqen Vision — $7,499/mo base + $2.00/camera metered
  *   ELI         — $9,499/mo base (first 500 nodes) · $4.00/node above 500
  *   Full Suite  — $14,995/mo (20K nodes included) · $3.00/node T1 · $3.00/node T2 · $120/agent
  *   Oil & Gas   — $8,000/mo (500 endpoints) · $2.00/endpoint above 500
  *   Smart City Gov — $16,000/mo (1,000 nodes) · $2.00/node above 1,000
  *   Smart City Muni — $12,495/mo (500 devices) · $2.00/device above 500
  *   Campus Security — $7,995/mo (100 cameras) · $2.00/camera above 100
- *   CaseForge Legal — $3,499/mo flat
- *   ASPIRE Reporting — $3,499/mo flat
- *   TruAddress  — $19,950/mo (100K records) · $0.20/1K records above 100K
- *   PanelPulse  — $3,995/mo flat
+ *   Arqen Command — $3,499/mo flat
+ *   Arqen Trace — $3,499/mo flat
+ *   Arqen Grid  — $19,950/mo (100K records) · $0.20/1K records above 100K
+ *   Arqen Vision  — $3,995/mo flat
  *   Smart City Demo — $4,750/mo flat
  *
  * All products: 10% annual discount (uniform across all products)
@@ -86,8 +86,8 @@ interface ProductConfig {
   agentMax: number;
   agentDefault: number;
 
-  // TruClaw special tier model
-  isTruClaw?: boolean;
+  // Arqen Command special tier model
+  isArqenCommand?: boolean;
   truClawStarterFee?: number;   // ≤10 agents
   truClawStandardFee?: number;  // 11–50 agents
   truClawEnterpriseThreshold?: number; // above this → Contact Sales
@@ -149,7 +149,7 @@ const PRODUCTS: ProductConfig[] = [
   },
   {
     id: 'truclaw',
-    label: 'TruClaw',
+    label: 'Arqen Command™',
     icon: <Brain className="h-4 w-4" />,
     color: '#7C3AED',
     category: 'Core',
@@ -175,7 +175,7 @@ const PRODUCTS: ProductConfig[] = [
     agentMin: 0,
     agentMax: 0,
     agentDefault: 0,
-    isTruClaw: true,
+    isArqenCommand: true,
     truClawStarterFee: 1299,
     truClawStandardFee: 6995,
     truClawEnterpriseThreshold: 50,
@@ -184,7 +184,7 @@ const PRODUCTS: ProductConfig[] = [
     annualDiscount: 0.10,
     infoText: (
       <>
-        <strong className="text-slate-300">TruClaw</strong>: $1,299/mo Starter (≤10 agents, 20M tokens) ·
+        <strong className="text-slate-300">Arqen Command</strong>: $1,299/mo Starter (≤10 agents, 20M tokens) ·
         $6,995/mo Standard (11–50 agents, 200M tokens) · Enterprise custom pricing (50+ agents).
         Token overages above included limits billed at $0.002/1K tokens.
       </>
@@ -192,7 +192,7 @@ const PRODUCTS: ProductConfig[] = [
   },
   {
     id: 'truinsight',
-    label: 'Tru-InSight',
+    label: 'Arqen Vision',
     icon: <Eye className="h-4 w-4" />,
     color: '#0EA5E9',
     category: 'Core',
@@ -223,7 +223,7 @@ const PRODUCTS: ProductConfig[] = [
     annualDiscount: 0.10,
     infoText: (
       <>
-        <strong className="text-slate-300">Tru-InSight</strong>: $7,499/mo base platform ·
+        <strong className="text-slate-300">Arqen Vision</strong>: $7,499/mo base platform ·
         $2.00/camera metered inference. All cameras are metered — no included allowance.
         Save 10% when bundled with Arqen via the Full Suite.
       </>
@@ -478,7 +478,7 @@ const PRODUCTS: ProductConfig[] = [
   },
   {
     id: 'caseforge',
-    label: 'CaseForge Legal',
+    label: 'Arqen Command™',
     icon: <Briefcase className="h-4 w-4" />,
     color: '#DAA520',
     category: 'Vertical',
@@ -503,15 +503,15 @@ const PRODUCTS: ProductConfig[] = [
     annualDiscount: 0.10,
     infoText: (
       <>
-        <strong className="text-slate-300">CaseForge Legal</strong>: $3,499/mo flat rate — no usage-based charges.
-        Includes AI legal research, TruClaw autonomous agents, and interactive case analytics.
+        <strong className="text-slate-300">Arqen Command</strong>: $3,499/mo flat rate — no usage-based charges.
+        Includes AI legal research, Arqen Command autonomous agents, and interactive case analytics.
         Volume discounts for multi-firm or multi-region deployments — contact sales.
       </>
     ),
   },
   {
     id: 'aspire',
-    label: 'ASPIRE Reporting',
+    label: 'Arqen Trace',
     icon: <BookOpen className="h-4 w-4" />,
     color: '#6495ED',
     category: 'Vertical',
@@ -536,7 +536,7 @@ const PRODUCTS: ProductConfig[] = [
     annualDiscount: 0.10,
     infoText: (
       <>
-        <strong className="text-slate-300">ASPIRE Reporting</strong>: $3,499/mo flat rate — no usage-based charges.
+        <strong className="text-slate-300">Arqen Trace</strong>: $3,499/mo flat rate — no usage-based charges.
         Includes ADA-compliant public reporting, AWS data warehouse integration, and progressive disclosure design.
         Multi-district pricing available — contact sales.
       </>
@@ -544,7 +544,7 @@ const PRODUCTS: ProductConfig[] = [
   },
   {
     id: 'truaddress',
-    label: 'TruAddress',
+    label: 'Arqen Grid',
     icon: <MapPin className="h-4 w-4" />,
     color: '#DC143C',
     category: 'Vertical',
@@ -577,7 +577,7 @@ const PRODUCTS: ProductConfig[] = [
     annualDiscount: 0.10,
     infoText: (
       <>
-        <strong className="text-slate-300">TruAddress</strong>: $19,950/mo base (first 100K records) ·
+        <strong className="text-slate-300">Arqen Grid</strong>: $19,950/mo base (first 100K records) ·
         $0.20/1K records above 100K. Includes satellite AI detection, province analytics, and 10,000+ surveyor management.
         Example: 500K records → $19,950 + (400 × $0.20) = $20,030/mo.
       </>
@@ -585,7 +585,7 @@ const PRODUCTS: ProductConfig[] = [
   },
   {
     id: 'panelpulse',
-    label: 'PanelPulse',
+    label: 'Arqen Vision',
     icon: <Radio className="h-4 w-4" />,
     color: '#00CED1',
     category: 'Vertical',
@@ -610,7 +610,7 @@ const PRODUCTS: ProductConfig[] = [
     annualDiscount: 0.10,
     infoText: (
       <>
-        <strong className="text-slate-300">PanelPulse</strong>: $3,995/mo flat rate — no usage-based charges.
+        <strong className="text-slate-300">Arqen Vision</strong>: $3,995/mo flat rate — no usage-based charges.
         Includes WhatsApp/SMS survey distribution, airtime incentive management, and AI analysis.
         SMS/WhatsApp message volume overage pricing available for high-frequency surveys — contact sales.
       </>
@@ -643,7 +643,7 @@ const PRODUCTS: ProductConfig[] = [
     annualDiscount: 0.10,
     infoText: (
       <>
-        <strong className="text-slate-300">Smart City Demo Suite</strong>: $4,750/mo flat rate — no usage-based charges.
+        <strong className="text-slate-300">Arqen Grid</strong>: $4,750/mo flat rate — no usage-based charges.
         Includes GPU-accelerated 3D visualization, ROI models, standards documentation, and white-label licensing.
         Multi-city or multi-region licensing available — contact sales.
       </>
@@ -653,7 +653,7 @@ const PRODUCTS: ProductConfig[] = [
 
 // ─── Calculation helpers ──────────────────────────────────────────────────────
 
-function calcTruClawCost(agents: number, p: ProductConfig): { total: number; tierLabel: string; isCustom: boolean } {
+function calcArqenCommandCost(agents: number, p: ProductConfig): { total: number; tierLabel: string; isCustom: boolean } {
   const starter = p.truClawStarterFee ?? 1299;
   const standard = p.truClawStandardFee ?? 9999;
   const threshold = p.truClawEnterpriseThreshold ?? 50;
@@ -842,9 +842,9 @@ function PricingSlider({
   );
 }
 
-// ─── TruClaw tier indicator ───────────────────────────────────────────────────
+// ─── Arqen Command tier indicator ───────────────────────────────────────────────────
 
-function TruClawTierBar({ agents, color }: { agents: number; color: string }) {
+function ArqenCommandTierBar({ agents, color }: { agents: number; color: string }) {
   const tiers = [
     { label: 'Starter', range: '1–10 agents', fee: '$1,299/mo', max: 10, active: agents <= 10 },
     { label: 'Standard', range: '11–50 agents', fee: '$6,995/mo', max: 50, active: agents > 10 && agents <= 50 },
@@ -921,8 +921,8 @@ export default function PricingCalculator({ onRequestQuote }: PricingCalculatorP
   }, []);
 
   const breakdown = useMemo(() => {
-    if (product.isTruClaw) {
-      const { total, tierLabel, isCustom } = calcTruClawCost(units, product);
+    if (product.isArqenCommand) {
+      const { total, tierLabel, isCustom } = calcArqenCommandCost(units, product);
       return { base: total, unitCost: 0, agentCost: 0, total, isCustom, tierLabel };
     }
     const base = product.baseFee;
@@ -970,12 +970,12 @@ export default function PricingCalculator({ onRequestQuote }: PricingCalculatorP
   const verticalProducts = PRODUCTS.filter((p) => p.category === 'Vertical');
 
   // Unit display value
-  const unitDisplayValue = product.isTruClaw
+  const unitDisplayValue = product.isArqenCommand
     ? `${units} agent${units !== 1 ? 's' : ''}`
     : formatUnits(units, product.unitLabel);
 
   // Sub-label for units (tier info)
-  const unitSubLabel = product.isTruClaw ? undefined :
+  const unitSubLabel = product.isArqenCommand ? undefined :
     product.unitsIncluded > 0 && units <= product.unitsIncluded
       ? `Within included ${formatUnits(product.unitsIncluded, product.unitLabel)} — no overage`
       : product.unitsIncluded > 0 && units > product.unitsIncluded
@@ -1173,10 +1173,10 @@ export default function PricingCalculator({ onRequestQuote }: PricingCalculatorP
                       No sliders needed.
                     </div>
                   </div>
-                ) : product.isTruClaw ? (
-                  /* TruClaw — agent tier selector */
+                ) : product.isArqenCommand ? (
+                  /* Arqen Command — agent tier selector */
                   <div>
-                    <TruClawTierBar agents={units} color={product.color} />
+                    <ArqenCommandTierBar agents={units} color={product.color} />
                     <input
                       type="range"
                       min={1}
@@ -1356,7 +1356,7 @@ export default function PricingCalculator({ onRequestQuote }: PricingCalculatorP
                         </div>
 
                         {/* Unit overage row */}
-                        {!product.isFlat && !product.isTruClaw && breakdown.unitCost > 0 && (
+                        {!product.isFlat && !product.isArqenCommand && breakdown.unitCost > 0 && (
                           <div className="flex justify-between">
                             <span className="text-slate-400">
                               {product.unitLabel} overage
@@ -1374,7 +1374,7 @@ export default function PricingCalculator({ onRequestQuote }: PricingCalculatorP
                         )}
 
                         {/* Units within base */}
-                        {!product.isFlat && !product.isTruClaw && breakdown.unitCost === 0 && product.unitsIncluded > 0 && (
+                        {!product.isFlat && !product.isArqenCommand && breakdown.unitCost === 0 && product.unitsIncluded > 0 && (
                           <div className="flex justify-between">
                             <span className="text-slate-400">
                               {formatUnits(units, product.unitLabel)} {product.unitLabel.toLowerCase()}
@@ -1384,8 +1384,8 @@ export default function PricingCalculator({ onRequestQuote }: PricingCalculatorP
                           </div>
                         )}
 
-                        {/* TruClaw tier */}
-                        {product.isTruClaw && breakdown.tierLabel && (
+                        {/* Arqen Command tier */}
+                        {product.isArqenCommand && breakdown.tierLabel && (
                           <div className="flex justify-between">
                             <span className="text-slate-400">{breakdown.tierLabel}</span>
                             <span className="text-slate-600 font-medium">Included</span>

@@ -6,15 +6,15 @@ import {
   TrendingUp, CheckCircle2, AlertCircle, GitBranch, Database, Layers
 } from "lucide-react";
 import { SEOHead } from "@/components/SEOHead";
-import TruClawDemo from "@/components/TruClawDemo";
+import ArqenCommandDemo from "@/components/TruClawDemo";
 import AgentGraphVisualization from "@/components/AgentGraphVisualization";
 
-export default function TruClaw() {
+export default function ArqenCommand() {
   return (
     <div className="min-h-screen">
       <SEOHead 
-        title="TruClaw™ AI Agent Governance | Agentic AI Security | Tyvanto"
-        description="TruClaw™ is Tyvanto's agentic AI governance and control layer within Arqen™. Stop Shadow AI, prevent autonomous agent exploitation, and enforce zero-trust for every AI agent across your enterprise."
+        title="Arqen Command™ AI Agent Governance | Agentic AI Security | Tyvanto"
+        description="Arqen Command™ is Tyvanto's agentic AI governance and control layer within Arqen™. Stop Shadow AI, prevent autonomous agent exploitation, and enforce zero-trust for every AI agent across your enterprise."
         canonicalUrl="https://www.tyvanto.com/solutions/truclaw"
       />
 
@@ -27,10 +27,10 @@ export default function TruClaw() {
               <span className="text-sm font-semibold">New — AI Governance Module</span>
             </div>
             <h1 className="text-5xl font-bold text-gray-900 mb-6">
-              <span className="text-primary">TruClaw™</span> Govern Every AI Agent.<br />Stop Every Shadow Agent.
+              <span className="text-primary">Arqen Command™</span> Govern Every AI Agent.<br />Stop Every Shadow Agent.
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              TruClaw™ is Tyvanto's agentic AI governance and control layer — built into Arqen™ — that monitors, constrains, and governs autonomous AI agents in real time, closing the attack surface opened by tools like OpenClaw and other open-source agentic frameworks before they can exploit your environment.
+              Arqen Command™ is Tyvanto's agentic AI governance and control layer — built into Arqen™ — that monitors, constrains, and governs autonomous AI agents in real time, closing the attack surface opened by tools like OpenClaw and other open-source agentic frameworks before they can exploit your environment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <Link href="/demo">
@@ -52,7 +52,7 @@ export default function TruClaw() {
                 <div>
                   <h3 className="font-bold text-orange-900 mb-2">The OpenClaw / Shadow AI Threat Is Real</h3>
                   <p className="text-orange-800">
-                    Open-source agentic frameworks like <strong>OpenClaw (Clawdbot / Moltbot)</strong> enable autonomous AI agents to chain actions, execute code, traverse networks, and exfiltrate data — entirely outside traditional security controls. Conventional SIEMs are blind to agent-level behavior. TruClaw was built to close that gap.
+                    Open-source agentic frameworks like <strong>OpenClaw (Clawdbot / Moltbot)</strong> enable autonomous AI agents to chain actions, execute code, traverse networks, and exfiltrate data — entirely outside traditional security controls. Conventional SIEMs are blind to agent-level behavior. Arqen Command was built to close that gap.
                   </p>
                 </div>
               </div>
@@ -123,23 +123,23 @@ export default function TruClaw() {
         </div>
       </section>
 
-      {/* What is TruClaw Section */}
+      {/* What is Arqen Command Section */}
       <section className="py-16 gradient-purple-blue">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">TruClaw™: <span className="text-primary">Agentic AI Governance</span> Inside Arqen™</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Arqen Command™: <span className="text-primary">Agentic AI Governance</span> Inside Arqen™</h2>
             <p className="text-xl text-gray-600">
-              TruClaw is the AI governance and control layer within the Arqen™ platform — sitting between your AI agents and enterprise systems to enforce policy, log every action, and terminate unauthorized behavior in real time.
+              Arqen Command is the AI governance and control layer within the Arqen™ platform — sitting between your AI agents and enterprise systems to enforce policy, log every action, and terminate unauthorized behavior in real time.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div>
               <p className="text-gray-600 mb-4 leading-relaxed">
-                Built on Arqen's patented dual-database architecture and an independent research organization graph intelligence heritage, TruClaw extends graph-based threat intelligence to the agent layer — mapping AI agent relationships, permissions, actions, and dependencies the same way Arqen maps network threats.
+                Built on Arqen's patented dual-database architecture and an independent research organization graph intelligence heritage, Arqen Command extends graph-based threat intelligence to the agent layer — mapping AI agent relationships, permissions, actions, and dependencies the same way Arqen maps network threats.
               </p>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                TruClaw integrates directly with Tyvanto's <strong>ELI (Ethical Layered Intelligence)</strong> framework to enforce configurable governance policies — giving security teams full, explainable control over every AI agent operating inside or adjacent to their environment.
+                Arqen Command integrates directly with Tyvanto's <strong>ELI (Ethical Layered Intelligence)</strong> framework to enforce configurable governance policies — giving security teams full, explainable control over every AI agent operating inside or adjacent to their environment.
               </p>
               <div className="flex flex-wrap gap-2">
                 <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-semibold border border-primary/20">an independent research organization ATLAS Aligned</span>
@@ -159,7 +159,7 @@ export default function TruClaw() {
                   </div>
                   <div className="text-center text-gray-400 text-xs">intercepted & analyzed</div>
                   <div className="bg-primary/20 border-2 border-primary rounded-lg p-3 text-sm font-semibold text-gray-900">
-                    🦀 TruClaw™ — AI Governance & Control Layer
+                    🦀 Arqen Command™ — AI Governance & Control Layer
                   </div>
                   <div className="text-center text-gray-400 text-xs">policy enforced via ELI</div>
                   <div className="bg-secondary/10 border border-secondary/30 rounded-lg p-3 text-sm font-semibold text-gray-900">
@@ -186,7 +186,7 @@ export default function TruClaw() {
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Six Pillars of <span className="text-primary">AI Agent Governance</span></h2>
             <p className="text-xl text-gray-600">
-              TruClaw combines real-time monitoring, policy enforcement, and graph-based intelligence to give security teams unprecedented control over the agentic AI layer.
+              Arqen Command combines real-time monitoring, policy enforcement, and graph-based intelligence to give security teams unprecedented control over the agentic AI layer.
             </p>
           </div>
 
@@ -203,7 +203,7 @@ export default function TruClaw() {
               <CardContent className="p-6">
                 <Shield className="h-10 w-10 text-primary mb-4" />
                 <h3 className="text-lg font-bold mb-2">Prompt Injection Defense</h3>
-                <p className="text-gray-600">TruClaw inspects all inputs to trusted AI agents in real time, detecting and blocking adversarial prompt injections before they redirect agent behavior — protecting both internal and externally-facing agents.</p>
+                <p className="text-gray-600">Arqen Command inspects all inputs to trusted AI agents in real time, detecting and blocking adversarial prompt injections before they redirect agent behavior — protecting both internal and externally-facing agents.</p>
               </CardContent>
             </Card>
 
@@ -219,7 +219,7 @@ export default function TruClaw() {
               <CardContent className="p-6">
                 <Lock className="h-10 w-10 text-primary mb-4" />
                 <h3 className="text-lg font-bold mb-2">Zero Trust Agent Policy</h3>
-                <p className="text-gray-600">Enforce least-privilege for every AI agent. TruClaw maps each agent's declared scope against actual behavior, flagging privilege creep and automatically quarantining agents that exceed authorization boundaries.</p>
+                <p className="text-gray-600">Enforce least-privilege for every AI agent. Arqen Command maps each agent's declared scope against actual behavior, flagging privilege creep and automatically quarantining agents that exceed authorization boundaries.</p>
               </CardContent>
             </Card>
 
@@ -235,7 +235,7 @@ export default function TruClaw() {
               <CardContent className="p-6">
                 <Network className="h-10 w-10 text-primary mb-4" />
                 <h3 className="text-lg font-bold mb-2">Multi-Agent Graph Mapping</h3>
-                <p className="text-gray-600">Leveraging Arqen's graph database, TruClaw visualizes trust relationships and communication patterns between AI agents — exposing lateral movement paths, rogue orchestration chains, and multi-agent attack progressions.</p>
+                <p className="text-gray-600">Leveraging Arqen's graph database, Arqen Command visualizes trust relationships and communication patterns between AI agents — exposing lateral movement paths, rogue orchestration chains, and multi-agent attack progressions.</p>
               </CardContent>
             </Card>
           </div>
@@ -248,17 +248,17 @@ export default function TruClaw() {
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">From Agent Discovery to <span className="text-primary">Real-Time Enforcement</span></h2>
             <p className="text-xl text-gray-600">
-              TruClaw operates in four continuous phases, building a living map of your AI agent ecosystem and enforcing governance policy at every step.
+              Arqen Command operates in four continuous phases, building a living map of your AI agent ecosystem and enforcing governance policy at every step.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12">
             <div className="space-y-6">
               {[
-                { num: 1, title: "Discover & Inventory", desc: "TruClaw scans your environment — cloud, on-prem, and hybrid — to build a complete inventory of all AI agents, LLM integrations, and agentic frameworks, authorized or otherwise." },
-                { num: 2, title: "Map & Contextualize", desc: "Using Arqen's graph engine, TruClaw maps each agent's permission scope, data access patterns, tool dependencies, and inter-agent relationships — giving you a complete picture of your agentic attack surface." },
-                { num: 3, title: "Monitor & Detect", desc: "Every agent action is compared against its baseline and policy in real time. TruClaw detects anomalies — unusual data access, privilege escalation, prompt injection indicators, and unauthorized tool use — as they occur." },
-                { num: 4, title: "Enforce & Respond", desc: "When policy violations are detected, TruClaw — guided by ELI governance rules — can alert, throttle, redirect, or quarantine the offending agent autonomously, with full documentation for compliance and incident response." }
+                { num: 1, title: "Discover & Inventory", desc: "Arqen Command scans your environment — cloud, on-prem, and hybrid — to build a complete inventory of all AI agents, LLM integrations, and agentic frameworks, authorized or otherwise." },
+                { num: 2, title: "Map & Contextualize", desc: "Using Arqen's graph engine, Arqen Command maps each agent's permission scope, data access patterns, tool dependencies, and inter-agent relationships — giving you a complete picture of your agentic attack surface." },
+                { num: 3, title: "Monitor & Detect", desc: "Every agent action is compared against its baseline and policy in real time. Arqen Command detects anomalies — unusual data access, privilege escalation, prompt injection indicators, and unauthorized tool use — as they occur." },
+                { num: 4, title: "Enforce & Respond", desc: "When policy violations are detected, Arqen Command — guided by ELI governance rules — can alert, throttle, redirect, or quarantine the offending agent autonomously, with full documentation for compliance and incident response." }
               ].map((step, idx) => (
                 <div key={idx} className="flex gap-4">
                   <div className="flex-shrink-0">
@@ -276,7 +276,7 @@ export default function TruClaw() {
 
             <Card className="bg-white border-2 border-primary/20 h-fit">
               <CardContent className="p-8">
-                <h3 className="font-bold text-lg mb-6 text-gray-900">TruClaw Detection Coverage</h3>
+                <h3 className="font-bold text-lg mb-6 text-gray-900">Arqen Command Detection Coverage</h3>
                 <div className="space-y-4">
                   {[
                     { label: "Prompt Injection Detection", value: "99%" },
@@ -320,12 +320,12 @@ export default function TruClaw() {
       <section className="py-16 bg-white">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">See TruClaw in Action</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">See Arqen Command in Action</h2>
             <p className="text-xl text-gray-600">
-              Watch how TruClaw discovers shadow AI agents, visualizes their relationships, and enforces governance policies in real time.
+              Watch how Arqen Command discovers shadow AI agents, visualizes their relationships, and enforces governance policies in real time.
             </p>
           </div>
-          <TruClawDemo />
+          <ArqenCommandDemo />
         </div>
       </section>
 
@@ -335,7 +335,7 @@ export default function TruClaw() {
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">AI Agent Relationship Mapping</h2>
             <p className="text-xl text-gray-600">
-              TruClaw visualizes the complex relationships and communication patterns between AI agents, exposing lateral movement paths and multi-agent attack chains.
+              Arqen Command visualizes the complex relationships and communication patterns between AI agents, exposing lateral movement paths and multi-agent attack chains.
             </p>
           </div>
           <AgentGraphVisualization />
@@ -348,7 +348,7 @@ export default function TruClaw() {
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Measurable AI Governance <span className="text-primary">From Day One</span></h2>
             <p className="text-xl text-gray-600">
-              Most customers achieve full AI agent inventory and active policy enforcement within the first 30 days of TruClaw deployment.
+              Most customers achieve full AI agent inventory and active policy enforcement within the first 30 days of Arqen Command deployment.
             </p>
           </div>
 
@@ -377,7 +377,7 @@ export default function TruClaw() {
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">No Other Platform Governs <span className="text-primary">AI Agents Like This</span></h2>
             <p className="text-xl text-gray-600">
-              Existing security tools were built before autonomous AI agents existed. TruClaw is built for the agentic AI era — purpose-designed from the ground up.
+              Existing security tools were built before autonomous AI agents existed. Arqen Command is built for the agentic AI era — purpose-designed from the ground up.
             </p>
           </div>
 
@@ -386,7 +386,7 @@ export default function TruClaw() {
               <thead>
                 <tr className="border-b-2 border-gray-300">
                   <th className="text-left p-4 font-bold text-gray-900">Capability</th>
-                  <th className="text-left p-4 font-bold text-primary">TruClaw™ (Tyvanto)</th>
+                  <th className="text-left p-4 font-bold text-primary">Arqen Command™ (Tyvanto)</th>
                   <th className="text-left p-4 font-bold text-gray-900">Traditional SIEM</th>
                   <th className="text-left p-4 font-bold text-gray-900">Generic AI Security Tools</th>
                 </tr>
@@ -419,9 +419,9 @@ export default function TruClaw() {
       <section className="py-16 bg-white">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">TruClaw Across <span className="text-primary">Every Industry</span></h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Arqen Command Across <span className="text-primary">Every Industry</span></h2>
             <p className="text-xl text-gray-600">
-              Wherever autonomous AI agents operate, TruClaw provides the governance layer that keeps them within sanctioned boundaries.
+              Wherever autonomous AI agents operate, Arqen Command provides the governance layer that keeps them within sanctioned boundaries.
             </p>
           </div>
 
@@ -452,7 +452,7 @@ export default function TruClaw() {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Ready to Govern Your AI Agents?</h2>
             <p className="text-xl text-gray-600 mb-8">
-              Schedule a demo to see how TruClaw protects your enterprise from autonomous AI threats.
+              Schedule a demo to see how Arqen Command protects your enterprise from autonomous AI threats.
             </p>
             <Link href="/demo">
               <Button size="lg" className="bg-primary hover:bg-primary/90">
