@@ -516,21 +516,21 @@ export default function Home() {
         </div>
       </section>
 
-      {/* an independent research organization ATT&CK */}
+      {/* ATT&CK Framework */}
       <section className="py-8 bg-gradient-to-br from-[#0D1B3E] via-[#1B3A8C] to-[#1B3A8C] text-white">
         <div className="container">
           <div className="text-center mb-8">
-            <img 
-              src="/mitre_attack_logo.webp" 
-              alt="an independent research organization ATT&CK" 
-              className="mx-auto h-16 sm:h-20 md:h-24 mb-6 object-contain"
-            />
+            <div className="mx-auto mb-6 inline-flex items-center gap-3">
+              <span className="text-4xl sm:text-5xl font-black tracking-tight text-white">ATT&amp;CK</span>
+              <span className="text-[#00D1B2] text-2xl font-bold">®</span>
+              <span className="text-blue-200 text-lg font-semibold">Framework Integration</span>
+            </div>
             <p className="text-xl text-blue-100 max-w-4xl mx-auto">
-              Arqen™ applies an independent research organization's ATT&CK framework — a globally-accessible catalog of adversarial tactics, techniques, and procedures (TTPs). Tyvanto leverages the framework to employ an effective, threat-informed defense.
+              Arqen™ natively integrates the ATT&amp;CK framework — a globally-accessible catalog of adversarial tactics, techniques, and procedures (TTPs). Tyvanto leverages the framework to employ an effective, threat-informed defense.
             </p>
             <Link href="/platform/ai-capabilities">
               <Button size="lg" variant="outline" className="mt-8 bg-white/10 border-white/30 hover:bg-white/20 text-white">
-                Learn How to Leverage the Power of an independent research organization ATT&CK
+                Learn How Arqen Leverages ATT&amp;CK
               </Button>
             </Link>
           </div>
