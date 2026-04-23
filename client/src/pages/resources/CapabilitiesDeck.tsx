@@ -7,23 +7,22 @@ import { Download, CheckCircle, ChevronLeft, ChevronRight } from 'lucide-react';
 import { SEOHead } from '@/components/SEOHead';
 import { trpc } from '@/lib/trpc';
 
-const PDF_URL = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663028236186/d8D2GoF7wZHc9ZPzYZfLpT/VisiumTechCapabilitiesDeck03-2026_e7a4924c.pdf';
+const PDF_URL = 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663028236186/wcUyIpkGAxfhIqRM.png';
 
 // PDF pages converted to images
 const DECK_PAGES = [
-  'https://d2xsxph8kpxj0f.cloudfront.net/310419663028236186/d8D2GoF7wZHc9ZPzYZfLpT/deck_page-01_39f9677d.png',
-  'https://d2xsxph8kpxj0f.cloudfront.net/310419663028236186/d8D2GoF7wZHc9ZPzYZfLpT/deck_page-02_b187113f.png',
-  'https://d2xsxph8kpxj0f.cloudfront.net/310419663028236186/d8D2GoF7wZHc9ZPzYZfLpT/deck_page-03_2d5e161e.png',
-  'https://d2xsxph8kpxj0f.cloudfront.net/310419663028236186/d8D2GoF7wZHc9ZPzYZfLpT/deck_page-04_225b70dc.png',
-  'https://d2xsxph8kpxj0f.cloudfront.net/310419663028236186/d8D2GoF7wZHc9ZPzYZfLpT/deck_page-05_7adc3862.png',
-  'https://d2xsxph8kpxj0f.cloudfront.net/310419663028236186/d8D2GoF7wZHc9ZPzYZfLpT/deck_page-06_5b1f932c.png',
-  'https://d2xsxph8kpxj0f.cloudfront.net/310419663028236186/d8D2GoF7wZHc9ZPzYZfLpT/deck_page-07_e18cf4fb.png',
-  'https://d2xsxph8kpxj0f.cloudfront.net/310419663028236186/d8D2GoF7wZHc9ZPzYZfLpT/deck_page-08_2478131e.png',
-  'https://d2xsxph8kpxj0f.cloudfront.net/310419663028236186/d8D2GoF7wZHc9ZPzYZfLpT/deck_page-09_961eeca3.png',
-  'https://d2xsxph8kpxj0f.cloudfront.net/310419663028236186/d8D2GoF7wZHc9ZPzYZfLpT/deck_page-10_982a0f77.png',
-  'https://d2xsxph8kpxj0f.cloudfront.net/310419663028236186/d8D2GoF7wZHc9ZPzYZfLpT/deck_page-11_d153d165.png',
-  'https://d2xsxph8kpxj0f.cloudfront.net/310419663028236186/d8D2GoF7wZHc9ZPzYZfLpT/deck_page-12_fb4ea81b.png',
-  'https://d2xsxph8kpxj0f.cloudfront.net/310419663028236186/d8D2GoF7wZHc9ZPzYZfLpT/deck_page-13_138ac023.png',
+  'https://files.manuscdn.com/user_upload_by_module/session_file/310419663028236186/wcUyIpkGAxfhIqRM.png',
+  'https://files.manuscdn.com/user_upload_by_module/session_file/310419663028236186/JhNUplICrECbaGiS.png',
+  'https://files.manuscdn.com/user_upload_by_module/session_file/310419663028236186/qLCubIJAKhMjsaSh.png',
+  'https://files.manuscdn.com/user_upload_by_module/session_file/310419663028236186/WCYKjPGzFTHxfIAP.png',
+  'https://files.manuscdn.com/user_upload_by_module/session_file/310419663028236186/oYYRHFNAJtvtJSDC.png',
+  'https://files.manuscdn.com/user_upload_by_module/session_file/310419663028236186/TpUGfGOfaGKhzpcq.png',
+  'https://files.manuscdn.com/user_upload_by_module/session_file/310419663028236186/icAxlOBUPfMEVEPW.png',
+  'https://files.manuscdn.com/user_upload_by_module/session_file/310419663028236186/bJwUFOfxFTyLhkYR.png',
+  'https://files.manuscdn.com/user_upload_by_module/session_file/310419663028236186/CQTVQMrLBgoIBFxb.png',
+  'https://files.manuscdn.com/user_upload_by_module/session_file/310419663028236186/UhOFYDAZAUTluUXW.png',
+  'https://files.manuscdn.com/user_upload_by_module/session_file/310419663028236186/UpurhLXmJPiVhjqS.png',
+  'https://files.manuscdn.com/user_upload_by_module/session_file/310419663028236186/eQnOoRBoHxnqewpF.png',
 ];
 
 export default function CapabilitiesDeck() {
@@ -45,7 +44,7 @@ export default function CapabilitiesDeck() {
         // Trigger download after successful submission
         const link = document.createElement('a');
         link.href = PDF_URL;
-        link.download = 'VisiumTechCapabilitiesDeck03-2026.pdf';
+        link.download = 'Tyvanto_Arqen_Capabilities_Deck.pptx';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -101,7 +100,7 @@ export default function CapabilitiesDeck() {
   const handleDirectDownload = () => {
     const link = document.createElement('a');
     link.href = PDF_URL;
-    link.download = 'VisiumTechCapabilitiesDeck03-2026.pdf';
+    link.download = 'Tyvanto_Arqen_Capabilities_Deck.pptx';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -237,7 +236,7 @@ export default function CapabilitiesDeck() {
               <div className="bg-gradient-to-r from-primary/5 to-secondary/5 p-6 border-t border-border flex flex-col sm:flex-row gap-4 justify-between items-center">
                 <div>
                   <p className="text-sm text-muted-foreground">
-                    13-page comprehensive overview of Arqen capabilities
+                    12-slide comprehensive overview of Arqen capabilities
                   </p>
                 </div>
                 <div className="flex gap-3">
