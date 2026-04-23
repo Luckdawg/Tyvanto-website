@@ -15,53 +15,7 @@ export default function Partners() {
     setLocation("/partners/login");
   };
 
-  const technologyPartners = [
-    {
-      name: "Datadog",
-      logo: "/datadog-logo.avif",
-      description: "Essential monitoring and security platform for cloud-scale applications"
-    },
-    {
-      name: "Tenable",
-      logo: "/partner_tenable.webp",
-      description: "Risk-based view of IT, security, and compliance across the enterprise"
-    },
-    {
-      name: "Splunk",
-      logo: "/partner_splunk.webp",
-      description: "World's first Data-to-Everything Platform for security and observability"
-    },
-    {
-      name: "Nutanix",
-      logo: "/partner_nutanix.webp",
-      description: "Leader in hyper-converged infrastructure and enterprise cloud platforms"
-    },
-    {
-      name: "IREX",
-      logo: "/partner_irex.webp",
-      description: "Joint product offering for AI-powered security camera integration"
-    },
-    {
-      name: "AWS",
-      logo: "/partner_aws.webp",
-      description: "Cloud infrastructure partnership for scalable, reliable deployment"
-    },
-    {
-      name: "an independent research organization",
-      logo: "/partner_mitre.webp",
-      description: "Strategic partnership leveraging an independent research organization ATT&CK framework and Cygraph technology"
-    },
-    {
-      name: "Carahsoft",
-      logo: "/partner_carahsoft.webp",
-      description: "Government contracting and public sector distribution partner"
-    },
-    {
-      name: "MicroTech",
-      logo: "/partner_microtech.webp",
-      description: "Federal government IT solutions and services partnership"
-    }
-  ];
+
 
   return (
     <div className="min-h-screen">
@@ -159,35 +113,7 @@ export default function Partners() {
         </div>
       </section>
 
-      {/* Our Partners Section */}
-      <section className="py-12 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div className="container">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Partners</h2>
-            <p className="text-xl text-gray-600">
-              Tyvanto has entered into partnerships to host the new Arqen™ SaaS model, providing redundancy, high availability, and scalability to our evolving platform. We collaborate with industry leaders to deliver comprehensive cybersecurity solutions.
-            </p>
-          </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {technologyPartners.map((partner, index) => (
-              <Card key={index} className="hover:shadow-xl transition-all hover:-translate-y-1">
-                <CardContent className="p-6">
-                  <div className="bg-white rounded-lg p-6 mb-4 flex items-center justify-center min-h-[120px]">
-                    <img 
-                      src={partner.logo} 
-                      alt={partner.name}
-                      className="max-w-full max-h-[80px] object-contain"
-                    />
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{partner.name}</h3>
-                  <p className="text-gray-600 text-sm">{partner.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* We Make Great Products Better Together */}
       <section className="py-12 bg-white">
