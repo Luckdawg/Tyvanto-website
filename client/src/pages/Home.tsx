@@ -12,7 +12,6 @@ import { StructuredData } from "@/components/StructuredData";
 import { SEOHead } from "@/components/SEOHead";
 import { SchemaHead } from "@/components/SchemaHead";
 import { organizationSchema, softwareApplicationSchema, createBreadcrumbSchema } from "@/lib/schema";
-import BlogPromotionBanner from "@/components/BlogPromotionBanner";
 
 import { 
   Shield, 
@@ -102,9 +101,6 @@ export default function Home() {
       {/* Tour feature disabled */}
       {/* <Tour steps={tourSteps} tourId="homepage" /> */}
       {/* <TourButton tourId="homepage" label="Take Tour" /> */}
-      
-      {/* Blog Promotion Banner - Top of Page */}
-      <BlogPromotionBanner />
       
       {/* Hero Section */}
       <section className="hero-section relative overflow-hidden py-12 lg:py-20">
