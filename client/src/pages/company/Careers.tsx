@@ -185,7 +185,7 @@ export default function Careers() {
                 size="lg"
                 variant="outline"
                 className="border-2 border-gray-800 hover:bg-gray-800 hover:text-white hover:scale-110 hover:shadow-lg transition-all duration-300 px-8"
-                onClick={() => window.open('https://x.com/VisiumAnalytics', '_blank')}
+                onClick={() => window.open('https://x.com/tyvanto', '_blank')}
               >
                 <svg className="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
@@ -207,7 +207,7 @@ export default function Careers() {
                 size="lg"
                 variant="outline"
                 className="border-2 border-blue-500 hover:bg-blue-500 hover:text-white hover:scale-110 hover:shadow-lg transition-all duration-300 px-8"
-                onClick={() => window.open('https://www.facebook.com/VisiumTech', '_blank')}
+                onClick={() => window.open('https://www.facebook.com/tyvanto', '_blank')}
               >
                 <Facebook className="h-5 w-5 mr-2" />
                 Facebook
@@ -227,7 +227,7 @@ export default function Careers() {
                 size="lg"
                 variant="outline"
                 className="border-2 border-pink-600 hover:bg-pink-600 hover:text-white hover:scale-110 hover:shadow-lg transition-all duration-300 px-8"
-                onClick={() => window.open('https://www.instagram.com/visiumtech/', '_blank')}
+                onClick={() => window.open('https://www.instagram.com/tyvanto/', '_blank')}
               >
                 <Instagram className="h-5 w-5 mr-2" />
                 Instagram
@@ -257,12 +257,12 @@ export default function Careers() {
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold">X (Twitter)</h3>
-                    <p className="text-sm text-gray-500">@VisiumAnalytics</p>
+                    <p className="text-sm text-gray-500">@tyvanto</p>
                   </div>
                 </div>
                 <Card className="border-2">
                   <CardContent className="p-4">
-                    <TwitterFeed username="VisiumAnalytics" height={500} />
+                    <TwitterFeed username="tyvanto" height={500} />
                   </CardContent>
                 </Card>
               </div>

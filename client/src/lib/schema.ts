@@ -21,12 +21,12 @@ export const organizationSchema = {
   "@type": "Organization",
   "name": "Tyvanto",
   "url": "https://tyvanto.com",
-  "logo": "https://tyvanto.com/visium_logo.svg",
+  "logo": "https://tyvanto.com/tyvanto_logo.png",
   "description": "Explainable AI for Real-Time Business Analytics - Arqen platform for cybersecurity and enterprise intelligence",
   "sameAs": [
     "https://www.linkedin.com/company/tyvanto-technologies",
-    "https://twitter.com/visiumtech",
-    "https://www.facebook.com/visiumtech"
+    "https://twitter.com/tyvanto",
+    "https://www.facebook.com/tyvanto"
   ],
   "contactPoint": {
     "@type": "ContactPoint",
@@ -106,7 +106,7 @@ export const createBlogPostingSchema = (props: SchemaProps) => ({
     "name": "Tyvanto",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://tyvanto.com/visium_logo.svg"
+      "url": "https://tyvanto.com/tyvanto_logo.png"
     }
   }
 });
@@ -148,7 +148,7 @@ export const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Tyvanto",
-  "image": "https://tyvanto.com/visium_logo.svg",
+  "image": "https://tyvanto.com/tyvanto_logo.png",
   "description": "Enterprise AI and cybersecurity analytics company",
   "url": "https://tyvanto.com",
   "telephone": "+1-888-344-9850",
