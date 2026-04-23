@@ -90,7 +90,7 @@ function Router() {
       <Route path={"/"} component={Home} />
       <Route path={"/platform"} component={Platform} />
       <Route path={"/platform/ai-capabilities"} component={AICapabilities} />
-      <Route path={"/platform/tru-insight"} component={TruInsight} />
+      <Route path={"/platform/arqen-vision"} component={TruInsight} />
       <Route path={"/solutions/cybersecurity"} component={Cybersecurity} />
       <Route path={"/solutions/smart-cities"} component={SmartCities} />
       <Route path={"/solutions/critical-infrastructure"} component={CriticalInfrastructure} />

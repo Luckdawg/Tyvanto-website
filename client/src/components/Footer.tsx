@@ -22,7 +22,7 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li><Link href="/platform"><span className="hover:text-[#00A3FF] cursor-pointer transition-colors">Overview</span></Link></li>
               <li><Link href="/platform/ai-capabilities"><span className="hover:text-[#00A3FF] cursor-pointer transition-colors">AI Capabilities</span></Link></li>
-              <li><Link href="/platform/tru-insight"><span className="hover:text-[#00A3FF] cursor-pointer transition-colors">Arqen Vision™</span></Link></li>
+              <li><Link href="/platform/arqen-vision"><span className="hover:text-[#00A3FF] cursor-pointer transition-colors">Arqen Vision™</span></Link></li>
               <li><Link href="/platform/architecture"><span className="hover:text-[#00A3FF] cursor-pointer transition-colors">Platform Architecture</span></Link></li>
             </ul>
           </div>

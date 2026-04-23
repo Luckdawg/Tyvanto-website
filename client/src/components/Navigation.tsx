@@ -61,7 +61,7 @@ const Navigation = () => {
                   <Link href="/platform/ai-capabilities">
                     <div className="px-4 py-2 hover:bg-primary hover:text-white cursor-pointer transition-colors">AI Capabilities</div>
                   </Link>
-                  <Link href="/platform/tru-insight">
+                  <Link href="/platform/arqen-vision">
                     <div className="px-4 py-2 hover:bg-primary hover:text-white cursor-pointer transition-colors">Arqen Vision™ Video Intelligence</div>
                   </Link>
 
@@ -292,7 +292,7 @@ const Navigation = () => {
                   <div className="pl-4 mt-1 space-y-1 bg-gray-50 rounded-lg py-2">
                     <Link href="/platform" onClick={() => setMobileMenuOpen(false)}><div className="py-2 px-3 hover:bg-white rounded">Overview</div></Link>
                     <Link href="/platform/ai-capabilities" onClick={() => setMobileMenuOpen(false)}><div className="py-2 px-3 hover:bg-white rounded">AI Capabilities</div></Link>
-                    <Link href="/platform/tru-insight" onClick={() => setMobileMenuOpen(false)}><div className="py-2 px-3 hover:bg-white rounded">Arqen Vision™</div></Link>
+                    <Link href="/platform/arqen-vision" onClick={() => setMobileMenuOpen(false)}><div className="py-2 px-3 hover:bg-white rounded">Arqen Vision™</div></Link>
                     <Link href="/platform/architecture" onClick={() => setMobileMenuOpen(false)}><div className="py-2 px-3 hover:bg-white rounded">Architecture</div></Link>
                   </div>
                 )}
