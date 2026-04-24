@@ -140,48 +140,6 @@ export default function TruInsight() {
         </div>
       </section>
 
-      {/* IREX.AI Integration */}
-      <section className="py-12 bg-white">
-        <div className="container">
-          <div className="max-w-4xl mx-auto">
-            <Card className="border-2 border-primary">
-              <CardContent className="p-12">
-                <div className="text-center">
-                  <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
-                    Strategic Integration
-                  </div>
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                    Enhanced with IREX.AI Technology
-                  </h2>
-                  <p className="text-xl text-gray-700 mb-8">
-                    Arqen Vision™ integrates with IREX.AI's Searchveillance™ technology for facial recognition and license plate detection capabilities, establishing the platform's role in advanced physical security applications.
-                  </p>
-                  <div className="grid md:grid-cols-2 gap-6 text-left">
-                    <div className="flex items-start space-x-3">
-                      <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <Eye className="h-4 w-4 text-primary" />
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-gray-900 mb-1">Facial Recognition</h4>
-                        <p className="text-gray-600">Advanced biometric identification and tracking</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="w-8 h-8 bg-secondary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <Activity className="h-4 w-4 text-secondary" />
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-gray-900 mb-1">License Plate Detection</h4>
-                        <p className="text-gray-600">Automatic vehicle identification and tracking</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
 
       {/* Industry Applications */}
       <section className="py-12 gradient-purple-blue">
