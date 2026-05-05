@@ -116,11 +116,11 @@ export default function Home() {
             <img 
               src="/tyvanto_logo.png" 
               alt="Tyvanto" 
-              className="h-16 sm:h-20 md:h-24 object-contain"
+              className="h-28 sm:h-36 md:h-44 object-contain"
             />
           </div>
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-lg md:text-2xl font-bold italic text-primary mb-4">
+            <p className="text-2xl md:text-4xl font-bold italic text-primary mb-4">
               Arqen: From Data Chaos to Decision Confidence.
             </p>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6">

@@ -61,7 +61,7 @@ export default function Platform() {
             <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
               The Arqen <span className="text-primary">Platform</span>
             </h1>
-            <p className="text-lg md:text-xl font-bold italic text-primary mb-8">
+            <p className="text-2xl md:text-4xl font-bold italic text-primary mb-8">
               Arqen: From Data Chaos to Decision Confidence.
             </p>
             <p className="text-xl text-gray-600 mb-8">

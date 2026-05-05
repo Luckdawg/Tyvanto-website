@@ -20,7 +20,7 @@ export default function About() {
             <img 
               src="/tyvanto_logo.png" 
               alt="Tyvanto" 
-              className="h-16 sm:h-20 md:h-24 object-contain"
+              className="h-28 sm:h-36 md:h-44 object-contain"
             />
           </div>
           <div className="max-w-4xl mx-auto text-center">
