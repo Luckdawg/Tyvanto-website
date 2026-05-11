@@ -1,6 +1,5 @@
 import { useAuth } from "@/_core/hooks/useAuth";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { useParallax } from "@/hooks/useParallax";
 import FollowUs from "@/components/FollowUs";
 import { Button } from "@/components/ui/button";
 import AnimatedGraphBackground from "@/components/AnimatedGraphBackground";
@@ -45,8 +44,7 @@ export default function Home() {
   const { ref: featuresRef, isVisible: featuresVisible } = useScrollAnimation({ threshold: 0.1 });
   const { ref: graphicRef, isVisible: graphicVisible } = useScrollAnimation({ threshold: 0.2 });
   
-  // Parallax effect for hero illustration
-  const { ref: parallaxRef, offset: parallaxOffset } = useParallax({ speed: 0.15, direction: 'up' });
+  // Parallax disabled — hero illustration is stationary
 
   const tourSteps: TourStep[] = [
     {
@@ -281,11 +279,7 @@ export default function Home() {
             >
               <div className="relative max-w-md w-full">
                 <div className="relative bg-white rounded-2xl shadow-xl overflow-hidden">
-                  <div 
-                    ref={parallaxRef}
-                    style={{ transform: `translateY(${parallaxOffset}px)` }}
-                    className="transition-transform duration-100 ease-out"
-                  >
+                  <div>
                     <img 
                       src="/hero_illustration.webp" 
                       alt="Arqen Platform" 
